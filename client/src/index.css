@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root { --mainGreen : #19a76d; --mainText :rgb(52, 58, 64); --mainText : rgb(134, 142, 150);}
+:root { --mainGreen : #19a76d; --mainText :rgb(52, 58, 64); --subText : rgb(134, 142, 150);}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
