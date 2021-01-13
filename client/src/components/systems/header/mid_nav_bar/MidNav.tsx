@@ -1,31 +1,49 @@
 import React from 'react';
 import styles from '../../../../styles/systems/header/Header.module.css';
 import DropDownNavModal from '../dropdown_nav_modal/DropDownNavModal';
+import OutsideClickHandler from 'react-outside-click-handler';
+import { BiChevronDown } from 'react-icons/bi';
 
-const MidNav: React.FC = () => {
+// ? ====================
+// ?   INTERFACE
+// ? ====================
+interface MidNavProps {
+  dropdown: boolean;
+  // eslint-disable-next-line no-unused-vars
+  onDropdown: (state: boolean, location?: string) => void;
+}
+
+// * ====================
+// *  React.FC
+// * ====================
+const MidNav: React.FC<MidNavProps> = ({ dropdown, onDropdown }) => {
   return (
     <>
       <ul className={styles.middle_nav_bar}>
-        <li className={styles.middle__nav__list__strong}>
-          <a href="#" className={styles.middle__nav__list__anchor}>
-            Overview
-          </a>
-          <DropDownNavModal />
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            onDropdown(false);
+          }}
+        >
+          <li className={styles.middle__nav__list__strong}>
+            <button
+              className={styles.middle__nav__bar__overView__button}
+              onClick={() => onDropdown(true, 'overView')}
+            >
+              Overview
+              <BiChevronDown />
+            </button>
+            {dropdown ? <DropDownNavModal onDropdown={onDropdown} /> : null}
+          </li>
+        </OutsideClickHandler>
+        <li>
+          <a href="#">이력서 작성하기</a>
         </li>
         <li>
-          <a href="#" className={styles.middle__nav__list__anchor}>
-            이력서 작성하기
-          </a>
+          <a href="#">내이력서</a>
         </li>
         <li>
-          <a href="#" className={styles.middle__nav__list__anchor}>
-            내이력서
-          </a>
-        </li>
-        <li>
-          <a href="#" className={styles.middle__nav__list__anchor}>
-            문의하기
-          </a>
+          <a href="#">문의하기</a>
         </li>
       </ul>
     </>

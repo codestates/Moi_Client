@@ -2,9 +2,9 @@
   box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.1);
   background: white;
   position: absolute;
-  top: 55px;
+  top: 60px;
   border-radius: 5px;
-  transform: translateX(-15px);
+  transform: translateX(-10px);
 }
 
 .nav__list{
@@ -14,12 +14,22 @@
 }
 
 .nav__list li {
-  padding: 8px 75px 8px 15px;
   color: var(--mainText);
   font-family: 'Nanum Gothic';
   font-weight: 500;
   font-size: 12px;
   cursor: pointer;
+}
+
+.nav__list button  {
+  cursor: pointer;
+  width: 120px;
+  text-align: left;
+  padding: 10px 30px 10px 15px;
+  border: none;
+  background: none;
+  font-family: 'Nanum Gothic';
+  font-size: 13px;
 }
 
 .nav__list li:hover {

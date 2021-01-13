@@ -1,7 +1,5 @@
 module.exports = {
   extends: [
-    // "airbnb-typescript",
-    // "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "prettier/react",
@@ -28,7 +26,6 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
-    "no-unused-vars": "error",
     "no-console": "warn",
     "linebreak-style": "off",
     "prettier/prettier": [
