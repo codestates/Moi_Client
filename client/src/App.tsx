@@ -2,11 +2,11 @@ import React from 'react';
 // * =====================
 // *   IMPORT_CONTAINERS
 // * =====================
-import LandingPageContainer from './containers/pages/landing_page/LandingPageContainer';
+import HeaderContainer from './containers/systems/header/HeaderContainer';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <LandingPageContainer />
+      <HeaderContainer />
     </div>
   );
 };
