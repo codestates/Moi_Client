@@ -1,5 +1,5 @@
 .container__nav__block  {
-    padding: 30px 0px 0px 15px;
+    padding: 30px 25px 0px 25px;
     transition: 300ms ease-in-out;
     position: fixed;
     top: 0;
@@ -11,7 +11,7 @@
 }
 
 .container__nav__block__avtive{
-  padding: 30px 0px 0px 15px;
+  padding: 30px 25px 0px 25px;
   transition: 300ms ease-in-out;
   width: 100%;
   position: fixed;
@@ -33,15 +33,25 @@
   border-radius: 20px;
 }
 
+.bugger__list_block {
+  padding: 10px 25px;
+  border: 3px solid white;
+  border-radius: 7px;
+  padding-bottom: 10px;
+}
+
 .buger__list{
   list-style: none;
   text-align: left;
+    padding: 20px 17px;
+    height: 370px;
 }
 
 .buger__list li {
   padding: 10px;
   cursor: pointer;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .buger__list li:hover {
@@ -61,14 +71,43 @@
   position: relative;
 }
 
+.buger__list__underBar__login {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 95px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+.buger__list__underBar__resume {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 175px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+.buger__list__underBar_my__resume {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 115px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+.buger__list__underBar__ask {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 105px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+
 .buger__list__copyright {
-  position: absolute;
   color: white;
-  text-align: center;
+  text-align: right;
   font-size: 15px;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .buger__right_block {

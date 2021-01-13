@@ -36,32 +36,38 @@ const Buger: React.FC<BugerProps> = ({ bugerMenu, onBugerMenu }) => {
       <div className={styles.buger__logo__block}>
         <img src={headerLogo} alt="logo" />
       </div>
-      <ul className={styles.buger__list}>
-        <li>
-          <a href="#">
-            <FcApprove />
-            로그인
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <FcRules />
-            이력서 작성하기
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <FcViewDetails />내 이력서
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <FcVoicePresentation />
-            문의하기
-          </a>
-        </li>
-      </ul>
-      <p className={styles.buger__list__copyright}>2021 © moi.co.kr</p>
+      <div className={styles.bugger__list_block}>
+        <ul className={styles.buger__list}>
+          <li>
+            <a href="#">
+              <FcApprove />
+              로그인
+            </a>
+            <div className={styles.buger__list__underBar__login}></div>
+          </li>
+          <li>
+            <a href="#">
+              <FcRules />
+              이력서 작성하기
+            </a>
+            <div className={styles.buger__list__underBar__resume}></div>
+          </li>
+          <li>
+            <a href="#">
+              <FcViewDetails />내 이력서
+            </a>
+            <div className={styles.buger__list__underBar_my__resume}></div>
+          </li>
+          <li>
+            <a href="#">
+              <FcVoicePresentation />
+              문의하기
+            </a>
+            <div className={styles.buger__list__underBar__ask}></div>
+          </li>
+        </ul>
+        <p className={styles.buger__list__copyright}>2021 © moi.co.kr</p>
+      </div>
     </nav>
   );
 };
