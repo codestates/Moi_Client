@@ -71,3 +71,31 @@ color:var(--subText)
   font-weight: 800;
   cursor: pointer;
 }
+
+.response__logo__block{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+.response__logo__block a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #49b889;
+  font-family: 'Jua';
+}
+
+.buger__toggle__button{
+  background: none;
+  border: none;
+}
+
+.buger__toggle__button:focus {
+  outline: none;
+}
+
+.buger__toggle__button svg {
+  font-size: 55px;
+  color: #49b889;
+}
