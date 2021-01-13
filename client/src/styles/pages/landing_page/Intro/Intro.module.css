@@ -1,0 +1,147 @@
+/* Intro Start*/
+
+.block {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap;  */
+  height: 700px;
+}
+
+.intro__button {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 50px;
+  background-color: white;
+  color: var(--mainText);
+  transition: 300ms ease-in-out;
+  opacity: 0.7;
+}
+
+.intro__button:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Intro End*/
+
+/* LeftMenu Start*/
+
+.left__Menu {
+  position: relative;
+  height: 400px;
+  width: 50%;
+  color: var(--subText); 
+}
+
+.intro_bird {
+  position: absolute;
+  left: 10%;
+  top: 18%;
+  z-index: 1;
+}
+.intro_bird img {
+  width: 100px;
+  height: 160px;
+}
+
+.first__desc {
+  position: absolute;
+  left: 33%;
+  top: 35%;
+  font-family: jua;
+  font-size: 41px;
+}
+
+.second__desc {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+  color: var(--mainGreen);
+}
+
+.second__desc strong {
+  display: inline;
+  font-family: jua;
+  font-size: 5.5rem;
+  font-weight: bold;
+}
+
+.second__desc p {
+  display: inline;
+  font-family: jua;
+  font-size:58px;
+}
+
+.third__desc {
+  position: absolute;
+  left: 20%;
+  top: 65%;
+  font-family: 'Nanum Gothic';
+  line-height: 1.5;
+  font-size: 1.3rem;
+}
+.third__desc span {
+  font-weight: 600;
+  color: var(--mainText);
+}
+
+.start__button {
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  font-family: 'Nanum Gothic';
+}
+
+.start__button button {
+  padding: 10px 0 10px 0;
+  width: 350px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--mainGreen);
+  color: white;
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.1);;
+  border-radius: 50px;
+  transition: all 300ms ease-in 0s;
+}
+
+.start__button button span {
+  line-height: normal;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 2rem;
+}
+
+.start__button button:hover {
+  transform: scale(1.1);
+}
+
+/* LeftMenu End*/
+
+
+/* RightMenu Start */
+
+.right__menu {
+  position: relative;
+  width: 50%;
+  height: 400px;
+}
+.img {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  height: auto;
+}
+
+/* RightMenu End */
