@@ -34,7 +34,7 @@
 }
 
 .bugger__list_block {
-  padding: 10px 25px;
+  padding: 15px 25px 0px 5px;
   border: 3px solid white;
   border-radius: 7px;
   padding-bottom: 10px;
@@ -43,8 +43,7 @@
 .buger__list{
   list-style: none;
   text-align: left;
-    padding: 20px 17px;
-    height: 370px;
+  height: 40vh;
 }
 
 .buger__list li {
