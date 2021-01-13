@@ -39,6 +39,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <>
       {isPc && (
+        //* PC header_nav_bar
         <div className={styles.block_container}>
           <LeftLogo />
           <MidNav dropdown={dropdown} onDropdown={onDropdown} />
@@ -46,6 +47,7 @@ const Header: React.FC<HeaderProps> = ({
         </div>
       )}
       {isMobile && (
+        //* Mobile header_hambuger_menu
         <>
           <div className={styles.response__logo__block}>
             <a href="#">모두의 이력서</a>
@@ -57,7 +59,6 @@ const Header: React.FC<HeaderProps> = ({
               <HiMenu />
             </button>
           </div>
-
           <Buger bugerMenu={bugerMenu} onBugerMenu={onBugerMenu} />
         </>
       )}

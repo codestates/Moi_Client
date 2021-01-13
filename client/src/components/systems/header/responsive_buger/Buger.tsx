@@ -61,6 +61,7 @@ const Buger: React.FC<BugerProps> = ({ bugerMenu, onBugerMenu }) => {
           </a>
         </li>
       </ul>
+      <p className={styles.buger__list__copyright}>2021 © moi.co.kr</p>
     </nav>
   );
 };

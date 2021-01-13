@@ -46,6 +46,7 @@ table {
   margin: 0;
   padding : 0;
 }
+
 body {
   font : 14px Arial,'Nanum Gothic';
   font-family: 'Nanum Gothic', sans-serif,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -53,7 +54,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1;
+	line-height: 1;
 }
 
 :root { --mainGreen : #19a76d; --mainText :rgb(52, 58, 64); --subText : rgb(134, 142, 150);}
