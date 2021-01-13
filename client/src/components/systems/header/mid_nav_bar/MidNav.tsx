@@ -1,30 +1,34 @@
 import React from 'react';
 import styles from '../../../../styles/systems/header/Header.module.css';
+import DropDownNavModal from '../dropdown_nav_modal/DropDownNavModal';
 
 const MidNav: React.FC = () => {
   return (
-    <ul className={styles.middle_nav_bar}>
-      <li className={styles.middle__nav__list__strong}>
-        <a href="#" className={styles.middle__nav__list__anchor}>
-          Overview
-        </a>
-      </li>
-      <li>
-        <a href="#" className={styles.middle__nav__list__anchor}>
-          이력서 작성하기
-        </a>
-      </li>
-      <li>
-        <a href="#" className={styles.middle__nav__list__anchor}>
-          내이력서
-        </a>
-      </li>
-      <li>
-        <a href="#" className={styles.middle__nav__list__anchor}>
-          문의하기
-        </a>
-      </li>
-    </ul>
+    <>
+      <ul className={styles.middle_nav_bar}>
+        <li className={styles.middle__nav__list__strong}>
+          <a href="#" className={styles.middle__nav__list__anchor}>
+            Overview
+          </a>
+          <DropDownNavModal />
+        </li>
+        <li>
+          <a href="#" className={styles.middle__nav__list__anchor}>
+            이력서 작성하기
+          </a>
+        </li>
+        <li>
+          <a href="#" className={styles.middle__nav__list__anchor}>
+            내이력서
+          </a>
+        </li>
+        <li>
+          <a href="#" className={styles.middle__nav__list__anchor}>
+            문의하기
+          </a>
+        </li>
+      </ul>
+    </>
   );
 };
 

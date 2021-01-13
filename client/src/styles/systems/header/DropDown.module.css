@@ -1,0 +1,27 @@
+.block__container {
+  box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.1);
+  background: white;
+  position: absolute;
+  top: 55px;
+  border-radius: 5px;
+  transform: translateX(-15px);
+}
+
+.nav__list{
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.nav__list li {
+  padding: 8px 75px 8px 15px;
+  color: var(--mainText);
+  font-family: 'Nanum Gothic';
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.nav__list li:hover {
+background: rgb(238, 238, 238);
+}
