@@ -57,7 +57,7 @@ body {
 	line-height: 1;
 }
 
-:root { --mainGreen : #19a76d; --mainText :rgb(52, 58, 64); --subText : rgb(134, 142, 150);}
+:root { --mainGreen : #19a76d; --mainText :rgb(52, 58, 64); --nomalText : #707070; --subText : rgb(134, 142, 150);}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -1,0 +1,30 @@
+@media screen and (min-width: 769px) {
+
+  .landing__guide__section{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 10px 40px 70px 40px;
+    background: #f7f7f7;
+  }
+
+  .landing__guide__block{
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing__guide__section{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 10px 40px 70px 40px;
+    background: #f7f7f7;
+  }
+}
+
+
+

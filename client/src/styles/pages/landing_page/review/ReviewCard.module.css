@@ -2,6 +2,7 @@
   .review__card__list {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
   
   .review__card__list header {
@@ -31,7 +32,7 @@
   }
   
   .review__card__list span {
-    color: var(--subText);
+    color: var(--nomalText);
   }
   
   .review__card__list_item {
@@ -44,7 +45,7 @@
   .review__card__list article {
     font-size: 15px;
     line-height: 27px;
-    color: var(--subText);
+    color: var(--nomalText);
   }
   
   .review__card__list__star__list {
@@ -64,6 +65,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    margin-bottom: 50px;
   }
   
   .review__card__list header {
@@ -93,7 +95,7 @@
   }
   
   .review__card__list span {
-    color: var(--subText);
+    color: var(--nomalText);
   }
   
   .review__card__list_item {
@@ -107,7 +109,7 @@
   .review__card__list article {
     font-size: 15px;
     line-height: 27px;
-    color: var(--subText);
+    color: var(--nomalText);
   }
   
   .review__card__list__star__list {
