@@ -19,7 +19,11 @@ const ReviewCard: React.FC = () => {
     return (
       <li className={styles.review__card__list_item} key={element.name}>
         <header>
-          <img src={element.profileImg} alt="preview_avatar" />
+          <img
+            className={styles.review__card__list__profile__img}
+            src={element.profileImg}
+            alt="preview_avatar"
+          />
           <div className={styles.review__card__list__header__rating__block}>
             <strong>{element.name}</strong>
             <ul className={styles.review__card__list__star__list}>

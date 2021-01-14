@@ -24,9 +24,10 @@
     margin-right: 10px;
   }
   
-  .review__card__list img {
+  .review__card__list__profile__img{
     margin-right: 12px;
     width: 45px;
+    height: 45px;
   }
   
   .review__card__list span {
@@ -85,9 +86,10 @@
     margin-right: 10px;
   }
   
-  .review__card__list img {
+  .review__card__list__profile__img{
     margin-right: 12px;
     width: 45px;
+    height: 45px;
   }
   
   .review__card__list span {
