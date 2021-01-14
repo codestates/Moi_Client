@@ -1,0 +1,128 @@
+.container__nav__block  {
+    padding: 30px 25px 0px 25px;
+    transition: 300ms ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #19a76deb;
+    right: -100%;
+    z-index: 3;
+}
+
+.container__nav__block__avtive{
+  padding: 30px 25px 0px 25px;
+  transition: 300ms ease-in-out;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background: #19a76deb;
+  right: 0%;
+  z-index: 3;
+}
+
+
+.buger__logo__block{
+  margin-bottom: 30px;
+}
+
+.buger__logo__block img {
+  width: 150px;
+  box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.bugger__list_block {
+  padding: 15px 25px 0px 5px;
+  border: 3px solid white;
+  border-radius: 7px;
+  padding-bottom: 10px;
+  box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.buger__list{
+  list-style: none;
+  text-align: left;
+  height: 40vh;
+}
+
+.buger__list li {
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.buger__list li:hover {
+  border-radius: 15px;
+  background: #3b9b72;
+}
+
+.buger__list a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+.buger__list svg {
+  margin-right: 5px;
+  top: 2px;
+  position: relative;
+}
+
+.buger__list__underBar__login {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 95px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+.buger__list__underBar__resume {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 175px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+.buger__list__underBar_my__resume {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 115px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+.buger__list__underBar__ask {
+  height: 2px;
+    position: absolute;
+    background: white;
+    width: 105px;
+    bottom: -3px;
+    border-radius: 28px;
+}
+
+.buger__list__copyright {
+  color: white;
+  text-align: right;
+  font-size: 15px;
+}
+
+.buger__right_block {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
+.buger__right_block button {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 55px;
+}
+.buger__right_block button:focus {
+  outline: none; 
+}

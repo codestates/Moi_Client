@@ -9,7 +9,6 @@ import { BiChevronDown } from 'react-icons/bi';
 // ? ====================
 interface MidNavProps {
   dropdown: boolean;
-  // eslint-disable-next-line no-unused-vars
   onDropdown: (state: boolean, location?: string) => void;
 }
 
