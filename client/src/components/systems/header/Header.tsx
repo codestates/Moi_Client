@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({
     query: '(min-width:1024px)',
   });
   const isMobile = useMediaQuery({
-    query: '(max-width:767px)',
+    query: '(max-width:1023px)',
   });
 
   return (
