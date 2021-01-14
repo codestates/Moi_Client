@@ -5,7 +5,7 @@
   
   .landing__review__header p{
     color: var(--subText);
-    padding-bottom: 35px;
+    padding-bottom: 75px;
   }
 
   .landing__review__header h3{
@@ -31,7 +31,7 @@
   }
   .landing__review__header p{
     color: var(--subText);
-    padding-bottom: 35px;
+    padding-bottom: 75px;
   }
 }
 
