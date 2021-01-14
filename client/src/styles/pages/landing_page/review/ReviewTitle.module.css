@@ -31,7 +31,7 @@
   }
   .landing__review__header p{
     color: var(--subText);
-    padding-bottom: 75px;
+    padding-bottom: 40px;
   }
 }
 
