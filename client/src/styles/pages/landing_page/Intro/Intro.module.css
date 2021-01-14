@@ -1,11 +1,12 @@
 /* Intro Start*/
 
 .block {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100vw;
 }
 
 .container {
+  max-width: 1200px;
+  margin:0 auto;
   position: relative;
   display: flex;
   justify-content: space-between;
