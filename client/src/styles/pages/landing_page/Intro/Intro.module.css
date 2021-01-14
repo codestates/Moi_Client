@@ -1,11 +1,12 @@
 /* Intro Start*/
 
 .block {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
 }
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -40,72 +41,16 @@
 .left__Menu {
   position: relative;
   height: 400px;
-  width: 50%;
   color: var(--subText); 
 }
 
-.intro_bird {
-  position: absolute;
-  left: 10%;
-  top: 18%;
-  z-index: 1;
-}
-.intro_bird img {
-  width: 100px;
-  height: 160px;
-}
-
-.first__desc {
-  position: absolute;
-  left: 33%;
-  top: 35%;
-  font-family: jua;
-  font-size: 41px;
-}
-
-.second__desc {
-  position: absolute;
-  left: 20%;
-  top: 40%;
-  color: var(--mainGreen);
-}
-
-.second__desc strong {
-  display: inline;
-  font-family: jua;
-  font-size: 5.5rem;
-  font-weight: bold;
-}
-
-.second__desc p {
-  display: inline;
-  font-family: jua;
-  font-size:58px;
-}
-
-.third__desc {
-  position: absolute;
-  left: 20%;
-  top: 65%;
-  font-family: 'Nanum Gothic';
-  line-height: 1.5;
-  font-size: 1.3rem;
-}
 .third__desc span {
   font-weight: 600;
   color: var(--mainText);
 }
 
-.start__button {
-  position: absolute;
-  bottom: 5%;
-  left: 20%;
-  font-family: 'Nanum Gothic';
-}
-
 .start__button button {
   padding: 10px 0 10px 0;
-  width: 350px;
   border: 0;
   outline: none;
   cursor: pointer;
@@ -145,3 +90,227 @@
 }
 
 /* RightMenu End */
+
+
+/* Media 1024 ~ 2000  */
+
+@media (min-width:1024px) and (max-width: 2000px) {
+  .left__Menu {
+    width: 50%;
+  }
+  .first__desc {
+    position: absolute;
+    left: 174px;
+    top: 141px;
+    font-family: jua;
+    font-size: 41px;
+  }
+
+  .second__desc {
+    position: absolute;
+    left: 100px;
+    top: 167px;
+    color: var(--mainGreen);
+  }
+
+  .second__desc strong {
+    display: inline;
+    font-family: jua;
+    font-size: 5.5rem;
+    font-weight: bold;
+  }
+
+  .second__desc p {
+    display: inline;
+    font-family: jua;
+    font-size:58px;
+  } 
+  .intro_bird {
+    position: absolute;
+    left: 43px;
+    top: 68px;
+    z-index: 1;
+  }
+
+  .intro_bird img {
+    width: 100px;
+    height: 160px;
+  }
+
+  .third__desc {
+    position: absolute;
+    left: 104px;
+    top: 251px;
+    font-family: 'Nanum Gothic';
+    line-height: 1.5;
+    font-size: 1.3rem;
+  }
+
+  .start__button {
+    position: absolute;
+    bottom: 9px;
+    left: 97px;
+    font-family: 'Nanum Gothic';
+  }
+
+  .start__button button {
+    width: 350px;
+  }
+
+  
+}
+
+/* Media 768 ~ 1024  */
+
+@media (min-width:768px) and (max-width:1024px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .left__Menu {
+    width: 100%;
+  }
+
+  .second__desc {
+    position: absolute;
+    left: 223px;
+    top: 167px;
+    color: var(--mainGreen);
+  }
+
+  .second__desc p {
+    display: inline;
+    font-family: jua;
+    font-size:58px;
+  }
+
+  .first__desc {
+    position: absolute;
+    left: 298px;
+    top: 141px;
+    font-family: jua;
+    font-size: 41px;
+  }
+
+  .second__desc strong {
+    display: inline;
+    font-family: jua;
+    font-size: 5.5rem;
+    font-weight: bold;
+  }
+  .intro_bird {
+    position: absolute;
+    left: 169px;
+    top: 68px;
+    z-index: 1;
+  }
+
+  .intro_bird img {
+    width: 100px;
+    height: 160px;
+  }
+
+  .right__menu {
+    display: none;
+  }
+
+  .third__desc {
+    position: absolute;
+    left: 223px;
+    top: 251px;
+    font-family: 'Nanum Gothic';
+    line-height: 1.5;
+    font-size: 1.3rem;
+  }
+
+  .start__button {
+    position: absolute;
+    bottom: 9px;
+    left: 214px;
+    font-family: 'Nanum Gothic';
+  }
+
+  .start__button button {
+    width: 350px;
+  }
+}
+
+
+/* Media 320 ~ 767 */
+@media (min-width:320px) and (max-width: 767px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left__Menu {
+    width: 300px;  }
+
+  .first__desc {
+    position: absolute;
+    left: 90px;
+    top: 148px;
+    font-family: jua;
+    font-size: 30px;
+  }
+
+  .second__desc {
+    position: absolute;
+    left: 39px;
+    top: 167px;
+    color: var(--mainGreen);
+  }
+
+  .second__desc strong {
+    display: inline;
+    font-family: jua;
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  .second__desc p {
+    display: inline;
+    font-family: jua;
+    font-size: 43px;
+  }
+
+    .intro_bird {
+      position: absolute;
+      left: 0px;
+      top: 80px;
+      z-index: 1;
+    }
+
+    .intro_bird img {
+      width: 79px;
+      height: 129px;
+    }
+
+    .third__desc {
+      position: absolute;
+      left: 41px;
+      top: 219px;
+      font-family: 'Nanum Gothic';
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    .start__button {
+      position: absolute;
+      bottom: 77px;
+      left: 42px;
+      font-family: 'Nanum Gothic';
+    }
+
+    .start__button button {
+      width:230px;
+    }
+
+
+
+  .right__menu {
+    display: none;
+  }
+}
