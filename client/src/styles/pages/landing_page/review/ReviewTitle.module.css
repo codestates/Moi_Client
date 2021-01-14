@@ -6,6 +6,7 @@
   .landing__review__header p{
     color: var(--subText);
     padding-bottom: 75px;
+    line-height: 20px;
   }
 
   .landing__review__header h3{
@@ -13,6 +14,7 @@
     font-weight: 600;
     color: var(--mainText);
     padding-top: 85px;
+    line-height: 10px;
     padding-bottom: 15px;
   }
 }
@@ -24,14 +26,16 @@
   .landing__review__header h3{
     line-height: 35px;
     font-size: 33px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--mainText);
-    padding-top: 85px;
+    padding-top: 50px;
+    line-height: 45px;
     padding-bottom: 15px;
   }
   .landing__review__header p{
     color: var(--subText);
     padding-bottom: 40px;
+    line-height: 20px;
   }
 }
 
