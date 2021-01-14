@@ -12,11 +12,9 @@ const Intro: React.FC = () => {
           <LeftTitle />
           <RightPreview />
         </div>
-        <div>
-          <button className={styles.intro__button}>
-            <VscFoldDown />
-          </button>
-        </div>
+        <button className={styles.intro__button}>
+          <VscFoldDown />
+        </button>
       </section>
     </>
   );
