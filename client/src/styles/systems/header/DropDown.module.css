@@ -1,16 +1,28 @@
 .block__container {
+  z-index: 2;
   box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.1);
   background: white;
   position: absolute;
-  top: 60px;
-  border-radius: 5px;
-  transform: translateX(-10px);
+  top: 65px;
+    border-radius: 5px;
+    transform: translateX(-40px);
 }
 
 .nav__list{
   padding: 0;
   list-style: none;
   text-align: left;
+}
+
+.nav__list a{
+  display: flex;
+    align-items: center;
+  font-size: 15px;
+  color: var(--mainText);
+  padding: 10px 80px 10px 10px;
+  margin: 0 0;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .nav__list li {
@@ -21,15 +33,13 @@
   cursor: pointer;
 }
 
-.nav__list button  {
-  cursor: pointer;
-  width: 120px;
+.nav__list svg{
+  position: initial;
+  padding: 0;
+  list-style: none;
   text-align: left;
-  padding: 10px 30px 10px 15px;
-  border: none;
-  background: none;
-  font-family: 'Nanum Gothic';
-  font-size: 13px;
+  margin-right: 5px;
+  font-size: 19px;
 }
 
 .nav__list li:hover {
