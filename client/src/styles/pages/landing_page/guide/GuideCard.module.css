@@ -30,7 +30,7 @@
 }
 
 .guide__card__block strong{
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--mainText);
 }
@@ -96,7 +96,7 @@
   }
   
   .guide__card__block strong{
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--mainText);
   }

@@ -46,15 +46,16 @@ const Card: React.FC = () => {
       </div>
       <div className={styles.guide__card__block}>
         <span className={styles.guide__card__block__strong}>
-          <strong>전문적인 이력서를 작성해보세요</strong>
+          <strong>이력서를 작성하거나 최적화 하십시오</strong>
         </span>
         <ul className={styles.guide__card__block__list}>
           <li>
             <span>
               <FcOk />
             </span>
-            CV 이력서 작성기를 사용하면 팁 및 요령을 활용하여 매우 용이하게
-            전문적인 이력서를 작성할 수 있습니다.
+            완벽한 이력서 작성이 어렵게 느껴지거나, 너무 바쁜 나머지 시간이
+            없으신가요? 그렇다면 전문가의 손에 이력서 작성 및 최적화를
+            맡겨보십시오.
           </li>
           <li>
             <span>
