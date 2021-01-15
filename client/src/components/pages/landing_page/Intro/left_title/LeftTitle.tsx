@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../../../styles/pages/landing_page/Intro/Intro.module.css';
+import styles from '../../../../../styles/pages/landing_page/intro/Intro.module.css';
 const LeftTitle: React.FC = () => {
   return (
     <div className={styles.intro__title__container}>

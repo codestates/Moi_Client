@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../../../styles/pages/landing_page/Description/Description.module.css';
+import styles from '../../../../../styles/pages/landing_page/description/Description.module.css';
 import { AiTwotoneLike } from 'react-icons/ai';
 import { AiTwotoneFileText } from 'react-icons/ai';
 import { AiFillDiff } from 'react-icons/ai';

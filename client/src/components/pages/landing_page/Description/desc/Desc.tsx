@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../../../styles/pages/landing_page/Description/Description.module.css';
+import styles from '../../../../../styles/pages/landing_page/description/Description.module.css';
 const Desc: React.FC = () => {
   return (
     <div className={styles.desc__container}>
