@@ -16,6 +16,7 @@ interface HeaderProps {
   onDropdown: (state: boolean) => void;
   bugerMenu: boolean;
   onBugerMenu: () => void;
+  onScroll: (destination: string, name: string) => JSX.Element;
 }
 // * ====================
 // *  REACT.FC
@@ -25,6 +26,7 @@ const Header: React.FC<HeaderProps> = ({
   onDropdown,
   bugerMenu,
   onBugerMenu,
+  onScroll,
 }) => {
   // * ====================
   // *  RESPONSIVE
@@ -42,7 +44,11 @@ const Header: React.FC<HeaderProps> = ({
         //* PC header_nav_bar
         <div className={styles.block_container}>
           <LeftLogo />
-          <MidNav dropdown={dropdown} onDropdown={onDropdown} />
+          <MidNav
+            dropdown={dropdown}
+            onDropdown={onDropdown}
+            onScroll={onScroll}
+          />
           <RightLoginButton />
         </div>
       )}

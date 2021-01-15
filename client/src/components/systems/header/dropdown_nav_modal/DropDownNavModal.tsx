@@ -1,72 +1,30 @@
 import React from 'react';
 import styles from '../../../../styles/systems/header/DropDown.module.css';
-import { Link } from 'react-scroll';
-import {
-  FcBusinessman,
-  FcVoicePresentation,
-  FcViewDetails,
-} from 'react-icons/fc';
 
 // ? ====================
 // ?   INTERFACE
 // ? ====================
 interface DropDownNavModal {
-  onDropdown: (state: boolean, location?: string) => void;
+  onScroll: (destination: string, name: string) => JSX.Element;
 }
 // * ====================
 // *  React.FC
 // * ====================
-const DropDownNavModal: React.FC<DropDownNavModal> = ({ onDropdown }) => {
+const DropDownNavModal: React.FC<DropDownNavModal> = ({ onScroll }) => {
   return (
     <div className={styles.block__container}>
       <ul className={styles.nav__list}>
         <li>
           {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
-          <Link
-            activeClass="active"
-            to="description"
-            spy={true}
-            smooth={true}
-            duration={500}
-            onClick={() => onDropdown(false)}
-          >
-            <span>
-              <FcBusinessman />
-            </span>
-            소개
-          </Link>
+          {onScroll('description', '소개')}
         </li>
         <li>
           {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
-          <Link
-            activeClass="active"
-            to="review"
-            spy={true}
-            smooth={true}
-            duration={500}
-            onClick={() => onDropdown(false)}
-          >
-            <span>
-              <FcVoicePresentation />
-            </span>
-            후기
-          </Link>
+          {onScroll('review', '후기')}
         </li>
         <li>
           {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
-          <Link
-            activeClass="active"
-            to="guide"
-            spy={true}
-            smooth={true}
-            duration={500}
-            onClick={() => onDropdown(false)}
-          >
-            <span>
-              <FcViewDetails />
-            </span>
-            가이드
-          </Link>
+          {onScroll('guide', '가이드')}
         </li>
       </ul>
     </div>
