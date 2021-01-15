@@ -1,5 +1,11 @@
 import React from 'react';
 import styles from '../../../../styles/systems/header/DropDown.module.css';
+import { Link } from 'react-scroll';
+import {
+  FcBusinessman,
+  FcVoicePresentation,
+  FcViewDetails,
+} from 'react-icons/fc';
 
 // ? ====================
 // ?   INTERFACE
@@ -15,19 +21,52 @@ const DropDownNavModal: React.FC<DropDownNavModal> = ({ onDropdown }) => {
     <div className={styles.block__container}>
       <ul className={styles.nav__list}>
         <li>
-          <button type="button" onClick={() => onDropdown(false)}>
+          {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
+          <Link
+            activeClass="active"
+            to="description"
+            spy={true}
+            smooth={true}
+            duration={500}
+            onClick={() => onDropdown(false)}
+          >
+            <span>
+              <FcBusinessman />
+            </span>
             소개
-          </button>
+          </Link>
         </li>
         <li>
-          <button type="button" onClick={() => onDropdown(false)}>
+          {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
+          <Link
+            activeClass="active"
+            to="review"
+            spy={true}
+            smooth={true}
+            duration={500}
+            onClick={() => onDropdown(false)}
+          >
+            <span>
+              <FcVoicePresentation />
+            </span>
             후기
-          </button>
+          </Link>
         </li>
         <li>
-          <button type="button" onClick={() => onDropdown(false)}>
+          {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
+          <Link
+            activeClass="active"
+            to="guide"
+            spy={true}
+            smooth={true}
+            duration={500}
+            onClick={() => onDropdown(false)}
+          >
+            <span>
+              <FcViewDetails />
+            </span>
             가이드
-          </button>
+          </Link>
         </li>
       </ul>
     </div>
