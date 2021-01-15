@@ -21,12 +21,12 @@ const DropDownNavModal: React.FC<DropDownNavModal> = ({ onDropdown }) => {
         </li>
         <li>
           <button type="button" onClick={() => onDropdown(false)}>
-            예시
+            후기
           </button>
         </li>
         <li>
           <button type="button" onClick={() => onDropdown(false)}>
-            템플릿
+            가이드
           </button>
         </li>
       </ul>
