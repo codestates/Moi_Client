@@ -5,29 +5,26 @@ import styles from '../../../../styles/systems/header/DropDown.module.css';
 // ?   INTERFACE
 // ? ====================
 interface DropDownNavModal {
-  onDropdown: (state: boolean, location?: string) => void;
+  onScroll: (destination: string, name: string) => JSX.Element;
 }
 // * ====================
 // *  React.FC
 // * ====================
-const DropDownNavModal: React.FC<DropDownNavModal> = ({ onDropdown }) => {
+const DropDownNavModal: React.FC<DropDownNavModal> = ({ onScroll }) => {
   return (
     <div className={styles.block__container}>
       <ul className={styles.nav__list}>
         <li>
-          <button type="button" onClick={() => onDropdown(false)}>
-            소개
-          </button>
+          {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
+          {onScroll('description', '소개')}
         </li>
         <li>
-          <button type="button" onClick={() => onDropdown(false)}>
-            예시
-          </button>
+          {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
+          {onScroll('review', '후기')}
         </li>
         <li>
-          <button type="button" onClick={() => onDropdown(false)}>
-            템플릿
-          </button>
+          {/* // ? ONCLICK_SCROLL_EVENT_(react-scroll)*/}
+          {onScroll('guide', '가이드')}
         </li>
       </ul>
     </div>

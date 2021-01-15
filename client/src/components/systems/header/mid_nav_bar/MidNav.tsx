@@ -10,12 +10,13 @@ import { BiChevronDown } from 'react-icons/bi';
 interface MidNavProps {
   dropdown: boolean;
   onDropdown: (state: boolean, location?: string) => void;
+  onScroll: (destination: string, name: string) => JSX.Element;
 }
 
 // * ====================
 // *  React.FC
 // * ====================
-const MidNav: React.FC<MidNavProps> = ({ dropdown, onDropdown }) => {
+const MidNav: React.FC<MidNavProps> = ({ dropdown, onDropdown, onScroll }) => {
   return (
     <>
       <ul className={styles.middle_nav_bar}>
@@ -32,7 +33,7 @@ const MidNav: React.FC<MidNavProps> = ({ dropdown, onDropdown }) => {
               Overview
               <BiChevronDown />
             </button>
-            {dropdown ? <DropDownNavModal onDropdown={onDropdown} /> : null}
+            {dropdown ? <DropDownNavModal onScroll={onScroll} /> : null}
           </li>
         </OutsideClickHandler>
         <li>
