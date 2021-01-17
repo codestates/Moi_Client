@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/landing_page/intro/Intro.module.css';
+import { Link } from 'react-router-dom';
 const LeftTitle: React.FC = () => {
   return (
     <div className={styles.intro__title__container}>
@@ -18,7 +19,9 @@ const LeftTitle: React.FC = () => {
         </p>
         <p>행운을 담은 이력서 지금 체험해보세요</p>
       </article>
-      <button className={styles.start__button}>시작하기</button>
+      <Link to="/template">
+        <button className={styles.start__button}>시작하기</button>
+      </Link>
     </div>
   );
 };
