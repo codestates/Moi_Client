@@ -80,12 +80,12 @@
     align-items: center;
     width: 100%;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 26px;
     margin-top: 10%;
     margin-bottom: 5%;
   }
   .desc_subTitle {
-    font-size: 19px;
+    font-size: 15px;
     margin-bottom: 10%;
   }
 }
@@ -243,14 +243,14 @@
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
-    font-size: 22px;
+    font-size: 19px;
 }
 
   .card__desc {
     text-align: left;
     padding: 0 20px 0 20px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 29px;
     color: var(--nomalText);
   }
