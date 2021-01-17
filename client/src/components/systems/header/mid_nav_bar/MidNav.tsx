@@ -3,6 +3,7 @@ import styles from '../../../../styles/systems/header/Header.module.css';
 import DropDownNavModal from '../dropdown_nav_modal/DropDownNavModal';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { BiChevronDown } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 // ? ====================
 // ?   INTERFACE
@@ -37,13 +38,13 @@ const MidNav: React.FC<MidNavProps> = ({ dropdown, onDropdown, onScroll }) => {
           </li>
         </OutsideClickHandler>
         <li>
-          <a href="#">이력서 작성하기</a>
+          <Link to="/template">이력서 작성하기</Link>
         </li>
         <li>
-          <a href="#">내이력서</a>
+          <Link to="#">내이력서</Link>
         </li>
         <li>
-          <a href="#">문의하기</a>
+          <Link to="#">문의하기</Link>
         </li>
       </ul>
     </>
