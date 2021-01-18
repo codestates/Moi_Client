@@ -15,6 +15,7 @@ interface WriteProps {
   email: string;
   onChangeFields: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeTextAreas: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  addSkill: () => void;
 }
 
 const Write: React.FC<WriteProps> = ({
@@ -37,7 +38,7 @@ const Write: React.FC<WriteProps> = ({
           onChangeFields={onChangeFields}
         />
         <Profile profile={profile} onChangeTextAreas={onChangeTextAreas} />
-        <Skills />
+        <Skills addSkill={addSkill}/>
       </div>
     </section>
   );

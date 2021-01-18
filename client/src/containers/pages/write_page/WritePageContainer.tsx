@@ -1,10 +1,10 @@
 import React from 'react';
 import WritePage from '../../../components/pages/write_page/WritePage';
-
 // * ======================
 // * IMPORT_CUSTOM_HOOKS
 // * ======================
 import useChangeInfoField from '../../../hooks/pages/write_page/useChangeInfoField';
+import useSkillsChangeField from '../../../hooks/pages/write_page/useSkillsChangeField';      
 
 const WritePageContainer: React.FC = () => {
   // * ======================
@@ -19,7 +19,8 @@ const WritePageContainer: React.FC = () => {
     onChangeFields,
     onChangeTextAreas,
   } = useChangeInfoField();
-
+   const { addSkill } = useSkillsChangeField();
+        
   return (
     <>
       <WritePage
@@ -30,6 +31,7 @@ const WritePageContainer: React.FC = () => {
         email={email}
         onChangeFields={onChangeFields}
         onChangeTextAreas={onChangeTextAreas}
+        addSkill={addSkill}
       />
     </>
   );

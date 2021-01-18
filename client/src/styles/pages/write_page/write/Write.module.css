@@ -1,3 +1,26 @@
+/* Global input and placeholder setting */
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color:transparent;
+}
+
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:transparent;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:transparent;
+}
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:transparent;
+}
+
+/* Global input and placeholder setting END */
+
 .block {
   margin-top: 200px;
   width: 50%;
@@ -76,28 +99,15 @@
   outline: none;
   border: none;
   width: 90%;
+  height: 200px;
   resize: none;
 }
 
-.profile_textarea:focus::-webkit-input-placeholder { /* WebKit browsers */
-  color:transparent;
-}
-
-.profile_textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color:transparent;
-}
-
-.profile_textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color:transparent;
-}
-
-.profile_textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
-  color:transparent;
-}
 /* Profile END*/
 
 
 /* Skills */
+
 .skills_title {
   width: 90%;
   padding-bottom: 10px;
@@ -108,12 +118,63 @@
   font-size: 16px;
 }
 
+.skills_button {
+  width: 90%;
+  padding-bottom: 20px;
+}
+
 .skills_button button {
-  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: #fff;
-  font-size: 24px;
+  background-color: transparent;
+  font-size: 18px;
+  color: #176fd8;
+  opacity: 0.6; 
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.skills_button button:hover {
+  opacity: 1;
+}
+
+.skills_listContainer {
+  border: 1px soild black;
+  width: 90%;
+}
+
+.skills_list_item input {
+  outline: none;
+  border: none;
+  padding: 20px 0 10px 0;
+}
+
+.inputName {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3b3d40;
+}
+
+.inputDesc {
+  width: 100%;
+  font-size: 16px;
+}
+
+.skills_list_button {
+  font-size: 16px;
+  padding-top: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #176fd8;
+  opacity: 0.6; 
+}
+.skills_list_button:hover {
+  opacity: 1;
 }
 /* Skills END */
