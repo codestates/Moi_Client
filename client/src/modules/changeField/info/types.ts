@@ -12,7 +12,7 @@ export interface State {
     profile: string;
     contact: {
       address: string;
-      phone: number;
+      phone: string;
       email: string;
       link: {
         facebook: string;
