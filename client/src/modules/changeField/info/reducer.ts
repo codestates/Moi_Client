@@ -9,7 +9,7 @@ const initialState: State = {
     profile: '',
     contact: {
       address: '',
-      phone: 0,
+      phone: '',
       email: '',
       link: {
         facebook: '',
@@ -42,7 +42,7 @@ const infoField = createReducer<State, Actions>(initialState, {
           ...state.info,
           contact: {
             ...state.info.contact,
-            address: action.payload.value,
+            [key]: action.payload.value,
           },
         },
       };
