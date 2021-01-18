@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../../../styles/pages/landing_page/description/Description.module.css';
 import Card from './card/Card';
 import Desc from './desc/Desc';
+
 const Description: React.FC = () => {
   return (
     <>

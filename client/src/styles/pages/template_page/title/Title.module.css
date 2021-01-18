@@ -1,0 +1,12 @@
+.template__title__container{
+  margin-bottom: 20px;
+}
+
+.template__title__container header {
+  font-size: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0px 50px 0px;
+  color: var(--mainText)
+}

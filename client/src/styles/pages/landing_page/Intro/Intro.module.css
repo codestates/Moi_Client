@@ -96,7 +96,6 @@
   
   .start__button {
     border-radius: 25px;
-    width: 50%;
     padding: 11px 20px;
     border: none;
     background: #19a76d;
@@ -130,9 +129,7 @@
       justify-content: center;
     width: 100%;
   }
-  .intro__title__container a {
-    width: 100%;
-  }
+
   .intro__title__block {
     display: inline-block;
   }
@@ -196,7 +193,6 @@
   
   .start__button {
     border-radius: 25px;
-    width: 50%;
     padding: 11px 20px;
     border: none;
     background: #19a76d;
@@ -230,9 +226,7 @@
     width: 100%;
     position: relative;
   }
-  .intro__title__container a {
-    width: 100%;
-  }
+
   
   .intro__title__block {
     display: inline-block;

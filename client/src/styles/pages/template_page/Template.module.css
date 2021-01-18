@@ -1,0 +1,7 @@
+.template__container {
+  max-width: 850px;
+  margin: 0 auto;
+  height: 100vh;
+  top: 65px;
+  position: relative;
+}
