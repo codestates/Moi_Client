@@ -1,6 +1,6 @@
 import { ActionType } from 'typesafe-actions';
 import {
-  changeSkillField,
+  changeExperienceField,
   addExperienceField,
   deleteSkillField,
   addWorkField,
@@ -25,7 +25,7 @@ export interface State {
   workExperience: ExperienceItem[];
 }
 const actions = {
-  changeSkillField,
+  changeExperienceField,
   addExperienceField,
   deleteSkillField,
   addWorkField,

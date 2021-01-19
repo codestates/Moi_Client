@@ -7,6 +7,7 @@ import {
 
 function useSkillsChangeField(): {
   addExperience: () => void;
+  changeExperienceFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   addWork: (index: number) => void;
   workExperience: ExperienceItem[];
 } {
@@ -25,23 +26,33 @@ function useSkillsChangeField(): {
     dispatch(actions.addExperienceField());
   };
 
+  const changeExperienceField = <U, T>(
+    index: U,
+    location: T,
+    value: T,
+  ): void => {
+    dispatch(
+      actions.changeExperienceField({
+        index: index,
+        key: location,
+        value: value,
+      }),
+    );
+  };
+
+  const changeExperienceFields = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    const { name, value } = event.target;
+    const index = event.target.getAttribute('data-index');
+    console.log(index, name, value);
+
+    changeExperienceField(index, name, value);
+  };
+
   const addWork = (index: number) => {
     dispatch(actions.addWorkField({ index }));
   };
-
-  // const onChangeSkillField = <U, T>(index: U, location: T, value: T): void => {
-  //   dispatch(
-  //     actions.changeSkillField({ index: index, key: location, value: value }),
-  //   );
-  // };
-
-  // const onChangeSkillFields = (
-  //   event: React.ChangeEvent<HTMLInputElement>,
-  // ): void => {
-  //   const { name, value } = event.target;
-  //   const index = event.target.getAttribute('data-index');
-  //   onChangeSkillField(index, name, value);
-  // };
 
   // const onDeleteSkillFields = (index: number) => {
   //   dispatch(actions.deleteSkillField({ index: index }));
@@ -51,6 +62,7 @@ function useSkillsChangeField(): {
     addExperience,
     workExperience,
     addWork,
+    changeExperienceFields,
   };
 }
 

@@ -1,14 +1,14 @@
 import { createAction } from 'typesafe-actions';
 
 // ?   CONST ACTION_TYPE
-export const SKILLS_CHANGE_FIELD = 'workExperience/SKIILS_CHANGE_FIELD';
+export const EXPERIENCE_CHANGE_FIELD = 'workExperience/EXPERIENCE_CHANGE_FIELD';
 export const ADD_EXPERIENCE_FIELD = 'workExperience/ADD_EXPERIENCE_FIELD';
 export const DELETE_SKILL_FIELD = 'workExperience/DELETE_SKILL_FIELD';
 export const ADD_WORK_FIELD = 'workExperience/ADD_WORK_FIELD';
 
 // ?   CREATE_ACTION_FUNTIONS
-export const changeSkillField = createAction(
-  SKILLS_CHANGE_FIELD,
+export const changeExperienceField = createAction(
+  EXPERIENCE_CHANGE_FIELD,
   ({ index, key, value }) => ({
     index,
     key,

@@ -3,13 +3,19 @@ import WorkExperience from '../../../../components/pages/write_page/write/work_e
 import useExperienceChangeField from '../../../../hooks/pages/write_page/useExperienceChangeField';
 
 const WorkExperienceContainer: React.FC = () => {
-  const { workExperience, addExperience, addWork } = useExperienceChangeField();
+  const {
+    workExperience,
+    addExperience,
+    addWork,
+    changeExperienceFields,
+  } = useExperienceChangeField();
   return (
     <>
       <WorkExperience
         addExperience={addExperience}
         workExperience={workExperience}
         addWork={addWork}
+        changeExperienceFields={changeExperienceFields}
       />
     </>
   );

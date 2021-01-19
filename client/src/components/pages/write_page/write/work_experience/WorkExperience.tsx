@@ -7,20 +7,24 @@ interface WorkExperienceProps {
   addExperience: () => void;
   workExperience: ExperienceItem[];
   addWork: (index: number) => void;
+  changeExperienceFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const WorkExperience: React.FC<WorkExperienceProps> = ({
   addExperience,
   workExperience,
   addWork,
+  changeExperienceFields,
 }) => {
   const list = workExperience.map((ele, index) => {
     return (
       <List
         key={index}
-        companyName={ele.companyName}
+        stateProperty={ele}
         addWork={addWork}
         index={index}
+        desc={ele.desc}
+        changeExperienceFields={changeExperienceFields}
       />
     );
   });
