@@ -6,6 +6,7 @@ import styles from '../../../../styles/pages/write_page/write/Write.module.css';
 // * ======================
 import SkillsContainer from '../../../../containers/pages/write_page/skrillsContainer.tsx/SkillsContainer';
 import InfoContainer from '../../../../containers/pages/write_page/infoContainer.tsx/InfoContainer';
+import EducationContainer from '../../../../containers/pages/write_page/educationContainer/EducationContainer';
 
 // ? ======================
 // ?   INTERFACE_TYPE
@@ -17,6 +18,7 @@ const Write: React.FC = () => {
       <div className={styles.container}>
         <InfoContainer />
         <SkillsContainer />
+        <EducationContainer />
       </div>
     </section>
   );
