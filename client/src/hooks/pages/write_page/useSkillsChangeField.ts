@@ -1,31 +1,49 @@
-import { addSkillField } from './../../../modules/changeField/skills/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../modules/changeField/skills/actions';
-import { State } from '../../../modules/changeField/skills/types';
+import { State, SkillItem } from '../../../modules/changeField/skills/types';
 
-function useSkillsChangeField() {
+function useSkillsChangeField(): {
+  addSkill: () => void;
+  skills: SkillItem[];
+  onChangeSkillFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onDeleteSkillFields: (index: number) => void;
+} {
+  //? useDispatch
   const dispatch = useDispatch();
+
+  //? useSelector
+  const { skills } = useSelector(({ skillsField }: { skillsField: State }) => ({
+    skills: skillsField.skills,
+  }));
+
+  // * VARIABLE & FUNCTIONS
   const addSkill = () => {
     dispatch(actions.addSkillField(''));
   };
-  // const { username, address, facebook } = useSelector(
-  //   ({ field }: { field: State }) => ({
-  //     username: field.info.username,
-  //     address: field.info.contact.address,
-  //     facebook: field.info.contact.link.facebook,
-  //   }),
-  // );
 
-  // const onChangeField = <T>(location: T, value: T): void => {
-  //   dispatch(actions.changeField({ key: location, value: value }));
-  // };
+  const onChangeSkillField = <U, T>(index: U, location: T, value: T): void => {
+    dispatch(
+      actions.changeSkillField({ index: index, key: location, value: value }),
+    );
+  };
 
-  // const onChangeFields = (event: React.ChangeEvent<HTMLInputElement>): void => {
-  //   const { name, value } = event.target;
-  //   onChangeField<string>(name, value);
-  // };
+  const onChangeSkillFields = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    const { name, value } = event.target;
+    const index = event.target.getAttribute('data-index');
+    onChangeSkillField(index, name, value);
+  };
+
+  const onDeleteSkillFields = (index: number) => {
+    dispatch(actions.deleteSkillField({ index: index }));
+  };
+
   return {
     addSkill,
+    skills,
+    onChangeSkillFields,
+    onDeleteSkillFields,
   };
 }
 
