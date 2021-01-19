@@ -5,10 +5,12 @@ import { all } from 'redux-saga/effects';
 import config from './config/reducer';
 import infoField from './changeField/info/reducer';
 import skillsField from './changeField/skills/reducer';
+import educationsField from './changeField/education/reducers';
 const rootReducer = combineReducers({
   config,
   infoField,
   skillsField,
+  educationsField,
 });
 
 export function* rootSaga(): Generator {
