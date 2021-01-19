@@ -1,0 +1,249 @@
+/* Global input and placeholder setting */
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color:transparent;
+}
+
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:transparent;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:transparent;
+}
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:transparent;
+}
+
+/* Global input and placeholder setting END */
+
+.block {
+  margin-top: 200px;
+  width: 50%;
+  border: 1px soild black;
+  height: 400px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.workExperience__period__container {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 50px;
+}
+
+.workExperience__period__block {
+  color: var(--subText);
+}
+
+.workExperience__period__block span {
+  margin: 0px 5px;
+}
+
+.workExperience__period__input{
+  font-size: 12px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #f1f0f0;
+  padding: 6px 11px;
+  color: var(--subText);
+  width: 78px;  
+}
+
+.workExperience__period__in_office {
+  color: var(--subText);
+  display: flex;
+    align-items: center;
+}
+.workExperience__period__in_office input {
+  margin-right: 5px;
+}
+
+
+
+
+/* User Info */
+.userinfo_container {
+  margin-bottom: 50px;
+}
+.userinfo_title {
+  width: 90%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #bababa;
+  font-family: 'Nanum Gothic';
+  font-weight: 510;
+  color: #3b3d40;
+  font-size: 16px;
+}
+
+.userinfo_formContainer {
+  margin-top: 30px;
+}
+
+.userinfo_form > div {
+  padding: 0 0 20px 0;
+  font-size: 16px;
+}
+
+.userinfo_form_name, .userinfo_form_address  {
+  padding-right: 23px;
+}
+
+.userinfo_form_phoneNumber, .userinfo_form_email {
+  padding-right: 10px;
+}
+
+/* Profile */
+.profile_title {
+  width: 90%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #bababa;
+  font-family: 'Nanum Gothic';
+  font-weight: 510;
+  color: #3b3d40;
+  font-size: 16px;
+}
+
+.profile_formContainer {
+  margin-top: 10px;
+}
+
+.profile_textarea {
+  outline: none;
+  border: none;
+  width: 90%;
+  height: 200px;
+  resize: none;
+}
+
+/* Profile END*/
+
+
+/* Skills */
+
+.skills_title {
+  width: 90%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #bababa;
+  font-family: 'Nanum Gothic';
+  font-weight: 510;
+  color: #3b3d40;
+  font-size: 16px;
+}
+
+.skills_button {
+  width: 90%;
+  padding-bottom: 20px;
+}
+
+.skills_button button {
+  text-align: left;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+  color: #176fd8;
+  opacity: 0.6; 
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.skills_button button:hover {
+  opacity: 1;
+}
+
+.skills_listContainer {
+  border: 1px soild black;
+  width: 90%;
+}
+
+.skills_listContainer li{
+  display: flex;
+  padding: 12px 15px;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 25px;
+}
+
+.skills__form {
+  margin-bottom: 15px;
+}
+.skills__form input{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--maintext);
+  border: none;
+  outline: none;
+}
+
+.skills__form_Desc{
+margin-bottom: 30px;
+}
+
+.skills__form_Desc input{
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--nomalText);
+  border: none;
+  outline: none;
+}
+
+/* .inputDesc {
+  width: 100%;
+  font-size: 16px;
+  border: none;
+} */
+
+.skills_list_button {
+  font-size: 16px;
+  padding-top: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--mainGreen);
+  opacity: 0.6; 
+}
+.skills_list_button:hover {
+  opacity: 1;
+}
+
+.add_work__button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: var(--mainGreen);
+  cursor: pointer;
+  outline: none;
+}
+
+.delete__button {
+  background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 20px;
+}
+
+.delete__button svg{
+  font-size: 15px;
+  color: var(--subText);
+}
+/* Skills END */
