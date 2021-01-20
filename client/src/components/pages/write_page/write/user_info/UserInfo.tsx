@@ -24,25 +24,27 @@ const UserInfo: React.FC<UserInfoProps> = ({
       <div className={styles.userinfo_title}>인적사항</div>
       <div className={styles.userinfo_formContainer}>
         <form className={styles.userinfo_form}>
-          <div>
+          <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_name}>이름</label>
             <input
               type="text"
+              placeholder="이름을 입력해주세요"
               name="username"
               value={username}
               onChange={onChangeFields}
             />
           </div>
-          <div>
+          <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_address}>주소</label>
             <input
               type="text"
+              placeholder="주소를 입력해주세요"
               name="address"
               value={address}
               onChange={onChangeFields}
             />
           </div>
-          <div>
+          <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_phoneNumber}>연락처</label>
             <input
               type="text"
@@ -52,10 +54,11 @@ const UserInfo: React.FC<UserInfoProps> = ({
               placeholder="ex) xxxx-xxxx-xxxx"
             />
           </div>
-          <div>
+          <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_email}>이메일</label>
             <input
               type="text"
+              placeholder="이메일을 입력해주세요"
               name="email"
               value={email}
               onChange={onChangeFields}

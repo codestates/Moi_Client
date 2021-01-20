@@ -24,8 +24,8 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 .block {
   margin-top: 200px;
   width: 50%;
+  padding: 10px 30px;
   border: 1px soild black;
-  height: 400px;
 }
 
 .container {
@@ -40,8 +40,7 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 .userinfo_title {
   width: 90%;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #bababa;
+  /* border-bottom: 2px solid #bababa; */
   font-family: 'Nanum Gothic';
   font-weight: 510;
   color: #3b3d40;
@@ -49,46 +48,62 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 .userinfo_formContainer {
-  margin-top: 30px;
+  margin-top: 10px;
+}
+
+.userinfo_form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .userinfo_form > div {
-  padding: 0 0 20px 0;
   font-size: 16px;
 }
 
-.userinfo_form_name, .userinfo_form_address  {
-  padding-right: 23px;
-}
-
-.userinfo_form_phoneNumber, .userinfo_form_email {
-  padding-right: 10px;
+.userinfo_form label {
+  display: block;
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: rgb(152, 161, 179);
 }
 
 
 .userinfo_form > div > input {
   height: 35px;
-  width: 400px;
+  width: 300px;
   padding: 10px;
   font-size: 15px;
   outline: none;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #f1f0f0;
+  background-color:#F2F5FA;
+}
+
+.userinfo_form_item {
+padding: 20px 20px 20px 0;
 }
 
 /* User Info END*/
 
 /* Profile */
+
+.profile_container {
+  margin-bottom: 50px;
+}
 .profile_title {
   width: 90%;
   padding-bottom: 10px;
-  border-bottom: 2px solid #bababa;
   font-family: 'Nanum Gothic';
   font-weight: 510;
   color: #3b3d40;
   font-size: 16px;
+}
+
+.profile_title_desc {
+  font-size: 12px;
+  color: rgb(152, 161, 179);
 }
 
 .profile_formContainer {
@@ -96,11 +111,14 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 .profile_textarea {
+  background-color:#F2F5FA;
   outline: none;
   border: none;
-  width: 90%;
+  border-radius: 4px;
+  width: 100%;
   height: 200px;
   resize: none;
+  padding: 10px 0 0 10px;
 }
 
 /* Profile END*/

@@ -2,7 +2,6 @@
 .block {
   max-width: 1400px;
   margin: 0 auto;
-  height: 100vh;
   display: flex;
   justify-content: space-between;
 }
