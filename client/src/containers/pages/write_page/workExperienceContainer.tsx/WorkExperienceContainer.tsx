@@ -6,16 +6,23 @@ const WorkExperienceContainer: React.FC = () => {
   const {
     workExperience,
     addExperience,
-    addWork,
+    addJobDescription,
     changeExperienceFields,
+    changeJobDescriptionFields,
+    onDeleteExperienceFields,
+    onDeleteJobDescFields,
   } = useExperienceChangeField();
+
   return (
     <>
       <WorkExperience
         addExperience={addExperience}
         workExperience={workExperience}
-        addWork={addWork}
+        addJobDescription={addJobDescription}
         changeExperienceFields={changeExperienceFields}
+        changeJobDescriptionFields={changeJobDescriptionFields}
+        onDeleteExperienceFields={onDeleteExperienceFields}
+        onDeleteJobDescFields={onDeleteJobDescFields}
       />
     </>
   );

@@ -11,21 +11,41 @@ interface ListProps {
     start: string;
     end: string;
   };
-  addWork: (index: number) => void;
+  addJobDescription: (index: number) => void;
   index: number;
   desc: DescItem[];
   changeExperienceFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  changeJobDescriptionFields: (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => void;
+  onDeleteExperienceFields: (index: number) => void;
+  onDeleteJobDescFields: (
+    experienceIndex: number,
+    jobDescIndex: number,
+  ) => void;
 }
 
 const List: React.FC<ListProps> = ({
   stateProperty,
-  addWork,
+  addJobDescription,
   index,
   desc,
   changeExperienceFields,
+  changeJobDescriptionFields,
+  onDeleteExperienceFields,
+  onDeleteJobDescFields,
 }) => {
-  const jobDescriptions = desc.map((ele, index) => {
-    return <JobDesc key={index} index={index} description={ele.description} />;
+  const jobDescriptions = desc.map((ele, idx) => {
+    return (
+      <JobDesc
+        key={idx}
+        experienceIndex={index}
+        jobIndex={idx}
+        description={ele.description}
+        changeJobDescriptionFields={changeJobDescriptionFields}
+        onDeleteJobDescFields={onDeleteJobDescFields}
+      />
+    );
   });
 
   return (
@@ -82,11 +102,16 @@ const List: React.FC<ListProps> = ({
               />
             </form>
             <div className={styles.add_work__block}>
-              <button onClick={() => addWork(index)}>+ 주요 성과 추가</button>
+              <button onClick={() => addJobDescription(index)}>
+                + 주요 성과 추가
+              </button>
             </div>
             <ul>{jobDescriptions}</ul>
           </div>
-          <button className={styles.delete__button}>
+          <button
+            className={styles.delete__button}
+            onClick={() => onDeleteExperienceFields(index)}
+          >
             <FaTimes />
           </button>
         </li>

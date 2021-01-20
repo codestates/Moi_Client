@@ -6,25 +6,39 @@ import { ExperienceItem } from '../../../../../modules/changeField/workExperienc
 interface WorkExperienceProps {
   addExperience: () => void;
   workExperience: ExperienceItem[];
-  addWork: (index: number) => void;
+  addJobDescription: (index: number) => void;
   changeExperienceFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  changeJobDescriptionFields: (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => void;
+  onDeleteExperienceFields: (index: number) => void;
+  onDeleteJobDescFields: (
+    experienceIndex: number,
+    jobDescIndex: number,
+  ) => void;
 }
 
 const WorkExperience: React.FC<WorkExperienceProps> = ({
   addExperience,
   workExperience,
-  addWork,
+  addJobDescription,
   changeExperienceFields,
+  changeJobDescriptionFields,
+  onDeleteExperienceFields,
+  onDeleteJobDescFields,
 }) => {
   const list = workExperience.map((ele, index) => {
     return (
       <List
         key={index}
         stateProperty={ele}
-        addWork={addWork}
+        addJobDescription={addJobDescription}
         index={index}
         desc={ele.desc}
         changeExperienceFields={changeExperienceFields}
+        changeJobDescriptionFields={changeJobDescriptionFields}
+        onDeleteExperienceFields={onDeleteExperienceFields}
+        onDeleteJobDescFields={onDeleteJobDescFields}
       />
     );
   });

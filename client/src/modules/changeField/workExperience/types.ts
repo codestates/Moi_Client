@@ -2,8 +2,10 @@ import { ActionType } from 'typesafe-actions';
 import {
   changeExperienceField,
   addExperienceField,
-  deleteSkillField,
-  addWorkField,
+  deleteExperienceField,
+  addJobDescField,
+  changeJobDescField,
+  deleteJobDescField,
 } from './actions';
 
 // ? ======================
@@ -27,7 +29,9 @@ export interface State {
 const actions = {
   changeExperienceField,
   addExperienceField,
-  deleteSkillField,
-  addWorkField,
+  deleteExperienceField,
+  addJobDescField,
+  changeJobDescField,
+  deleteJobDescField,
 };
 export type Actions = ActionType<typeof actions>;

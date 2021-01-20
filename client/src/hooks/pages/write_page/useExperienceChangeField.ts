@@ -8,8 +8,16 @@ import {
 function useSkillsChangeField(): {
   addExperience: () => void;
   changeExperienceFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  addWork: (index: number) => void;
+  changeJobDescriptionFields: (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => void;
+  addJobDescription: (index: number) => void;
   workExperience: ExperienceItem[];
+  onDeleteExperienceFields: (index: number) => void;
+  onDeleteJobDescFields: (
+    experienceIndex: number,
+    jobDescIndex: number,
+  ) => void;
 } {
   //? useDispatch
   const dispatch = useDispatch();
@@ -45,24 +53,60 @@ function useSkillsChangeField(): {
   ): void => {
     const { name, value } = event.target;
     const index = event.target.getAttribute('data-index');
-    console.log(index, name, value);
-
     changeExperienceField(index, name, value);
   };
 
-  const addWork = (index: number) => {
-    dispatch(actions.addWorkField({ index }));
+  const addJobDescription = (index: number) => {
+    dispatch(actions.addJobDescField({ index }));
   };
 
-  // const onDeleteSkillFields = (index: number) => {
-  //   dispatch(actions.deleteSkillField({ index: index }));
-  // };
+  const changeJobDescriptionField = <T, U, V>(
+    experienceIndex: T,
+    descIndex: U,
+    value: V,
+  ): void => {
+    dispatch(
+      actions.changeJobDescField({
+        experienceIndex,
+        descIndex,
+        value: value,
+      }),
+    );
+  };
+  const changeJobDescriptionFields = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    const { value } = event.target;
+    const experienceIndex = event.target.getAttribute('data-experience-index');
+    const jobIndex = event.target.getAttribute('data-job-index');
+
+    changeJobDescriptionField(experienceIndex, jobIndex, value);
+  };
+
+  const onDeleteExperienceFields = (index: number) => {
+    dispatch(actions.deleteExperienceField({ index: index }));
+  };
+
+  const onDeleteJobDescFields = (
+    experienceIndex: number,
+    jobDescIndex: number,
+  ) => {
+    dispatch(
+      actions.deleteJobDescField({
+        experienceIndex: experienceIndex,
+        jobDescIndex: jobDescIndex,
+      }),
+    );
+  };
 
   return {
     addExperience,
     workExperience,
-    addWork,
+    addJobDescription,
     changeExperienceFields,
+    changeJobDescriptionFields,
+    onDeleteExperienceFields,
+    onDeleteJobDescFields,
   };
 }
 
