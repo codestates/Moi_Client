@@ -7,7 +7,7 @@ const WritePage: React.FC = () => {
   return (
     <div className={styles.block}>
       <Write />
-      <Preview />
+      {/* <Preview /> */}
     </div>
   );
 };

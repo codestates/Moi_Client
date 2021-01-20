@@ -31,11 +31,16 @@ const Skills: React.FC<SkillProps> = ({
 
   return (
     <article className={styles.skills_container}>
-      <div className={styles.skills_title}>기술</div>
-      <div className={styles.skills_button}>
-        <button onClick={addSkill}>+ 추가</button>
+      <div className={styles.skills_title__block}>
+        <p className={styles.skills_title__p}>기술</p>
+        <p className={styles.skills_sub_title__p}>
+          기술명과 해당 기술에 대한 상세 설명을 기재해주세요 :)
+        </p>
       </div>
-      {list}
+      <div className={styles.skills_list__block}>
+        <button onClick={addSkill}>+ 추가</button>
+        {list}
+      </div>
     </article>
   );
 };

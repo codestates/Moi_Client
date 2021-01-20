@@ -31,8 +31,44 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 .container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
+
+.workExperience__period__container {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 50px;
+}
+
+.workExperience__period__block {
+  color: var(--subText);
+}
+
+.workExperience__period__block span {
+  margin: 0px 5px;
+}
+
+.workExperience__period__input{
+  font-size: 12px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #f1f0f0;
+  padding: 6px 11px;
+  color: var(--mainText);
+  width: 78px;  
+}
+
+.workExperience__period__in_office {
+  color: var(--subText);
+  display: flex;
+    align-items: center;
+}
+.workExperience__period__in_office input {
+  margin-right: 5px;
+}
 
 /* User Info */
 .userinfo_container {
@@ -65,21 +101,6 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   padding-right: 10px;
 }
 
-
-.userinfo_form > div > input {
-  height: 35px;
-  width: 400px;
-  padding: 10px;
-  font-size: 15px;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #f1f0f0;
-}
-
-/* User Info END*/
-
 /* Profile */
 .profile_title {
   width: 90%;
@@ -108,29 +129,22 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 
 /* Skills */
 
-.skills_title__block{
-  margin-bottom: 15px;
+.skills_title {
+  width: 90%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #bababa;
+  font-family: 'Nanum Gothic';
+  font-weight: 510;
+  color: #3b3d40;
+  font-size: 16px;
 }
 
-.skills_title__p {
-  font-size: 20px;
-  font-weight: 600;
-    color: var(--mainText);
-    padding-bottom: 10px;
+.skills_button {
+  width: 90%;
+  padding-bottom: 20px;
 }
 
-.skills_sub_title__p {
-  color: var(--nomalText);
-  font-size: 12px;
-}
-.skills_list__block{
-  padding: 30px;
-  width: 100%;
-  border: 1px solid rgb(218 218 218);
-  border-radius: 3px;
-}
-
-.skills_list__block button  {
+.skills_button button {
   text-align: left;
   width: 100%;
   padding-top: 30px;
@@ -149,62 +163,105 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   opacity: 1;
 }
 
-.skills_listContainer {
-  border: 2px solid rgb(220 220 220);
-    display: flex;
-    border-radius: 6px;
-    padding: 20px 20px;
-
+.workExperience__Container {
+  border: 1px soild black;
+  width: 90%;
 }
 
-.skills_listContainer ul {
- width: 100%;
-
-}
-
-
-.skills_list_item__li {
+.workExperience__list{
   display: flex;
+  padding: 12px 15px;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 25px;
 }
 
-.skills_list_item__li input {
-  outline: none;
+.skills__form {
+  margin-bottom: 15px;
+}
+.skills__form input{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--maintext);
   border: none;
+  outline: none;
 }
 
-.form {
-  display: flex;
-}
-.form::after{
-  content: "|";
-  color: #bdbdbd;
-  padding-right: 20px;
+.skills__form_Desc{
+margin-bottom: 30px;
 }
 
-.inputName {
+.skills__form_Desc input{
   width: 100%;
   font-size: 15px;
-  font-weight: 800;
-  color: #3b3d40;
-}
-
-
-.inputDesc {
-  /* width: 100%;
+  font-weight: 500;
   color: var(--nomalText);
-  font-size: 16px; */
+  border: none;
+  outline: none;
 }
 
 .skills_list_button {
   font-size: 16px;
-  padding: 20px 0;
+  padding-top: 20px;
   background-color: transparent;
   outline: none;
   border: none;
-  color: #176fd8;
+  color: var(--mainGreen);
   opacity: 0.6; 
 }
 .skills_list_button:hover {
   opacity: 1;
 }
-/* Skills END */
+
+.add_work__block  {
+  margin-bottom: 30px;
+}
+
+.add_work__block button{
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: var(--mainGreen);
+  cursor: pointer;
+  outline: none;
+}
+
+.delete__button {
+  background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 20px;
+}
+
+.delete__button svg{
+  font-size: 15px;
+  color: var(--subText);
+}
+
+
+
+.job_desc__list{
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.job_desc__list div {
+  width: 8px;
+  height: 2px;
+  background: var(--mainGreen);
+  margin-right: 8px;
+}
+
+.job_desc__list input{
+  color: var(--mainText);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  font-size: 15px;
+  outline: none;
+}

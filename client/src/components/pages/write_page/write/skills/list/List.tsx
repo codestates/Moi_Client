@@ -19,35 +19,34 @@ const List: React.FC<ListProps> = ({
   return (
     <div className={styles.skills_listContainer}>
       <ul className={styles.skills_list}>
-        <li className={styles.skills_list_item}>
-          <form className={styles.skills_formName}>
+        <li className={styles.skills_list_item__li}>
+          <form className={styles.form}>
             <input
               className={styles.inputName}
               type="text"
               name="skill"
-              placeholder="기술명"
+              placeholder="기술"
               data-index={index}
               value={skill}
               onChange={onChangeSkillFields}
             />
           </form>
-          <form className={styles.skills_formDesc}>
+          <form>
             <input
-              className={styles.inputDesc}
               type="text"
               name="desc"
-              placeholder="세부사항"
+              placeholder="기술 명과 해당 기술에 대한 상세 설명을 기재해주세요:)"
               data-index={index}
               value={desc}
               onChange={onChangeSkillFields}
             />
           </form>
-          <button
+          {/* <button
             className={styles.skills_list_button}
             onClick={() => onDeleteSkillFields(index)}
           >
             삭제
-          </button>
+          </button> */}
         </li>
       </ul>
     </div>
