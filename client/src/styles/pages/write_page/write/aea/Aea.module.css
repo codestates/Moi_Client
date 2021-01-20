@@ -1,0 +1,70 @@
+.aea_title {
+  width: 90%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #bababa;
+  font-family: 'Nanum Gothic';
+  font-weight: 510;
+  color: #3b3d40;
+  font-size: 16px;
+}
+
+.aea_button {
+  width: 90%;
+  padding-bottom: 20px;
+}
+
+.aea_button button {
+  text-align: left;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+  color: #176fd8;
+  opacity: 0.6; 
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.aea_button button:hover {
+  opacity: 1;
+}
+
+
+.aea_listContainer {
+  border: 1px soild black;
+  width: 90%;
+}
+
+.aea_list_item input {
+  outline: none;
+  border: none;
+  padding: 20px 0 10px 0;
+}
+
+.inputName {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3b3d40;
+}
+
+.inputDesc {
+  width: 100%;
+  font-size: 16px;
+}
+
+.aea_list_button {
+  font-size: 16px;
+  padding: 20px 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #176fd8;
+  opacity: 0.6; 
+}
+.aea_list_button:hover {
+  opacity: 1;
+}
