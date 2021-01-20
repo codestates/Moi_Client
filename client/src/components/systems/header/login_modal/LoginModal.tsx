@@ -11,7 +11,7 @@ interface LoginModal {
 
 const LoginModal: React.FC<LoginModal> = ({ onLoginModal }) => {
   return (
-    <div className={styles.full__screen} onClick={() => onLoginModal(false)}>
+    <div className={styles.full__screen}>
       <div className={styles.white__box}>
         <AiOutlineClose
           className={styles.close__button}
