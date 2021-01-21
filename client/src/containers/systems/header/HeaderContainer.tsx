@@ -14,6 +14,7 @@ import {
 // * ====================
 import useDropdown from '../../../hooks/systems/header/useDropdown';
 import useBugerMenu from '../../../hooks/systems/header/useBugerMenu';
+import useLoginModal from '../../../hooks/systems/header/useLoginModal';
 
 const HeaderContainer: React.FC = () => {
   // * ====================
@@ -21,6 +22,7 @@ const HeaderContainer: React.FC = () => {
   // * ====================
   const { dropdown, onDropdown } = useDropdown();
   const { bugerMenu, onBugerMenu } = useBugerMenu();
+  const { modal, onLoginModal } = useLoginModal();
   // * ====================
   // *   FUNCTIONS
   // * ====================
@@ -61,6 +63,8 @@ const HeaderContainer: React.FC = () => {
         bugerMenu={bugerMenu}
         onBugerMenu={onBugerMenu}
         onScroll={onScroll}
+        modal={modal}
+        onLoginModal={onLoginModal}
       />
     </>
   );

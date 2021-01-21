@@ -7,6 +7,7 @@ import LeftLogo from './left_logo/LeftLogo';
 import MidNav from './mid_nav_bar/MidNav';
 import RightLoginButton from './right_login_button/RightLoginButton';
 import styles from '../../../styles/systems/header/Header.module.css';
+import LoginModal from '../header/login_modal/LoginModal';
 
 // ? ====================
 // ?   INTERFACE
@@ -17,6 +18,8 @@ interface HeaderProps {
   bugerMenu: boolean;
   onBugerMenu: () => void;
   onScroll: (destination: string, name: string) => JSX.Element;
+  modal: boolean;
+  onLoginModal: (state: boolean) => void;
 }
 // * ====================
 // *  REACT.FC
@@ -27,6 +30,8 @@ const Header: React.FC<HeaderProps> = ({
   bugerMenu,
   onBugerMenu,
   onScroll,
+  modal,
+  onLoginModal,
 }) => {
   // * ====================
   // *  RESPONSIVE
@@ -37,20 +42,22 @@ const Header: React.FC<HeaderProps> = ({
   const isMobile = useMediaQuery({
     query: '(max-width:1023px)',
   });
-
   return (
     <>
       {isPc && (
         //* PC header_nav_bar
-        <div className={styles.block_container}>
-          <LeftLogo />
-          <MidNav
-            dropdown={dropdown}
-            onDropdown={onDropdown}
-            onScroll={onScroll}
-          />
-          <RightLoginButton />
-        </div>
+        <>
+          <div className={styles.block_container}>
+            <LeftLogo />
+            <MidNav
+              dropdown={dropdown}
+              onDropdown={onDropdown}
+              onScroll={onScroll}
+            />
+            <RightLoginButton onLoginModal={onLoginModal} />
+          </div>
+          {modal && <LoginModal onLoginModal={onLoginModal} />}
+        </>
       )}
       {isMobile && (
         //* Mobile header_hambuger_menu
