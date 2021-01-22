@@ -44,9 +44,14 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
   });
 
   return (
-    <article className={styles.skills_container}>
-      <div className={styles.skills_title}>경력</div>
-      <div className={styles.skills_button}>
+    <article className={styles.experience_container__article}>
+      <div className={styles.experience_title_block__div}>
+        <p className={styles.experience_title__p}>경력</p>
+        <p className={styles.experience_sub_title__p}>
+          근무했던 회사명과 직무, 근무 기간 및 주요 성과를 기재해주세요 :)
+        </p>
+      </div>
+      <div className={styles.experience_list_block__div}>
         <button onClick={addExperience}>+ 추가</button>
       </div>
       {list}
