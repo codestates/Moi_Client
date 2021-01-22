@@ -30,7 +30,7 @@ const Skills: React.FC<SkillProps> = ({
   });
 
   return (
-    <article className={styles.skills_container}>
+    <article className={styles.skills__article}>
       <div className={styles.skills_title__block}>
         <p className={styles.skills_title__p}>기술</p>
         <p className={styles.skills_sub_title__p}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../../../../styles/pages/write_page/write/WorkExperience.module.css';
-import { FaTimes } from 'react-icons/fa';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 interface JobDescProps {
   experienceIndex: number;
@@ -23,22 +23,22 @@ const JobDesc: React.FC<JobDescProps> = ({
   onDeleteJobDescFields,
 }) => {
   return (
-    <li className={styles.job_desc__list}>
+    <li className={styles.experience_job_desc_list__li}>
       <div></div>
       <input
         type="text"
         name="description"
         data-experience-index={experienceIndex}
         data-job-index={jobIndex}
-        placeholder="주요 성과"
+        placeholder="주요 성과를 입력해주세요."
         value={description}
         onChange={changeJobDescriptionFields}
       />
       <button
-        className={styles.delete__button}
+        className={styles.experience_job_desc_list_delete__button}
         onClick={() => onDeleteJobDescFields(experienceIndex, jobIndex)}
       >
-        <FaTimes />
+        <FaRegTrashAlt />
       </button>
     </li>
   );

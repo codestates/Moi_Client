@@ -18,7 +18,7 @@ const Write: React.FC = () => {
   return (
     <section className={styles.block}>
       <div className={styles.container}>
-        {/* <InfoContainer /> */}
+        <InfoContainer />
         <SkillsContainer />
         <WorkExperienceContainer />
         <EducationContainer />

@@ -35,7 +35,7 @@ const List: React.FC<ListProps> = ({
             <input
               type="text"
               name="desc"
-              placeholder="기술 명과 해당 기술에 대한 상세 설명을 기재해주세요:)"
+              placeholder="기술 명과 기술에 대한 상세 설명을 기재해주세요"
               data-index={index}
               value={desc}
               onChange={onChangeSkillFields}

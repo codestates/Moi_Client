@@ -7,6 +7,7 @@ import {
   JOB_DESC_CHANGE_FILED,
   DELETE_EXPERIENCE_FIELD,
   DELETE_JOB_DESC_FIELD,
+  CHECK_IN_OFFICE,
 } from './actions';
 
 const initialState: State = {
@@ -23,6 +24,7 @@ const workExperienceField = createReducer<State, Actions>(initialState, {
           companyName: '',
           start: '',
           end: '',
+          inOffice: false,
           positionName: '',
           desc: [],
         },
@@ -92,6 +94,16 @@ const workExperienceField = createReducer<State, Actions>(initialState, {
     ].desc.filter((_, idx) => {
       return descIndex !== idx;
     });
+
+    return {
+      ...state,
+      workExperience: newExperiences,
+    };
+  },
+  [CHECK_IN_OFFICE]: (state, action) => {
+    const index = action.payload.experienceIndex;
+    const newExperiences = [...state.workExperience];
+    newExperiences[index].inOffice = action.payload.state;
 
     return {
       ...state,

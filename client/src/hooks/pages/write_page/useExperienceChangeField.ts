@@ -18,6 +18,7 @@ function useSkillsChangeField(): {
     experienceIndex: number,
     jobDescIndex: number,
   ) => void;
+  onCheckInOffice: (index: number) => void;
 } {
   //? useDispatch
   const dispatch = useDispatch();
@@ -99,6 +100,16 @@ function useSkillsChangeField(): {
     );
   };
 
+  const onCheckInOffice = (index: number) => {
+    const currentCheckBoxState = workExperience[index].inOffice;
+    dispatch(
+      actions.checkInOffice({
+        experienceIndex: index,
+        state: !currentCheckBoxState,
+      }),
+    );
+  };
+
   return {
     addExperience,
     workExperience,
@@ -107,6 +118,7 @@ function useSkillsChangeField(): {
     changeJobDescriptionFields,
     onDeleteExperienceFields,
     onDeleteJobDescFields,
+    onCheckInOffice,
   };
 }
 
