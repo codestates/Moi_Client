@@ -3,6 +3,7 @@ import styles from '../../../../../../styles/pages/write_page/write/WorkExperien
 import JobDesc from '../jobDesc/JobDesc';
 import { FaTimes } from 'react-icons/fa';
 import { DescItem } from '../../../../../../modules/changeField/workExperience/types';
+import { ExperienceItem } from '../../../../../../modules/changeField/workExperience/types';
 
 interface ListProps {
   stateProperty: {
@@ -23,6 +24,8 @@ interface ListProps {
     experienceIndex: number,
     jobDescIndex: number,
   ) => void;
+  onCheckInOffice: (index: number) => void;
+  workExperience: ExperienceItem[];
 }
 
 const List: React.FC<ListProps> = ({
@@ -34,6 +37,8 @@ const List: React.FC<ListProps> = ({
   changeJobDescriptionFields,
   onDeleteExperienceFields,
   onDeleteJobDescFields,
+  onCheckInOffice,
+  workExperience,
 }) => {
   const jobDescriptions = desc.map((ele, idx) => {
     return (
@@ -85,7 +90,10 @@ const List: React.FC<ListProps> = ({
             <div className={styles.experience_period_title_block__div}>
               근무 기간
               <span className={styles.experience_period_in_office__span}>
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={() => onCheckInOffice(index)}
+                />
                 <strong> 현재 재직중</strong>
               </span>
             </div>
@@ -99,15 +107,17 @@ const List: React.FC<ListProps> = ({
               placeholder="YYYY.MM"
             />
             <span className={styles.experience_period_wave__span}>~</span>
-            <input
-              type="text"
-              className={styles.experience_period__input}
-              value={stateProperty.end}
-              data-index={index}
-              name="end"
-              onChange={changeExperienceFields}
-              placeholder="YYYY.MM"
-            />
+            {!workExperience[index].inOffice && (
+              <input
+                type="text"
+                className={styles.experience_period__input}
+                value={stateProperty.end}
+                data-index={index}
+                name="end"
+                onChange={changeExperienceFields}
+                placeholder="YYYY.MM"
+              />
+            )}
           </div>
 
           <div className={styles.experience_add_work_container_div}>
@@ -120,12 +130,12 @@ const List: React.FC<ListProps> = ({
               {jobDescriptions}
             </ul>
           </div>
-          {/* <button
-            className={styles.delete__button}
+          <button
+            className={styles.experience_delete__button}
             onClick={() => onDeleteExperienceFields(index)}
           >
             <FaTimes />
-          </button> */}
+          </button>
         </li>
       </ul>
     </div>

@@ -82,6 +82,7 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     border-radius: 5px;
     border: 1px solid #e5e5e5;
     padding: 55px 15px 15px 15px;
+    position: relative;
   }
   .experience_company_and_position_container__div{
     display: flex;
@@ -167,6 +168,17 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   cursor: pointer;
   padding: 15px 15px;
   outline: none;
+  }
+  .experience_delete__button {
+    top: 15px;
+  position: absolute;
+  right: 15px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mainGreen);
+  font-size: 15px;
   }
 
   /* JobDesc */
@@ -254,6 +266,7 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
       border-radius: 5px;
       border: 1px solid #e5e5e5;
       padding: 55px 15px 15px 15px;
+      position: relative;
     }
     .experience_company_and_position_container__div{
       display: flex;
@@ -340,6 +353,18 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     cursor: pointer;
     padding: 15px 15px;
     outline: none;
+    }
+
+    .experience_delete__button {
+      top: 15px;
+    position: absolute;
+    right: 15px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: var(--mainGreen);
+    font-size: 15px;
     }
 
     /* JobDesc */

@@ -10,4 +10,5 @@ export interface State {
     template: 0;
   };
 }
+
 export type Actions = ActionType<typeof changeField>;

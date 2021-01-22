@@ -16,6 +16,7 @@ interface WorkExperienceProps {
     experienceIndex: number,
     jobDescIndex: number,
   ) => void;
+  onCheckInOffice: (index: number) => void;
 }
 
 const WorkExperience: React.FC<WorkExperienceProps> = ({
@@ -26,6 +27,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
   changeJobDescriptionFields,
   onDeleteExperienceFields,
   onDeleteJobDescFields,
+  onCheckInOffice,
 }) => {
   const list = workExperience.map((ele, index) => {
     return (
@@ -39,6 +41,8 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
         changeJobDescriptionFields={changeJobDescriptionFields}
         onDeleteExperienceFields={onDeleteExperienceFields}
         onDeleteJobDescFields={onDeleteJobDescFields}
+        onCheckInOffice={onCheckInOffice}
+        workExperience={workExperience}
       />
     );
   });
