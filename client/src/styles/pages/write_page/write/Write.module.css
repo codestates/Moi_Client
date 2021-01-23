@@ -129,6 +129,10 @@ padding: 20px 20px 20px 0;
   margin-bottom: 50px;
 }
 
+.skills__article > div{
+  margin-bottom: 20px;
+}
+
 .skills_title__block {
   margin-bottom: 15px;
 }
@@ -149,10 +153,11 @@ padding: 20px 20px 20px 0;
   border-radius: 3px;
 }
 
-.skills_list__block > button  {
+.skills_list__block button  {
   text-align: left;
   width: 100%;
-  padding : 30px 0px 30px 15px;
+  padding : 12px 0px 12px 15px;
+  border-radius: 10px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -162,10 +167,9 @@ padding: 20px 20px 20px 0;
   color: var(--mainGreen);
 }
 
-.skills_button button:hover {
-  opacity: 1;
+.skills_list__block button:hover {
+  background: #19a76c11;
 }
-
 
 
 .skills_listContainer {
@@ -347,10 +351,14 @@ padding: 20px 20px 20px 0;
   .skills__article {
     margin-bottom: 50px;
   }
+  .skills__article > div{
+    margin-bottom: 20px;
+  }
   
   .skills_title__block{
     margin-bottom: 15px;
   }
+  
   
   .skills_title__p {
     font-size: 20px;
@@ -368,10 +376,11 @@ padding: 20px 20px 20px 0;
     border-radius: 3px;
   }
   
-  .skills_list__block > button  {
+  .skills_list__block button  {
     text-align: left;
     width: 100%;
-    padding : 30px 0px 30px 15px;
+    padding : 12px 0px 12px 15px;
+    border-radius: 10px;
     outline: none;
     border: none;
     cursor: pointer;
@@ -381,8 +390,8 @@ padding: 20px 20px 20px 0;
     color: var(--mainGreen);
   }
   
-  .skills_button button:hover {
-    opacity: 1;
+  .skills_list__block button:hover {
+    background: #19a76c11;
   }
   
   .skills_listContainer {
