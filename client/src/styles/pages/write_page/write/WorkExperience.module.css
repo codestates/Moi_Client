@@ -81,18 +81,19 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     margin-bottom: 30px;
     border-radius: 5px;
     border: 1px solid #e5e5e5;
-    padding: 55px 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
     position: relative;
   }
   .experience_company_and_position_container__div{
     display: flex;
     margin-bottom: 25px;
+    padding-top: 25px;
   }
 
   .experience_company_and_position_block__div{
-    color: var(--mainText);
-    font-size: 15px;
-    font-weight: 600;
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
     width: 50%;
   }
 
@@ -115,12 +116,12 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     margin-bottom: 20px;
   }
   .experience_period_title_block__div {
-    margin-bottom: 10px;
-    color: var(--mainText);
+    margin-bottom: 5px;
     display: flex;
     flex-direction: row;
-    font-size: 15px;
-    font-weight: 600;
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
   }
 
   .experience_period_in_office__span{
@@ -265,7 +266,7 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
       margin-bottom: 30px;
       border-radius: 5px;
       border: 1px solid #e5e5e5;
-      padding: 55px 15px 15px 15px;
+      padding: 15px 15px 15px 15px;
       position: relative;
     }
     .experience_company_and_position_container__div{
@@ -274,10 +275,10 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     }
   
     .experience_company_and_position_block__div{
-      color: var(--mainText);
-      font-size: 15px;
-      font-weight: 600;
-      width: 50%;
+      color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+    width: 50%;
     }
   
     .experience_company_and_position_block__div form {
@@ -300,12 +301,12 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     }
 
     .experience_period_title_block__div {
-      margin-bottom: 10px;
-      color: var(--mainText);
+      margin-bottom: 5px;
       display: flex;
       flex-direction: row;
-      font-size: 15px;
-      font-weight: 600;
+      color: var(--nomalText);
+      font-size: 12px;
+      font-weight: 500;
     }
 
     .experience_period_in_office__span{

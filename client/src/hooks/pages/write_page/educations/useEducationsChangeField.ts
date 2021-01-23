@@ -10,6 +10,7 @@ function useEducationsChangeField(): {
   educations: EducationItem[];
   onChangeEducationFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onDeleteEducationFields: (index: number) => void;
+  onToggleEduDropdown: (index: number) => void;
 } {
   //? useDispatch
   const dispatch = useDispatch();
@@ -52,11 +53,16 @@ function useEducationsChangeField(): {
     dispatch(actions.deleteEducationField({ index: index }));
   };
 
+  const onToggleEduDropdown = (index: number) => {
+    dispatch(actions.toggleEduDropdown({ index: index }));
+  };
+
   return {
     addEducation,
     educations,
     onChangeEducationFields,
     onDeleteEducationFields,
+    onToggleEduDropdown,
   };
 }
 

@@ -233,7 +233,7 @@ padding: 20px 20px 20px 0;
 @media screen and (max-width: 1023px) {
   .block {
     width: 100%;
-    padding: 70px 55px 0px 55px;
+    padding: 70px 40px 0px 40px;
   }
 
   .container {
@@ -280,7 +280,7 @@ padding: 20px 20px 20px 0;
   
   .userinfo_form > div > input {
     height: 35px;
-    width: 300px;
+    width: 75vw;
     padding: 10px;
     font-size: 15px;
     outline: none;
