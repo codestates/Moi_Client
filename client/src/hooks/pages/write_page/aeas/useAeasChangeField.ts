@@ -7,6 +7,7 @@ function useAeasChangeField(): {
   aeas: AeaItem[];
   onChangeAeaFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onDeleteAeaFields: (index: number) => void;
+  onToggleAeaDropdown: (index: number) => void;
 } {
   //? useDispatch
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function useAeasChangeField(): {
 
   // * VARIABLE & FUNCTIONS
   const addAea = () => {
-    dispatch(actions.addAeaField(''));
+    dispatch(actions.addAeaField());
   };
 
   const onChangeAeaField = <U, T>(index: U, location: T, value: T): void => {
@@ -43,11 +44,16 @@ function useAeasChangeField(): {
     dispatch(actions.deleteAeaField({ index: index }));
   };
 
+  const onToggleAeaDropdown = (index: number) => {
+    dispatch(actions.toggleEduDropdown({ index: index }));
+  };
+
   return {
     addAea,
     aeas,
     onChangeAeaFields,
     onDeleteAeaFields,
+    onToggleAeaDropdown,
   };
 }
 

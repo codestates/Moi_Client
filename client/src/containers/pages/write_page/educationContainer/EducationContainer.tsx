@@ -7,6 +7,7 @@ const EducationContainer: React.FC = () => {
     educations,
     onChangeEducationFields,
     onDeleteEducationFields,
+    onToggleEduDropdown,
   } = useEducationsChangeField();
 
   return (
@@ -16,6 +17,7 @@ const EducationContainer: React.FC = () => {
         educations={educations}
         onChangeEducationFields={onChangeEducationFields}
         onDeleteEducationFields={onDeleteEducationFields}
+        onToggleEduDropdown={onToggleEduDropdown}
       />
     </>
   );

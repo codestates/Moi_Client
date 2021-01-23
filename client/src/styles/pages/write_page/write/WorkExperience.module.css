@@ -40,10 +40,11 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   .experience_container__article{
     margin-bottom: 50px;
   }
-  
-  .experience_title_block__div {
-    margin-bottom: 15px;
+
+  .experience_container__article > div{
+    margin-bottom: 20px;
   }
+  
 
   .experience_title__p {
     font-size: 20px;
@@ -65,15 +66,18 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   .experience_list_block__div button{
     text-align: left;
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding : 12px 0px 12px 15px;
     outline: none;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
     background-color: transparent;
     font-size: 18px;
     font-weight: 600;
     color: var(--mainGreen);
+  }
+  .experience_list_block__div button:hover {
+    background: #19a76c11;
   }
 
   .experience_list__li {
@@ -81,18 +85,19 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     margin-bottom: 30px;
     border-radius: 5px;
     border: 1px solid #e5e5e5;
-    padding: 55px 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
     position: relative;
   }
   .experience_company_and_position_container__div{
     display: flex;
     margin-bottom: 25px;
+    padding-top: 25px;
   }
 
   .experience_company_and_position_block__div{
-    color: var(--mainText);
-    font-size: 15px;
-    font-weight: 600;
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
     width: 50%;
   }
 
@@ -115,12 +120,12 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     margin-bottom: 20px;
   }
   .experience_period_title_block__div {
-    margin-bottom: 10px;
-    color: var(--mainText);
+    margin-bottom: 5px;
     display: flex;
     flex-direction: row;
-    font-size: 15px;
-    font-weight: 600;
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
   }
 
   .experience_period_in_office__span{
@@ -212,6 +217,7 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     position: absolute;
     background: #f2f5fa;
     cursor: pointer;
+    border-radius: 10px;
     height: 37px;
     padding: 0px 15px 0px 8px;
     border-radius: 0px 8px 8px 0px;
@@ -227,8 +233,8 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
       margin-bottom: 50px;
     }
 
-    .experience_title_block__div {
-      margin-bottom: 15px;
+    .experience_container__article > div{
+      margin-bottom: 20px;
     }
 
     .experience_title__p {
@@ -249,15 +255,18 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     .experience_list_block__div button{
       text-align: left;
       width: 100%;
-      padding-top: 30px;
-      padding-bottom: 30px;
+      padding : 12px 0px 12px 15px;
       outline: none;
       border: none;
       cursor: pointer;
       background-color: transparent;
+      border-radius: 10px;
       font-size: 18px;
       font-weight: 600;
       color: var(--mainGreen);
+    }
+    .experience_list_block__div button:hover {
+      background: #19a76c11;
     }
 
     .experience_list__li {
@@ -265,7 +274,7 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
       margin-bottom: 30px;
       border-radius: 5px;
       border: 1px solid #e5e5e5;
-      padding: 55px 15px 15px 15px;
+      padding: 15px 15px 15px 15px;
       position: relative;
     }
     .experience_company_and_position_container__div{
@@ -274,10 +283,10 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     }
   
     .experience_company_and_position_block__div{
-      color: var(--mainText);
-      font-size: 15px;
-      font-weight: 600;
-      width: 50%;
+      color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+    width: 50%;
     }
   
     .experience_company_and_position_block__div form {
@@ -300,12 +309,12 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
     }
 
     .experience_period_title_block__div {
-      margin-bottom: 10px;
-      color: var(--mainText);
+      margin-bottom: 5px;
       display: flex;
       flex-direction: row;
-      font-size: 15px;
-      font-weight: 600;
+      color: var(--nomalText);
+      font-size: 12px;
+      font-weight: 500;
     }
 
     .experience_period_in_office__span{

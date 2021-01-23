@@ -8,6 +8,7 @@ interface EducationProps {
   educations: EducationItem[];
   onChangeEducationFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onDeleteEducationFields: (index: number) => void;
+  onToggleEduDropdown: (index: number) => void;
 }
 
 const Education: React.FC<EducationProps> = ({
@@ -15,23 +16,29 @@ const Education: React.FC<EducationProps> = ({
   educations,
   onChangeEducationFields,
   onDeleteEducationFields,
+  onToggleEduDropdown,
 }) => {
   const list = educations.map((ele, index) => {
     return (
       <List
         key={index}
-        eduTitle={ele.eduTitle}
-        eduDesc={ele.eduDesc}
+        stateProperty={ele}
         index={index}
         onChangeEducationFields={onChangeEducationFields}
         onDeleteEducationFields={onDeleteEducationFields}
+        onToggleEduDropdown={onToggleEduDropdown}
       />
     );
   });
   return (
-    <article className={styles.education_container}>
-      <div className={styles.education_title}>학력</div>
-      <div className={styles.education_button}>
+    <article className={styles.education_container__article}>
+      <div>
+        <p className={styles.education_title__p}>학력 및 교육 이수</p>
+        <p className={styles.education_sub_title__p}>
+          학력 및 교육 이수를 기재해주세요 :)
+        </p>
+      </div>
+      <div className={styles.education_list_block__div}>
         <button onClick={addEducation}>+ 추가</button>
       </div>
       {list}
