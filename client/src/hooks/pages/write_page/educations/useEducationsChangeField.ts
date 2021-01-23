@@ -24,7 +24,7 @@ function useEducationsChangeField(): {
 
   // * VARIABLE & FUNCTIONS
   const addEducation = () => {
-    dispatch(actions.addEducationField(''));
+    dispatch(actions.addEducationField());
   };
 
   const onChangeEducationField = <U, T>(

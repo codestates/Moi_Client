@@ -32,7 +32,7 @@ const Education: React.FC<EducationProps> = ({
   });
   return (
     <article className={styles.education_container__article}>
-      <div className={styles.education_title_block__div}>
+      <div>
         <p className={styles.education_title__p}>학력 및 교육 이수</p>
         <p className={styles.education_sub_title__p}>
           학력 및 교육 이수를 기재해주세요 :)

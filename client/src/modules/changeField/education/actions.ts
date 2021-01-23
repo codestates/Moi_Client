@@ -17,10 +17,7 @@ export const changeEducationField = createAction(
 
 export const addEducationField = createAction(
   ADD_EDUCATION_FIELD,
-  ({ eduTitle, eduDesc }) => ({
-    eduTitle,
-    eduDesc,
-  }),
+  () => ({}),
 )();
 
 export const deleteEducationField = createAction(
