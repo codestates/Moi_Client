@@ -7,6 +7,7 @@ import HeaderContainer from './containers/systems/header/HeaderContainer';
 import LandingPageContainer from './containers/pages/landing_page/LandingPageContainer';
 import TemplatePageContainer from './containers/pages/template_page/TemplatePageContainer';
 import WritePageContainer from './containers/pages/write_page/WritePageContainer';
+import MypageContainer from './containers/pages/my_page/MypageContainer';
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route exact path="/" component={LandingPageContainer} />
           <Route path="/template" component={TemplatePageContainer} />
           <Route path="/write" component={WritePageContainer} />
+          <Route path="/mypage" component={MypageContainer} />
         </Switch>
       </Router>
     </div>
