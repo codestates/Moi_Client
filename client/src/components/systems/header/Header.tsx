@@ -20,6 +20,11 @@ interface HeaderProps {
   onScroll: (destination: string, name: string) => JSX.Element;
   modal: boolean;
   onLoginModal: (state: boolean) => void;
+  requestGoogleAuthorizationCode: () => void;
+  requestFacebookAuthorizationCode: () => void;
+  requestGithubAuthorizationCode: () => void;
+  isLoggedIn: boolean;
+  requestSignOut: () => void;
 }
 // * ====================
 // *  REACT.FC
@@ -32,6 +37,11 @@ const Header: React.FC<HeaderProps> = ({
   onScroll,
   modal,
   onLoginModal,
+  requestGoogleAuthorizationCode,
+  requestFacebookAuthorizationCode,
+  requestGithubAuthorizationCode,
+  isLoggedIn,
+  requestSignOut,
 }) => {
   // * ====================
   // *  RESPONSIVE
@@ -54,9 +64,22 @@ const Header: React.FC<HeaderProps> = ({
               onDropdown={onDropdown}
               onScroll={onScroll}
             />
-            <RightLoginButton onLoginModal={onLoginModal} />
+            <RightLoginButton
+              onLoginModal={onLoginModal}
+              isLoggedIn={isLoggedIn}
+              requestSignOut={requestSignOut}
+            />
           </div>
-          {modal && <LoginModal onLoginModal={onLoginModal} />}
+          {modal && (
+            <LoginModal
+              onLoginModal={onLoginModal}
+              requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
+              requestFacebookAuthorizationCode={
+                requestFacebookAuthorizationCode
+              }
+              requestGithubAuthorizationCode={requestGithubAuthorizationCode}
+            />
+          )}
         </>
       )}
       {isMobile && (
