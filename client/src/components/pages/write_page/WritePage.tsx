@@ -1,7 +1,7 @@
 import React from 'react';
 import Write from './write/Write';
 import styles from '../../../styles/pages/write_page/Index.module.css';
-import Preview from './preview/Preview';
+import PreviewContainer from '../../../containers/pages/write_page/preview/PreviewContainer';
 import { useMediaQuery } from 'react-responsive';
 
 const WritePage: React.FC = () => {
@@ -20,7 +20,7 @@ const WritePage: React.FC = () => {
       {isPc && (
         <div className={styles.block}>
           <Write />
-          <Preview />
+          <PreviewContainer />
         </div>
       )}
       {isMobile && (

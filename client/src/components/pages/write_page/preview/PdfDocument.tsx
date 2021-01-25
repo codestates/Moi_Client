@@ -7,15 +7,15 @@ import Experience from './experience/Experience';
 import Edu from './education/Edu';
 import Aea from './aea/Aea';
 
+import { ExperienceItem } from '../../../../modules/changeField/workExperience/types';
+import { SkillItem } from '../../../../modules/changeField/skills/types';
+import { AeaItem } from '../../../../modules/changeField/aea/types';
+import { EducationItem } from '../../../../modules/changeField/education/types';
+
 import NanumGothicNomal from './font/NanumGothic.ttf';
-// import NanumGothicBold from './font/NanumGothicBold.ttf';
+import NanumGothicBold from './font/NanumGothicBold.ttf';
 
 import { Page, Font, Document, StyleSheet } from '@react-pdf/renderer';
-
-Font.register({
-  family: 'Nanum Gothic',
-  src: NanumGothicNomal,
-});
 
 const styles = StyleSheet.create({
   page: {
@@ -27,17 +27,73 @@ const styles = StyleSheet.create({
   },
 });
 
+Font.register({
+  family: 'Nanum Gothic',
+  fonts: [
+    {
+      src: NanumGothicNomal,
+    },
+    {
+      src: NanumGothicBold,
+      fontWeight: 600,
+    },
+  ],
+});
+
+Font.register({
+  family: 'Open Sans',
+  fonts: [
+    {
+      src:
+        'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf',
+    },
+    {
+      src:
+        'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf',
+      fontWeight: 600,
+    },
+  ],
+});
+
+interface PdfDocumentProps {
+  values: {
+    info: {
+      username: string;
+      avatar: string;
+      profile: string;
+      contact: {
+        address: string;
+        phone: string;
+        email: string;
+        link: {
+          facebook: string;
+          twitter: string;
+          blog: string;
+          github: string;
+          youtube: string;
+          instagram: string;
+        };
+      };
+    };
+    skills: SkillItem[];
+    workExperience: ExperienceItem[];
+    educations: EducationItem[];
+    aeas: AeaItem[];
+  };
+}
 // Create Document Component
-const PdfDocument: React.FC = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <Header />
-      <Profile />
-      <Skills />
-      <Experience />
-      <Edu />
-      <Aea />
-    </Page>
-  </Document>
-);
+const PdfDocument: React.FC<PdfDocumentProps> = ({ values }) => {
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <Header values={values} />
+        <Profile values={values} />
+        <Skills values={values} />
+        <Experience values={values} />
+        <Edu values={values} />
+        <Aea values={values} />
+      </Page>
+    </Document>
+  );
+};
 export default PdfDocument;

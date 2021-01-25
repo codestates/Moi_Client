@@ -1,5 +1,5 @@
 import { createReducer } from 'typesafe-actions';
-import { Actions, State } from './types';
+import { Actions, EduState } from './types';
 import {
   EDUCATIONS_CHANGE_FIELD,
   ADD_EDUCATION_FIELD,
@@ -7,11 +7,11 @@ import {
   TOGGLE_EDU_DROPDOWN,
 } from './actions';
 
-const initialState: State = {
+const initialState: EduState = {
   educations: [],
 };
 
-const educationsField = createReducer<State, Actions>(initialState, {
+const educationsField = createReducer<EduState, Actions>(initialState, {
   [ADD_EDUCATION_FIELD]: (state) => {
     return {
       ...state,

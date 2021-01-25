@@ -4,10 +4,6 @@ import { Text, View, Link, StyleSheet } from '@react-pdf/renderer';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    // paddingBottom: '10px',
-    // borderBottomWidth: 2,
-    // borderBottomColor: '#343a40',
-    // borderBottomStyle: 'solid',
     alignItems: 'stretch',
   },
   detailColumn: {
@@ -24,7 +20,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 24,
     fontFamily: 'Nanum Gothic',
-    // color: '#19a76d',
+    fontWeight: 600,
     color: '#343a40',
     marginBottom: '20px',
   },
@@ -49,17 +45,45 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
 });
-const Header: React.FC = () => {
+
+interface HeaderProps {
+  values: {
+    info: {
+      username: string;
+      avatar: string;
+      profile: string;
+      contact: {
+        address: string;
+        phone: string;
+        email: string;
+        link: {
+          facebook: string;
+          twitter: string;
+          blog: string;
+          github: string;
+          youtube: string;
+          instagram: string;
+        };
+      };
+    };
+  };
+}
+
+const Header: React.FC<HeaderProps> = ({ values }) => {
+  const {
+    username,
+    contact: { address, phone, email },
+  } = values.info;
   return (
     <>
       <View style={styles.container}>
         <View style={styles.detailColumn}>
-          <Text style={styles.name}>박준형</Text>
-          <Link src="badsoap141@gmail.com" style={styles.contact}>
-            이메일 : badsoap141@gmail.com
+          <Text style={styles.name}>{username}</Text>
+          <Link src={email} style={styles.contact}>
+            {`이메일 : ${email}`}
           </Link>
-          <Text style={styles.contact}>주소 : 서울 특별시 중랑구 면목동</Text>
-          <Text style={styles.contact}>연락처 : 010-2768-3037</Text>
+          <Text style={styles.contact}>{`주소 : ${address}`}</Text>
+          <Text style={styles.contact}>{`연락처 : ${phone}`}</Text>
         </View>
       </View>
     </>

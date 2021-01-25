@@ -13,7 +13,7 @@ export interface AeaItem {
   dropDownToggle: boolean;
 }
 
-export interface State {
+export interface AeaState {
   aeas: AeaItem[];
 }
 

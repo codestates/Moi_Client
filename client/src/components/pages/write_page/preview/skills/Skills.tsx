@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { SkillItem } from '../../../../../modules/changeField/skills/types';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,10 +20,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Nanum Gothic',
     lineHeight: '160%',
+    fontWeight: 600,
     color: '#343a40',
     textDecoration: 'none',
     marginBottom: '5px',
-    textTransform: 'lowercase',
   },
   subtitle: {
     fontSize: 10,
@@ -41,37 +42,49 @@ const styles = StyleSheet.create({
   },
   itemContent: {
     flex: 1,
-    fontSize: 10,
+    fontSize: 14,
     fontFamily: 'Nanum Gothic',
+    marginBottom: '3px',
+  },
+  descContent: {
+    flex: 1,
+    fontSize: 11,
+    fontFamily: 'Nanum Gothic',
+    color: '#686868',
   },
   skillList: { flexDirection: 'column' },
   list: { flexDirection: 'row', marginBottom: '5px' },
+  textBlock: {
+    flexDirection: 'column',
+  },
 });
-const Skills: React.FC = () => {
+
+interface SkillsProps {
+  values: {
+    skills: SkillItem[];
+  };
+}
+
+const Skills: React.FC<SkillsProps> = ({ values }) => {
+  const { skills } = values;
+  const printSkills = skills.map((ele, index) => {
+    return (
+      <View style={styles.list} key={index}>
+        <Text style={styles.bulletPoint}>•</Text>
+        <View style={styles.textBlock}>
+          <Text style={styles.itemContent}>{ele.skill}</Text>
+          <Text style={styles.descContent}>{ele.desc}</Text>
+        </View>
+      </View>
+    );
+  });
   return (
     <>
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.profile}>기술</Text>
         </View>
-        <View style={styles.skillList}>
-          <View style={styles.list}>
-            <Text style={styles.bulletPoint}>•</Text>
-            <Text style={styles.itemContent}>Java script</Text>
-          </View>
-          <View style={styles.list}>
-            <Text style={styles.bulletPoint}>•</Text>
-            <Text style={styles.itemContent}>React js</Text>
-          </View>
-          <View style={styles.list}>
-            <Text style={styles.bulletPoint}>•</Text>
-            <Text style={styles.itemContent}>Node JS</Text>
-          </View>
-          <View style={styles.list}>
-            <Text style={styles.bulletPoint}>•</Text>
-            <Text style={styles.itemContent}>Vue Js</Text>
-          </View>
-        </View>
+        <View style={styles.skillList}>{printSkills}</View>
       </View>
     </>
   );

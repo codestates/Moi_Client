@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { AeaItem } from '../../../../../modules/changeField/aea/types';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,22 +24,24 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     marginBottom: '5px',
     textTransform: 'lowercase',
+    fontWeight: 600,
   },
   period: {
     flex: 1,
-    fontSize: 7,
+    fontSize: 9,
     fontFamily: 'Nanum Gothic',
   },
   itemContent: {
     flex: 1,
-    fontSize: 10,
+    fontSize: 12,
     fontFamily: 'Nanum Gothic',
   },
   subContent: {
     flex: 1,
-    fontSize: 7,
+    fontSize: 8,
     fontFamily: 'Nanum Gothic',
     paddingBottom: '10px',
+    color: '#686868',
   },
   skillList: { flexDirection: 'row', marginBottom: '5px' },
   experienceTitle: {
@@ -54,30 +57,35 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-const Aea: React.FC = () => {
+
+interface AeaProps {
+  values: {
+    aeas: AeaItem[];
+  };
+}
+
+const Aea: React.FC<AeaProps> = ({ values }) => {
+  const { aeas } = values;
+  const printAeas = aeas.map((ele, index) => {
+    return (
+      <View style={styles.skillList} key={index}>
+        <View style={styles.list}>
+          <Text style={styles.period}>{`${ele.aeaDate}`}</Text>
+          <View style={styles.experienceTitle}>
+            <Text style={styles.itemContent}>{ele.aeaTitle}</Text>
+            <Text style={styles.subContent}>{ele.aeaDesc}</Text>
+          </View>
+        </View>
+      </View>
+    );
+  });
   return (
     <>
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.profile}>수상 및 기타 활동</Text>
         </View>
-        <View style={styles.skillList}>
-          <View style={styles.list}>
-            <Text style={styles.period}>2020.02 - 2020.02</Text>
-            <View style={styles.experienceTitle}>
-              <Text style={styles.itemContent}>중랑구 하늘 노인정 해커톤</Text>
-              <Text style={styles.subContent}>특별 상</Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.skillList}>
-          <View style={styles.list}>
-            <Text style={styles.period}>2020.02 - 2020.02</Text>
-            <View style={styles.experienceTitle}>
-              <Text style={styles.itemContent}>리액트 스터디</Text>
-            </View>
-          </View>
-        </View>
+        {printAeas}
       </View>
     </>
   );

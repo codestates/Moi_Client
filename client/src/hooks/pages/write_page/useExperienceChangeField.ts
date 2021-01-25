@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../modules/changeField/workExperience/actions';
 import {
-  State,
+  ExperienceState,
   ExperienceItem,
 } from '../../../modules/changeField/workExperience/types';
 
@@ -25,7 +25,7 @@ function useSkillsChangeField(): {
 
   //? useSelector
   const { workExperience } = useSelector(
-    ({ workExperienceField }: { workExperienceField: State }) => ({
+    ({ workExperienceField }: { workExperienceField: ExperienceState }) => ({
       workExperience: workExperienceField.workExperience,
     }),
   );

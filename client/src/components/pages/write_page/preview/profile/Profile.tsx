@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 24,
     fontFamily: 'Nanum Gothic',
-    // color: '#19a76d',
     color: '#343a40',
     marginBottom: '20px',
   },
@@ -46,18 +45,36 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
 });
-const Profile: React.FC = () => {
+
+interface ProfileProps {
+  values: {
+    info: {
+      username: string;
+      avatar: string;
+      profile: string;
+      contact: {
+        address: string;
+        phone: string;
+        email: string;
+        link: {
+          facebook: string;
+          twitter: string;
+          blog: string;
+          github: string;
+          youtube: string;
+          instagram: string;
+        };
+      };
+    };
+  };
+}
+
+const Profile: React.FC<ProfileProps> = ({ values }) => {
+  const { profile } = values.info;
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.profile}>
-          얼음에 대고, 있음으로써 인간의 광야에서 영원히 것이다. 있으며,
-          청춘에서만 곧 굳세게 동력은 이상의 대한 황금시대의 봄바람이다. 긴지라
-          봄바람을 반짝이는 생의 가슴에 피다. 같은 꽃이 황금시대의 위하여서,
-          장식하는 싸인 아니더면, 품에 아름다우냐? 황금시대의 없는 가지에 품고
-          이것이다. 끓는 위하여서 수 이것이다. 싸인 이것이야말로 피어나기
-          위하여, 아름답고 석가는 내려온 사람은 사막이다.
-        </Text>
+        <Text style={styles.profile}>{profile}</Text>
       </View>
     </>
   );

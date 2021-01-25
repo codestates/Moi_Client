@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { ExperienceItem } from '../../../../../modules/changeField/workExperience/types';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     marginBottom: '5px',
     textTransform: 'lowercase',
+    fontWeight: 600,
   },
   period: {
     flex: 1,
@@ -72,68 +74,50 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
 });
-const Experience: React.FC = () => {
+
+interface ExperienceProps {
+  values: {
+    workExperience: ExperienceItem[];
+  };
+}
+
+const Experience: React.FC<ExperienceProps> = ({ values }) => {
+  const { workExperience } = values;
+
+  const printExperience = workExperience.map((ele, index) => {
+    //? Inner_list(array)
+    const printWorkDesc = ele.desc.map((ele, index) => {
+      return (
+        <View style={styles.descList} key={index}>
+          <Text style={styles.bulletPoint}>•</Text>
+          <Text style={styles.desc}>{ele.description}</Text>
+        </View>
+      );
+    });
+    return (
+      <View key={index} style={styles.experienceList}>
+        <View style={styles.skillList}>
+          <Text style={styles.period}>{`${ele.start} ~ ${ele.end}`}</Text>
+        </View>
+
+        <View style={styles.work}>
+          <View style={styles.experienceTitle}>
+            <Text style={styles.itemContent}>{ele.companyName}</Text>
+            <Text style={styles.subContent}>{ele.positionName}</Text>
+          </View>
+
+          {printWorkDesc}
+        </View>
+      </View>
+    );
+  });
   return (
     <>
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.profile}>경력</Text>
         </View>
-        <View style={styles.experienceList}>
-          <View style={styles.skillList}>
-            <Text style={styles.period}>2020.02 - 2020.02</Text>
-          </View>
-
-          <View style={styles.work}>
-            <View style={styles.experienceTitle}>
-              <Text style={styles.itemContent}>코드 스테이츠 부트 캠프</Text>
-              <Text style={styles.subContent}>
-                소프트웨어 엔지니어링 과정 수료
-              </Text>
-            </View>
-
-            <View style={styles.descList}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.desc}>소프트웨어 개발</Text>
-            </View>
-            <View style={styles.descList}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.desc}>소프트웨어 개발</Text>
-            </View>
-            <View style={styles.descList}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.desc}>소프트웨어 개발</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.experienceList}>
-          <View style={styles.skillList}>
-            <Text style={styles.period}>2020.02 - 2020.02</Text>
-          </View>
-
-          <View style={styles.work}>
-            <View style={styles.experienceTitle}>
-              <Text style={styles.itemContent}>코드 스테이츠 부트 캠프</Text>
-              <Text style={styles.subContent}>
-                소프트웨어 엔지니어링 과정 수료
-              </Text>
-            </View>
-
-            <View style={styles.descList}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.desc}>소프트웨어 개발</Text>
-            </View>
-            <View style={styles.descList}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.desc}>소프트웨어 개발</Text>
-            </View>
-            <View style={styles.descList}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.desc}>소프트웨어 개발</Text>
-            </View>
-          </View>
-        </View>
+        {printExperience}
       </View>
     </>
   );

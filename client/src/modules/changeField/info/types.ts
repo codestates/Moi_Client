@@ -5,7 +5,7 @@ import { changeField } from './actions';
 // ?   CONST ACTION & STATE_TYPE
 // ? ======================
 
-export interface State {
+export interface InfoState {
   info: {
     username: string;
     avatar: string;

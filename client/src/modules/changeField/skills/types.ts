@@ -8,7 +8,7 @@ export interface SkillItem {
   skill: string;
   desc: string;
 }
-export interface State {
+export interface SkillsState {
   skills: SkillItem[];
 }
 const actions = { changeSkillField, addSkillField, deleteSkillField };

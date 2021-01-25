@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { EducationItem } from '../../../../../modules/changeField/education/types';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     marginBottom: '5px',
     textTransform: 'lowercase',
+    fontWeight: 600,
   },
   period: {
     flex: 1,
@@ -56,35 +58,36 @@ const styles = StyleSheet.create({
     paddingRight: '20px',
   },
 });
-const Experience: React.FC = () => {
+
+interface ExperienceProps {
+  values: {
+    educations: EducationItem[];
+  };
+}
+const Experience: React.FC<ExperienceProps> = ({ values }) => {
+  const { educations } = values;
+
+  const printEducations = educations.map((ele, index) => {
+    return (
+      <View style={styles.skillList} key={index}>
+        <View style={styles.date}>
+          <Text style={styles.period}>{`${ele.start} ~ ${ele.end}`}</Text>
+        </View>
+        <View style={styles.experienceTitle}>
+          <Text style={styles.itemContent}>{ele.eduTitle}</Text>
+          <Text style={styles.subContent}>{ele.eduDesc}</Text>
+        </View>
+      </View>
+    );
+  });
+
   return (
     <>
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.profile}>학력 및 교육 이수</Text>
         </View>
-        <View style={styles.skillList}>
-          <View style={styles.date}>
-            <Text style={styles.period}>2020.02 - 2020.02</Text>
-          </View>
-          <View style={styles.experienceTitle}>
-            <Text style={styles.itemContent}>코드 스테이츠 </Text>
-            <Text style={styles.subContent}>
-              소프트웨어 엔지니어링 과정 수료
-            </Text>
-          </View>
-        </View>
-        <View style={styles.skillList}>
-          <View style={styles.date}>
-            <Text style={styles.period}>2020.02 - 2020.02</Text>
-          </View>
-          <View style={styles.experienceTitle}>
-            <Text style={styles.itemContent}>코드 스테이츠</Text>
-            <Text style={styles.subContent}>
-              소프트웨어 엔지니어링 과정 수료
-            </Text>
-          </View>
-        </View>
+        {printEducations}
       </View>
     </>
   );

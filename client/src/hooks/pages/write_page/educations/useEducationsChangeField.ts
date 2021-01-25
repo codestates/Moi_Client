@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../../modules/changeField/education/actions';
 import {
-  State,
+  EduState,
   EducationItem,
 } from '../../../../modules/changeField/education/types';
 
@@ -17,7 +17,7 @@ function useEducationsChangeField(): {
 
   //? useSelector
   const { educations } = useSelector(
-    ({ educationsField }: { educationsField: State }) => ({
+    ({ educationsField }: { educationsField: EduState }) => ({
       educations: educationsField.educations,
     }),
   );

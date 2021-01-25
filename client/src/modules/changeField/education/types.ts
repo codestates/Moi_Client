@@ -14,7 +14,7 @@ export interface EducationItem {
   end: string;
 }
 
-export interface State {
+export interface EduState {
   educations: EducationItem[];
 }
 
