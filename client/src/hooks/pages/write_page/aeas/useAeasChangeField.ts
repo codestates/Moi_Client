@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../../modules/changeField/aea/actions';
-import { State, AeaItem } from '../../../../modules/changeField/aea/types';
+import { AeaState, AeaItem } from '../../../../modules/changeField/aea/types';
 
 function useAeasChangeField(): {
   addAea: () => void;
@@ -13,7 +13,7 @@ function useAeasChangeField(): {
   const dispatch = useDispatch();
 
   //? useSelector
-  const { aeas } = useSelector(({ aeasField }: { aeasField: State }) => ({
+  const { aeas } = useSelector(({ aeasField }: { aeasField: AeaState }) => ({
     aeas: aeasField.aeas,
   }));
 

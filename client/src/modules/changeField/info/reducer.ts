@@ -1,8 +1,8 @@
 import { createReducer } from 'typesafe-actions';
-import { Actions, State } from './types';
-import { INFO_CHANGE_FIELD } from './actions';
+import { Actions, InfoState } from './types';
+import { INFO_CHANGE_FIELD, LOAD_INFO_FIELD } from './actions';
 
-const initialState: State = {
+const initialState: InfoState = {
   info: {
     username: '',
     avatar: '',
@@ -23,7 +23,7 @@ const initialState: State = {
   },
 };
 
-const infoField = createReducer<State, Actions>(initialState, {
+const infoField = createReducer<InfoState, Actions>(initialState, {
   [INFO_CHANGE_FIELD]: (state, action) => {
     const key = action.payload.key;
 
@@ -74,6 +74,10 @@ const infoField = createReducer<State, Actions>(initialState, {
         },
       };
     }
+  },
+  [LOAD_INFO_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['info']: loadData };
   },
 });
 

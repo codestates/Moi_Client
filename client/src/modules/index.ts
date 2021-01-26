@@ -10,6 +10,14 @@ import educationsField from './changeField/education/reducers';
 import aeasField from './changeField/aea/reducers';
 import askField from './changeField/ask/reducers';
 import askRequestField from './post_ask/reducer';
+import googleLoginField from './socialLoginField/google/reducer';
+import facebookLoginField from './socialLoginField/facebook/reducer';
+import githubLoginField from './socialLoginField/github/reducer';
+import { googleLoginSaga } from './socialLoginField/google/saga';
+import { facebookLoginSaga } from './socialLoginField/facebook/saga';
+import { githubLoginSaga } from './socialLoginField/github/saga';
+
+
 const rootReducer = combineReducers({
   config,
   infoField,
@@ -19,10 +27,18 @@ const rootReducer = combineReducers({
   aeasField,
   askField,
   askRequestField,
+  googleLoginField,
+  facebookLoginField,
+  githubLoginField,
 });
 
 export function* rootSaga(): Generator {
-  yield all([askSaga()]);
+  yield all([
+    askSaga(), 
+    googleLoginSaga(), 
+    facebookLoginSaga(), 
+    githubLoginSaga()]);
 }
+
 export type RootStore = ReturnType<typeof rootReducer>;
 export default rootReducer;

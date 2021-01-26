@@ -1,10 +1,50 @@
 import React from 'react';
 import Write from './write/Write';
 import styles from '../../../styles/pages/write_page/Index.module.css';
-import Preview from './preview/Preview';
+import PreviewContainer from '../../../containers/pages/write_page/preview/PreviewContainer';
 import { useMediaQuery } from 'react-responsive';
 
-const WritePage: React.FC = () => {
+import { ExperienceItem } from '../../../modules/changeField/workExperience/types';
+import { SkillItem } from '../../../modules/changeField/skills/types';
+import { AeaItem } from '../../../modules/changeField/aea/types';
+import { EducationItem } from '../../../modules/changeField/education/types';
+
+interface WritePageProps {
+  values: {
+    info: {
+      username: string;
+      avatar: string;
+      profile: string;
+      contact: {
+        address: string;
+        phone: string;
+        email: string;
+        link: {
+          facebook: string;
+          twitter: string;
+          blog: string;
+          github: string;
+          youtube: string;
+          instagram: string;
+        };
+      };
+    };
+    skills: SkillItem[];
+    workExperience: ExperienceItem[];
+    educations: EducationItem[];
+    aeas: AeaItem[];
+  };
+  onPreviewModal: () => void;
+  preview: boolean;
+  saveLocal: () => void;
+}
+
+const WritePage: React.FC<WritePageProps> = ({
+  values,
+  onPreviewModal,
+  preview,
+  saveLocal,
+}) => {
   // * ====================
   // *  RESPONSIVE
   // * ====================
@@ -19,13 +59,15 @@ const WritePage: React.FC = () => {
     <>
       {isPc && (
         <div className={styles.block}>
-          <Write />
-          <Preview />
+          <Write onPreviewModal={onPreviewModal} saveLocal={saveLocal} />
+          {preview && (
+            <PreviewContainer values={values} onPreviewModal={onPreviewModal} />
+          )}
         </div>
       )}
       {isMobile && (
         <div className={styles.block}>
-          <Write />
+          <Write onPreviewModal={onPreviewModal} saveLocal={saveLocal} />
         </div>
       )}
     </>

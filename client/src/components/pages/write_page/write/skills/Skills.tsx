@@ -38,7 +38,12 @@ const Skills: React.FC<SkillProps> = ({
         </p>
       </div>
       <div className={styles.skills_list__block}>
-        <button onClick={addSkill}>+ 추가</button>
+        <button
+          className={styles.skills_list__block__add__button}
+          onClick={addSkill}
+        >
+          + 추가
+        </button>
         {list}
       </div>
     </article>
