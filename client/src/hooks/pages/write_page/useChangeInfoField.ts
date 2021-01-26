@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../modules/changeField/info/actions';
-import { State } from '../../../modules/changeField/info/types';
+import { InfoState } from '../../../modules/changeField/info/types';
 
 function useChangeInfoField(): {
   username: string;
@@ -13,7 +13,7 @@ function useChangeInfoField(): {
 } {
   const dispatch = useDispatch();
   const { username, profile, address, phone, email } = useSelector(
-    ({ infoField }: { infoField: State }) => ({
+    ({ infoField }: { infoField: InfoState }) => ({
       username: infoField.info.username,
       profile: infoField.info.profile,
       address: infoField.info.contact.address,

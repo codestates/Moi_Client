@@ -11,6 +11,7 @@ const WorkExperienceContainer: React.FC = () => {
     changeJobDescriptionFields,
     onDeleteExperienceFields,
     onDeleteJobDescFields,
+    onCheckInOffice,
   } = useExperienceChangeField();
 
   return (
@@ -23,6 +24,7 @@ const WorkExperienceContainer: React.FC = () => {
         changeJobDescriptionFields={changeJobDescriptionFields}
         onDeleteExperienceFields={onDeleteExperienceFields}
         onDeleteJobDescFields={onDeleteJobDescFields}
+        onCheckInOffice={onCheckInOffice}
       />
     </>
   );

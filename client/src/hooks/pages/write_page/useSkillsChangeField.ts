@@ -1,6 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../modules/changeField/skills/actions';
-import { State, SkillItem } from '../../../modules/changeField/skills/types';
+import {
+  SkillsState,
+  SkillItem,
+} from '../../../modules/changeField/skills/types';
 
 function useSkillsChangeField(): {
   addSkill: () => void;
@@ -12,9 +15,11 @@ function useSkillsChangeField(): {
   const dispatch = useDispatch();
 
   //? useSelector
-  const { skills } = useSelector(({ skillsField }: { skillsField: State }) => ({
-    skills: skillsField.skills,
-  }));
+  const { skills } = useSelector(
+    ({ skillsField }: { skillsField: SkillsState }) => ({
+      skills: skillsField.skills,
+    }),
+  );
 
   // * VARIABLE & FUNCTIONS
   const addSkill = () => {

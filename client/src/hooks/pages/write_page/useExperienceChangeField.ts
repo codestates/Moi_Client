@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../modules/changeField/workExperience/actions';
 import {
-  State,
+  ExperienceState,
   ExperienceItem,
 } from '../../../modules/changeField/workExperience/types';
 
@@ -18,13 +18,14 @@ function useSkillsChangeField(): {
     experienceIndex: number,
     jobDescIndex: number,
   ) => void;
+  onCheckInOffice: (index: number) => void;
 } {
   //? useDispatch
   const dispatch = useDispatch();
 
   //? useSelector
   const { workExperience } = useSelector(
-    ({ workExperienceField }: { workExperienceField: State }) => ({
+    ({ workExperienceField }: { workExperienceField: ExperienceState }) => ({
       workExperience: workExperienceField.workExperience,
     }),
   );
@@ -99,6 +100,16 @@ function useSkillsChangeField(): {
     );
   };
 
+  const onCheckInOffice = (index: number) => {
+    const currentCheckBoxState = workExperience[index].inOffice;
+    dispatch(
+      actions.checkInOffice({
+        experienceIndex: index,
+        state: !currentCheckBoxState,
+      }),
+    );
+  };
+
   return {
     addExperience,
     workExperience,
@@ -107,6 +118,7 @@ function useSkillsChangeField(): {
     changeJobDescriptionFields,
     onDeleteExperienceFields,
     onDeleteJobDescFields,
+    onCheckInOffice,
   };
 }
 

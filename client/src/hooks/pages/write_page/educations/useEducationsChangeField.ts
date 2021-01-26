@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../../modules/changeField/education/actions';
 import {
-  State,
+  EduState,
   EducationItem,
 } from '../../../../modules/changeField/education/types';
 
@@ -10,20 +10,21 @@ function useEducationsChangeField(): {
   educations: EducationItem[];
   onChangeEducationFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onDeleteEducationFields: (index: number) => void;
+  onToggleEduDropdown: (index: number) => void;
 } {
   //? useDispatch
   const dispatch = useDispatch();
 
   //? useSelector
   const { educations } = useSelector(
-    ({ educationsField }: { educationsField: State }) => ({
+    ({ educationsField }: { educationsField: EduState }) => ({
       educations: educationsField.educations,
     }),
   );
 
   // * VARIABLE & FUNCTIONS
   const addEducation = () => {
-    dispatch(actions.addEducationField(''));
+    dispatch(actions.addEducationField());
   };
 
   const onChangeEducationField = <U, T>(
@@ -52,11 +53,16 @@ function useEducationsChangeField(): {
     dispatch(actions.deleteEducationField({ index: index }));
   };
 
+  const onToggleEduDropdown = (index: number) => {
+    dispatch(actions.toggleEduDropdown({ index: index }));
+  };
+
   return {
     addEducation,
     educations,
     onChangeEducationFields,
     onDeleteEducationFields,
+    onToggleEduDropdown,
   };
 }
 

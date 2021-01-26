@@ -1,52 +1,96 @@
 import React from 'react';
 import styles from '../../../../../../styles/pages/write_page/write/aea/Aea.module.css';
+import { FaTimes, FaAngleUp, FaAngleDown } from 'react-icons/fa';
+
 interface ListProps {
-  aeaTitle: string;
-  aeaDesc: string;
+  stateProperty: {
+    aeaTitle: string;
+    aeaDesc: string;
+    aeaDate: string;
+    dropDownToggle: boolean;
+  };
   index: number;
   onChangeAeaFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onDeleteAeaFields: (index: number) => void;
+  onToggleAeaDropdown: (index: number) => void;
 }
 
 const List: React.FC<ListProps> = ({
-  aeaTitle,
-  aeaDesc,
+  stateProperty,
   index,
   onChangeAeaFields,
   onDeleteAeaFields,
+  onToggleAeaDropdown,
 }) => {
   return (
-    <div className={styles.aea_listContainer}>
-      <ul className={styles.aea_list}>
-        <li className={styles.aea_list_item}>
-          <form className={styles.aea_formName}>
-            <input
-              className={styles.inputName}
-              type="text"
-              name="aeaTitle"
-              placeholder="활동명"
-              data-index={index}
-              value={aeaTitle}
-              onChange={onChangeAeaFields}
-            />
-          </form>
-          <form className={styles.aea_formDesc}>
-            <input
-              className={styles.inputDesc}
-              type="text"
-              name="aeaDesc"
-              placeholder="세부사항"
-              data-index={index}
-              value={aeaDesc}
-              onChange={onChangeAeaFields}
-            />
-          </form>
-          <button
-            className={styles.aea_list_button}
-            onClick={() => onDeleteAeaFields(index)}
-          >
-            삭제
-          </button>
+    <div>
+      <ul>
+        <li className={styles.aea_list__li}>
+          <div className={styles.aea_list_header}>
+            <button
+              className={styles.aea_list_header__button}
+              type="button"
+              onClick={() => onToggleAeaDropdown(index)}
+            >
+              {stateProperty.aeaTitle
+                ? stateProperty.aeaTitle
+                : '수상 및 활동 명'}
+            </button>
+            {stateProperty.dropDownToggle ? <FaAngleUp /> : <FaAngleDown />}
+            {stateProperty.aeaDate ? (
+              <p>{stateProperty.aeaDate}</p>
+            ) : (
+              <p>2021.01</p>
+            )}
+            <button
+              className={styles.aea_delete__button}
+              onClick={() => onDeleteAeaFields(index)}
+            >
+              <FaTimes />
+            </button>
+          </div>
+          {stateProperty.dropDownToggle && (
+            <>
+              <div className={styles.aea_company_and_position_container__div}>
+                <div className={styles.aea_company_and_position_block__div}>
+                  수상 및 활동 명
+                  <form>
+                    <input
+                      type="text"
+                      name="aeaTitle"
+                      value={stateProperty.aeaTitle}
+                      data-index={index}
+                      onChange={onChangeAeaFields}
+                    />
+                  </form>
+                </div>
+                <div className={styles.aea_company_and_position_block__div}>
+                  세부사항
+                  <form>
+                    <input
+                      type="text"
+                      name="aeaDesc"
+                      value={stateProperty.aeaDesc}
+                      data-index={index}
+                      onChange={onChangeAeaFields}
+                    />
+                  </form>
+                </div>
+              </div>
+              <div className={styles.aea_period_container__div}>
+                <div className={styles.aea_period_title_block__div}>날짜</div>
+                <input
+                  type="text"
+                  className={styles.aea_period__input}
+                  value={stateProperty.aeaDate}
+                  data-index={index}
+                  name="aeaDate"
+                  onChange={onChangeAeaFields}
+                  placeholder="YYYY.MM"
+                />
+              </div>
+            </>
+          )}
         </li>
       </ul>
     </div>

@@ -7,6 +7,7 @@ const AeaContainer: React.FC = () => {
     aeas,
     onChangeAeaFields,
     onDeleteAeaFields,
+    onToggleAeaDropdown,
   } = useAeasChangeField();
   return (
     <>
@@ -15,6 +16,7 @@ const AeaContainer: React.FC = () => {
         aeas={aeas}
         onChangeAeaFields={onChangeAeaFields}
         onDeleteAeaFields={onDeleteAeaFields}
+        onToggleAeaDropdown={onToggleAeaDropdown}
       />
     </>
   );

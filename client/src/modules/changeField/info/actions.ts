@@ -2,6 +2,7 @@ import { createAction } from 'typesafe-actions';
 
 // ?   CONST ACTION_TYPE
 export const INFO_CHANGE_FIELD = 'changeFiled/INFO_CHANGE_FIELD';
+export const LOAD_INFO_FIELD = 'changeFiled/LOAD_INFO_FIELD';
 
 // ?   CREATE_ACTION_FUNTIONS
 export const changeField = createAction(
@@ -11,3 +12,7 @@ export const changeField = createAction(
     value,
   }),
 )();
+
+export const loadInfoField = createAction(LOAD_INFO_FIELD, ({ state }) => ({
+  state,
+}))();

@@ -1,0 +1,12 @@
+.block {
+  padding-top: 200px;
+  width: 100%;
+  border: 1px soild black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+}
+

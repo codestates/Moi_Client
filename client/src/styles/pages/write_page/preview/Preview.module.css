@@ -1,10 +1,33 @@
-.block {
-  margin-top: 200px;
-  width: 50%;
-  height: 400px;
+.preview_container__div {
+  background:#7a859954;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+    z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 65px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+.preview_block__div {
+  top: 15px;
+  position: fixed;
+  background: white;
+  width: 35vw;
+  height: 45vw;
+  border-radius: 10px;
+  box-shadow: -1px 2px 4px rgb(50 50 93 / 20%);
+}
+
+.preview_download__button {
+  padding: 12px 8px;
+  position: fixed;
+  right: 50px;
+  bottom:20px;
+  text-decoration: none;
+background:var(--mainGreen);
+  border-radius: 10px;
+  border: none;
+  font-weight: 800;
 }

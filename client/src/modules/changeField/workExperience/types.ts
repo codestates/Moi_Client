@@ -3,9 +3,11 @@ import {
   changeExperienceField,
   addExperienceField,
   deleteExperienceField,
+  loadExperienceField,
   addJobDescField,
   changeJobDescField,
   deleteJobDescField,
+  checkInOffice,
 } from './actions';
 
 // ? ======================
@@ -20,18 +22,21 @@ export interface ExperienceItem {
   companyName: string;
   start: string;
   end: string;
+  inOffice: boolean;
   positionName: string;
   desc: DescItem[];
 }
-export interface State {
+export interface ExperienceState {
   workExperience: ExperienceItem[];
 }
 const actions = {
   changeExperienceField,
   addExperienceField,
   deleteExperienceField,
+  loadExperienceField,
   addJobDescField,
   changeJobDescField,
   deleteJobDescField,
+  checkInOffice,
 };
 export type Actions = ActionType<typeof actions>;

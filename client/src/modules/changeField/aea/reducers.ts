@@ -1,25 +1,43 @@
 import { createReducer } from 'typesafe-actions';
-import { Actions, State } from './types';
-import { AEAS_CHANGE_FIELD, ADD_AEA_FIELD, DELETE_AEA_FIELD } from './actions';
+import { Actions, AeaState } from './types';
+import {
+  AEAS_CHANGE_FIELD,
+  ADD_AEA_FIELD,
+  DELETE_AEA_FIELD,
+  LOAD_AEA_FIELD,
+  TOGGLE_AEA_DROPDOWN,
+} from './actions';
 
-const initialState: State = {
+const initialState: AeaState = {
   aeas: [],
 };
 
-const aeasField = createReducer<State, Actions>(initialState, {
+const aeasField = createReducer<AeaState, Actions>(initialState, {
   [ADD_AEA_FIELD]: (state) => {
     return {
       ...state,
-      aeas: [...state.aeas, { aeaTitle: '', aeaDesc: '' }],
+      aeas: [
+        ...state.aeas,
+        {
+          aeaTitle: '',
+          aeaDesc: '',
+          aeaDate: '',
+          dropDownToggle: false,
+        },
+      ],
     };
   },
   [AEAS_CHANGE_FIELD]: (state, action) => {
     const index = action.payload.index;
     const newAeas = [...state.aeas];
 
-    action.payload.key === 'aeaTitle'
-      ? (newAeas[index].aeaTitle = action.payload.value)
-      : (newAeas[index].aeaDesc = action.payload.value);
+    if (action.payload.key === 'aeaTitle') {
+      newAeas[index].aeaTitle = action.payload.value;
+    } else if (action.payload.key === 'aeaDesc') {
+      newAeas[index].aeaDesc = action.payload.value;
+    } else if (action.payload.key === 'aeaDate') {
+      newAeas[index].aeaDate = action.payload.value;
+    }
 
     return {
       ...state,
@@ -37,6 +55,19 @@ const aeasField = createReducer<State, Actions>(initialState, {
     return {
       ...state,
       aeas: newAeas,
+    };
+  },
+  [LOAD_AEA_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['aeas']: loadData };
+  },
+  [TOGGLE_AEA_DROPDOWN]: (state, action) => {
+    const index = action.payload.index;
+    const newAea = [...state.aeas];
+    newAea[index].dropDownToggle = !newAea[index].dropDownToggle;
+    return {
+      ...state,
+      educations: newAea,
     };
   },
 });
