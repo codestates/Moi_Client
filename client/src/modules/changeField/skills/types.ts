@@ -1,5 +1,10 @@
 import { ActionType } from 'typesafe-actions';
-import { changeSkillField, addSkillField, deleteSkillField } from './actions';
+import {
+  changeSkillField,
+  addSkillField,
+  deleteSkillField,
+  loadSkillsField,
+} from './actions';
 
 // ? ======================
 // ?   CONST ACTION & STATE_TYPE
@@ -11,5 +16,10 @@ export interface SkillItem {
 export interface SkillsState {
   skills: SkillItem[];
 }
-const actions = { changeSkillField, addSkillField, deleteSkillField };
+const actions = {
+  changeSkillField,
+  addSkillField,
+  deleteSkillField,
+  loadSkillsField,
+};
 export type Actions = ActionType<typeof actions>;

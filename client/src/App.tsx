@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Router>
-        <HeaderContainer />
+        {/* <HeaderContainer /> */}
         <Switch>
           <Route exact path="/" component={LandingPageContainer} />
           <Route path="/template" component={TemplatePageContainer} />

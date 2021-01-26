@@ -4,6 +4,7 @@ import {
   AEAS_CHANGE_FIELD,
   ADD_AEA_FIELD,
   DELETE_AEA_FIELD,
+  LOAD_AEA_FIELD,
   TOGGLE_AEA_DROPDOWN,
 } from './actions';
 
@@ -55,6 +56,10 @@ const aeasField = createReducer<AeaState, Actions>(initialState, {
       ...state,
       aeas: newAeas,
     };
+  },
+  [LOAD_AEA_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['aeas']: loadData };
   },
   [TOGGLE_AEA_DROPDOWN]: (state, action) => {
     const index = action.payload.index;

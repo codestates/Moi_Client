@@ -1,6 +1,6 @@
 import { createReducer } from 'typesafe-actions';
 import { Actions, InfoState } from './types';
-import { INFO_CHANGE_FIELD } from './actions';
+import { INFO_CHANGE_FIELD, LOAD_INFO_FIELD } from './actions';
 
 const initialState: InfoState = {
   info: {
@@ -74,6 +74,10 @@ const infoField = createReducer<InfoState, Actions>(initialState, {
         },
       };
     }
+  },
+  [LOAD_INFO_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['info']: loadData };
   },
 });
 

@@ -2,14 +2,47 @@ import React from 'react';
 import styles from '../../../../styles/pages/write_page/preview/Preview.module.css';
 import PdfPreview from '../../../../components/pages/write_page/preview/PdfPreview';
 import PdfDocument from '../../../../components/pages/write_page/preview/PdfDocument';
-import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+
+import { ExperienceItem } from '../../../../modules/changeField/workExperience/types';
+import { SkillItem } from '../../../../modules/changeField/skills/types';
+import { AeaItem } from '../../../../modules/changeField/aea/types';
+import { EducationItem } from '../../../../modules/changeField/education/types';
 
 //* ==========================
 //* IMPORT_CHILDREN_COMPONENTS
 //* ==========================
 
-const Preview: React.FC = () => {
-  const values = {
+interface PreviewProps {
+  values: {
+    info: {
+      username: string;
+      avatar: string;
+      profile: string;
+      contact: {
+        address: string;
+        phone: string;
+        email: string;
+        link: {
+          facebook: string;
+          twitter: string;
+          blog: string;
+          github: string;
+          youtube: string;
+          instagram: string;
+        };
+      };
+    };
+    skills: SkillItem[];
+    workExperience: ExperienceItem[];
+    educations: EducationItem[];
+    aeas: AeaItem[];
+  };
+  onPreviewModal: () => void;
+}
+
+const Preview: React.FC<PreviewProps> = ({ values, onPreviewModal }) => {
+  const fakeValues = {
     info: {
       username: '김인기',
       avatar: '',
@@ -86,9 +119,12 @@ const Preview: React.FC = () => {
   return (
     <section className={styles.preview_container__div}>
       <div className={styles.preview_block__div}>
-        <PdfPreview />
+        <PDFViewer width="100%" height="100%">
+          <PdfDocument values={values} />
+        </PDFViewer>
+        <button onClick={onPreviewModal}>x</button>
       </div>
-      <div>
+      {/* <div>
         <button className={styles.preview_download__button}>
           <PDFDownloadLink
             document={<PdfDocument values={values} />}
@@ -103,7 +139,7 @@ const Preview: React.FC = () => {
             {({ loading }) => (loading ? 'PDF 변환중...' : 'PDF로 다운로드')}
           </PDFDownloadLink>
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

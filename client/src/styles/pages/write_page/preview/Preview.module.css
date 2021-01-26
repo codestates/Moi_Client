@@ -1,9 +1,9 @@
 .preview_container__div {
-  width: 50vw;
-  background: rgb(122, 133, 153);
+  background:#7a859954;
   position: fixed;
   height: 100vh;
-  right: 0;
+  width: 100vw;
+    z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,10 +11,11 @@
 }
 
 .preview_block__div {
+  top: 15px;
+  position: fixed;
   background: white;
-  padding: 30px;
-  width: 25vw;
-  height: 37vw;
+  width: 35vw;
+  height: 45vw;
   border-radius: 10px;
   box-shadow: -1px 2px 4px rgb(50 50 93 / 20%);
 }

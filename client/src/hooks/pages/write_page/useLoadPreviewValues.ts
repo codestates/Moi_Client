@@ -36,8 +36,8 @@ function useLoadPreviewValues(): {
   };
   skills: SkillItem[];
   workExperience: ExperienceItem[];
-  aeas: AeaItem[];
   educations: EducationItem[];
+  aeas: AeaItem[];
 } {
   //? useSelector
   const { info, skills, workExperience, aeas, educations } = useSelector(
@@ -62,14 +62,16 @@ function useLoadPreviewValues(): {
     }),
   );
 
-  // * VARIABLE & FUNCTIONS
-  return {
+  const values = {
     info,
     skills,
     workExperience,
-    aeas,
     educations,
+    aeas,
   };
+
+  // * VARIABLE & FUNCTIONS
+  return values;
 }
 
 export default useLoadPreviewValues;

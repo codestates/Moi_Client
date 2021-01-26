@@ -3,6 +3,7 @@ import {
   changeEducationField,
   addEducationField,
   deleteEducationField,
+  loadEducationField,
   toggleEduDropdown,
 } from './actions';
 
@@ -22,6 +23,7 @@ const actions = {
   changeEducationField,
   addEducationField,
   deleteEducationField,
+  loadEducationField,
   toggleEduDropdown,
 };
 export type Actions = ActionType<typeof actions>;

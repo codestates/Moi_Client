@@ -3,6 +3,7 @@ import {
   changeAeaField,
   addAeaField,
   deleteAeaField,
+  loadAeaField,
   toggleEduDropdown,
 } from './actions';
 
@@ -21,6 +22,7 @@ const actions = {
   changeAeaField,
   addAeaField,
   deleteAeaField,
+  loadAeaField,
   toggleEduDropdown,
 };
 export type Actions = ActionType<typeof actions>;

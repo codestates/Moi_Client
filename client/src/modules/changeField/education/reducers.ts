@@ -5,6 +5,7 @@ import {
   ADD_EDUCATION_FIELD,
   DELETE_EDUCATION_FIELD,
   TOGGLE_EDU_DROPDOWN,
+  LOAD_EDUCATION_FIELD,
 } from './actions';
 
 const initialState: EduState = {
@@ -67,6 +68,10 @@ const educationsField = createReducer<EduState, Actions>(initialState, {
       ...state,
       educations: newEducations,
     };
+  },
+  [LOAD_EDUCATION_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['educations']: loadData };
   },
 });
 

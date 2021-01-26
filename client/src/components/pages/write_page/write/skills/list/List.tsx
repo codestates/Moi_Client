@@ -45,7 +45,7 @@ const List: React.FC<ListProps> = ({
             </form>
           </div>
           <button
-            className={styles.aea_delete__button}
+            className={styles.skills_list_item_delete__button}
             onClick={() => onDeleteSkillFields(index)}
           >
             <FaTimes />

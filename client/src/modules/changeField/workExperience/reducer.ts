@@ -4,6 +4,7 @@ import {
   EXPERIENCE_CHANGE_FIELD,
   ADD_EXPERIENCE_FIELD,
   ADD_JOB_DESC_FIELD,
+  LOAD_EXPERIENCE_FIELD,
   JOB_DESC_CHANGE_FILED,
   DELETE_EXPERIENCE_FIELD,
   DELETE_JOB_DESC_FIELD,
@@ -111,6 +112,10 @@ const workExperienceField = createReducer<ExperienceState, Actions>(
         ...state,
         workExperience: newExperiences,
       };
+    },
+    [LOAD_EXPERIENCE_FIELD]: (state, action) => {
+      const loadData = action.payload.state;
+      return { ...state, ['workExperience']: loadData };
     },
   },
 );

@@ -4,6 +4,7 @@ import {
   SKILLS_CHANGE_FIELD,
   ADD_SKILL_FIELD,
   DELETE_SKILL_FIELD,
+  LOAD_SKILLS_FIELD,
 } from './actions';
 
 const initialState: SkillsState = {
@@ -42,6 +43,10 @@ const skillsField = createReducer<SkillsState, Actions>(initialState, {
       ...state,
       skills: newSkills,
     };
+  },
+  [LOAD_SKILLS_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['skills']: loadData };
   },
 });
 
