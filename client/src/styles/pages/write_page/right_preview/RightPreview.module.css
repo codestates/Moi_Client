@@ -13,7 +13,7 @@
   font-size: 1.8vw;
   font-weight: 600;
   color: var(--mainText);
-  padding-top: 50px;
+  padding-top: 75px;
   margin-bottom: 40px;
 }
 
@@ -56,7 +56,8 @@
 }
 
 .skills_block__div li {
-  display: flex
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .skills_block__div li span {

@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from '../../../../styles/pages/write_page/preview/Preview.module.css';
 import PdfDocument from '../../../../components/pages/write_page/preview/PdfDocument';
-import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
 
+//* import responsive module
+import { useMediaQuery } from 'react-responsive';
+
+//* import redux state types
 import { ExperienceItem } from '../../../../modules/changeField/workExperience/types';
 import { SkillItem } from '../../../../modules/changeField/skills/types';
 import { AeaItem } from '../../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../../modules/changeField/education/types';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 //* ==========================
 //* IMPORT_CHILDREN_COMPONENTS
@@ -41,30 +46,47 @@ interface PreviewProps {
 }
 
 const Preview: React.FC<PreviewProps> = ({ values, onPreviewModal }) => {
+  // * ====================
+  // *  RESPONSIVE
+  // * ====================
+  const isPc = useMediaQuery({
+    query: '(min-width:1024px)',
+  });
+  const isMobile = useMediaQuery({
+    query: '(max-width:1023px)',
+  });
+
   return (
     <section className={styles.preview_container__div}>
-      <div className={styles.preview_block__div}>
-        <PDFViewer width="100%" height="100%">
-          <PdfDocument values={values} />
-        </PDFViewer>
-        <button onClick={onPreviewModal}>x</button>
-      </div>
-      {/* <div>
-        <button className={styles.preview_download__button}>
+      {isPc && (
+        <OutsideClickHandler onOutsideClick={onPreviewModal}>
+          <div className={styles.preview_block__div}>
+            <PDFViewer width="100%" height="100%">
+              <PdfDocument values={values} />
+            </PDFViewer>
+          </div>
+        </OutsideClickHandler>
+      )}
+      {isMobile && (
+        <OutsideClickHandler onOutsideClick={onPreviewModal}>
           <PDFDownloadLink
             document={<PdfDocument values={values} />}
-            fileName="moi_basic_resume.pdf"
-            style={{
-              padding: '12px 8px',
-              textDecoration: 'none',
-              color: 'white',
-              fontWeight: 800,
-            }}
+            fileName="somename.pdf"
           >
-            {({ loading }) => (loading ? 'PDF 변환중...' : 'PDF로 다운로드')}
+            {({ blob, url, loading, error }) =>
+              loading ? (
+                <button className={styles.preview_pdf_download__button}>
+                  렌더링 중입니다...
+                </button>
+              ) : (
+                <button className={styles.preview_pdf_download__button}>
+                  PDF 다운로드
+                </button>
+              )
+            }
           </PDFDownloadLink>
-        </button>
-      </div> */}
+        </OutsideClickHandler>
+      )}
     </section>
   );
 };

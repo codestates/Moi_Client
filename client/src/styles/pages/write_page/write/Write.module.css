@@ -168,6 +168,7 @@ padding: 20px 20px 20px 0;
   font-size: 18px;
   font-weight: 600;
   color: var(--mainGreen);
+  margin-bottom: 18px;
 }
 
 .skills_list__block__add__button:hover {
@@ -392,6 +393,7 @@ padding: 20px 20px 20px 0;
     font-size: 18px;
     font-weight: 600;
     color: var(--mainGreen);
+    margin-bottom: 18px;
   }
   
   .skills_list__block__add__button:hover {

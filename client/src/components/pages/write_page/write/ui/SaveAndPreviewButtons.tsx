@@ -16,7 +16,6 @@ const SaveAndPreviewButtons: React.FC<SaveAndPreviewButtonsProps> = ({
 }) => {
   const history = useHistory();
   const goTemplatePage = () => {
-    console.log(history);
     history.goBack();
   };
   return (

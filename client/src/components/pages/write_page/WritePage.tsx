@@ -75,6 +75,9 @@ const WritePage: React.FC<WritePageProps> = ({
       {isMobile && (
         <div className={styles.block}>
           <Write onPreviewModal={onPreviewModal} saveLocal={saveLocal} />
+          {preview && (
+            <PreviewContainer values={values} onPreviewModal={onPreviewModal} />
+          )}
         </div>
       )}
     </>
