@@ -1,17 +1,18 @@
 import { createReducer } from 'typesafe-actions';
-import { Actions, State } from './types';
+import { Actions, AeaState } from './types';
 import {
   AEAS_CHANGE_FIELD,
   ADD_AEA_FIELD,
   DELETE_AEA_FIELD,
+  LOAD_AEA_FIELD,
   TOGGLE_AEA_DROPDOWN,
 } from './actions';
 
-const initialState: State = {
+const initialState: AeaState = {
   aeas: [],
 };
 
-const aeasField = createReducer<State, Actions>(initialState, {
+const aeasField = createReducer<AeaState, Actions>(initialState, {
   [ADD_AEA_FIELD]: (state) => {
     return {
       ...state,
@@ -55,6 +56,10 @@ const aeasField = createReducer<State, Actions>(initialState, {
       ...state,
       aeas: newAeas,
     };
+  },
+  [LOAD_AEA_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['aeas']: loadData };
   },
   [TOGGLE_AEA_DROPDOWN]: (state, action) => {
     const index = action.payload.index;

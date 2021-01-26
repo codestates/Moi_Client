@@ -1,11 +1,11 @@
 import { ActionType } from 'typesafe-actions';
-import { changeField } from './actions';
+import { changeField, loadInfoField } from './actions';
 
 // ? ======================
 // ?   CONST ACTION & STATE_TYPE
 // ? ======================
 
-export interface State {
+export interface InfoState {
   info: {
     username: string;
     avatar: string;
@@ -25,4 +25,5 @@ export interface State {
     };
   };
 }
-export type Actions = ActionType<typeof changeField>;
+const actions = { changeField, loadInfoField };
+export type Actions = ActionType<typeof actions>;

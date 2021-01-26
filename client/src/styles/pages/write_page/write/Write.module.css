@@ -153,7 +153,7 @@ padding: 20px 20px 20px 0;
   border-radius: 3px;
 }
 
-.skills_list__block button  {
+.skills_list__block__add__button  {
   text-align: left;
   width: 100%;
   padding : 12px 0px 12px 15px;
@@ -167,7 +167,7 @@ padding: 20px 20px 20px 0;
   color: var(--mainGreen);
 }
 
-.skills_list__block button:hover {
+.skills_list__block__add__button:hover {
   background: #19a76c11;
 }
 
@@ -199,7 +199,7 @@ padding: 20px 20px 20px 0;
   border: none;
 }
 
-.skills_list_item__li button {
+.skills_list_item_delete__button {
   font-size: 15px;
   right: 0px;
   position: absolute;
@@ -376,7 +376,7 @@ padding: 20px 20px 20px 0;
     border-radius: 3px;
   }
   
-  .skills_list__block button  {
+  .skills_list__block__add__button  {
     text-align: left;
     width: 100%;
     padding : 12px 0px 12px 15px;
@@ -390,10 +390,9 @@ padding: 20px 20px 20px 0;
     color: var(--mainGreen);
   }
   
-  .skills_list__block button:hover {
+  .skills_list__block__add__button:hover {
     background: #19a76c11;
   }
-  
   .skills_listContainer {
     box-shadow: 0px 1px 4px rgba(50,50,93,0.3);
       display: flex;
@@ -452,7 +451,7 @@ padding: 20px 20px 20px 0;
     opacity: 1;
   }
 
-  .skills_list_item__li button {
+  .skills_list_item_delete__button {
     font-size: 15px;
     right: 0px;
     position: absolute;

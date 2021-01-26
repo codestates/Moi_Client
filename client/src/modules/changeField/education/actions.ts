@@ -5,6 +5,7 @@ export const EDUCATIONS_CHANGE_FIELD =
 export const ADD_EDUCATION_FIELD = 'educationsField/ADD_EDUCATION_FIELD';
 export const DELETE_EDUCATION_FIELD = 'educationsField/DELETE_EDUCATION_FIELD';
 export const TOGGLE_EDU_DROPDOWN = 'educationsField/TOGGLE_EDU_DROPDOWN';
+export const LOAD_EDUCATION_FIELD = 'educationsField/LOAD_EDUCATION_FIELD';
 
 export const changeEducationField = createAction(
   EDUCATIONS_CHANGE_FIELD,
@@ -24,6 +25,13 @@ export const deleteEducationField = createAction(
   DELETE_EDUCATION_FIELD,
   ({ index }) => ({
     index,
+  }),
+)();
+
+export const loadEducationField = createAction(
+  LOAD_EDUCATION_FIELD,
+  ({ state }) => ({
+    state,
   }),
 )();
 

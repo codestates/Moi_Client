@@ -1,0 +1,51 @@
+.buttons_container__div {
+  background: #ffffff;
+  padding: 10px 15px;
+  position: fixed;
+  bottom: 0px;
+  width: 50vw;
+  left: 0;
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.goBack__button {
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border: none;
+  color: #5d5d5d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.goBack__button svg{
+  position: relative;
+  top: 3px;
+}
+
+.preview__button {
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background:rgb(241, 243, 245);
+  border: none;
+  color:rgb(73, 80, 87);
+  font-weight: 700;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.save__button {
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background: var(--mainGreen);
+  border: none;
+  color:white;
+  font-weight: 700;
+  cursor: pointer;
+}
+

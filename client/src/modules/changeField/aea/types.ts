@@ -3,6 +3,7 @@ import {
   changeAeaField,
   addAeaField,
   deleteAeaField,
+  loadAeaField,
   toggleEduDropdown,
 } from './actions';
 
@@ -13,7 +14,7 @@ export interface AeaItem {
   dropDownToggle: boolean;
 }
 
-export interface State {
+export interface AeaState {
   aeas: AeaItem[];
 }
 
@@ -21,6 +22,7 @@ const actions = {
   changeAeaField,
   addAeaField,
   deleteAeaField,
+  loadAeaField,
   toggleEduDropdown,
 };
 export type Actions = ActionType<typeof actions>;

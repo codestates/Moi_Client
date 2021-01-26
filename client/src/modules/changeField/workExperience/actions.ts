@@ -8,6 +8,7 @@ import { createAction } from 'typesafe-actions';
 export const ADD_EXPERIENCE_FIELD = 'workExperience/ADD_EXPERIENCE_FIELD';
 export const EXPERIENCE_CHANGE_FIELD = 'workExperience/EXPERIENCE_CHANGE_FIELD';
 export const DELETE_EXPERIENCE_FIELD = 'workExperience/DELETE_EXPERIENCE_FIELD';
+export const LOAD_EXPERIENCE_FIELD = 'workExperience/LOAD_EXPERIENCE_FIELD';
 
 //* JOB_DESCRIPTION_TYPES
 export const ADD_JOB_DESC_FIELD = 'workExperience/ADD_JOB_DESC_FIELD';
@@ -38,6 +39,13 @@ export const deleteExperienceField = createAction(
   DELETE_EXPERIENCE_FIELD,
   ({ index }) => ({
     index,
+  }),
+)();
+
+export const loadExperienceField = createAction(
+  LOAD_EXPERIENCE_FIELD,
+  ({ state }) => ({
+    state,
   }),
 )();
 

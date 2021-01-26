@@ -1,16 +1,17 @@
 import { createReducer } from 'typesafe-actions';
-import { Actions, State } from './types';
+import { Actions, SkillsState } from './types';
 import {
   SKILLS_CHANGE_FIELD,
   ADD_SKILL_FIELD,
   DELETE_SKILL_FIELD,
+  LOAD_SKILLS_FIELD,
 } from './actions';
 
-const initialState: State = {
+const initialState: SkillsState = {
   skills: [],
 };
 
-const skillsField = createReducer<State, Actions>(initialState, {
+const skillsField = createReducer<SkillsState, Actions>(initialState, {
   [ADD_SKILL_FIELD]: (state) => {
     return {
       ...state,
@@ -42,6 +43,10 @@ const skillsField = createReducer<State, Actions>(initialState, {
       ...state,
       skills: newSkills,
     };
+  },
+  [LOAD_SKILLS_FIELD]: (state, action) => {
+    const loadData = action.payload.state;
+    return { ...state, ['skills']: loadData };
   },
 });
 

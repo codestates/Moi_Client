@@ -3,6 +3,7 @@ import {
   changeExperienceField,
   addExperienceField,
   deleteExperienceField,
+  loadExperienceField,
   addJobDescField,
   changeJobDescField,
   deleteJobDescField,
@@ -25,13 +26,14 @@ export interface ExperienceItem {
   positionName: string;
   desc: DescItem[];
 }
-export interface State {
+export interface ExperienceState {
   workExperience: ExperienceItem[];
 }
 const actions = {
   changeExperienceField,
   addExperienceField,
   deleteExperienceField,
+  loadExperienceField,
   addJobDescField,
   changeJobDescField,
   deleteJobDescField,
