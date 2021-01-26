@@ -1,0 +1,126 @@
+.container {
+  overflow: scroll;
+    height: 100vh;
+  width: 50vw;
+    padding: 65px 5vw 0px 5vw;
+    border-left: 2px solid #d9d9d9;
+    padding-top: 50px;
+}
+
+/* name */
+
+.name__h1 {
+  font-size: 1.8vw;
+  font-weight: 600;
+  color: var(--mainText);
+  padding-top: 50px;
+  margin-bottom: 40px;
+}
+
+/* contact */
+
+.contact_block__div{
+  margin-bottom: 25px;
+}
+
+.contact_block__div li{
+  font-size: 1vw;
+  padding-bottom: 10px;
+  color: var(--mainText);
+}
+
+/* profile */
+
+.profile_block__div {
+  margin-bottom: 40px;
+}
+
+.profile_block__div span{
+  font-size: 0.9vw;
+  line-height: 1.2vw;
+}
+
+/* skills */
+.skills_block__div {
+  margin-bottom: 50px;
+}
+
+.skills_block__div h2 {
+  font-size: 1.5vw;
+  font-weight: 600;
+  color: var(--mainText);
+  padding-top: 50px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgb(219 219 219);
+  padding: 20px 10px;
+}
+
+.skills_block__div li {
+  display: flex
+}
+
+.skills_block__div li span {
+  position: relative;
+  bottom: 0.1vw;
+  padding-right: 7px;
+}
+
+.skills_block__div li strong {
+  font-size: 1vw;
+  padding-bottom: 8px;
+  display:inline-block;
+}
+
+.skills_block__div li p {
+  color: var(--nomalText);
+  font-size: 0.8vw;
+}
+
+/* experience */
+.experience_block__div {
+  margin-bottom: 50px;
+}
+
+.experience_block__div h2 {
+  font-size: 1.5vw;
+  font-weight: 600;
+  color: var(--mainText);
+  padding-top: 50px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgb(219 219 219);
+  padding: 20px 10px;
+}
+
+.experience_block__div li {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 0.7vw;;
+  color: var(--mainText)
+}
+
+.experience_date {
+  font-size: 0.8vw;
+  position: relative;
+  bottom: 0.1vw;
+  padding-right: 3vw;
+  color: var(--mainText)
+}
+
+.experience_block__div li strong {
+  font-size: 1vw;
+  padding-bottom: 8px;
+  display:inline-block;
+  color: var(--mainText)
+}
+
+.experience_block__div li p {
+  color: var(--nomalText);
+  font-size: 0.7vw;
+  padding-bottom: 20px;
+}
+
+.experience_list_dot__span  {
+  padding-right: 7px;
+}
+
+/* educations */
