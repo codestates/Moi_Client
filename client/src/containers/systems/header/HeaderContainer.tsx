@@ -39,7 +39,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   const { googleUser, googleLogin } = useGoogleLogin();
   const { facebookUser, facebookLogin } = useFacebookLogin();
   const { githubUser, githubLogin } = useGithubLogin();
-  const { requestSignOut } = useSignOut();
+  const { logout, requestSignOut } = useSignOut();
 
   // * ====================
   // *   FUNCTIONS
@@ -76,7 +76,6 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
     const state = url.searchParams.get('state');
     if (authorizationCode && state) {
       const loginState = state.split('/');
-      console.log(loginState);
       switch (loginState[0]) {
         case 'google':
           googleLogin(authorizationCode);
@@ -105,7 +104,10 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
     if (googleUser.id || facebookUser.id || githubUser.id) {
       setIsLoggedIn(true);
     }
-  }, [modal, googleUser, facebookUser, githubUser]);
+    if (logout) {
+      setIsLoggedIn(false);
+    }
+  }, [modal, googleUser, facebookUser, githubUser, logout]);
 
   useEffect(() => {
     onSocialLogin();

@@ -26,6 +26,16 @@ export const check: () => Promise<UserInfo> = async () => {
   return response.data;
 };
 
+export const logout: () => Promise<UserInfo> = async () => {
+  const response = await axios.post(
+    '/auth/signout',
+    {},
+    { withCredentials: true },
+  );
+
+  return response.data;
+};
+
 export interface UserInfo {
   currentUser: {
     id: string;

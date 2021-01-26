@@ -1,6 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { Actions } from './types';
-import { check } from '../../../api/socialLogin';
+import { check, logout } from '../../../api/socialLogin';
 
 function* checkSaga() {
   try {
@@ -25,7 +24,17 @@ function checkFailureSaga() {
   }
 }
 
+function* logoutSaga() {
+  try {
+    yield call(logout);
+    localStorage.removeItem('current_user');
+  } catch (e) {
+    throw Error(e);
+  }
+}
+
 export function* userSaga() {
   yield takeLatest('CHECK_USER_REQUEST', checkSaga);
   yield takeLatest('CHECK_USER_FAILURE', checkFailureSaga);
+  yield takeLatest('LOGOUT_USER_REQUEST', logoutSaga);
 }

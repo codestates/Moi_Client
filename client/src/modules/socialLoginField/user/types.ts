@@ -1,12 +1,13 @@
 import { ActionType } from 'typesafe-actions';
-import { checkUser } from './actions';
+import { checkUser, logoutUser } from './actions';
 
-export interface State {
+export interface CheckState {
   isLoggedIn: boolean;
   message: string | null;
 }
 
 const actions = {
   checkUser,
+  logoutUser,
 };
 export type Actions = ActionType<typeof actions>;
