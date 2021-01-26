@@ -25,10 +25,7 @@ const githubLoginField = createReducer<State, Actions>(initialState, {
   }),
   [GITHUB_LOGIN_FAILURE]: (state, action) => ({
     ...state,
-    currentUser: {
-      id: null,
-      email: null,
-    },
+
     message: action.payload.message,
   }),
 });

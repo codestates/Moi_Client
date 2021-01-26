@@ -9,6 +9,10 @@ function* fetch(action: Actions) {
       type: 'FACEBOOK_LOGIN_SUCCESS',
       payload: { currentUser: facbookLogin.currentUser },
     });
+    localStorage.setItem(
+      'current_user',
+      JSON.stringify(facbookLogin.currentUser),
+    );
   } catch (err) {
     yield put({
       type: 'FACEBOOK_LOGIN_FAILURE',

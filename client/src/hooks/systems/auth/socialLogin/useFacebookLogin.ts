@@ -3,13 +3,13 @@ import * as actions from '../../../../modules/socialLoginField/facebook/actions'
 import { State } from '../../../../modules/socialLoginField/facebook/types';
 
 function useFacebookLogin(): {
-  currentUser: { id: string | null; email: string | null };
+  facebookUser: { id: string | null; email: string | null };
   facebookLogin: (authorizationCode: string) => void;
 } {
   const dispatch = useDispatch();
-  const { currentUser } = useSelector(
+  const { facebookUser } = useSelector(
     ({ facebookLoginField }: { facebookLoginField: State }) => ({
-      currentUser: {
+      facebookUser: {
         id: facebookLoginField.currentUser.id,
         email: facebookLoginField.currentUser.email,
       },
@@ -20,7 +20,7 @@ function useFacebookLogin(): {
     dispatch(actions.facebookLoginRequest({ authorizationCode }));
   };
 
-  return { currentUser, facebookLogin };
+  return { facebookUser, facebookLogin };
 }
 
 export default useFacebookLogin;

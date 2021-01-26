@@ -9,6 +9,10 @@ function* fetch(action: Actions) {
       type: 'GITHUB_LOGIN_SUCCESS',
       payload: { currentUser: githubLogin.currentUser },
     });
+    localStorage.setItem(
+      'current_user',
+      JSON.stringify(githubLogin.currentUser),
+    );
   } catch (err) {
     yield put({
       type: 'GITHUB_LOGIN_FAILURE',

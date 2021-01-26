@@ -25,10 +25,6 @@ const facebookLoginField = createReducer<State, Actions>(initialState, {
   }),
   [FACEBOOK_LOGIN_FAILURE]: (state, action) => ({
     ...state,
-    currentUser: {
-      id: null,
-      email: null,
-    },
     message: action.payload.message,
   }),
 });

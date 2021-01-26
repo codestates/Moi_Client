@@ -12,6 +12,7 @@ const RightLoginButton: React.FC<RightLoginButtonProps> = ({
   isLoggedIn,
   requestSignOut,
 }) => {
+  console.log(isLoggedIn);
   return (
     <>
       {isLoggedIn ? (

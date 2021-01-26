@@ -13,9 +13,11 @@ import askRequestField from './post_ask/reducer';
 import googleLoginField from './socialLoginField/google/reducer';
 import facebookLoginField from './socialLoginField/facebook/reducer';
 import githubLoginField from './socialLoginField/github/reducer';
+import checkUserField from './socialLoginField/user/reducer';
 import { googleLoginSaga } from './socialLoginField/google/saga';
 import { facebookLoginSaga } from './socialLoginField/facebook/saga';
 import { githubLoginSaga } from './socialLoginField/github/saga';
+import { userSaga } from './socialLoginField/user/saga';
 
 
 const rootReducer = combineReducers({
@@ -30,14 +32,17 @@ const rootReducer = combineReducers({
   googleLoginField,
   facebookLoginField,
   githubLoginField,
+  checkUserField,
 });
 
 export function* rootSaga(): Generator {
   yield all([
     askSaga(), 
-    googleLoginSaga(), 
-    facebookLoginSaga(), 
-    githubLoginSaga()]);
+    googleLoginSaga(),
+    facebookLoginSaga(),
+    githubLoginSaga(),
+    userSaga(),
+  ]);
 }
 
 export type RootStore = ReturnType<typeof rootReducer>;

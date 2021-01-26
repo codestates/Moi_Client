@@ -25,10 +25,6 @@ const googleLoginField = createReducer<State, Actions>(initialState, {
   }),
   [GOOGLE_LOGIN_FAILURE]: (state, action) => ({
     ...state,
-    currentUser: {
-      id: null,
-      email: null,
-    },
     message: action.payload.message,
   }),
 });

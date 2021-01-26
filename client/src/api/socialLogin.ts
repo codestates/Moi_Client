@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const google: (data: any) => Promise<UserInfo> = async (data) => {
-  console.log(data);
   const response = await axios.post('/auth/google', data, {
     withCredentials: true,
   });
@@ -22,11 +21,17 @@ export const github: (data: any) => Promise<UserInfo> = async (data) => {
   return response.data;
 };
 
+export const check: () => Promise<UserInfo> = async () => {
+  const response = await axios.get('/auth/isauth', { withCredentials: true });
+  return response.data;
+};
+
 export interface UserInfo {
   currentUser: {
     id: string;
     email: string;
   };
+  isLoggedIn: boolean;
 }
 
 export default google;
