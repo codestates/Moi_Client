@@ -7,9 +7,17 @@ import styles from '../../../../styles/systems/header/LoginModal.module.css';
 
 interface LoginModal {
   onLoginModal: (state: boolean) => void;
+  requestGoogleAuthorizationCode: () => void;
+  requestFacebookAuthorizationCode: () => void;
+  requestGithubAuthorizationCode: () => void;
 }
 
-const LoginModal: React.FC<LoginModal> = ({ onLoginModal }) => {
+const LoginModal: React.FC<LoginModal> = ({
+  onLoginModal,
+  requestGoogleAuthorizationCode,
+  requestFacebookAuthorizationCode,
+  requestGithubAuthorizationCode,
+}) => {
   return (
     <div className={styles.full__screen}>
       <div className={styles.white__box}>
@@ -22,19 +30,28 @@ const LoginModal: React.FC<LoginModal> = ({ onLoginModal }) => {
         </div>
         <ul className={styles.button__block}>
           <li>
-            <button className={styles.google__button}>
+            <button
+              className={styles.google__button}
+              onClick={requestGoogleAuthorizationCode}
+            >
               <FcGoogle className={styles.login__logo} />
               Google로 로그인
             </button>
           </li>
           <li>
-            <button className={styles.facebook__button}>
+            <button
+              className={styles.facebook__button}
+              onClick={requestFacebookAuthorizationCode}
+            >
               <SiFacebook className={styles.login__logo} />
               Facebook으로 로그인
             </button>
           </li>
           <li>
-            <button className={styles.github__button}>
+            <button
+              className={styles.github__button}
+              onClick={requestGithubAuthorizationCode}
+            >
               <SiGithub className={styles.login__logo} />
               Github로 로그인
             </button>
