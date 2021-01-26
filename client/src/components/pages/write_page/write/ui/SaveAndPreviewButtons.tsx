@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/write_page/write/ui/SaveAndPreviewButtons.module.css';
+import { useHistory } from 'react-router-dom';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 // ? ======================
 // ?   INTERFACE_TYPE
@@ -13,9 +14,14 @@ const SaveAndPreviewButtons: React.FC<SaveAndPreviewButtonsProps> = ({
   onPreviewModal,
   saveLocal,
 }) => {
+  const history = useHistory();
+  const goTemplatePage = () => {
+    console.log(history);
+    history.goBack();
+  };
   return (
     <div className={styles.buttons_container__div}>
-      <button className={styles.goBack__button}>
+      <button className={styles.goBack__button} onClick={goTemplatePage}>
         <RiArrowGoBackLine /> 템플릿 선택 페이지로
       </button>
       <div>
