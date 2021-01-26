@@ -3,13 +3,13 @@ import * as actions from '../../../../modules/socialLoginField/github/actions';
 import { State } from '../../../../modules/socialLoginField/github/types';
 
 function useGithubLogin(): {
-  currentUser: { id: string | null; email: string | null };
+  githubUser: { id: string | null; email: string | null };
   githubLogin: (authorizationCode: string) => void;
 } {
   const dispatch = useDispatch();
-  const { currentUser } = useSelector(
+  const { githubUser } = useSelector(
     ({ githubLoginField }: { githubLoginField: State }) => ({
-      currentUser: {
+      githubUser: {
         id: githubLoginField.currentUser.id,
         email: githubLoginField.currentUser.email,
       },
@@ -20,7 +20,7 @@ function useGithubLogin(): {
     dispatch(actions.githubLoginRequest({ authorizationCode }));
   };
 
-  return { currentUser, githubLogin };
+  return { githubUser, githubLogin };
 }
 
 export default useGithubLogin;

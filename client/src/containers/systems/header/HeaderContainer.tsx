@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import Header from '../../../components/systems/header/Header';
 import { Link } from 'react-scroll';
@@ -21,8 +21,10 @@ import useGoogleLogin from '../../../hooks/systems/auth/socialLogin/useGoogleLog
 import useFacebookLogin from '../../../hooks/systems/auth/socialLogin/useFacebookLogin';
 import useGithubLogin from '../../../hooks/systems/auth/socialLogin/useGithubLogin';
 import useSignOut from '../../../hooks/systems/auth/useSignOut';
+import { github } from '../../../api/socialLogin';
 
 const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   // * ====================
   // *   CUSTOM_HOOKS
   // * ====================
@@ -34,9 +36,9 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
     requestFacebookAuthorizationCode,
     requestGithubAuthorizationCode,
   } = useRequestAuthorizationCode();
-  const google = useGoogleLogin();
-  const facebook = useFacebookLogin();
-  const github = useGithubLogin();
+  const { googleUser, googleLogin } = useGoogleLogin();
+  const { facebookUser, facebookLogin } = useFacebookLogin();
+  const { githubUser, githubLogin } = useGithubLogin();
   const { requestSignOut } = useSignOut();
 
   // * ====================
@@ -77,15 +79,15 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
       console.log(loginState);
       switch (loginState[0]) {
         case 'google':
-          google.googleLogin(authorizationCode);
+          googleLogin(authorizationCode);
           history.push(`/${loginState[1]}`);
           break;
         case 'kakao':
-          facebook.facebookLogin(authorizationCode);
+          facebookLogin(authorizationCode);
           history.push(`/${loginState[1]}`);
           break;
         case 'github':
-          github.githubLogin(authorizationCode);
+          githubLogin(authorizationCode);
           history.push(`/${loginState[1]}`);
           break;
         default:
@@ -100,15 +102,16 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [
-    modal,
-    useGoogleLogin().currentUser,
-    useFacebookLogin().currentUser,
-    useGithubLogin().currentUser,
-  ]);
+    if (googleUser.id || facebookUser.id || githubUser.id) {
+      setIsLoggedIn(true);
+    }
+  }, [modal, googleUser, facebookUser, githubUser]);
 
   useEffect(() => {
     onSocialLogin();
+    if (localStorage.getItem('current_user')) {
+      setIsLoggedIn(true);
+    }
   }, []);
 
   // * ====================
@@ -127,7 +130,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
         requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
         requestFacebookAuthorizationCode={requestFacebookAuthorizationCode}
         requestGithubAuthorizationCode={requestGithubAuthorizationCode}
-        isLoggedIn={Boolean(localStorage.getItem('isLoggedIn'))}
+        isLoggedIn={isLoggedIn}
         requestSignOut={requestSignOut}
       />
     </>

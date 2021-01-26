@@ -3,13 +3,13 @@ import * as actions from '../../../../modules/socialLoginField/google/actions';
 import { State } from '../../../../modules/socialLoginField/google/types';
 
 function useGoogleLogin(): {
-  currentUser: { id: string | null; email: string | null };
+  googleUser: { id: string | null; email: string | null };
   googleLogin: (authorizationCode: string) => void;
 } {
   const dispatch = useDispatch();
-  const { currentUser } = useSelector(
+  const { googleUser } = useSelector(
     ({ googleLoginField }: { googleLoginField: State }) => ({
-      currentUser: {
+      googleUser: {
         id: googleLoginField.currentUser.id,
         email: googleLoginField.currentUser.email,
       },
@@ -20,7 +20,7 @@ function useGoogleLogin(): {
     dispatch(actions.googleLoginRequest({ authorizationCode }));
   };
 
-  return { currentUser, googleLogin };
+  return { googleUser, googleLogin };
 }
 
 export default useGoogleLogin;
