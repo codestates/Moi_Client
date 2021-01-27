@@ -14,11 +14,13 @@ import googleLoginField from './socialLoginField/google/reducer';
 import facebookLoginField from './socialLoginField/facebook/reducer';
 import githubLoginField from './socialLoginField/github/reducer';
 import checkUserField from './socialLoginField/user/reducer';
+import asyncResumeField from './asyncResumeField/reducers';
+
 import { googleLoginSaga } from './socialLoginField/google/saga';
 import { facebookLoginSaga } from './socialLoginField/facebook/saga';
 import { githubLoginSaga } from './socialLoginField/github/saga';
 import { userSaga } from './socialLoginField/user/saga';
-
+import { saveResumeSaga } from './asyncResumeField/sagas';
 
 const rootReducer = combineReducers({
   config,
@@ -33,15 +35,17 @@ const rootReducer = combineReducers({
   facebookLoginField,
   githubLoginField,
   checkUserField,
+  asyncResumeField,
 });
 
 export function* rootSaga(): Generator {
   yield all([
-    askSaga(), 
+    askSaga(),
     googleLoginSaga(),
     facebookLoginSaga(),
     githubLoginSaga(),
     userSaga(),
+    saveResumeSaga(),
   ]);
 }
 
