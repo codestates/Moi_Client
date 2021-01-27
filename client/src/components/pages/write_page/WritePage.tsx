@@ -1,14 +1,23 @@
 import React from 'react';
 import Write from './write/Write';
 import styles from '../../../styles/pages/write_page/Index.module.css';
+
+//* import child components
+import RightPreviewContainer from '../../../containers/pages/write_page/right_preview/RightPreviewContainer';
 import PreviewContainer from '../../../containers/pages/write_page/preview/PreviewContainer';
+
+//* import responsive module
 import { useMediaQuery } from 'react-responsive';
 
+//* import redux state types
 import { ExperienceItem } from '../../../modules/changeField/workExperience/types';
 import { SkillItem } from '../../../modules/changeField/skills/types';
 import { AeaItem } from '../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../modules/changeField/education/types';
 
+// ? ======================
+// ?   INTERFACE_TYPE
+// ? ======================
 interface WritePageProps {
   values: {
     info: {
@@ -60,6 +69,7 @@ const WritePage: React.FC<WritePageProps> = ({
       {isPc && (
         <div className={styles.block}>
           <Write onPreviewModal={onPreviewModal} saveLocal={saveLocal} />
+          <RightPreviewContainer values={values} />
           {preview && (
             <PreviewContainer values={values} onPreviewModal={onPreviewModal} />
           )}
@@ -68,6 +78,9 @@ const WritePage: React.FC<WritePageProps> = ({
       {isMobile && (
         <div className={styles.block}>
           <Write onPreviewModal={onPreviewModal} saveLocal={saveLocal} />
+          {preview && (
+            <PreviewContainer values={values} onPreviewModal={onPreviewModal} />
+          )}
         </div>
       )}
     </>

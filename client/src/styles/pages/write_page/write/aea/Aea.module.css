@@ -1,6 +1,6 @@
 @media screen and (min-width: 1025px) {
   .aea_container__article{
-    margin-bottom: 50px;
+    margin-bottom: 120px;
   }
   
   .aea_container__article > div{
@@ -160,7 +160,7 @@
 
 @media screen and (max-width: 1023px) {
   .aea_container__article{
-    margin-bottom: 50px;
+    margin-bottom: 120px;
   }
 
   .aea_container__article > div{

@@ -12,7 +12,10 @@ const config = createReducer<State, Actions>(initialState, {
   [SELECT_TEMPLATE]: (state, action) => {
     return {
       ...state,
-      [action.payload.key]: action.payload.value,
+      resume: {
+        ...state.resume,
+        ['template']: action.payload.value,
+      },
     };
   },
 });

@@ -1,8 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+
+//* Import child Components
 import WritePage from '../../../components/pages/write_page/WritePage';
+
+//* Import custom hooks
 import useLoadPreviewValues from '../../../hooks/pages/write_page/useLoadPreviewValues';
 import usePreviewModal from '../../../hooks/pages/write_page/usePreviewModal';
+
+//* Import reduce states
 import { ExperienceState } from '../../../modules/changeField/workExperience/types';
 import { InfoState } from '../../../modules/changeField/info/types';
 import { SkillsState } from '../../../modules/changeField/skills/types';

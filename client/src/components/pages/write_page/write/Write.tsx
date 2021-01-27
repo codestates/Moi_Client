@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../../../../styles/pages/write_page/write/Write.module.css';
-
 // * ======================
 // *   IMPORT_CHILD_CONTAINERS
 // * ======================

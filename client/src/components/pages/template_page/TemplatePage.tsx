@@ -5,11 +5,14 @@ import styles from '../../../styles/pages/template_page/Template.module.css';
 import Title from './title/Title';
 import Cards from './cards/Cards';
 
-const TemplatePage: React.FC = () => {
+interface TemplatePageProps {
+  selectTemplate: (templateCode: number) => void;
+}
+const TemplatePage: React.FC<TemplatePageProps> = ({ selectTemplate }) => {
   return (
     <div className={styles.template__container}>
       <Title />
-      <Cards />
+      <Cards selectTemplate={selectTemplate} />
     </div>
   );
 };
