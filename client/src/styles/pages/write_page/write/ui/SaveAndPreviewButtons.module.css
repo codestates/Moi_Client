@@ -72,6 +72,7 @@
     color: #5d5d5d;
     font-weight: 700;
     cursor: pointer;
+    outline: none;
   }
   
   .goBack__button svg{
@@ -89,6 +90,7 @@
     font-weight: 700;
     margin-right: 15px;
     cursor: pointer;
+    outline: none;
   }
   
   .save__button {
@@ -100,5 +102,7 @@
     color:white;
     font-weight: 700;
     cursor: pointer;
+    outline: none;
   }
+  
 }

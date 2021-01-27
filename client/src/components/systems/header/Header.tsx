@@ -1,6 +1,7 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { HiMenu } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 import Buger from './responsive_buger/Buger';
 import LeftLogo from './left_logo/LeftLogo';
@@ -86,7 +87,7 @@ const Header: React.FC<HeaderProps> = ({
         //* Mobile header_hambuger_menu
         <>
           <div className={styles.response__logo__block}>
-            <a href="#">모두의 이력서</a>
+            <Link to="/">모두의 이력서</Link>
             <button
               className={styles.buger__toggle__button}
               type="button"

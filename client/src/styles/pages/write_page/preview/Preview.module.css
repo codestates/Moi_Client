@@ -68,14 +68,14 @@ background:var(--mainGreen);
   }
 
   .preview_pdf_download__button {
-    font-size: 20px;
-    color: white;
+     font-size: 4vw;
+    border-radius: 4px;
+    padding: 10px 20px;
     background: var(--mainGreen);
-    outline: none;
     border: none;
-    border-radius: 7px;
-    padding: 10px 54px;
-    font-weight: 600;
+    color:white;
+    font-weight: 700;
     cursor: pointer;
+    outline: none;
   }
 }

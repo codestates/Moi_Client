@@ -73,15 +73,17 @@ const Preview: React.FC<PreviewProps> = ({ values, onPreviewModal }) => {
             document={<PdfDocument values={values} />}
             fileName="somename.pdf"
           >
-            {({ blob, url, loading, error }) =>
+            {({ loading }) =>
               loading ? (
                 <button className={styles.preview_pdf_download__button}>
-                  렌더링 중입니다...
+                  렌더링중
                 </button>
               ) : (
-                <button className={styles.preview_pdf_download__button}>
-                  PDF 다운로드
-                </button>
+                <div className={styles.white__box}>
+                  <button className={styles.preview_pdf_download__button}>
+                    다운로드
+                  </button>
+                </div>
               )
             }
           </PDFDownloadLink>

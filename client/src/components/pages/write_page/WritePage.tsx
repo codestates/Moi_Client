@@ -15,6 +15,9 @@ import { SkillItem } from '../../../modules/changeField/skills/types';
 import { AeaItem } from '../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../modules/changeField/education/types';
 
+// ? ======================
+// ?   INTERFACE_TYPE
+// ? ======================
 interface WritePageProps {
   values: {
     info: {
