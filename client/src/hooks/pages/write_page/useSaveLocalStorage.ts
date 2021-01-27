@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as info from '../../../modules/changeField/info/actions';
 import * as skills from '../../../modules/changeField/skills/actions';
 import * as experience from '../../../modules/changeField/workExperience/actions';

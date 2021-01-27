@@ -20,6 +20,7 @@ function* fetch(action: Actions) {
     });
   }
 }
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* googleLoginSaga() {
   yield takeLatest('GOOGLE_LOGIN_REQUEST', fetch);
 }

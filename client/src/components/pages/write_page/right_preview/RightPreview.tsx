@@ -41,7 +41,7 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
   //? user_skills
   const printSkills = values.skills.map((ele) => {
     return (
-      <li>
+      <li key={ele.skill}>
         <span>●</span>
         <div>
           <strong>{ele.skill}</strong>
@@ -52,10 +52,10 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
   });
 
   //? user_experience
-  const printExperience = values.workExperience.map((ele) => {
-    const printworkDesc = ele.desc.map((ele) => {
+  const printExperience = values.workExperience.map((ele, index) => {
+    const printworkDesc = ele.desc.map((ele, index) => {
       return (
-        <li>
+        <li key={index}>
           {ele.description && (
             <span className={styles.experience_list_dot__span}>●</span>
           )}
@@ -64,7 +64,7 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
       );
     });
     return (
-      <li>
+      <li key={index}>
         <span className={styles.experience_date}>
           {ele.start}
           {ele.end && <> ~ </>}
@@ -81,9 +81,9 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
   });
 
   //? Render_educations
-  const printEducations = values.educations.map((ele) => {
+  const printEducations = values.educations.map((ele, index) => {
     return (
-      <li>
+      <li key={index}>
         <span className={styles.experience_date}>
           {ele.start}
           {ele.end && <span> ~ </span>} {ele.end}
@@ -97,9 +97,9 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
   });
 
   //? Render_AEAs
-  const printAeas = values.aeas.map((ele) => {
+  const printAeas = values.aeas.map((ele, index) => {
     return (
-      <li>
+      <li key={index}>
         <span className={styles.experience_date}>{ele.aeaDate}</span>
         <div>
           <strong>{ele.aeaTitle}</strong>
@@ -127,25 +127,32 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
         <span>{profile}</span>
       </div>
 
-      <div className={styles.skills_block__div}>
-        <h2>기술</h2>
-        <ul>{printSkills}</ul>
-      </div>
+      {values.skills.length >= 1 && (
+        <div className={styles.skills_block__div}>
+          <h2>기술</h2>
+          <ul>{printSkills}</ul>
+        </div>
+      )}
 
-      <div className={styles.experience_block__div}>
-        <h2>경력</h2>
-        <ul>{printExperience}</ul>
-      </div>
+      {values.workExperience.length >= 1 && (
+        <div className={styles.experience_block__div}>
+          <h2>경력</h2>
+          <ul>{printExperience}</ul>
+        </div>
+      )}
 
-      <div className={styles.experience_block__div}>
-        <h2>학력 및 교육 이수</h2>
-        <ul>{printEducations}</ul>
-      </div>
-
-      <div className={styles.experience_block__div}>
-        <h2>수상 및 기타 활동</h2>
-        <ul>{printAeas}</ul>
-      </div>
+      {values.educations.length >= 1 && (
+        <div className={styles.experience_block__div}>
+          <h2>학력 및 교육 이수</h2>
+          <ul>{printEducations}</ul>
+        </div>
+      )}
+      {values.aeas.length >= 1 && (
+        <div className={styles.experience_block__div}>
+          <h2>수상 및 기타 활동</h2>
+          <ul>{printAeas}</ul>
+        </div>
+      )}
     </section>
   );
 };

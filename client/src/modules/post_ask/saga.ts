@@ -17,6 +17,7 @@ function* fetch(actions: Actions) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* askSaga() {
   yield takeEvery('POST_ASK_REQUEST', fetch);
 }

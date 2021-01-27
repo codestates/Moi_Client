@@ -45,7 +45,10 @@ interface PreviewProps {
   onPreviewModal: () => void;
 }
 
-const Preview: React.FC<PreviewProps> = ({ values, onPreviewModal }) => {
+const PreviewContainer: React.FC<PreviewProps> = ({
+  values,
+  onPreviewModal,
+}) => {
   // * ====================
   // *  RESPONSIVE
   // * ====================
@@ -92,4 +95,4 @@ const Preview: React.FC<PreviewProps> = ({ values, onPreviewModal }) => {
     </section>
   );
 };
-export default Preview;
+export default PreviewContainer;

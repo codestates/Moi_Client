@@ -1,4 +1,4 @@
-import { action, createReducer } from 'typesafe-actions';
+import { createReducer } from 'typesafe-actions';
 import { State, Actions } from './types';
 import {
   SAVE_RESUME_FIELD_REQUEST,

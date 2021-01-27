@@ -7,7 +7,6 @@ interface AskProps {
   desc: string;
   onChangeAskFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeTextAreas: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onClicks: (event: React.MouseEvent<HTMLButtonElement>) => void;
   onAskRequest: (
     username: string,
     email: string,
@@ -22,7 +21,6 @@ const Ask: React.FC<AskProps> = ({
   desc,
   onChangeAskFields,
   onChangeTextAreas,
-  onClicks,
   onAskRequest,
 }) => {
   return (
