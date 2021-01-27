@@ -12,11 +12,13 @@ const RightLoginButton: React.FC<RightLoginButtonProps> = ({
   isLoggedIn,
   requestSignOut,
 }) => {
-  console.log(isLoggedIn);
   return (
     <>
       {isLoggedIn ? (
-        <button className={styles.right_login_button} onClick={requestSignOut}>
+        <button
+          className={styles.right_login_button}
+          onClick={() => requestSignOut()}
+        >
           로그아웃
         </button>
       ) : (
@@ -32,14 +34,3 @@ const RightLoginButton: React.FC<RightLoginButtonProps> = ({
 };
 
 export default RightLoginButton;
-
-/**
- *   return  (
-    <button
-      className={styles.right_login_button}
-      onClick={() => onLoginModal(true)}
-    >
-      로그인
-    </button>
-  );
- */

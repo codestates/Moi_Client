@@ -1,17 +1,18 @@
 import { createReducer } from 'typesafe-actions';
-import { State, Actions } from './types';
+import { CheckState, Actions } from './types';
 import {
   CHECK_USER_REQUEST,
   CHECK_USER_SUCCESS,
   CHECK_USER_FAILURE,
+  LOGOUT_USER_REQUEST,
 } from './actions';
 
-const initialState: State = {
+const initialState: CheckState = {
   isLoggedIn: false,
   message: null,
 };
 
-const checkUserField = createReducer<State, Actions>(initialState, {
+const checkUserField = createReducer<CheckState, Actions>(initialState, {
   [CHECK_USER_REQUEST]: (state) => ({
     ...state,
   }),
@@ -22,6 +23,9 @@ const checkUserField = createReducer<State, Actions>(initialState, {
   [CHECK_USER_FAILURE]: (state, action) => ({
     ...state,
     message: action.payload.message,
+  }),
+  [LOGOUT_USER_REQUEST]: (state) => ({
+    ...state,
   }),
 });
 
