@@ -5,7 +5,7 @@ import { selectTemplate } from './actions';
 // ?   CONST ACTION & STATE_TYPE
 // ? ======================
 
-export interface State {
+export interface ConfigState {
   resume: {
     template: 0;
   };

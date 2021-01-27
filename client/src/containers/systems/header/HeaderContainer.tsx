@@ -21,7 +21,6 @@ import useGoogleLogin from '../../../hooks/systems/auth/socialLogin/useGoogleLog
 import useFacebookLogin from '../../../hooks/systems/auth/socialLogin/useFacebookLogin';
 import useGithubLogin from '../../../hooks/systems/auth/socialLogin/useGithubLogin';
 import useSignOut from '../../../hooks/systems/auth/useSignOut';
-import { github } from '../../../api/socialLogin';
 
 const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);

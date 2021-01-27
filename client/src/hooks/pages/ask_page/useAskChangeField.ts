@@ -9,7 +9,6 @@ function useAskChangeField(): {
   desc: string;
   onChangeAskFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeTextAreas: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onClicks: (event: React.MouseEvent<HTMLButtonElement>) => void;
 } {
   //? useDispatch
   const dispatch = useDispatch();
@@ -35,9 +34,6 @@ function useAskChangeField(): {
     );
   };
 
-  const onClicks = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    console.log(username, email, title, desc);
-  };
   const onChangeAskFields = (
     event: React.ChangeEvent<HTMLInputElement>,
   ): void => {
@@ -59,7 +55,6 @@ function useAskChangeField(): {
     desc,
     onChangeAskFields,
     onChangeTextAreas,
-    onClicks,
   };
 }
 

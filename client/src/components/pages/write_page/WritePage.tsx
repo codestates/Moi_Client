@@ -58,10 +58,10 @@ const WritePage: React.FC<WritePageProps> = ({
   // *  RESPONSIVE
   // * ====================
   const isPc = useMediaQuery({
-    query: '(min-width:1024px)',
+    query: '(min-width:1025px)',
   });
   const isMobile = useMediaQuery({
-    query: '(max-width:1023px)',
+    query: '(max-width:1024px)',
   });
 
   return (

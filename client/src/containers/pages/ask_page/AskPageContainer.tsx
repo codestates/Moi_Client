@@ -11,7 +11,6 @@ const AskPageContainer: React.FC<RouteComponentProps> = ({ history }) => {
     desc,
     onChangeAskFields,
     onChangeTextAreas,
-    onClicks,
   } = useAskChangeField();
 
   const { onAskRequest, isMailSucssessed } = useAskRequest();
@@ -30,7 +29,6 @@ const AskPageContainer: React.FC<RouteComponentProps> = ({ history }) => {
         desc={desc}
         onChangeAskFields={onChangeAskFields}
         onChangeTextAreas={onChangeTextAreas}
-        onClicks={onClicks}
         onAskRequest={onAskRequest}
       />
     </>
