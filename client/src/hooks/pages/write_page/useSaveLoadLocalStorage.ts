@@ -19,6 +19,7 @@ function useSaveLocalStorage(): {
       username: string;
       avatar: string;
       profile: string;
+      title: string;
       contact: {
         address: string;
         phone: string;
@@ -47,6 +48,7 @@ function useSaveLocalStorage(): {
       username: string;
       avatar: string;
       profile: string;
+      title: string;
       contact: {
         address: string;
         phone: string;

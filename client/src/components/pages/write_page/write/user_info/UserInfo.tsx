@@ -9,6 +9,7 @@ interface UserInfoProps {
   address: string;
   phone: string;
   email: string;
+  title: string;
   onChangeFields: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -16,6 +17,7 @@ const UserInfo: React.FC<UserInfoProps> = ({
   username,
   address,
   phone,
+  title,
   email,
   onChangeFields,
 }) => {
@@ -23,7 +25,13 @@ const UserInfo: React.FC<UserInfoProps> = ({
     <article className={styles.userinfo_container}>
       {localStorage.getItem('current_user') && (
         <div className={styles.userinfo_resume_title_block__div}>
-          <input type="text" placeholder="이력서의 이름을 기재해주세요" />
+          <input
+            type="text"
+            placeholder="이력서의 이름을 기재해주세요"
+            name="title"
+            value={title}
+            onChange={onChangeFields}
+          />
         </div>
       )}
       <div className={styles.userinfo_title}>인적사항</div>

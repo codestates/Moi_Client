@@ -7,7 +7,7 @@ import WritePage from '../../../components/pages/write_page/WritePage';
 //* Import custom hooks
 import useLoadPreviewValues from '../../../hooks/pages/write_page/useLoadPreviewValues';
 import usePreviewModal from '../../../hooks/pages/write_page/usePreviewModal';
-import useSaveLocalStorage from '../../../hooks/pages/write_page/useSaveLocalStorage';
+import useSaveLocalStorage from '../../../hooks/pages/write_page/useSaveLoadLocalStorage';
 
 //* Import reduce states
 import { ExperienceState } from '../../../modules/changeField/workExperience/types';

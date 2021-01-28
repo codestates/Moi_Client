@@ -1,8 +1,9 @@
 
-.card__container {
+.card_list__ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  padding-left: 30px;
 }
 
 .card__item {

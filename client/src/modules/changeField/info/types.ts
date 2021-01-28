@@ -10,6 +10,7 @@ export interface InfoState {
     username: string;
     avatar: string;
     profile: string;
+    title: string;
     contact: {
       address: string;
       phone: string;

@@ -22,7 +22,7 @@ import { facebookLoginSaga } from './socialLoginField/facebook/saga';
 import { githubLoginSaga } from './socialLoginField/github/saga';
 import { userSaga } from './socialLoginField/user/saga';
 import { mypageSaga } from './get_mypage/saga';
-import { saveResumeSaga } from './asyncResumeField/sagas';
+import { saveResumeSaga, editResumeSaga } from './asyncResumeField/sagas';
 
 const rootReducer = combineReducers({
   config,
@@ -50,6 +50,7 @@ export function* rootSaga(): Generator {
     userSaga(),
     mypageSaga(),
     saveResumeSaga(),
+    editResumeSaga(),
   ]);
 }
 

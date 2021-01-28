@@ -7,6 +7,7 @@ const initialState: InfoState = {
     username: '',
     avatar: '',
     profile: '',
+    title: '',
     contact: {
       address: '',
       phone: '',
@@ -27,7 +28,12 @@ const infoField = createReducer<InfoState, Actions>(initialState, {
   [INFO_CHANGE_FIELD]: (state, action) => {
     const key = action.payload.key;
 
-    if (key === 'username' || key === 'avatar' || key === 'profile') {
+    if (
+      key === 'username' ||
+      key === 'avatar' ||
+      key === 'profile' ||
+      key === 'title'
+    ) {
       return {
         ...state,
         info: {
