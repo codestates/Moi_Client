@@ -8,6 +8,7 @@ import MidNav from './mid_nav_bar/MidNav';
 import RightLoginButton from './right_login_button/RightLoginButton';
 import styles from '../../../styles/systems/header/Header.module.css';
 import LoginModal from '../header/login_modal/LoginModal';
+import AuthCheckModal from '../modal/AuthCheckModal';
 
 // ? ====================
 // ?   INTERFACE
@@ -25,6 +26,9 @@ interface HeaderProps {
   requestGithubAuthorizationCode: () => void;
   isLoggedIn: boolean;
   requestSignOut: () => void;
+  checkModal: boolean;
+  onAuthCheckModal: (state: boolean) => void;
+  onCloseModal: () => void;
 }
 // * ====================
 // *  REACT.FC
@@ -42,6 +46,9 @@ const Header: React.FC<HeaderProps> = ({
   requestGithubAuthorizationCode,
   isLoggedIn,
   requestSignOut,
+  checkModal,
+  onAuthCheckModal,
+  onCloseModal,
 }) => {
   // * ====================
   // *  RESPONSIVE
@@ -63,6 +70,7 @@ const Header: React.FC<HeaderProps> = ({
               dropdown={dropdown}
               onDropdown={onDropdown}
               onScroll={onScroll}
+              onAuthCheckModal={onAuthCheckModal}
             />
             <RightLoginButton
               onLoginModal={onLoginModal}
@@ -80,6 +88,7 @@ const Header: React.FC<HeaderProps> = ({
               requestGithubAuthorizationCode={requestGithubAuthorizationCode}
             />
           )}
+          {checkModal && <AuthCheckModal onCloseModal={onCloseModal} />}
         </>
       )}
       {isMobile && (

@@ -21,7 +21,7 @@ import useGoogleLogin from '../../../hooks/systems/auth/socialLogin/useGoogleLog
 import useFacebookLogin from '../../../hooks/systems/auth/socialLogin/useFacebookLogin';
 import useGithubLogin from '../../../hooks/systems/auth/socialLogin/useGithubLogin';
 import useSignOut from '../../../hooks/systems/auth/useSignOut';
-import { github } from '../../../api/socialLogin';
+import useAuthCheckModal from '../../../hooks/systems/modal/useAuthCheckModal';
 
 const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -40,6 +40,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   const { facebookUser, facebookLogin } = useFacebookLogin();
   const { githubUser, githubLogin } = useGithubLogin();
   const { logout, requestSignOut } = useSignOut();
+  const { checkModal, onAuthCheckModal, onCloseModal } = useAuthCheckModal();
 
   // * ====================
   // *   FUNCTIONS
@@ -134,6 +135,9 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
         requestGithubAuthorizationCode={requestGithubAuthorizationCode}
         isLoggedIn={isLoggedIn}
         requestSignOut={requestSignOut}
+        checkModal={checkModal}
+        onAuthCheckModal={onAuthCheckModal}
+        onCloseModal={onCloseModal}
       />
     </>
   );

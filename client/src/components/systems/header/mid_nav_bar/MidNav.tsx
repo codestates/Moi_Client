@@ -12,12 +12,18 @@ interface MidNavProps {
   dropdown: boolean;
   onDropdown: (state: boolean, location?: string) => void;
   onScroll: (destination: string, name: string) => JSX.Element;
+  onAuthCheckModal: (state: boolean) => void;
 }
 
 // * ====================
 // *  React.FC
 // * ====================
-const MidNav: React.FC<MidNavProps> = ({ dropdown, onDropdown, onScroll }) => {
+const MidNav: React.FC<MidNavProps> = ({
+  dropdown,
+  onDropdown,
+  onScroll,
+  onAuthCheckModal,
+}) => {
   return (
     <>
       <ul className={styles.middle_nav_bar}>
@@ -27,18 +33,25 @@ const MidNav: React.FC<MidNavProps> = ({ dropdown, onDropdown, onScroll }) => {
           }}
         >
           <li className={styles.middle__nav__list__strong}>
-            <button
-              className={styles.middle__nav__bar__overView__button}
-              onClick={() => onDropdown(true, 'overView')}
-            >
-              Overview
-              <BiChevronDown />
-            </button>
+            {location.pathname === '/' && (
+              <button
+                className={styles.middle__nav__bar__overView__button}
+                onClick={() => onDropdown(true, 'overView')}
+              >
+                Overview
+                <BiChevronDown />
+              </button>
+            )}
             {dropdown ? <DropDownNavModal onScroll={onScroll} /> : null}
           </li>
         </OutsideClickHandler>
         <li>
-          <Link to="/template">이력서 작성하기</Link>
+          <button
+            className={styles.write__resume}
+            onClick={() => onAuthCheckModal(true)}
+          >
+            이력서 작성하기
+          </button>
         </li>
         <li>
           <Link to="#">내이력서</Link>

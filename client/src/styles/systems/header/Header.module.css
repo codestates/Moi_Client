@@ -21,6 +21,8 @@
 .middle_nav_bar{
   list-style: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
 }
 
@@ -42,6 +44,18 @@
 
 .middle_nav_bar button:focus{
  outline: none;
+}
+
+.middle_nav_bar .write__resume {
+  font-size: 15px;
+  color :var(--mainText);
+  background: none;
+  border: 0;
+  margin: 0px 20px;
+  padding: 10px 0px;
+  cursor:pointer;
+  text-decoration: none;
+  font-family: 'Nanum Gothic';
 }
 
 .middle_nav_bar a{
