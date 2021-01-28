@@ -228,7 +228,7 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   
   
   /* Mobile */
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 1024px) {
     .experience_container__article{
       margin-bottom: 50px;
     }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as actions from '../../../modules/socialLoginField/user/actions';
 
 function useSignOut(): {

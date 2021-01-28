@@ -21,6 +21,11 @@ const UserInfo: React.FC<UserInfoProps> = ({
 }) => {
   return (
     <article className={styles.userinfo_container}>
+      {localStorage.getItem('current_user') && (
+        <div className={styles.userinfo_resume_title_block__div}>
+          <input type="text" placeholder="이력서의 이름을 기재해주세요" />
+        </div>
+      )}
       <div className={styles.userinfo_title}>인적사항</div>
       <p className={styles.skills_sub_title__p}>
         이름과 주소 연락처 등과 같은 인적사항을 입력해주세요

@@ -1,18 +1,21 @@
 import { createReducer } from 'typesafe-actions';
-import { Actions, State } from './types';
+import { Actions, ConfigState } from './types';
 import { SELECT_TEMPLATE } from './actions';
 
-const initialState: State = {
+const initialState: ConfigState = {
   resume: {
     template: 0,
   },
 };
 
-const config = createReducer<State, Actions>(initialState, {
+const config = createReducer<ConfigState, Actions>(initialState, {
   [SELECT_TEMPLATE]: (state, action) => {
     return {
       ...state,
-      [action.payload.key]: action.payload.value,
+      resume: {
+        ...state.resume,
+        ['template']: action.payload.value,
+      },
     };
   },
 });

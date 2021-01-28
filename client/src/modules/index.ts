@@ -15,11 +15,15 @@ import facebookLoginField from './socialLoginField/facebook/reducer';
 import githubLoginField from './socialLoginField/github/reducer';
 import checkUserField from './socialLoginField/user/reducer';
 import mypageRequestField from './get_mypage/reducer';
+import asyncResumeField from './asyncResumeField/reducers';
+
 import { googleLoginSaga } from './socialLoginField/google/saga';
 import { facebookLoginSaga } from './socialLoginField/facebook/saga';
 import { githubLoginSaga } from './socialLoginField/github/saga';
 import { userSaga } from './socialLoginField/user/saga';
 import { mypageSaga } from './get_mypage/saga';
+import { saveResumeSaga } from './asyncResumeField/sagas';
+
 const rootReducer = combineReducers({
   config,
   infoField,
@@ -34,6 +38,7 @@ const rootReducer = combineReducers({
   githubLoginField,
   checkUserField,
   mypageRequestField,
+  asyncResumeField,
 });
 
 export function* rootSaga(): Generator {
@@ -44,6 +49,7 @@ export function* rootSaga(): Generator {
     githubLoginSaga(),
     userSaga(),
     mypageSaga(),
+    saveResumeSaga(),
   ]);
 }
 

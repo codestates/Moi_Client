@@ -1,12 +1,17 @@
 import React from 'react';
 import TemplatePage from '../../../components/pages/template_page/TemplatePage';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
-const TemplatePageContainer: React.FC = () => {
+import useSelectTemplate from '../../../hooks/pages/template_page/useSelectTemplate';
+
+const TemplatePageContainer: React.FC<RouteComponentProps> = () => {
+  const { selectTemplate } = useSelectTemplate();
+
   return (
     <>
-      <TemplatePage />
+      <TemplatePage selectTemplate={selectTemplate} />
     </>
   );
 };
 
-export default TemplatePageContainer;
+export default withRouter(TemplatePageContainer);

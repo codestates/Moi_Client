@@ -33,6 +33,7 @@ function* logoutSaga() {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* userSaga() {
   yield takeLatest('CHECK_USER_REQUEST', checkSaga);
   yield takeLatest('CHECK_USER_FAILURE', checkFailureSaga);
