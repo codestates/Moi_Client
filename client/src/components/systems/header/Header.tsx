@@ -20,7 +20,7 @@ interface HeaderProps {
   bugerMenu: boolean;
   onBugerMenu: () => void;
   onScroll: (destination: string, name: string) => JSX.Element;
-  modal: boolean;
+  loginModal: boolean;
   onLoginModal: (state: boolean) => void;
   requestGoogleAuthorizationCode: () => void;
   requestFacebookAuthorizationCode: () => void;
@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({
   bugerMenu,
   onBugerMenu,
   onScroll,
-  modal,
+  loginModal,
   onLoginModal,
   requestGoogleAuthorizationCode,
   requestFacebookAuthorizationCode,
@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({
               requestSignOut={requestSignOut}
             />
           </div>
-          {modal && (
+          {loginModal && (
             <LoginModal
               onLoginModal={onLoginModal}
               requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}

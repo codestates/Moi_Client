@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useLoginModal from '../../../hooks/systems/modal/useLoginModal';
 import styles from '../../../styles/systems/modal/AuthCheck.module.css';
 
 interface AuthCheckModal {
@@ -7,6 +8,7 @@ interface AuthCheckModal {
 }
 
 const AuthCheckModal: React.FC<AuthCheckModal> = ({ onCloseModal }) => {
+  const { onLoginModal } = useLoginModal();
   return (
     <div className={styles.full__screen}>
       <div className={styles.white__box}>
@@ -18,7 +20,12 @@ const AuthCheckModal: React.FC<AuthCheckModal> = ({ onCloseModal }) => {
         </div>
         <ul className={styles.button__block}>
           <li className={styles.login__button__area}>
-            <button className={styles.login__button} onClick={onCloseModal}>
+            <button
+              className={styles.login__button}
+              onClick={() => {
+                onCloseModal(), onLoginModal();
+              }}
+            >
               로그인
             </button>
           </li>
