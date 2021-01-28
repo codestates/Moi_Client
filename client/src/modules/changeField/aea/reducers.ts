@@ -67,7 +67,7 @@ const aeasField = createReducer<AeaState, Actions>(initialState, {
     newAea[index].dropDownToggle = !newAea[index].dropDownToggle;
     return {
       ...state,
-      educations: newAea,
+      ['aeas']: newAea,
     };
   },
 });

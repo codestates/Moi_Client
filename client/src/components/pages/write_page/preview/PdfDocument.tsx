@@ -1,17 +1,20 @@
 import React from 'react';
 import Header from './header/Header';
 
+//* Import child components
 import Profile from './profile/Profile';
 import Skills from './skills/Skills';
 import Experience from './experience/Experience';
 import Edu from './education/Edu';
 import Aea from './aea/Aea';
 
+//* Import types
 import { ExperienceItem } from '../../../../modules/changeField/workExperience/types';
 import { SkillItem } from '../../../../modules/changeField/skills/types';
 import { AeaItem } from '../../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../../modules/changeField/education/types';
 
+//* Import fonts
 import NanumGothicNomal from './font/NanumGothic.ttf';
 import NanumGothicBold from './font/NanumGothicBold.ttf';
 
@@ -81,17 +84,18 @@ interface PdfDocumentProps {
     aeas: AeaItem[];
   };
 }
-// Create Document Component
+
+//?  Create Document Component
 const PdfDocument: React.FC<PdfDocumentProps> = ({ values }) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <Header values={values} />
         <Profile values={values} />
-        <Skills values={values} />
-        <Experience values={values} />
-        <Edu values={values} />
-        <Aea values={values} />
+        {values.skills.length >= 1 && <Skills values={values} />}
+        {values.workExperience.length >= 1 && <Experience values={values} />}
+        {values.educations.length >= 1 && <Edu values={values} />}
+        {values.aeas.length >= 1 && <Aea values={values} />}
       </Page>
     </Document>
   );

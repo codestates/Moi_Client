@@ -1,46 +1,42 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/landing_page/description/Description.module.css';
-import { AiTwotoneLike } from 'react-icons/ai';
-import { AiTwotoneFileText } from 'react-icons/ai';
-import { AiFillDiff } from 'react-icons/ai';
+
+import description1 from '../../../../../public/description1.png';
+import description2 from '../../../../../public/description2.png';
+
 const Card: React.FC = () => {
   return (
     <div className={styles.card__container}>
       <ul className={styles.card__ul}>
         <li className={styles.card__item}>
-          <AiTwotoneFileText className={styles.card__icon} />
-          <h2 className={styles.card__title}>빠르고 간편한 이력서 작성기</h2>
-          <p className={styles.card__desc}>
-            모두의 이력서와 함께라면 누구나 간단하고 빠르게 전문적인 이력서를
-            작성할 수 있습니다.
-            <br />
-            원하는 템플릿을 선택하고 이력서를 작성해보세요 (비회원은 저장 불가)
-            마지막으로,
-            <br />
-            작성한 이력서를 저장하거나, pdf 파일로 다운받아보세요
-          </p>
+          <img src={description1} alt="descriptionIcon" />
+          <div>
+            <h2 className={styles.card__title}>빠르게 ! 간단하게 ! 멋지게 !</h2>
+            <p className={styles.card__desc}>
+              모두의 이력서로 쉽고 간단하게 멋진 이력서를 완성해보세요!
+              <br />
+              이력서 양식은 신경 쓰지 마세요! 모두의 이력서가 멋진 이력서 양식을
+              제공해드립니다. <br />
+              개인 정보를 입력하면 멋진 이력서가 완성됩니다. 완성 후 PDF로
+              다운로드 받으세요.
+            </p>
+          </div>
         </li>
+
         <li className={styles.card__item}>
-          <AiTwotoneLike className={styles.card__icon} />
-          <h2 className={styles.card__title}>취업 성공률 증가</h2>
-          <p className={styles.card__desc}>
-            대표적이고 전문적인 이력서는 여러 지원자 중에서 당신을 단연 돋보이게
-            하는 효과가 있습니다
-            <br />
-            모두의 이력서를 통해 작성한 전문적인 이력서는 면접을 보게 될 확률이
-            최대 65% 상승합니다
-          </p>
-        </li>
-        <li className={styles.card__item}>
-          <AiFillDiff className={styles.card__icon} />
-          <h2 className={styles.card__title}>이력서 정리하기</h2>
-          <p className={styles.card__desc}>
-            때때로 지원하는 직업에 따라 이력서를 수정하는 것이 중요합니다 모두의
-            이력서와 함께
-            <br />
-            개인 계정을 통해 여러 종류의 이력서를 작성하고 작성된 이력서를
-            체계적으로 관리할 수 있습니다
-          </p>
+          <img src={description2} alt="descriptionIcon2" />
+          <div>
+            <h2 className={styles.card__title}>
+              소셜 계정으로 이력서 관리까지 한 번에 해결하세요 !
+            </h2>
+            <p className={styles.card__desc}>
+              소셜 계정으로 간편하게 로그인하고 만든 이력서들을 보관 및
+              관리해보세요. <br />
+              모두의 이력서에 로그인하면 만든 이력서들을 모아 두고 관리할 수
+              있습니다. <br />
+              이미 만들어진 이력서 수정도 간편하게 수정이 가능합니다.
+            </p>
+          </div>
         </li>
       </ul>
     </div>
