@@ -1,8 +1,8 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
-import { saveResumeAsync } from '../../api/saveResume';
-import { Actions } from '../../modules/post_ask/types';
+import { saveResumeAsync, editResumeAsync } from '../../api/asyncResume';
+import { Actions } from '../../modules/asyncResumeField/types';
 
-function* fetch(actions: Actions) {
+function* fetchSave(actions: Actions) {
   try {
     const req = yield call(saveResumeAsync, actions.payload);
     yield put({
@@ -17,7 +17,27 @@ function* fetch(actions: Actions) {
   }
 }
 
+function* fetchEdit(actions: Actions) {
+  try {
+    const req = yield call(editResumeAsync, actions.payload);
+    yield put({
+      type: 'EDIT_RESUME_FIELD_SUCCESS',
+      payload: { resume: req },
+    });
+  } catch (e) {
+    yield put({
+      type: 'EDIT_RESUME_FIELD_FAILURE',
+      payload: { message: e.message },
+    });
+  }
+}
+
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* saveResumeSaga() {
-  yield takeLatest('SAVE_RESUME_FIELD_REQUEST', fetch);
+  yield takeLatest('SAVE_RESUME_FIELD_REQUEST', fetchSave);
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function* editResumeSaga() {
+  yield takeLatest('EDIT_RESUME_FIELD_REQUEST', fetchEdit);
 }

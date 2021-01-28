@@ -8,12 +8,14 @@ function useChangeInfoField(): {
   address: string;
   phone: string;
   email: string;
+  title: string;
   onChangeFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeTextAreas: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 } {
   const dispatch = useDispatch();
-  const { username, profile, address, phone, email } = useSelector(
+  const { username, title, profile, address, phone, email } = useSelector(
     ({ infoField }: { infoField: InfoState }) => ({
+      title: infoField.info.title,
       username: infoField.info.username,
       profile: infoField.info.profile,
       address: infoField.info.contact.address,
@@ -41,6 +43,7 @@ function useChangeInfoField(): {
     profile,
     address,
     phone,
+    title,
     email,
     onChangeFields,
     onChangeTextAreas,

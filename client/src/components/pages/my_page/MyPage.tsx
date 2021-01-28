@@ -4,11 +4,12 @@ import Resume from './resume/Resume';
 import { ResumeData } from '../../../modules/get_mypage/types';
 interface MypageProps {
   list: ResumeData[];
+  editRequest: (resumeId: string) => void;
 }
-const MyPage: React.FC<MypageProps> = ({ list }) => {
+const MyPage: React.FC<MypageProps> = ({ list, editRequest }) => {
   return (
     <div className={styles.block}>
-      <Resume list={list} />
+      <Resume list={list} editRequest={editRequest} />
     </div>
   );
 };

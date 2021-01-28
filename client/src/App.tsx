@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={LandingPageContainer} />
           <Route path="/template" component={TemplatePageContainer} />
-          <Route path="/write" component={WritePageContainer} />
+          <Route path={['/write', '/edit/:']} component={WritePageContainer} />
           <Route path="/mypage" component={MypageContainer} />
           <Route path="/ask" component={AskPageContainer} />
         </Switch>

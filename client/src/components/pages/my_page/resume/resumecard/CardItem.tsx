@@ -7,10 +7,15 @@ interface CardProps {
     createdAt: string;
     template: string;
   };
+  editRequest: (resumeId: string) => void;
 }
-const CardItem: React.FC<CardProps> = ({ stateProperty }) => {
+const CardItem: React.FC<CardProps> = ({ stateProperty, editRequest }) => {
   return (
-    <div className={styles.card__item} key={stateProperty.resumeId}>
+    <div
+      className={styles.card__item}
+      key={stateProperty.resumeId}
+      onClick={() => editRequest(stateProperty.resumeId)}
+    >
       <div className={styles.card__item__iconContainer}>
         <img className={styles.card__item__icon} src="/moi_basic.png" />
       </div>
