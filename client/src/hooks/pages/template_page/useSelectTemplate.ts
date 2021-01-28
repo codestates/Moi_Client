@@ -8,6 +8,7 @@ function useSelectTemplate(): {
 
   const selectTemplate = (templateCode: number) => {
     dispatch(actions.selectTemplate({ value: templateCode }));
+    localStorage.removeItem('edit_field');
   };
   return {
     selectTemplate,

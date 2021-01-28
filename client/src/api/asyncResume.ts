@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import { ExperienceItem } from '../modules/changeField/workExperience/types';
 import { SkillItem } from '../modules/changeField/skills/types';
@@ -33,6 +34,7 @@ export const editResumeAsync: (data: any) => Promise<EditResult> = async (
   if (!response.data.resume) {
     throw new Error('불러오기에 실패했습니다.');
   }
+  localStorage.setItem('edit_field', JSON.stringify(response.data.resume));
   return response.data.resume;
 };
 export interface EditResult {

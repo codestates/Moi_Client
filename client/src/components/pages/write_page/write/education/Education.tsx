@@ -18,18 +18,20 @@ const Education: React.FC<EducationProps> = ({
   onDeleteEducationFields,
   onToggleEduDropdown,
 }) => {
-  const list = educations.map((ele, index) => {
-    return (
-      <List
-        key={index}
-        stateProperty={ele}
-        index={index}
-        onChangeEducationFields={onChangeEducationFields}
-        onDeleteEducationFields={onDeleteEducationFields}
-        onToggleEduDropdown={onToggleEduDropdown}
-      />
-    );
-  });
+  const list =
+    educations &&
+    educations.map((ele, index) => {
+      return (
+        <List
+          key={index}
+          stateProperty={ele}
+          index={index}
+          onChangeEducationFields={onChangeEducationFields}
+          onDeleteEducationFields={onDeleteEducationFields}
+          onToggleEduDropdown={onToggleEduDropdown}
+        />
+      );
+    });
   return (
     <article className={styles.education_container__article}>
       <div>

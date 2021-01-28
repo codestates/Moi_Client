@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/my_page/resume/resumecard/ResumeCard.module.css';
-import CreateCard from '../../../../../components/pages/my_page/resume/resumecard/createcard/CreateCard';
 import { ResumeData } from '../../../../../modules/get_mypage/types';
 import CardItem from './CardItem';
 interface ResumeCardProps {
