@@ -5,6 +5,7 @@ import * as actions from '../../../modules/socialLoginField/user/actions';
 function useSignOut(): {
   logout: boolean;
   requestSignOut: () => void;
+  changeLogoutState: () => void;
 } {
   const [logout, setLogout] = useState<boolean>(false);
 
@@ -14,8 +15,14 @@ function useSignOut(): {
     setLogout(true);
     dispatch(actions.logoutUser());
   };
+
+  const changeLogoutState = () => {
+    setLogout(false);
+  };
+
   return {
     requestSignOut,
+    changeLogoutState,
     logout,
   };
 }

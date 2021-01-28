@@ -1,7 +1,15 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/landing_page/intro/Intro.module.css';
 import { Link } from 'react-router-dom';
-const LeftTitle: React.FC = () => {
+interface LeftTitleProps {
+  checkModal: boolean;
+  onAuthCheckModal: (state: boolean) => void;
+}
+
+const LeftTitle: React.FC<LeftTitleProps> = ({
+  checkModal,
+  onAuthCheckModal,
+}) => {
   return (
     <div className={styles.intro__title__container}>
       <article>
@@ -19,9 +27,13 @@ const LeftTitle: React.FC = () => {
         </p>
         <p>행운을 담은 이력서 지금 체험해보세요</p>
       </article>
-      <Link to="/template">
-        <button className={styles.start__button}>시작하기</button>
-      </Link>
+
+      <button
+        className={styles.start__button}
+        onClick={() => onAuthCheckModal(true)}
+      >
+        시작하기
+      </button>
     </div>
   );
 };
