@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from '../../../../styles/pages/my_page/resume/Resume.module.css';
 import ResumeCard from './resumecard/ResumeCard';
-const Resume: React.FC = () => {
+
+import { ResumeData } from '../../../../modules/get_mypage/types';
+interface ResumeProps {
+  list: ResumeData[];
+}
+const Resume: React.FC<ResumeProps> = ({ list }) => {
   return (
     <section className={styles.block}>
       <div className={styles.container}>
-        <ResumeCard />
+        <ResumeCard list={list} />
       </div>
     </section>
   );
