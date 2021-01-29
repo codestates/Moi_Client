@@ -69,7 +69,6 @@ function useLoadPreviewValues(): {
     educations,
     aeas,
   };
-  console.log(values);
   // * VARIABLE & FUNCTIONS
   return values;
 }

@@ -67,7 +67,9 @@ const WritePageContainer: React.FC = () => {
     };
 
     setLocalStorage(values);
-    history.push('/mypage');
+    if (localStorage.getItem('current_user')) {
+      history.push('/mypage');
+    }
   };
 
   // const onGetBlobFile = (blobFile: File) => {

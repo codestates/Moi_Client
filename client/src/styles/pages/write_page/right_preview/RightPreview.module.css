@@ -7,6 +7,17 @@
     padding-top: 50px;
 }
 
+.header_block__div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_block__div img{
+  width: 5vw;
+  border-radius: 5px;
+}
+
 /* name */
 
 .name__h1 {

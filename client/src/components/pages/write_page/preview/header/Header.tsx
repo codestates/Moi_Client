@@ -1,10 +1,15 @@
 import React from 'react';
-import { Text, View, Link, StyleSheet } from '@react-pdf/renderer';
+import { Text, Image, View, Link, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'stretch',
+  },
+  image: {
+    width: '70',
+    height: '90',
+    borderRadius: '4',
   },
   detailColumn: {
     flexDirection: 'column',
@@ -72,6 +77,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ values }) => {
   const {
     username,
+    avatar,
     contact: { address, phone, email },
   } = values.info;
   return (
@@ -85,6 +91,7 @@ const Header: React.FC<HeaderProps> = ({ values }) => {
           <Text style={styles.contact}>{`주소 : ${address}`}</Text>
           <Text style={styles.contact}>{`연락처 : ${phone}`}</Text>
         </View>
+        <Image src={avatar} style={styles.image} />
       </View>
     </>
   );

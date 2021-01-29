@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../../../../../styles/pages/write_page/write/Write.module.css';
 import { GoPerson } from 'react-icons/go';
 import { ReactImageCropperTs } from '../../../../../components/systems/imageCrop/ImageCrop';
@@ -13,9 +13,11 @@ interface UserInfoProps {
   phone: string;
   email: string;
   title: string;
+  avatar: string;
   onChangeFields: (e: React.ChangeEvent<HTMLInputElement>) => void;
   uploadModal: boolean;
   onUploadModal: () => void;
+  onChangeAvatarField: <T>(location: T, value: T) => void;
 }
 
 const UserInfo: React.FC<UserInfoProps> = ({
@@ -23,16 +25,22 @@ const UserInfo: React.FC<UserInfoProps> = ({
   address,
   phone,
   title,
+  avatar,
   email,
   onChangeFields,
   uploadModal,
   onUploadModal,
+  onChangeAvatarField,
 }) => {
-  const { uploadImage } = useUploadImage();
+  const { uploadImage, location } = useUploadImage();
   const onGetBlobFile = (blobFile: File) => {
-    console.log(blobFile);
     uploadImage(blobFile);
   };
+
+  useEffect(() => {
+    onChangeAvatarField('avatar', location);
+  }, [location]);
+
   return (
     <article className={styles.userinfo_container}>
       {uploadModal && (
@@ -61,12 +69,24 @@ const UserInfo: React.FC<UserInfoProps> = ({
       <div className={styles.userinfo_formContainer}>
         {/* ImageUpload */}
         <div className={styles.imageUpload_block__div}>
-          <button
-            className={styles.imageUpload_button__button}
-            onClick={onUploadModal}
-          >
-            <GoPerson />
-          </button>
+          {location || avatar ? (
+            <img
+              style={{
+                width: '48px',
+                borderRadius: '7px',
+                marginRight: '15px',
+              }}
+              src={location || avatar}
+              alt="uploadImg"
+            />
+          ) : (
+            <button
+              className={styles.imageUpload_button__button}
+              onClick={onUploadModal}
+            >
+              <GoPerson />
+            </button>
+          )}
           <span>
             <button
               className={styles.sub_Upload_button__button}

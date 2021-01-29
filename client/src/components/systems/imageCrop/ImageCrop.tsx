@@ -57,6 +57,7 @@ export class ReactImageCropperTs extends React.Component<
               x: 25,
               y: 25,
               width: 50,
+              height: 65,
               aspect: 4 / 5,
             },
             image.width / image.height,
@@ -147,7 +148,6 @@ export class ReactImageCropperTs extends React.Component<
         const blob = new Blob([response]);
         const file = new File([blob], this.state.fileName);
         this.setState({ file });
-        // this.props.onGetBlobFile(file);
       });
     };
   };

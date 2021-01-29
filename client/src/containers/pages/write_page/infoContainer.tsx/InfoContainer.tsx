@@ -17,9 +17,11 @@ const InfoContainer: React.FC = () => {
     address,
     phone,
     email,
+    avatar,
     title,
     onChangeFields,
     onChangeTextAreas,
+    onChangeAvatarField,
   } = useChangeInfoField();
 
   const { uploadModal, onUploadModal } = useUploadModal();
@@ -44,10 +46,12 @@ const InfoContainer: React.FC = () => {
         address={address}
         phone={phone}
         email={email}
+        avatar={avatar}
         title={title}
         onChangeFields={onChangeFields}
         uploadModal={uploadModal}
         onUploadModal={onUploadModal}
+        onChangeAvatarField={onChangeAvatarField}
       />
       <Profile profile={profile} onChangeTextAreas={onChangeTextAreas} />
     </>

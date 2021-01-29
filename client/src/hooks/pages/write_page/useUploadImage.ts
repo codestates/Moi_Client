@@ -4,16 +4,17 @@ import { SaveEditResumeState } from '../../../modules/asyncResumeField/types';
 
 function useSkillsChangeField(): {
   uploadImage: (file: File) => void;
+  location: string | null;
 } {
   //? useDispatch
   const dispatch = useDispatch();
 
   //? useSelector
-  // const { skills } = useSelector(
-  //   ({ asyncResumeField }: { asyncResumeField: SaveEditResumeState }) => ({
-  //     skills: skillsField.skills,
-  //   }),
-  // );
+  const { location } = useSelector(
+    ({ asyncResumeField }: { asyncResumeField: SaveEditResumeState }) => ({
+      location: asyncResumeField.uploadImage.location,
+    }),
+  );
   const uploadImage = (file: File) => {
     const formData = new FormData();
 
@@ -21,7 +22,7 @@ function useSkillsChangeField(): {
 
     dispatch(actions.onUploadImageRequest({ formData }));
   };
-  return { uploadImage };
+  return { uploadImage, location };
 }
 
 export default useSkillsChangeField;
