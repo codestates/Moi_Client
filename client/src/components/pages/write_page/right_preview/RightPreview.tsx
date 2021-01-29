@@ -81,20 +81,22 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
   });
 
   //? Render_educations
-  const printEducations = values.educations.map((ele, index) => {
-    return (
-      <li key={index}>
-        <span className={styles.experience_date}>
-          {ele.start}
-          {ele.end && <span> ~ </span>} {ele.end}
-        </span>
-        <div>
-          <strong>{ele.eduTitle}</strong>
-          <p>{ele.eduDesc}</p>
-        </div>
-      </li>
-    );
-  });
+  const printEducations =
+    values.educations &&
+    values.educations.map((ele, index) => {
+      return (
+        <li key={index}>
+          <span className={styles.experience_date}>
+            {ele.start}
+            {ele.end && <span> ~ </span>} {ele.end}
+          </span>
+          <div>
+            <strong>{ele.eduTitle}</strong>
+            <p>{ele.eduDesc}</p>
+          </div>
+        </li>
+      );
+    });
 
   //? Render_AEAs
   const printAeas = values.aeas.map((ele, index) => {
@@ -134,20 +136,20 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
         </div>
       )}
 
-      {values.workExperience.length >= 1 && (
+      {values.workExperience && values.workExperience.length >= 1 && (
         <div className={styles.experience_block__div}>
           <h2>경력</h2>
           <ul>{printExperience}</ul>
         </div>
       )}
 
-      {values.educations.length >= 1 && (
+      {values.educations && values.educations.length >= 1 && (
         <div className={styles.experience_block__div}>
           <h2>학력 및 교육 이수</h2>
           <ul>{printEducations}</ul>
         </div>
       )}
-      {values.aeas.length >= 1 && (
+      {values.aeas && values.aeas.length >= 1 && (
         <div className={styles.experience_block__div}>
           <h2>수상 및 기타 활동</h2>
           <ul>{printAeas}</ul>

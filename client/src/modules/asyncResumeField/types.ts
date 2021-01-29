@@ -15,7 +15,7 @@ import {
   editResumeFieldFailure,
 } from './actions';
 
-export interface State {
+export interface SaveEditResumeState {
   saveResume: {
     save: boolean | null;
     message: null | string;

@@ -19,10 +19,7 @@ const Intro: React.FC<IntroProps> = ({
     <>
       <section className={styles.block}>
         <div className={styles.container}>
-          <LeftTitle
-            checkModal={checkModal}
-            onAuthCheckModal={onAuthCheckModal}
-          />
+          <LeftTitle onAuthCheckModal={onAuthCheckModal} />
           <RightPreview />
           {checkModal && <AuthCheckModal onCloseModal={onCloseModal} />}
         </div>

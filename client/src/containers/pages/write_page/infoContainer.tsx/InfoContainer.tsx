@@ -3,6 +3,8 @@ import Info from '../../../../components/pages/write_page/write/user_info/UserIn
 import Profile from '../../../../components/pages/write_page/write/profile/Profile';
 import useChangeInfoField from '../../../../hooks/pages/write_page/useChangeInfoField';
 import useSaveLocalStorage from '../../../../hooks/pages/write_page/useSaveLoadLocalStorage';
+import { useSelector } from 'react-redux';
+import { SaveEditResumeState } from '../../../../modules/asyncResumeField/types';
 
 const InfoContainer: React.FC = () => {
   // * ======================
@@ -19,11 +21,18 @@ const InfoContainer: React.FC = () => {
     onChangeTextAreas,
   } = useChangeInfoField();
 
+  //? useSelector
+  const { resume } = useSelector(
+    ({ asyncResumeField }: { asyncResumeField: SaveEditResumeState }) => ({
+      resume: asyncResumeField.editResume.resume,
+    }),
+  );
+
   const { loadInfoField } = useSaveLocalStorage();
 
   useEffect(() => {
     loadInfoField();
-  }, []);
+  }, [resume]);
 
   return (
     <>

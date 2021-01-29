@@ -15,7 +15,7 @@ import {
 // * ====================
 import useDropdown from '../../../hooks/systems/header/useDropdown';
 import useBugerMenu from '../../../hooks/systems/header/useBugerMenu';
-import useLoginModal from '../../../hooks/systems/header/useLoginModal';
+import useLoginModal from '../../../hooks/systems/modal/useLoginModal';
 import useRequestAuthorizationCode from '../../../hooks/systems/auth/useRequestAuthorizationCode';
 import useGoogleLogin from '../../../hooks/systems/auth/socialLogin/useGoogleLogin';
 import useFacebookLogin from '../../../hooks/systems/auth/socialLogin/useFacebookLogin';
@@ -25,12 +25,13 @@ import useAuthCheckModal from '../../../hooks/systems/modal/useAuthCheckModal';
 
 const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
   // * ====================
   // *   CUSTOM_HOOKS
   // * ====================
   const { dropdown, onDropdown } = useDropdown();
   const { bugerMenu, onBugerMenu } = useBugerMenu();
-  const { modal, onLoginModal } = useLoginModal();
+  const { loginModal, onLoginModal } = useLoginModal();
   const {
     requestGoogleAuthorizationCode,
     requestFacebookAuthorizationCode,
@@ -97,7 +98,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   };
 
   useEffect(() => {
-    if (modal) {
+    if (loginModal) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -108,7 +109,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
     if (logout) {
       setIsLoggedIn(false);
     }
-  }, [modal, googleUser, facebookUser, githubUser, logout]);
+  }, [loginModal, googleUser, facebookUser, githubUser, logout]);
 
   useEffect(() => {
     onSocialLogin();
@@ -128,7 +129,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
         bugerMenu={bugerMenu}
         onBugerMenu={onBugerMenu}
         onScroll={onScroll}
-        modal={modal}
+        loginModal={loginModal}
         onLoginModal={onLoginModal}
         requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
         requestFacebookAuthorizationCode={requestFacebookAuthorizationCode}

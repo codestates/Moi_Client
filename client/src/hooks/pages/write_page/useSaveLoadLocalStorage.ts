@@ -75,7 +75,16 @@ function useSaveLocalStorage(): {
   };
 
   const loadInfoField = () => {
-    if (localStorage.getItem('resume-field')) {
+    if (localStorage.getItem('edit_field')) {
+      const localState = JSON.parse(localStorage.getItem('edit_field') || '{}');
+      dispatch(info.loadInfoField({ state: localState.info }));
+      dispatch(skills.loadSkillsField({ state: localState.skills }));
+      dispatch(
+        experience.loadExperienceField({ state: localState.workExperience }),
+      );
+      dispatch(educations.loadEducationField({ state: localState.educations }));
+      dispatch(aeas.loadAeaField({ state: localState.aeas }));
+    } else if (localStorage.getItem('resume-field')) {
       const localState = JSON.parse(
         localStorage.getItem('resume-field') || '{}',
       );

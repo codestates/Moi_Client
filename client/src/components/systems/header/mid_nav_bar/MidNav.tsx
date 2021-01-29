@@ -54,10 +54,10 @@ const MidNav: React.FC<MidNavProps> = ({
           </button>
         </li>
         <li>
-          <Link to="#">내이력서</Link>
+          <Link to="/mypage">내이력서</Link>
         </li>
         <li>
-          <Link to="#">문의하기</Link>
+          <Link to="/ask">문의하기</Link>
         </li>
       </ul>
     </>

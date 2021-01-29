@@ -2,14 +2,10 @@ import React from 'react';
 import styles from '../../../../../styles/pages/landing_page/intro/Intro.module.css';
 import { Link } from 'react-router-dom';
 interface LeftTitleProps {
-  checkModal: boolean;
   onAuthCheckModal: (state: boolean) => void;
 }
 
-const LeftTitle: React.FC<LeftTitleProps> = ({
-  checkModal,
-  onAuthCheckModal,
-}) => {
+const LeftTitle: React.FC<LeftTitleProps> = ({ onAuthCheckModal }) => {
   return (
     <div className={styles.intro__title__container}>
       <article>
