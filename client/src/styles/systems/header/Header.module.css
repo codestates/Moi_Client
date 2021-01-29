@@ -94,6 +94,30 @@ color:var(--subText)
  outline: none;
 }
 
+.right__toggle__button__block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  cursor: pointer;
+}
+
+.right__toggle__image__block{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  margin-right: 5px;
+  overflow: hidden;
+}
+
+.right__toggle__image__block img {
+  width: 2.9rem;
+}
+
 .response__logo__block{
   display: flex;
   align-items: center;

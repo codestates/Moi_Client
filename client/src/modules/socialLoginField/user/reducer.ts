@@ -5,11 +5,13 @@ import {
   CHECK_USER_SUCCESS,
   CHECK_USER_FAILURE,
   LOGOUT_USER_REQUEST,
+  WITHDRAWAL_USET_REQUEST,
 } from './actions';
 
 const initialState: CheckState = {
   isLoggedIn: false,
   message: null,
+  logout: false,
 };
 
 const checkUserField = createReducer<CheckState, Actions>(initialState, {
@@ -24,7 +26,11 @@ const checkUserField = createReducer<CheckState, Actions>(initialState, {
     ...state,
     message: action.payload.message,
   }),
-  [LOGOUT_USER_REQUEST]: (state) => ({
+  [LOGOUT_USER_REQUEST]: (state, action) => ({
+    ...state,
+    logout: action.payload.state,
+  }),
+  [WITHDRAWAL_USET_REQUEST]: (state) => ({
     ...state,
   }),
 });

@@ -6,7 +6,12 @@ import LandingPage from '../../../components/pages/landing_page/LandingPage';
 import useAuthCheckModal from '../../../hooks/systems/modal/useAuthCheckModal';
 
 const LandingPageContainer: React.FC = () => {
-  const { checkModal, onAuthCheckModal, onCloseModal } = useAuthCheckModal();
+  const {
+    checkModal,
+    type,
+    onAuthCheckModal,
+    onCloseModal,
+  } = useAuthCheckModal();
 
   useEffect(() => {
     if (checkModal) {
@@ -19,6 +24,7 @@ const LandingPageContainer: React.FC = () => {
     <>
       <LandingPage
         checkModal={checkModal}
+        type={type}
         onAuthCheckModal={onAuthCheckModal}
         onCloseModal={onCloseModal}
       />

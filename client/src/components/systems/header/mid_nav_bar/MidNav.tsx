@@ -12,7 +12,7 @@ interface MidNavProps {
   dropdown: boolean;
   onDropdown: (state: boolean, location?: string) => void;
   onScroll: (destination: string, name: string) => JSX.Element;
-  onAuthCheckModal: (state: boolean) => void;
+  onAuthCheckModal: (state: boolean, type: string) => void;
 }
 
 // * ====================
@@ -48,13 +48,18 @@ const MidNav: React.FC<MidNavProps> = ({
         <li>
           <button
             className={styles.write__resume}
-            onClick={() => onAuthCheckModal(true)}
+            onClick={() => onAuthCheckModal(true, 'write')}
           >
             이력서 작성하기
           </button>
         </li>
         <li>
-          <Link to="/mypage">내이력서</Link>
+          <button
+            className={styles.write__resume}
+            onClick={() => onAuthCheckModal(true, 'myResume')}
+          >
+            내 이력서
+          </button>
         </li>
         <li>
           <Link to="/ask">문의하기</Link>

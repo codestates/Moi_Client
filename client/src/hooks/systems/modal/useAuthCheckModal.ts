@@ -3,16 +3,23 @@ import { useHistory } from 'react-router-dom';
 
 function useAuthCheckModal(): {
   checkModal: boolean;
-  onAuthCheckModal: (state: boolean) => void;
+  type: string;
+  onAuthCheckModal: (state: boolean, type: string) => void;
   onCloseModal: () => void;
 } {
   const [checkModal, setCheckModal] = useState<boolean>(false);
+  const [type, setType] = useState<string>('');
   const history = useHistory();
 
-  const onAuthCheckModal = (state: boolean) => {
+  const onAuthCheckModal = (state: boolean, type: string) => {
     if (localStorage.getItem('current_user')) {
-      history.push('/template');
+      if (type === 'write') {
+        history.push('/template');
+      } else {
+        history.push('/mypage');
+      }
     } else {
+      setType(type);
       setCheckModal(state);
     }
   };
@@ -21,7 +28,7 @@ function useAuthCheckModal(): {
     setCheckModal(false);
   };
 
-  return { checkModal, onAuthCheckModal, onCloseModal };
+  return { checkModal, type, onAuthCheckModal, onCloseModal };
 }
 
 export default useAuthCheckModal;

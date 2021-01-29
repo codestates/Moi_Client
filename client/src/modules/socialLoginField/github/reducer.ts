@@ -10,6 +10,7 @@ const initialState: State = {
   currentUser: {
     id: '',
     email: '',
+    thumbnail: '',
   },
   message: '',
 };

@@ -1,6 +1,6 @@
 function useRequestAuthorizationCode(): {
   requestGoogleAuthorizationCode: () => void;
-  requestFacebookAuthorizationCode: () => void;
+  requestKakaoAuthorizationCode: () => void;
   requestGithubAuthorizationCode: () => void;
 } {
   const requestGoogleAuthorizationCode = () => {
@@ -9,7 +9,7 @@ function useRequestAuthorizationCode(): {
     const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=http://localhost:3000&response_type=code&scope=email+profile&state=google${location.pathname}&access_type=offline`;
     window.location.href = url;
   };
-  const requestFacebookAuthorizationCode = () => {
+  const requestKakaoAuthorizationCode = () => {
     const clientId = '6de2889046d6e55e51859728f8c18487';
     const url = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=http://localhost:3000&response_type=code&state=kakao${location.pathname}`;
     window.location.href = url;
@@ -23,7 +23,7 @@ function useRequestAuthorizationCode(): {
 
   return {
     requestGoogleAuthorizationCode,
-    requestFacebookAuthorizationCode,
+    requestKakaoAuthorizationCode,
     requestGithubAuthorizationCode,
   };
 }

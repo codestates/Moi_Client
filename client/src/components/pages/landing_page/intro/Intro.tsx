@@ -6,12 +6,14 @@ import AuthCheckModal from '../../../systems/modal/AuthCheckModal';
 
 interface IntroProps {
   checkModal: boolean;
-  onAuthCheckModal: (state: boolean) => void;
+  type: string;
+  onAuthCheckModal: (state: boolean, type: string) => void;
   onCloseModal: () => void;
 }
 
 const Intro: React.FC<IntroProps> = ({
   checkModal,
+  type,
   onAuthCheckModal,
   onCloseModal,
 }) => {
@@ -21,7 +23,9 @@ const Intro: React.FC<IntroProps> = ({
         <div className={styles.container}>
           <LeftTitle onAuthCheckModal={onAuthCheckModal} />
           <RightPreview />
-          {checkModal && <AuthCheckModal onCloseModal={onCloseModal} />}
+          {checkModal && (
+            <AuthCheckModal type={type} onCloseModal={onCloseModal} />
+          )}
         </div>
       </section>
     </>
