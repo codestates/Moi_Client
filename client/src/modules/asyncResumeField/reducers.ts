@@ -7,6 +7,9 @@ import {
   EDIT_RESUME_FIELD_REQUEST,
   EDIT_RESUME_FIELD_SUCCESS,
   EDIT_RESUME_FIELD_FAILURE,
+  UPDATE_RESUME_FIELD_REQUEST,
+  UPDATE_RESUME_FIELD_SUCCESS,
+  UPDATE_RESUME_FIELD_FAILURE,
 } from './actions';
 
 const initialState: SaveEditResumeState = {
@@ -17,6 +20,10 @@ const initialState: SaveEditResumeState = {
   editResume: {
     resume: null,
     message: null,
+  },
+  updateResume: {
+    isEdited: null,
+    newResume: null,
   },
 };
 
@@ -55,6 +62,23 @@ const asyncResumeField = createReducer<SaveEditResumeState, Actions>(
       editResume: {
         ['resume']: null,
         ['message']: action.payload.message,
+      },
+    }),
+    [UPDATE_RESUME_FIELD_REQUEST]: (state) => ({
+      ...state,
+    }),
+    [UPDATE_RESUME_FIELD_SUCCESS]: (state, action) => ({
+      ...state,
+      updateResume: {
+        ['newResume']: action.payload.newResume,
+        ['isEdited']: null,
+      },
+    }),
+    [UPDATE_RESUME_FIELD_FAILURE]: (state, action) => ({
+      ...state,
+      updateResume: {
+        ['newResume']: null,
+        ['isEdited']: action.payload.isEdited,
       },
     }),
   },

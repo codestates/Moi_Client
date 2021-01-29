@@ -25,7 +25,7 @@ const SaveAndPreviewButtons: React.FC<SaveAndPreviewButtonsProps> = ({
       </button>
       <div>
         <button className={styles.preview__button} onClick={saveLocal}>
-          임시저장
+          저장
         </button>
         <button className={styles.save__button} onClick={onPreviewModal}>
           미리보기

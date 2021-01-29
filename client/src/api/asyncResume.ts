@@ -63,3 +63,43 @@ export interface EditResult {
     aeas: AeaItem[];
   };
 }
+
+export const updateResumeAsync: (data: any) => Promise<UpdateResult> = async (
+  data,
+) => {
+  const response = await axios.post('http://localhost:8080/resume/edit', data, {
+    withCredentials: true,
+  });
+  if (!response.data.newResume) {
+    throw new Error('불러오기에 실패했습니다.');
+  }
+  return response.data;
+};
+
+export interface UpdateResult {
+  isEdited: boolean;
+  newResume: {
+    info: {
+      username: string;
+      avatar: string;
+      profile: string;
+      contact: {
+        address: string;
+        phone: string;
+        email: string;
+        link: {
+          facebook: string;
+          twitter: string;
+          blog: string;
+          github: string;
+          youtube: string;
+          instagram: string;
+        };
+      };
+    };
+    skills: SkillItem[];
+    workExperience: ExperienceItem[];
+    educations: EducationItem[];
+    aeas: AeaItem[];
+  };
+}

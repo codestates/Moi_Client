@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 //* Import child Components
 import WritePage from '../../../components/pages/write_page/WritePage';
@@ -53,7 +54,7 @@ const WritePageContainer: React.FC = () => {
       aeas: aeasField.aeas,
     }),
   );
-
+  const history = useHistory();
   const saveLocal = () => {
     const values = {
       template,
@@ -63,7 +64,9 @@ const WritePageContainer: React.FC = () => {
       aeas,
       educations,
     };
+
     setLocalStorage(values);
+    history.push('/mypage');
   };
 
   return (

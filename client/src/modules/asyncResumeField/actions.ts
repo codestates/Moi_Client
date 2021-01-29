@@ -8,6 +8,10 @@ export const EDIT_RESUME_FIELD_REQUEST = 'EDIT_RESUME_FIELD_REQUEST';
 export const EDIT_RESUME_FIELD_SUCCESS = 'EDIT_RESUME_FIELD_SUCCESS';
 export const EDIT_RESUME_FIELD_FAILURE = 'EDIT_RESUME_FIELD_FAILURE';
 
+export const UPDATE_RESUME_FIELD_REQUEST = 'UPDATE_RESUME_FIELD_REQUEST';
+export const UPDATE_RESUME_FIELD_SUCCESS = 'UPDATE_RESUME_FIELD_SUCCESS';
+export const UPDATE_RESUME_FIELD_FAILURE = 'UPDATE_RESUME_FIELD_FAILURE';
+
 export const saveResumeFieldRequest = createAction(
   SAVE_RESUME_FIELD_REQUEST,
   ({ values }) => ({
@@ -48,5 +52,27 @@ export const editResumeFieldFailure = createAction(
   EDIT_RESUME_FIELD_FAILURE,
   ({ result }) => ({
     message: result,
+  }),
+)();
+
+//* UPDATE_RESUME_FIELD_SAGA_ACTIONS
+export const updateResumeFieldRequest = createAction(
+  UPDATE_RESUME_FIELD_REQUEST,
+  ({ values }) => ({
+    values,
+  }),
+)();
+
+export const updateResumeFieldSuccess = createAction(
+  UPDATE_RESUME_FIELD_SUCCESS,
+  ({ result }) => ({
+    newResume: result,
+  }),
+)();
+
+export const updateResumeFieldFailure = createAction(
+  UPDATE_RESUME_FIELD_FAILURE,
+  ({ result }) => ({
+    isEdited: result,
   }),
 )();
