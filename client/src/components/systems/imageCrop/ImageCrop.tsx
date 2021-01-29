@@ -7,12 +7,16 @@
 import * as React from 'react';
 import ReactCrop, { makeAspectCrop } from 'react-image-crop';
 import './ReactCrop.css';
+import styles from '../../../styles/systems/imageCrop/ImageCrop.module.css';
+import OutsideClickHandler from 'react-outside-click-handler';
+import { FcConferenceCall } from 'react-icons/fc';
 
 interface IFileSelectorCrop {
   onGetBlobFile: (blobFile: File) => void;
   placeholderImage?: string; // optional placeholder image
   aspect?: number; // optional aspect ratio requirement
   style?: React.CSSProperties; // optional style to apply to placeholder image and uploaded image
+  onUploadModal: () => void;
 }
 
 interface IFileSelectorCropState {
@@ -21,6 +25,7 @@ interface IFileSelectorCropState {
   fileName: string;
   upload: boolean;
   imgLoaded: boolean;
+  file: any;
 }
 
 export class ReactImageCropperTs extends React.Component<
@@ -31,10 +36,11 @@ export class ReactImageCropperTs extends React.Component<
     super(props);
     this.state = {
       dataUrl: null,
-      crop: {},
+      crop: { aspect: 4 / 5 },
       fileName: '',
       upload: false,
       imgLoaded: false,
+      file: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.onComplete = this.onComplete.bind(this);
@@ -50,8 +56,8 @@ export class ReactImageCropperTs extends React.Component<
             {
               x: 25,
               y: 25,
-              aspect: this.props.aspect,
               width: 50,
+              aspect: 4 / 5,
             },
             image.width / image.height,
             10,
@@ -62,7 +68,8 @@ export class ReactImageCropperTs extends React.Component<
             x: 25,
             y: 25,
             width: 50,
-            height: 50,
+            height: 65,
+            aspect: 4 / 5,
           },
         });
   };
@@ -82,9 +89,6 @@ export class ReactImageCropperTs extends React.Component<
       });
 
       //convert dataURL and send blob data to container level
-      const blobFile = this.dataURLtoBlobFile(data);
-
-      this.props.onGetBlobFile(blobFile);
     };
     fileReader.readAsDataURL(selectorFiles[0]);
   }
@@ -140,11 +144,10 @@ export class ReactImageCropperTs extends React.Component<
           resolve(file);
         }, 'image/jpeg');
       }).then((response: any) => {
-        // send blobFile to parent
         const blob = new Blob([response]);
         const file = new File([blob], this.state.fileName);
-
-        this.props.onGetBlobFile(file);
+        this.setState({ file });
+        // this.props.onGetBlobFile(file);
       });
     };
   };
@@ -155,33 +158,54 @@ export class ReactImageCropperTs extends React.Component<
 
   render() {
     return (
-      <React.Fragment>
-        <div className="row" style={{ margin: 'auto' }}>
-          {/* show place holder image until file is uploaded */}
-          {this.state.imgLoaded ? (
-            <ReactCrop
-              src={this.state.dataUrl}
-              crop={this.state.crop}
-              onChange={this.onCropChange}
-              onComplete={this.onComplete}
-              onImageLoaded={this.onImageLoaded}
-              imageStyle={this.props.style ? this.props.style : {}}
-              style={this.props.style ? this.props.style : {}}
-            />
-          ) : this.props.placeholderImage ? (
-            <img
-              src={this.props.placeholderImage}
-              className="img-responsive center-block"
-              style={this.props.style ? this.props.style : {}}
-            />
-          ) : (
-            ''
-          )}
-          <br />
-        </div>
-        <br />
-        <input type="file" onChange={this.fileUploadHandler} />
-      </React.Fragment>
+      <div className={styles.background}>
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            this.props.onUploadModal();
+          }}
+        >
+          <div className={styles.crop_modal_block__div}>
+            <header className={styles.imageUpload_block_header__div}>
+              <strong>나의 가장 멋진 사진!</strong>
+            </header>
+            <div className="row" style={{ margin: 'auto' }}>
+              {/* show place holder image until file is uploaded */}
+              {this.state.imgLoaded ? (
+                <ReactCrop
+                  src={this.state.dataUrl}
+                  crop={this.state.crop}
+                  onChange={this.onCropChange}
+                  onComplete={this.onComplete}
+                  onImageLoaded={this.onImageLoaded}
+                  imageStyle={this.props.style ? this.props.style : {}}
+                  style={this.props.style ? this.props.style : {}}
+                />
+              ) : (
+                <div className={styles.before_upload_img_block__div}>
+                  <FcConferenceCall />
+                  <p>여러분의 이력서에서 보여질 멋진 사진을 선택해주세요 :)</p>
+                  <input type="file" onChange={this.fileUploadHandler} />
+                </div>
+              )}
+            </div>
+            <div className={styles.bottom_buttons_block__div}>
+              <button className={styles.bottom_upload_button__button}>
+                업로드
+              </button>
+              <input type="file" onChange={this.fileUploadHandler} />
+              <button
+                className={styles.bottom_save_button__button}
+                onClick={() => {
+                  this.props.onGetBlobFile(this.state.file);
+                  this.props.onUploadModal();
+                }}
+              >
+                저장하기
+              </button>
+            </div>
+          </div>
+        </OutsideClickHandler>
+      </div>
     );
   }
 }

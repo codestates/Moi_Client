@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/write_page/write/Write.module.css';
+import { GoPerson } from 'react-icons/go';
+import { ReactImageCropperTs } from '../../../../../components/systems/imageCrop/ImageCrop';
+import useUploadImage from '../../../../../hooks/pages/write_page/useUploadImage';
 
 // ? ======================
 // ?   INTERFACE_TYPE
@@ -11,6 +14,8 @@ interface UserInfoProps {
   email: string;
   title: string;
   onChangeFields: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  uploadModal: boolean;
+  onUploadModal: () => void;
 }
 
 const UserInfo: React.FC<UserInfoProps> = ({
@@ -20,9 +25,24 @@ const UserInfo: React.FC<UserInfoProps> = ({
   title,
   email,
   onChangeFields,
+  uploadModal,
+  onUploadModal,
 }) => {
+  const { uploadImage } = useUploadImage();
+  const onGetBlobFile = (blobFile: File) => {
+    console.log(blobFile);
+    uploadImage(blobFile);
+  };
   return (
     <article className={styles.userinfo_container}>
+      {uploadModal && (
+        <ReactImageCropperTs
+          onGetBlobFile={onGetBlobFile}
+          placeholderImage=""
+          style={{ maxHeight: '25vh', maxWidth: '25vw' }}
+          onUploadModal={onUploadModal}
+        />
+      )}
       {localStorage.getItem('current_user') && (
         <div className={styles.userinfo_resume_title_block__div}>
           <input
@@ -39,6 +59,24 @@ const UserInfo: React.FC<UserInfoProps> = ({
         이름과 주소 연락처 등과 같은 인적사항을 입력해주세요
       </p>
       <div className={styles.userinfo_formContainer}>
+        {/* ImageUpload */}
+        <div className={styles.imageUpload_block__div}>
+          <button
+            className={styles.imageUpload_button__button}
+            onClick={onUploadModal}
+          >
+            <GoPerson />
+          </button>
+          <span>
+            <button
+              className={styles.sub_Upload_button__button}
+              onClick={onUploadModal}
+            >
+              사진 업로드
+            </button>
+          </span>
+        </div>
+
         <form className={styles.userinfo_form}>
           <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_name}>이름</label>
