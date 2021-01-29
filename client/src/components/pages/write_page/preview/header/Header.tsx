@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ values }) => {
           <Text style={styles.contact}>{`주소 : ${address}`}</Text>
           <Text style={styles.contact}>{`연락처 : ${phone}`}</Text>
         </View>
-        <Image src={avatar} style={styles.image} />
+        {avatar.length >= 1 && <Image src={avatar} style={styles.image} />}
       </View>
     </>
   );

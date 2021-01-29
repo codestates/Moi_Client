@@ -5,6 +5,7 @@ import {
   deleteAeaField,
   loadAeaField,
   toggleEduDropdown,
+  initAeaField,
 } from './actions';
 
 export interface AeaItem {
@@ -24,5 +25,6 @@ const actions = {
   deleteAeaField,
   loadAeaField,
   toggleEduDropdown,
+  initAeaField,
 };
 export type Actions = ActionType<typeof actions>;

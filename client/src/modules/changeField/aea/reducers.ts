@@ -6,6 +6,7 @@ import {
   DELETE_AEA_FIELD,
   LOAD_AEA_FIELD,
   TOGGLE_AEA_DROPDOWN,
+  INIT_AEA_FIELD,
 } from './actions';
 
 const initialState: AeaState = {
@@ -68,6 +69,12 @@ const aeasField = createReducer<AeaState, Actions>(initialState, {
     return {
       ...state,
       ['aeas']: newAea,
+    };
+  },
+  [INIT_AEA_FIELD]: (state, action) => {
+    return {
+      ...state,
+      aeas: [],
     };
   },
 });

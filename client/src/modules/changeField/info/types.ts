@@ -1,5 +1,5 @@
 import { ActionType } from 'typesafe-actions';
-import { changeField, loadInfoField } from './actions';
+import { changeField, loadInfoField, initInfoField } from './actions';
 
 // ? ======================
 // ?   CONST ACTION & STATE_TYPE
@@ -26,5 +26,5 @@ export interface InfoState {
     };
   };
 }
-const actions = { changeField, loadInfoField };
+const actions = { changeField, loadInfoField, initInfoField };
 export type Actions = ActionType<typeof actions>;
