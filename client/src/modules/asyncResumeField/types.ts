@@ -16,6 +16,9 @@ import {
   updateResumeFieldRequest,
   updateResumeFieldSuccess,
   updateResumeFieldFailure,
+  onUploadImageRequest,
+  onUploadImageSuccess,
+  onUploadImageFailure,
 } from './actions';
 
 export interface SaveEditResumeState {
@@ -77,6 +80,7 @@ export interface SaveEditResumeState {
       aeas: AeaItem[];
     };
   };
+  uploadImage: { location: null | string; isUpload: null | boolean };
 }
 
 const actions = {
@@ -89,5 +93,8 @@ const actions = {
   updateResumeFieldRequest,
   updateResumeFieldSuccess,
   updateResumeFieldFailure,
+  onUploadImageRequest,
+  onUploadImageSuccess,
+  onUploadImageFailure,
 };
 export type Actions = ActionType<typeof actions>;

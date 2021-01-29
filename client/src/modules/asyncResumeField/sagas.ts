@@ -4,6 +4,7 @@ import {
   saveResumeAsync,
   editResumeAsync,
   updateResumeAsync,
+  uploadImageAsync,
 } from '../../api/asyncResume';
 import { Actions } from '../../modules/asyncResumeField/types';
 
@@ -52,6 +53,21 @@ function* fetchUpdate(actions: Actions) {
   }
 }
 
+function* fetchUpload(actions: Actions) {
+  try {
+    const req = yield call(uploadImageAsync, actions.payload);
+    yield put({
+      type: 'ON_UPLOAD_IMAGE_SUCCESS',
+      payload: { location: req.location, isUpload: req.isUpload },
+    });
+  } catch (e) {
+    yield put({
+      type: 'ON_UPLOAD_IMAGE_FAILURE',
+      payload: { isEdited: e.message },
+    });
+  }
+}
+
 export function* saveResumeSaga() {
   yield takeLatest('SAVE_RESUME_FIELD_REQUEST', fetchSave);
 }
@@ -62,4 +78,8 @@ export function* editResumeSaga() {
 
 export function* updateResumeSaga() {
   yield takeLatest('UPDATE_RESUME_FIELD_REQUEST', fetchUpdate);
+}
+
+export function* uploadImageSaga() {
+  yield takeLatest('ON_UPLOAD_IMAGE_REQUEST', fetchUpload);
 }

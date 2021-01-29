@@ -4,11 +4,13 @@ import { useHistory } from 'react-router-dom';
 
 //* Import child Components
 import WritePage from '../../../components/pages/write_page/WritePage';
+import { ReactImageCropperTs } from '../../../components/systems/imageCrop/ImageCrop';
 
 //* Import custom hooks
 import useLoadPreviewValues from '../../../hooks/pages/write_page/useLoadPreviewValues';
 import usePreviewModal from '../../../hooks/pages/write_page/usePreviewModal';
 import useSaveLocalStorage from '../../../hooks/pages/write_page/useSaveLoadLocalStorage';
+import useSkillsChangeField from '../../../hooks/pages/write_page/useUploadImage';
 
 //* Import reduce states
 import { ExperienceState } from '../../../modules/changeField/workExperience/types';
@@ -22,6 +24,8 @@ const WritePageContainer: React.FC = () => {
   const values = useLoadPreviewValues();
   const { preview, onPreviewModal } = usePreviewModal();
   const { setLocalStorage } = useSaveLocalStorage();
+
+  const { uploadImage } = useSkillsChangeField();
 
   const {
     template,
@@ -69,8 +73,17 @@ const WritePageContainer: React.FC = () => {
     history.push('/mypage');
   };
 
+  const onGetBlobFile = (blobFile: File) => {
+    uploadImage(blobFile);
+  };
+
   return (
     <>
+      <ReactImageCropperTs
+        onGetBlobFile={onGetBlobFile}
+        placeholderImage=""
+        style={{ maxHeight: '50vh', maxWidth: '50vw' }}
+      />
       <WritePage
         values={values}
         preview={preview}

@@ -26,6 +26,7 @@ import {
   saveResumeSaga,
   editResumeSaga,
   updateResumeSaga,
+  uploadImageSaga,
 } from './asyncResumeField/sagas';
 
 const rootReducer = combineReducers({
@@ -56,6 +57,7 @@ export function* rootSaga(): Generator {
     saveResumeSaga(),
     editResumeSaga(),
     updateResumeSaga(),
+    uploadImageSaga(),
   ]);
 }
 

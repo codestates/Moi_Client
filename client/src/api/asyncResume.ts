@@ -103,3 +103,25 @@ export interface UpdateResult {
     aeas: AeaItem[];
   };
 }
+
+export const uploadImageAsync: (file: any) => Promise<UploadResult> = async (
+  file,
+) => {
+  console.log(file);
+
+  const response = await axios.post(
+    'http://localhost:8080/upload/image',
+    file.formData,
+    {
+      withCredentials: true,
+    },
+  );
+  if (!response.data.isUpload) {
+    throw new Error('저장에 실패했습니다.');
+  }
+  return response.data;
+};
+export interface UploadResult {
+  location: string;
+  isUpload: null | boolean;
+}
