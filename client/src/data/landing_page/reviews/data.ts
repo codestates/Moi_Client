@@ -20,10 +20,10 @@ export const reviews = [
   {
     profileImg:
       'http://carismartes.com.br/assets/global/images/avatars/avatar12_big.png',
-    name: '이준형',
+    name: '브랜든',
     rating: 5,
     description:
-      'CV 이력서 작성기를 사용하여 모든 이력서와 앱을 한 곳에 모아볼 수 있다는 점이 아주 편리하다고 생각합니다. 훌륭한 템플릿이 정말 많습니다!',
+      '최근 이직준비로 바빴는데 모두의 이력서 덕분에 한결 편했습니다. 소셜 계정으로 이력서들을 모아 한 번에 관리가 되니 수정할때도 편했습니다.',
     role: '브랜드 마케터',
   },
 ];
