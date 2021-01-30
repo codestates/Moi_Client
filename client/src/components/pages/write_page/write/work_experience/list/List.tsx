@@ -62,27 +62,23 @@ const List: React.FC<ListProps> = ({
           >
             <div className={styles.experience_company_and_position_block__div}>
               회사명
-              <form>
-                <input
-                  type="text"
-                  name="companyName"
-                  value={stateProperty.companyName}
-                  data-index={index}
-                  onChange={changeExperienceFields}
-                />
-              </form>
+              <input
+                type="text"
+                name="companyName"
+                value={stateProperty.companyName}
+                data-index={index}
+                onChange={changeExperienceFields}
+              />
             </div>
             <div className={styles.experience_company_and_position_block__div}>
               직무명
-              <form>
-                <input
-                  type="text"
-                  name="positionName"
-                  value={stateProperty.positionName}
-                  data-index={index}
-                  onChange={changeExperienceFields}
-                />
-              </form>
+              <input
+                type="text"
+                name="positionName"
+                value={stateProperty.positionName}
+                data-index={index}
+                onChange={changeExperienceFields}
+              />
             </div>
           </div>
 

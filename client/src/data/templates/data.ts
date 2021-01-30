@@ -1,10 +1,10 @@
 //* Import template card preview image
-import moi_basic from '../../public/moi_basic.png';
+import moiBasic from '../../public/moiBasic.png';
 
 //* templates_array
 export const templates = [
   {
-    templateImg: moi_basic,
+    templateImg: moiBasic,
     name: 'Moi Basic',
     templateCode: 1,
   },

@@ -40,30 +40,30 @@ const Buger: React.FC<BugerProps> = ({ bugerMenu, onBugerMenu }) => {
       <div className={styles.bugger__list_block}>
         <ul className={styles.buger__list}>
           <li>
-            <a href="">
+            <Link to="" onClick={onBugerMenu}>
               <FcApprove />
               로그인
-            </a>
+            </Link>
             <div className={styles.buger__list__underBar__login}></div>
           </li>
           <li>
-            <a href="/write">
+            <Link to="/write" onClick={onBugerMenu}>
               <FcRules />
               이력서 작성하기
-            </a>
+            </Link>
             <div className={styles.buger__list__underBar__resume}></div>
           </li>
           <li>
-            <a href="/mypage">
+            <Link to="/mypage" onClick={onBugerMenu}>
               <FcViewDetails />내 이력서
-            </a>
+            </Link>
             <div className={styles.buger__list__underBar_my__resume}></div>
           </li>
           <li>
-            <a href="/ask">
+            <Link to="/ask" onClick={onBugerMenu}>
               <FcVoicePresentation />
               문의하기
-            </a>
+            </Link>
             <div className={styles.buger__list__underBar__ask}></div>
           </li>
         </ul>

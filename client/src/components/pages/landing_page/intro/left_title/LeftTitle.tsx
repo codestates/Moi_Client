@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/landing_page/intro/Intro.module.css';
-import { Link } from 'react-router-dom';
+import birdImg from '../../../../../public/intro_Bird_illust.png';
 interface LeftTitleProps {
   onAuthCheckModal: (state: boolean, type: string) => void;
 }
@@ -10,6 +10,7 @@ const LeftTitle: React.FC<LeftTitleProps> = ({ onAuthCheckModal }) => {
     <div className={styles.intro__title__container}>
       <article>
         <span>
+          <img src={birdImg} alt="moiBird" />
           <strong className={styles.intro__title}>모</strong>
         </span>
         <article className={styles.intro__title__block}>

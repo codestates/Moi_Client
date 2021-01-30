@@ -126,3 +126,18 @@
 .buger__right_block button:focus {
   outline: none; 
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container__nav__block__avtive{
+    padding: 30px 25px 0px 25px;
+    transition: 300ms ease-in-out;
+    width: 40%;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background: #19a76deb;
+    right: 0%;
+    z-index: 3;
+  }
+  
+}

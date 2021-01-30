@@ -4,12 +4,10 @@ import styles from '../../../../../styles/pages/landing_page/guide/GuideTitle.mo
 const Title: React.FC = () => {
   return (
     <header className={styles.landing__guide__header}>
-      <h3> 성공적으로 지원하기</h3>
+      <h3> 좋은 이력서를 작성하는 TIP!</h3>
       <p>
-        CV 이력서 작성기의 도움으로 매우 쉽게 전문적인 이력서를 작성할 수
-        있습니다. CV 이력서 작성기를 사용하여 빠르고 쉽게 스스로 작성하거나,
-        전문가에게 요청하여 작성할 수 있습니다 - 항상 돋보이는 이력서를 작성할
-        수 있습니다.
+        이력서를 처음 써보시는 분들을 위해 모두의 이력서가 간단한 가이드를
+        제공해드립니다 !
       </p>
     </header>
   );

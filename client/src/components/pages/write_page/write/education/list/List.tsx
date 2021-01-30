@@ -86,7 +86,7 @@ const List: React.FC<ListProps> = ({
               </div>
               <div className={styles.education_period_container__div}>
                 <div className={styles.education_period_title_block__div}>
-                  근무 기간
+                  기간
                 </div>
                 <input
                   type="text"
