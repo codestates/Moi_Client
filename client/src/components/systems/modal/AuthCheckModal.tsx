@@ -10,7 +10,7 @@ interface AuthCheckModal {
 }
 
 const AuthCheckModal: React.FC<AuthCheckModal> = ({ onCloseModal, type }) => {
-  const { onLoginModal } = useLoginModal();
+  const { hadleLoginModal } = useLoginModal();
   return (
     <div className={styles.full__screen}>
       <OutsideClickHandler onOutsideClick={onCloseModal}>
@@ -46,7 +46,7 @@ const AuthCheckModal: React.FC<AuthCheckModal> = ({ onCloseModal, type }) => {
                     : styles.login__button__full__width
                 }
                 onClick={() => {
-                  onCloseModal(), onLoginModal();
+                  onCloseModal(), hadleLoginModal();
                 }}
               >
                 로그인

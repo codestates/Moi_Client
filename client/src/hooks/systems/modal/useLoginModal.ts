@@ -4,20 +4,20 @@ import { ConfigState } from '../../../modules/config/types';
 
 function useLoginModal(): {
   loginModal: boolean;
-  onLoginModal: () => void;
+  hadleLoginModal: () => void;
 } {
   const dispatch = useDispatch();
   const { loginModal } = useSelector(({ config }: { config: ConfigState }) => ({
     loginModal: config.modal.loginModal,
   }));
 
-  const onLoginModal = () => {
+  const hadleLoginModal = () => {
     dispatch(actions.onLoginModal({ state: !loginModal }));
   };
 
   return {
     loginModal,
-    onLoginModal,
+    hadleLoginModal,
   };
 }
 

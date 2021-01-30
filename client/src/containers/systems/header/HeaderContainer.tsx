@@ -34,7 +34,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   // * ====================
   const { dropdown, onDropdown } = useDropdown();
   const { bugerMenu, onBugerMenu } = useBugerMenu();
-  const { loginModal, onLoginModal } = useLoginModal();
+  const { loginModal, hadleLoginModal } = useLoginModal();
   const {
     requestGoogleAuthorizationCode,
     requestKakaoAuthorizationCode,
@@ -136,7 +136,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
         onBugerMenu={onBugerMenu}
         onScroll={onScroll}
         loginModal={loginModal}
-        onLoginModal={onLoginModal}
+        hadleLoginModal={hadleLoginModal}
         requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
         requestKakaoAuthorizationCode={requestKakaoAuthorizationCode}
         requestGithubAuthorizationCode={requestGithubAuthorizationCode}

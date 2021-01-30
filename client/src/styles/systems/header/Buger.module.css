@@ -49,12 +49,11 @@
 
 .buger__list li {
   padding: 10px;
-  cursor: pointer;
   margin-bottom: 10px;
   position: relative;
 }
 
-.buger__list li:hover {
+.buger__list > li:hover {
   border-radius: 15px;
   background: #3b9b72;
 }
@@ -64,44 +63,15 @@
   color: white;
   font-size: 20px;
   font-weight: 700;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  border-bottom: 2px solid #fff;
 }
+
 .buger__list svg {
   margin-right: 5px;
   top: 2px;
   position: relative;
-}
-
-.buger__list__underBar__login {
-  height: 2px;
-    position: absolute;
-    background: white;
-    width: 95px;
-    bottom: -3px;
-    border-radius: 28px;
-}
-.buger__list__underBar__resume {
-  height: 2px;
-    position: absolute;
-    background: white;
-    width: 175px;
-    bottom: -3px;
-    border-radius: 28px;
-}
-.buger__list__underBar_my__resume {
-  height: 2px;
-    position: absolute;
-    background: white;
-    width: 115px;
-    bottom: -3px;
-    border-radius: 28px;
-}
-.buger__list__underBar__ask {
-  height: 2px;
-    position: absolute;
-    background: white;
-    width: 105px;
-    bottom: -3px;
-    border-radius: 28px;
 }
 
 .buger__list__copyright {
@@ -123,8 +93,35 @@
   border: none;
   font-size: 55px;
 }
+
 .buger__right_block button:focus {
   outline: none; 
+}
+
+/*Auth Button*/
+.buger__after__login__block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.buger__after__login__block > li:hover{
+  border-radius: 15px;
+  background: #3b9b72;
+}
+
+.bugger__auth__button {
+  background: inherit;
+  font-size: 20px;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  border-bottom: 2px solid #fff;
+  font-family: 'Nanum Gothic';
+  outline: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -141,3 +138,4 @@
   }
   
 }
+
