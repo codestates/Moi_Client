@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../../../styles/pages/my_page/resume/Resume.module.css';
+import CreateCard from './resumecard/createcard/CreateCard';
 import ResumeCard from './resumecard/ResumeCard';
 
 import { ResumeData } from '../../../../modules/get_mypage/types';

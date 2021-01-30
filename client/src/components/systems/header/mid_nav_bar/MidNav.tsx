@@ -32,8 +32,8 @@ const MidNav: React.FC<MidNavProps> = ({
             onDropdown(false);
           }}
         >
-          <li className={styles.middle__nav__list__strong}>
-            {location.pathname === '/' && (
+          {location.pathname === '/' && (
+            <li className={styles.middle__nav__list__strong}>
               <button
                 className={styles.middle__nav__bar__overView__button}
                 onClick={() => onDropdown(true, 'overView')}
@@ -41,9 +41,9 @@ const MidNav: React.FC<MidNavProps> = ({
                 Overview
                 <BiChevronDown />
               </button>
-            )}
-            {dropdown ? <DropDownNavModal onScroll={onScroll} /> : null}
-          </li>
+              {dropdown ? <DropDownNavModal onScroll={onScroll} /> : null}
+            </li>
+          )}
         </OutsideClickHandler>
         <li>
           <button

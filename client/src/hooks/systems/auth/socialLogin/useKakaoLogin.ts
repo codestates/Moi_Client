@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from '../../../../modules/socialLoginField/kakao/actions';
-import { State } from '../../../../modules/socialLoginField/kakao/types';
+import * as actions from '../../../../modules/socialLoginField/facebook/actions';
+import { State } from '../../../../modules/socialLoginField/facebook/types';
 
 function useKakaoLogin(): {
   kakaoUser: {
