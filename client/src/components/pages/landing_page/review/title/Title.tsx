@@ -4,8 +4,11 @@ import styles from '../../../../../styles/pages/landing_page/review/ReviewTitle.
 const Title: React.FC = () => {
   return (
     <header className={styles.landing__review__header}>
-      <h3> 사용자가 말하는 CV 이력서 작성기란?</h3>
-      <p> CV 이력서 작성기 덕분에 꿈에 그리던 직장에 취업할 수 있었습니다:</p>
+      <h3> 사용자가 말하는 모두의 이력서란?</h3>
+      <p>
+        모두의 이력서 덕분에 언제 어디서든 손쉽게 이력서를 작성할 수 있어서 구직
+        할동에 큰 도움이 되었어요.
+      </p>
     </header>
   );
 };

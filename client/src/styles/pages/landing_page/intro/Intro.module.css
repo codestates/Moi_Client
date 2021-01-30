@@ -13,6 +13,14 @@
       align-items: center;
       justify-content: space-around;
       margin-right: 4vw;
+      position: relative;
+  }
+
+  .intro__title__container img{
+    position: absolute;
+    width: 75px;
+    bottom: 195px;
+    left: -37px;
   }
   .intro__title__container a {
     width: 100%;
@@ -129,7 +137,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
     width: 100%;
+  }
+
+  .intro__title__container img{
+    position: absolute;
+    width: 17vw;
+    bottom: 20vw;
+    left: 17vw;
   }
 
   .intro__title__block {
@@ -223,6 +239,13 @@
       justify-content: center;
     width: 100%;
     position: relative;
+  }
+
+  .intro__title__container img{
+    position: absolute;
+    width: 17vw;
+    bottom: 41vw;
+    left: 3vw;
   }
 
   

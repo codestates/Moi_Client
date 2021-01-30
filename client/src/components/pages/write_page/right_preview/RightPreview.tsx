@@ -127,9 +127,7 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
             </ul>
           </div>
         </div>
-        <div>
-          <img src={avatar} alt="avatar" />
-        </div>
+        <div>{avatar && <img src={avatar} alt="avatar" />}</div>
       </div>
 
       <div className={styles.profile_block__div}>

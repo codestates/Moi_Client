@@ -82,7 +82,6 @@ const Buger: React.FC<BugerProps> = ({
               </button>
             </li>
           )}
-
           <li>
             <button
               className={styles.bugger__auth__button}

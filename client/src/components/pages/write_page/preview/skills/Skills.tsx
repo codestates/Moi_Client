@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
   },
   itemContent: {
     flex: 1,
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'Nanum Gothic',
     marginBottom: '3px',
   },
   descContent: {
     flex: 1,
-    fontSize: 11,
+    fontSize: 9,
     fontFamily: 'Nanum Gothic',
     color: '#686868',
   },
