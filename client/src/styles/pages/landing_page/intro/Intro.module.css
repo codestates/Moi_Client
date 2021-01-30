@@ -137,14 +137,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
     width: 100%;
   }
 
   .intro__title__container img{
     position: absolute;
     width: 17vw;
-    bottom: 548px;
-    left: 18vw;
+    bottom: 20vw;
+    left: 17vw;
   }
 
   .intro__title__block {
