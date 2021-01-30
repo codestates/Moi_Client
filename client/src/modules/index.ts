@@ -18,7 +18,7 @@ import mypageRequestField from './get_mypage/reducer';
 import asyncResumeField from './asyncResumeField/reducers';
 
 import { googleLoginSaga } from './socialLoginField/google/saga';
-import { facebookLoginSaga } from './socialLoginField/facebook/saga';
+import { kakaoLoginSaga } from './socialLoginField/facebook/saga';
 import { githubLoginSaga } from './socialLoginField/github/saga';
 import { userSaga } from './socialLoginField/user/saga';
 import { mypageSaga } from './get_mypage/saga';
@@ -45,7 +45,7 @@ export function* rootSaga(): Generator {
   yield all([
     askSaga(),
     googleLoginSaga(),
-    facebookLoginSaga(),
+    kakaoLoginSaga(),
     githubLoginSaga(),
     userSaga(),
     mypageSaga(),
