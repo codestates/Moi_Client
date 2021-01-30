@@ -5,6 +5,7 @@ import {
   deleteEducationField,
   loadEducationField,
   toggleEduDropdown,
+  initEducationField,
 } from './actions';
 
 export interface EducationItem {
@@ -25,5 +26,6 @@ const actions = {
   deleteEducationField,
   loadEducationField,
   toggleEduDropdown,
+  initEducationField,
 };
 export type Actions = ActionType<typeof actions>;

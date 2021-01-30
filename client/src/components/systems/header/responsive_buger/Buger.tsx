@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../../../styles/systems/header/Buger.module.css';
 import headerLogo from '../../../../public/headerLogo.png';
+import { Link } from 'react-router-dom';
 import { GoX } from 'react-icons/go';
 import {
   FcApprove,
@@ -39,27 +40,27 @@ const Buger: React.FC<BugerProps> = ({ bugerMenu, onBugerMenu }) => {
       <div className={styles.bugger__list_block}>
         <ul className={styles.buger__list}>
           <li>
-            <a href="#">
+            <a href="">
               <FcApprove />
               로그인
             </a>
             <div className={styles.buger__list__underBar__login}></div>
           </li>
           <li>
-            <a href="#">
+            <a href="/write">
               <FcRules />
               이력서 작성하기
             </a>
             <div className={styles.buger__list__underBar__resume}></div>
           </li>
           <li>
-            <a href="#">
+            <a href="/mypage">
               <FcViewDetails />내 이력서
             </a>
             <div className={styles.buger__list__underBar_my__resume}></div>
           </li>
           <li>
-            <a href="#">
+            <a href="/ask">
               <FcVoicePresentation />
               문의하기
             </a>

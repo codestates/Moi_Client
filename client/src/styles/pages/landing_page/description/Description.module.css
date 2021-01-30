@@ -34,6 +34,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 /* Desc Media */
@@ -133,7 +134,7 @@
 
   .card__title {
     display: block;
-    padding: 100px 0 10px;
+    padding: 5vw 0 10px;
     text-align: left;
     font-weight: 600;
     color: #333;
@@ -159,19 +160,17 @@
     flex-direction: column;
   }
 
-  .card__item {
-    position: relative;
-    display: inline-block;
-    width: 700px;
-    height: 150px;
-    background-color: #fff;
-    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
-    text-align: center;
-    margin: 0 0 25px;
-    border-radius: 4px;
-  }
   .card__item img{
     width: 18vw;
+     }
+  .card__item {
+    display: flex;
+
+   
+
+  }
+  .card__item img{
+    width: 200px;
      }
    
   .card__icon {
@@ -191,11 +190,12 @@
 
   .card__title {
     display: block;
-    padding: 100px 0 10px 0px;
+    padding: 40px 0 10px 0px;
     text-align: left;
     font-weight: 600;
     color: #333;
-    font-size: 18px;
+    font-size: 2.5vw;
+    line-height: 7vw;
   }
 
   .card__desc {
@@ -225,7 +225,6 @@
     width: 100%;
     /* min-height: 200px; */
     background-color: #fff;
-    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
     text-align: center;
     margin: 0 0 25px;
     /* padding: 0 30px 0 160px; */
@@ -233,7 +232,7 @@
   }
   
   .card__item img{
-    width: 17vw;
+    width: 50vw;
      }
    
   .card__icon {
@@ -259,7 +258,13 @@
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
-    font-size: 19px;
+    font-size: 3.5vw;
+}
+.desc_subTitle {
+  font-size: 3.5vw;
+  margin-bottom: 10%;
+  text-align: center;
+  color: var(--mainText);
 }
 
   .card__desc {

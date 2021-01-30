@@ -115,9 +115,10 @@
     overflow: hidden;
   }
   .img {
-    width: 30%;
+    width: 500px;
     height: auto;
     border-radius: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -208,12 +209,8 @@
    display: none;
   }
   .img {
-    position: absolute;
-    top: -20px;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-  }  
+ display: none;
+  }
 }
 
 
@@ -307,12 +304,8 @@
    display: none;
   }
   .img {
-    position: absolute;
-    top: -20px;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-  }  
+    display: none;
+     }
 }
 
 

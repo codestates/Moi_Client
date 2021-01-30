@@ -1,0 +1,150 @@
+.background {
+  width: 100%;
+  background: #42424294;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageUpload_block__div{
+  display: flex;
+  align-items: center;
+}
+
+.imageUpload_block_header__div{
+  /* position: absolute;
+  top: 0px; */
+}
+
+.imageUpload_block_header__div > strong {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--mainText);
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.before_upload_img_block__div {
+  display: flex;
+  flex-direction: column;
+    padding: 27px 50px 50px;
+    border-width: 4px;
+    border-style: dashed;
+    border-color: rgb(207, 214, 230);
+    border-image: url(https://resume.io/packs/media/resume-editor/border-dash-rounded-b0aa1c81.svg) 3 / 1 / 0 round;
+    transition: color 0.1s ease 0s;
+    margin: auto;
+    width: 550px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.before_upload_img_block__div > svg {
+  font-size: 115px;
+}
+.before_upload_img_block__div > p {
+
+  color: var(--nomalText);
+}
+.before_upload_img_block__div > input {
+  outline: none;
+  padding: 103px 89px;
+  position: absolute;
+  width: 550;
+  opacity: 0;
+}
+
+
+.sub_Upload_button__button{
+  color: var(--mainGreen);
+    font-weight: 700;
+    font-size: 15px;
+    background: none;
+    outline: none;
+    border: none;
+}
+.imageUpload_button__button{
+  padding: 15px;
+  position: relative;
+  outline: none;
+    border: none;
+  /* margin: 30px 0px 15px 0px; */
+  background: #f1f5fa;
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.input_upload__input {
+  position: absolute;
+  opacity: 0;
+  width: 250%;
+  height: 100%;
+  cursor: pointer;
+    left: 0;
+    top: 0;
+}
+
+
+.imageUpload_button__button > svg{
+  color: #b1bece;
+  font-size: 30px;
+  transition: all 200ms ease-in-out;
+}
+
+.imageUpload_button__button > svg:hover{
+  color: var(--mainGreen);
+  transition: all 200ms ease-in-out;
+}
+
+.crop_modal_block__div {
+  display: flex;
+  width: 600px;
+  background-color: rgb(255, 255, 255);
+  padding: 25px;
+  justify-content: center;
+  z-index: 2;
+  border-radius: 10px;
+  height: 360px;
+  flex-direction: column;
+}
+
+.bottom_buttons_block__div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom_save_button__button  {
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background: var(--mainGreen);
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.bottom_upload_button__button  {
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background: rgb(241, 243, 245);
+  border: none;
+  color: rgb(73, 80, 87);
+  font-weight: 700;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.bottom_buttons_block__div > input { 
+  position: absolute;
+  width: 84px;
+  height: 39px;
+  cursor: pointer;
+  opacity: 0;
+}

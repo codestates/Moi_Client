@@ -7,6 +7,12 @@ import {
   EDIT_RESUME_FIELD_REQUEST,
   EDIT_RESUME_FIELD_SUCCESS,
   EDIT_RESUME_FIELD_FAILURE,
+  UPDATE_RESUME_FIELD_REQUEST,
+  UPDATE_RESUME_FIELD_SUCCESS,
+  UPDATE_RESUME_FIELD_FAILURE,
+  ON_UPLOAD_IMAGE_REQUEST,
+  ON_UPLOAD_IMAGE_SUCCESS,
+  ON_UPLOAD_IMAGE_FAILURE,
 } from './actions';
 
 const initialState: SaveEditResumeState = {
@@ -18,6 +24,11 @@ const initialState: SaveEditResumeState = {
     resume: null,
     message: null,
   },
+  updateResume: {
+    isEdited: null,
+    newResume: null,
+  },
+  uploadImage: { location: '', isUpload: null },
 };
 
 const asyncResumeField = createReducer<SaveEditResumeState, Actions>(
@@ -55,6 +66,40 @@ const asyncResumeField = createReducer<SaveEditResumeState, Actions>(
       editResume: {
         ['resume']: null,
         ['message']: action.payload.message,
+      },
+    }),
+    [UPDATE_RESUME_FIELD_REQUEST]: (state) => ({
+      ...state,
+    }),
+    [UPDATE_RESUME_FIELD_SUCCESS]: (state, action) => ({
+      ...state,
+      updateResume: {
+        ['newResume']: action.payload.newResume,
+        ['isEdited']: null,
+      },
+    }),
+    [UPDATE_RESUME_FIELD_FAILURE]: (state, action) => ({
+      ...state,
+      updateResume: {
+        ['newResume']: null,
+        ['isEdited']: action.payload.isEdited,
+      },
+    }),
+    [ON_UPLOAD_IMAGE_REQUEST]: (state) => ({
+      ...state,
+    }),
+    [ON_UPLOAD_IMAGE_SUCCESS]: (state, action) => ({
+      ...state,
+      uploadImage: {
+        ['location']: action.payload.location,
+        ['isUpload']: null,
+      },
+    }),
+    [ON_UPLOAD_IMAGE_FAILURE]: (state, action) => ({
+      ...state,
+      uploadImage: {
+        ['location']: null,
+        ['isUpload']: action.payload.isUpload,
       },
     }),
   },
