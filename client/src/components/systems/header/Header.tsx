@@ -23,13 +23,18 @@ interface HeaderProps {
   loginModal: boolean;
   onLoginModal: (state: boolean) => void;
   requestGoogleAuthorizationCode: () => void;
-  requestFacebookAuthorizationCode: () => void;
+  requestKakaoAuthorizationCode: () => void;
   requestGithubAuthorizationCode: () => void;
   isLoggedIn: boolean;
+  logout: boolean;
   requestSignOut: () => void;
   checkModal: boolean;
-  onAuthCheckModal: (state: boolean) => void;
+  type: string;
+  onAuthCheckModal: (state: boolean, type: string) => void;
   onCloseModal: () => void;
+  userDropdown: boolean;
+  onUserDropdown: (state: boolean) => void;
+  onWithdrawal: () => void;
 }
 // * ====================
 // *  REACT.FC
@@ -43,13 +48,18 @@ const Header: React.FC<HeaderProps> = ({
   loginModal,
   onLoginModal,
   requestGoogleAuthorizationCode,
-  requestFacebookAuthorizationCode,
+  requestKakaoAuthorizationCode,
   requestGithubAuthorizationCode,
   isLoggedIn,
+  logout,
   requestSignOut,
   checkModal,
+  type,
   onAuthCheckModal,
   onCloseModal,
+  userDropdown,
+  onUserDropdown,
+  onWithdrawal,
 }) => {
   // * ====================
   // *  RESPONSIVE
@@ -76,20 +86,24 @@ const Header: React.FC<HeaderProps> = ({
             <RightLoginButton
               onLoginModal={onLoginModal}
               isLoggedIn={isLoggedIn}
+              logout={logout}
               requestSignOut={requestSignOut}
+              userDropdown={userDropdown}
+              onUserDropdown={onUserDropdown}
+              onWithdrawal={onWithdrawal}
             />
           </div>
           {loginModal && (
             <LoginModal
               onLoginModal={onLoginModal}
               requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
-              requestFacebookAuthorizationCode={
-                requestFacebookAuthorizationCode
-              }
+              requestKakaoAuthorizationCode={requestKakaoAuthorizationCode}
               requestGithubAuthorizationCode={requestGithubAuthorizationCode}
             />
           )}
-          {checkModal && <AuthCheckModal onCloseModal={onCloseModal} />}
+          {checkModal && (
+            <AuthCheckModal type={type} onCloseModal={onCloseModal} />
+          )}
         </>
       )}
       {isMobile && (

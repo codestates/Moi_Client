@@ -3,7 +3,11 @@ import * as actions from '../../../../modules/socialLoginField/github/actions';
 import { State } from '../../../../modules/socialLoginField/github/types';
 
 function useGithubLogin(): {
-  githubUser: { id: string | null; email: string | null };
+  githubUser: {
+    id: string | null;
+    email: string | null;
+    thumbnail: string | null;
+  };
   githubLogin: (authorizationCode: string) => void;
 } {
   const dispatch = useDispatch();
@@ -12,6 +16,7 @@ function useGithubLogin(): {
       githubUser: {
         id: githubLoginField.currentUser.id,
         email: githubLoginField.currentUser.email,
+        thumbnail: githubLoginField.currentUser.thumbnail,
       },
     }),
   );

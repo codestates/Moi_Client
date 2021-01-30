@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { check, logout } from '../../../api/socialLogin';
+import { check, logout, withdrawal } from '../../../api/socialLogin';
 
 function* checkSaga() {
   try {
@@ -33,9 +33,19 @@ function* logoutSaga() {
   }
 }
 
+function* withdrawalSaga() {
+  try {
+    yield call(withdrawal);
+    localStorage.removeItem('current_user');
+  } catch (e) {
+    throw Error(e);
+  }
+}
+
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* userSaga() {
   yield takeLatest('CHECK_USER_REQUEST', checkSaga);
   yield takeLatest('CHECK_USER_FAILURE', checkFailureSaga);
   yield takeLatest('LOGOUT_USER_REQUEST', logoutSaga);
+  yield takeLatest('WITHDRAWAL_USER_REQUEST', withdrawalSaga);
 }

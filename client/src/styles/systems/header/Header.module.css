@@ -1,11 +1,12 @@
 .block_container {
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   max-width: 100%;
-  padding: 0px 55px;
+  padding: 0px 100px;
     background: white;
     width: 100%;
+    height: 5rem;
     position: fixed;
     z-index: 2;
 }
@@ -13,8 +14,8 @@
 .left_side_anchor{
   cursor: pointer;
 }
+
 .left_side_anchor img {
-  padding: 15px 0px 0px 0px;
   width: 45px;
 }
 
@@ -27,15 +28,14 @@
 }
 
 .middle_nav_bar svg{
-    top: 20px;
-    position: absolute;
     font-size: 25px;
 }
 .middle__nav__bar__overView__button{
+  display: flex;
+  align-items: center;
   font-size: 15px;
   color :var(--mainText);
   background: none;
-  margin: 0px 20px;
   border: none;
   font-weight: 700;
   cursor:pointer;
@@ -70,6 +70,8 @@
 
 
 .middle__nav__list__strong{
+  display: flex;
+  align-items: center;
   font-weight: 700;
 }
 .middle__nav__list__strong::after{
@@ -92,6 +94,30 @@ color:var(--subText)
 
 .right_login_button:focus {
  outline: none;
+}
+
+.right__toggle__button__block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  cursor: pointer;
+}
+
+.right__toggle__image__block{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  margin-right: 5px;
+  overflow: hidden;
+}
+
+.right__toggle__image__block img {
+  width: 2.9rem;
 }
 
 .response__logo__block{

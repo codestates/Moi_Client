@@ -3,7 +3,11 @@ import * as actions from '../../../../modules/socialLoginField/google/actions';
 import { State } from '../../../../modules/socialLoginField/google/types';
 
 function useGoogleLogin(): {
-  googleUser: { id: string | null; email: string | null };
+  googleUser: {
+    id: string | null;
+    email: string | null;
+    thumbnail: string | null;
+  };
   googleLogin: (authorizationCode: string) => void;
 } {
   const dispatch = useDispatch();
@@ -12,6 +16,7 @@ function useGoogleLogin(): {
       googleUser: {
         id: googleLoginField.currentUser.id,
         email: googleLoginField.currentUser.email,
+        thumbnail: googleLoginField.currentUser.thumbnail,
       },
     }),
   );

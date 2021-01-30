@@ -1,15 +1,46 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../../../styles/pages/my_page/Index.module.css';
-import Resume from './resume/Resume';
+import ResumeAddCard from './ResumeAddCard';
+import ResumeCard from './ResumeCard';
 import { ResumeData } from '../../../modules/get_mypage/types';
 interface MypageProps {
   list: ResumeData[];
   editRequest: (resumeId: string) => void;
+  handleMouseEnter: (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => void;
+  handleMouseLeave: (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => void;
 }
-const MyPage: React.FC<MypageProps> = ({ list, editRequest }) => {
+const MyPage: React.FC<MypageProps> = ({
+  list,
+  editRequest,
+  handleMouseEnter,
+  handleMouseLeave,
+}) => {
   return (
     <div className={styles.block}>
-      <Resume list={list} editRequest={editRequest} />
+      <div className={styles.wrapper}>
+        <ul>
+          <li className={styles.card__block}>
+            <Link to="/template">
+              <ResumeAddCard />
+            </Link>
+          </li>
+          {list.map((resume, index) => (
+            <li className={styles.card__block} key={resume.resumeId}>
+              <ResumeCard
+                resume={resume}
+                handleMouseEnter={handleMouseEnter}
+                handleMouseLeave={handleMouseLeave}
+                currentIndex={index}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

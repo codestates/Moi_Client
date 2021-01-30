@@ -8,8 +8,8 @@ export const google: (data: any) => Promise<UserInfo> = async (data) => {
   return response.data;
 };
 
-export const facebook: (data: any) => Promise<UserInfo> = async (data) => {
-  const response = await axios.post('/auth/facebook', data, {
+export const kakao: (data: any) => Promise<UserInfo> = async (data) => {
+  const response = await axios.post('/auth/kakao', data, {
     withCredentials: true,
   });
   return response.data;
@@ -37,12 +37,24 @@ export const logout: () => Promise<UserInfo> = async () => {
   return response.data;
 };
 
+export const withdrawal: () => Promise<UserInfo> = async () => {
+  const response = await axios.post(
+    '/auth/withdrawal',
+    {},
+    { withCredentials: true },
+  );
+
+  return response.data;
+};
+
 export interface UserInfo {
   currentUser: {
     id: string;
     email: string;
+    thumbnail: string;
   };
   isLoggedIn: boolean;
+  withdrawal: boolean;
 }
 
 export default google;
