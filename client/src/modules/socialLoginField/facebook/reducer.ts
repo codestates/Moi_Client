@@ -1,32 +1,33 @@
 import { createReducer } from 'typesafe-actions';
 import { State, Actions } from './types';
 import {
-  FACEBOOK_LOGIN_REQUEST,
-  FACEBOOK_LOGIN_SUCCESS,
-  FACEBOOK_LOGIN_FAILURE,
+  KAKAO_LOGIN_REQUEST,
+  KAKAO_LOGIN_SUCCESS,
+  KAKAO_LOGIN_FAILURE,
 } from './actions';
 
 const initialState: State = {
   currentUser: {
     id: '',
     email: '',
+    thumbnail: '',
   },
   message: '',
 };
 
-const facebookLoginField = createReducer<State, Actions>(initialState, {
-  [FACEBOOK_LOGIN_REQUEST]: (state) => ({
+const kakaoLoginField = createReducer<State, Actions>(initialState, {
+  [KAKAO_LOGIN_REQUEST]: (state) => ({
     ...state,
   }),
-  [FACEBOOK_LOGIN_SUCCESS]: (state, action) => ({
+  [KAKAO_LOGIN_SUCCESS]: (state, action) => ({
     ...state,
     currentUser: action.payload.currentUser,
     message: null,
   }),
-  [FACEBOOK_LOGIN_FAILURE]: (state, action) => ({
+  [KAKAO_LOGIN_FAILURE]: (state, action) => ({
     ...state,
     message: action.payload.message,
   }),
 });
 
-export default facebookLoginField;
+export default kakaoLoginField;

@@ -1,0 +1,21 @@
+.card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus__icon {
+    font-size: 5rem;
+    color: var(--mainGreen);
+    margin-bottom: 30px;
+}
+
+.card__content >  p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--mainText)
+}
+
+
+

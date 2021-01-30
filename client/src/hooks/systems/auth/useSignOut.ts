@@ -1,28 +1,24 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../../modules/socialLoginField/user/actions';
+import { CheckState } from '../../../modules/socialLoginField/user/types';
 
 function useSignOut(): {
   logout: boolean;
   requestSignOut: () => void;
-  changeLogoutState: () => void;
 } {
-  const [logout, setLogout] = useState<boolean>(false);
-
   const dispatch = useDispatch();
-
+  const { logout } = useSelector(
+    ({ checkUserField }: { checkUserField: CheckState }) => ({
+      logout: checkUserField.logout,
+    }),
+  );
   const requestSignOut = () => {
-    setLogout(true);
-    dispatch(actions.logoutUser());
-  };
-
-  const changeLogoutState = () => {
-    setLogout(false);
+    dispatch(actions.logoutUser({ state: true }));
   };
 
   return {
     requestSignOut,
-    changeLogoutState,
     logout,
   };
 }

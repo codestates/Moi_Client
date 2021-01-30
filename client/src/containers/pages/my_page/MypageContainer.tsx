@@ -5,14 +5,23 @@ import useEditResumeField from '../../../hooks/pages/my_page/useEditResumeField'
 
 const MypageContainer: React.FC = () => {
   const { onMypageRequest, list } = useMypageRequest();
-  const { editRequest } = useEditResumeField();
+  const {
+    editRequest,
+    handleMouseEnter,
+    handleMouseLeave,
+  } = useEditResumeField();
 
   useEffect(() => {
     onMypageRequest();
   }, []);
   return (
     <>
-      <MyPage list={list} editRequest={editRequest} />
+      <MyPage
+        list={list}
+        editRequest={editRequest}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
+      />
     </>
   );
 };
