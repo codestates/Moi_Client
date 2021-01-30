@@ -3,9 +3,10 @@ import DropDownUserModal from '../dropdown_user_modal/DropDownUserModal';
 import OutsideClickHandler from 'react-outside-click-handler';
 import styles from '../../../../styles/systems/header/Header.module.css';
 import { AiFillCaretDown } from 'react-icons/ai';
+import { GiSwallow } from 'react-icons/gi';
 
 interface RightLoginButtonProps {
-  onLoginModal: (state: boolean) => void;
+  hadleLoginModal: () => void;
   isLoggedIn: boolean;
   logout: boolean;
   requestSignOut: () => void;
@@ -15,7 +16,7 @@ interface RightLoginButtonProps {
 }
 
 const RightLoginButton: React.FC<RightLoginButtonProps> = ({
-  onLoginModal,
+  hadleLoginModal,
   isLoggedIn,
   logout,
   requestSignOut,
@@ -38,10 +39,11 @@ const RightLoginButton: React.FC<RightLoginButtonProps> = ({
               onClick={() => onUserDropdown(!userDropdown)}
             >
               <div className={styles.right__toggle__image__block}>
-                <img
-                  src={userInfo.thumbnail ? userInfo.thumbnail : ''}
-                  alt="profile"
-                />
+                {userInfo.thumbnail ? (
+                  <img src={userInfo.thumbnail} alt="profile" />
+                ) : (
+                  <GiSwallow />
+                )}
               </div>
               <AiFillCaretDown />
               {userDropdown && (
@@ -56,7 +58,7 @@ const RightLoginButton: React.FC<RightLoginButtonProps> = ({
       ) : (
         <button
           className={styles.right_login_button}
-          onClick={() => onLoginModal(true)}
+          onClick={() => hadleLoginModal()}
         >
           로그인
         </button>

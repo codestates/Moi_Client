@@ -43,6 +43,7 @@ function useChangeInfoField(): {
 
   const onChangeFields = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
+
     onChangeField<string>(name, value);
   };
   const onChangeTextAreas = (

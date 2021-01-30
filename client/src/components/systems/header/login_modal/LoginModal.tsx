@@ -7,14 +7,14 @@ import headerLogo from '../../../../public/headerLogo.png';
 import styles from '../../../../styles/systems/header/LoginModal.module.css';
 
 interface LoginModal {
-  onLoginModal: (state: boolean) => void;
+  hadleLoginModal: () => void;
   requestGoogleAuthorizationCode: () => void;
   requestKakaoAuthorizationCode: () => void;
   requestGithubAuthorizationCode: () => void;
 }
 
 const LoginModal: React.FC<LoginModal> = ({
-  onLoginModal,
+  hadleLoginModal,
   requestGoogleAuthorizationCode,
   requestKakaoAuthorizationCode,
   requestGithubAuthorizationCode,
@@ -24,7 +24,7 @@ const LoginModal: React.FC<LoginModal> = ({
       <div className={styles.white__box}>
         <AiOutlineClose
           className={styles.close__button}
-          onClick={() => onLoginModal(false)}
+          onClick={() => hadleLoginModal()}
         />
         <div className={styles.logo__block}>
           <img src={headerLogo} alt="logo" />

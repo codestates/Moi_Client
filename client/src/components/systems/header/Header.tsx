@@ -21,7 +21,7 @@ interface HeaderProps {
   onBugerMenu: () => void;
   onScroll: (destination: string, name: string) => JSX.Element;
   loginModal: boolean;
-  onLoginModal: (state: boolean) => void;
+  hadleLoginModal: () => void;
   requestGoogleAuthorizationCode: () => void;
   requestKakaoAuthorizationCode: () => void;
   requestGithubAuthorizationCode: () => void;
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({
   onBugerMenu,
   onScroll,
   loginModal,
-  onLoginModal,
+  hadleLoginModal,
   requestGoogleAuthorizationCode,
   requestKakaoAuthorizationCode,
   requestGithubAuthorizationCode,
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({
               onAuthCheckModal={onAuthCheckModal}
             />
             <RightLoginButton
-              onLoginModal={onLoginModal}
+              hadleLoginModal={hadleLoginModal}
               isLoggedIn={isLoggedIn}
               logout={logout}
               requestSignOut={requestSignOut}
@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
           {loginModal && (
             <LoginModal
-              onLoginModal={onLoginModal}
+              hadleLoginModal={hadleLoginModal}
               requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
               requestKakaoAuthorizationCode={requestKakaoAuthorizationCode}
               requestGithubAuthorizationCode={requestGithubAuthorizationCode}
@@ -119,7 +119,27 @@ const Header: React.FC<HeaderProps> = ({
               <HiMenu />
             </button>
           </div>
-          <Buger bugerMenu={bugerMenu} onBugerMenu={onBugerMenu} />
+          <Buger
+            bugerMenu={bugerMenu}
+            onBugerMenu={onBugerMenu}
+            hadleLoginModal={hadleLoginModal}
+            isLoggedIn={isLoggedIn}
+            logout={logout}
+            requestSignOut={requestSignOut}
+            onWithdrawal={onWithdrawal}
+            onAuthCheckModal={onAuthCheckModal}
+          />
+          {loginModal && (
+            <LoginModal
+              hadleLoginModal={hadleLoginModal}
+              requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
+              requestKakaoAuthorizationCode={requestKakaoAuthorizationCode}
+              requestGithubAuthorizationCode={requestGithubAuthorizationCode}
+            />
+          )}
+          {checkModal && (
+            <AuthCheckModal type={type} onCloseModal={onCloseModal} />
+          )}
         </>
       )}
     </>
