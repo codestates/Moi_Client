@@ -11,12 +11,14 @@ import { Link } from 'react-scroll';
 
 interface LandingPageProps {
   checkModal: boolean;
-  onAuthCheckModal: (state: boolean) => void;
+  type: string;
+  onAuthCheckModal: (state: boolean, type: string) => void;
   onCloseModal: () => void;
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({
   checkModal,
+  type,
   onAuthCheckModal,
   onCloseModal,
 }) => {
@@ -25,6 +27,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
       <Element name="intro">
         <Intro
           checkModal={checkModal}
+          type={type}
           onAuthCheckModal={onAuthCheckModal}
           onCloseModal={onCloseModal}
         />

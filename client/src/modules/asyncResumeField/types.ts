@@ -13,6 +13,12 @@ import {
   editResumeFieldRequest,
   editResumeFieldSuccess,
   editResumeFieldFailure,
+  updateResumeFieldRequest,
+  updateResumeFieldSuccess,
+  updateResumeFieldFailure,
+  onUploadImageRequest,
+  onUploadImageSuccess,
+  onUploadImageFailure,
 } from './actions';
 
 export interface SaveEditResumeState {
@@ -47,6 +53,34 @@ export interface SaveEditResumeState {
     };
     message: null | string;
   };
+  updateResume: {
+    isEdited: null | boolean;
+    newResume: null | {
+      info: {
+        username: string;
+        avatar: string;
+        profile: string;
+        contact: {
+          address: string;
+          phone: string;
+          email: string;
+          link: {
+            facebook: string;
+            twitter: string;
+            blog: string;
+            github: string;
+            youtube: string;
+            instagram: string;
+          };
+        };
+      };
+      skills: SkillItem[];
+      workExperience: ExperienceItem[];
+      educations: EducationItem[];
+      aeas: AeaItem[];
+    };
+  };
+  uploadImage: { location: null | string; isUpload: null | boolean };
 }
 
 const actions = {
@@ -56,5 +90,11 @@ const actions = {
   editResumeFieldRequest,
   editResumeFieldSuccess,
   editResumeFieldFailure,
+  updateResumeFieldRequest,
+  updateResumeFieldSuccess,
+  updateResumeFieldFailure,
+  onUploadImageRequest,
+  onUploadImageSuccess,
+  onUploadImageFailure,
 };
 export type Actions = ActionType<typeof actions>;

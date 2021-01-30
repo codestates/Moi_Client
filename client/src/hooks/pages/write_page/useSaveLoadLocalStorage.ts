@@ -44,6 +44,7 @@ function useSaveLocalStorage(): {
 
   const setLocalStorage = (values: {
     template: number;
+    resumeId?: string;
     info: {
       username: string;
       avatar: string;
@@ -70,7 +71,16 @@ function useSaveLocalStorage(): {
   }) => {
     localStorage.setItem('resume-field', JSON.stringify(values));
     if (localStorage.getItem('current_user')) {
-      dispatch(asyncResume.saveResumeFieldRequest({ values }));
+      if (localStorage.getItem('edit_field')) {
+        const localState = JSON.parse(
+          localStorage.getItem('edit_field') || '{}',
+        );
+        values.resumeId = localState._id;
+
+        dispatch(asyncResume.updateResumeFieldRequest({ values }));
+      } else {
+        dispatch(asyncResume.saveResumeFieldRequest({ values }));
+      }
     }
   };
 
@@ -88,6 +98,7 @@ function useSaveLocalStorage(): {
       const localState = JSON.parse(
         localStorage.getItem('resume-field') || '{}',
       );
+
       dispatch(info.loadInfoField({ state: localState.info }));
       dispatch(skills.loadSkillsField({ state: localState.skills }));
       dispatch(

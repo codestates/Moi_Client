@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import Info from '../../../../components/pages/write_page/write/user_info/UserInfo';
+import UserInfo from '../../../../components/pages/write_page/write/user_info/UserInfo';
 import Profile from '../../../../components/pages/write_page/write/profile/Profile';
 import useChangeInfoField from '../../../../hooks/pages/write_page/useChangeInfoField';
 import useSaveLocalStorage from '../../../../hooks/pages/write_page/useSaveLoadLocalStorage';
+import useUploadModal from '../../../../hooks/systems/modal/useUploadModal';
 import { useSelector } from 'react-redux';
 import { SaveEditResumeState } from '../../../../modules/asyncResumeField/types';
 
@@ -16,10 +17,14 @@ const InfoContainer: React.FC = () => {
     address,
     phone,
     email,
+    avatar,
     title,
     onChangeFields,
     onChangeTextAreas,
+    onChangeAvatarField,
   } = useChangeInfoField();
+
+  const { uploadModal, onUploadModal } = useUploadModal();
 
   //? useSelector
   const { resume } = useSelector(
@@ -36,13 +41,17 @@ const InfoContainer: React.FC = () => {
 
   return (
     <>
-      <Info
+      <UserInfo
         username={username}
         address={address}
         phone={phone}
         email={email}
+        avatar={avatar}
         title={title}
         onChangeFields={onChangeFields}
+        uploadModal={uploadModal}
+        onUploadModal={onUploadModal}
+        onChangeAvatarField={onChangeAvatarField}
       />
       <Profile profile={profile} onChangeTextAreas={onChangeTextAreas} />
     </>

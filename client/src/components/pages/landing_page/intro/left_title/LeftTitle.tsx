@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../../../../styles/pages/landing_page/intro/Intro.module.css';
 import { Link } from 'react-router-dom';
 interface LeftTitleProps {
-  onAuthCheckModal: (state: boolean) => void;
+  onAuthCheckModal: (state: boolean, type: string) => void;
 }
 
 const LeftTitle: React.FC<LeftTitleProps> = ({ onAuthCheckModal }) => {
@@ -26,7 +26,7 @@ const LeftTitle: React.FC<LeftTitleProps> = ({ onAuthCheckModal }) => {
 
       <button
         className={styles.start__button}
-        onClick={() => onAuthCheckModal(true)}
+        onClick={() => onAuthCheckModal(true, 'write')}
       >
         시작하기
       </button>

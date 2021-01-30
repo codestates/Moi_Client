@@ -2,20 +2,21 @@ import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { SiFacebook, SiGithub } from 'react-icons/si';
+import { RiKakaoTalkFill } from 'react-icons/ri';
 import headerLogo from '../../../../public/headerLogo.png';
 import styles from '../../../../styles/systems/header/LoginModal.module.css';
 
 interface LoginModal {
   onLoginModal: (state: boolean) => void;
   requestGoogleAuthorizationCode: () => void;
-  requestFacebookAuthorizationCode: () => void;
+  requestKakaoAuthorizationCode: () => void;
   requestGithubAuthorizationCode: () => void;
 }
 
 const LoginModal: React.FC<LoginModal> = ({
   onLoginModal,
   requestGoogleAuthorizationCode,
-  requestFacebookAuthorizationCode,
+  requestKakaoAuthorizationCode,
   requestGithubAuthorizationCode,
 }) => {
   return (
@@ -40,11 +41,11 @@ const LoginModal: React.FC<LoginModal> = ({
           </li>
           <li>
             <button
-              className={styles.facebook__button}
-              onClick={requestFacebookAuthorizationCode}
+              className={styles.kakao__button}
+              onClick={requestKakaoAuthorizationCode}
             >
-              <SiFacebook className={styles.login__logo} />
-              Facebook으로 로그인
+              <RiKakaoTalkFill className={styles.login__logo} />
+              Kakao로 로그인
             </button>
           </li>
           <li>

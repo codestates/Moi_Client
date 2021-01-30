@@ -94,7 +94,7 @@ const PdfDocument: React.FC<PdfDocumentProps> = ({ values }) => {
         <Profile values={values} />
         {values.skills.length >= 1 && <Skills values={values} />}
         {values.workExperience.length >= 1 && <Experience values={values} />}
-        {values.educations.length >= 1 && <Edu values={values} />}
+        {values?.educations.length >= 1 && <Edu values={values} />}
         {values.aeas.length >= 1 && <Aea values={values} />}
       </Page>
     </Document>

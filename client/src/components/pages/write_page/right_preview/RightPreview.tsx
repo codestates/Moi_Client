@@ -36,7 +36,7 @@ interface RightPreviewProps {
 
 const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
   //? user_info
-  const { username, profile, contact } = values.info;
+  const { username, profile, avatar, contact } = values.info;
 
   //? user_skills
   const printSkills = values.skills.map((ele) => {
@@ -116,13 +116,20 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
   //* =========================
   return (
     <section className={styles.container}>
-      <h1 className={styles.name__h1}>{username}</h1>
-      <div className={styles.contact_block__div}>
-        <ul>
-          <li>이메일 : {contact.email}</li>
-          <li>주소 : {contact.address}</li>
-          <li>연락처 : {contact.phone}</li>
-        </ul>
+      <div className={styles.header_block__div}>
+        <div>
+          <h1 className={styles.name__h1}>{username}</h1>
+          <div className={styles.contact_block__div}>
+            <ul>
+              <li>이메일 : {contact.email}</li>
+              <li>주소 : {contact.address}</li>
+              <li>연락처 : {contact.phone}</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <img src={avatar} alt="avatar" />
+        </div>
       </div>
 
       <div className={styles.profile_block__div}>
