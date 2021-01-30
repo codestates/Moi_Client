@@ -13,6 +13,9 @@ import {
   ON_UPLOAD_IMAGE_REQUEST,
   ON_UPLOAD_IMAGE_SUCCESS,
   ON_UPLOAD_IMAGE_FAILURE,
+  DELETE_RESUME_FIELD_REQUEST,
+  DELETE_RESUME_FIELD_SUCCESS,
+  DELETE_RESUME_FIELD_FAILURE,
 } from './actions';
 
 const initialState: SaveEditResumeState = {
@@ -29,6 +32,7 @@ const initialState: SaveEditResumeState = {
     newResume: null,
   },
   uploadImage: { location: '', isUpload: null },
+  deleteResume: { isDeleted: null, message: null },
 };
 
 const asyncResumeField = createReducer<SaveEditResumeState, Actions>(
@@ -101,6 +105,19 @@ const asyncResumeField = createReducer<SaveEditResumeState, Actions>(
         ['location']: null,
         ['isUpload']: action.payload.isUpload,
       },
+    }),
+    [DELETE_RESUME_FIELD_REQUEST]: (state) => ({
+      ...state,
+    }),
+    [DELETE_RESUME_FIELD_SUCCESS]: (state, action) => ({
+      ...state,
+      isDeleted: action.payload.isDeleted,
+      message: null,
+    }),
+    [DELETE_RESUME_FIELD_FAILURE]: (state, action) => ({
+      ...state,
+      isDeleted: false,
+      message: action.payload.message,
     }),
   },
 );

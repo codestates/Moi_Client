@@ -7,6 +7,7 @@ import { ResumeData } from '../../../modules/get_mypage/types';
 interface MypageProps {
   list: ResumeData[];
   editRequest: (resumeId: string) => void;
+  onDeleteResume: (resumeId: string) => void;
   handleMouseEnter: (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => void;
@@ -19,6 +20,7 @@ const MyPage: React.FC<MypageProps> = ({
   editRequest,
   handleMouseEnter,
   handleMouseLeave,
+  onDeleteResume,
 }) => {
   return (
     <div className={styles.block}>
@@ -33,8 +35,10 @@ const MyPage: React.FC<MypageProps> = ({
             <li className={styles.card__block} key={resume.resumeId}>
               <ResumeCard
                 resume={resume}
+                editRequest={editRequest}
                 handleMouseEnter={handleMouseEnter}
                 handleMouseLeave={handleMouseLeave}
+                onDeleteResume={onDeleteResume}
                 currentIndex={index}
               />
             </li>

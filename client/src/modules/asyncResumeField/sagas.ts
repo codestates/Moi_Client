@@ -5,6 +5,7 @@ import {
   editResumeAsync,
   updateResumeAsync,
   uploadImageAsync,
+  deleteResumeAsync,
 } from '../../api/asyncResume';
 import { Actions } from '../../modules/asyncResumeField/types';
 
@@ -68,18 +69,25 @@ function* fetchUpload(actions: Actions) {
   }
 }
 
-export function* saveResumeSaga() {
+function* fetchDelete(actions: Actions) {
+  try {
+    const req = yield call(deleteResumeAsync, actions.payload);
+    yield put({
+      type: 'DELETE_RESUME_FIELD_SUCCESS',
+      payload: { isDeleted: req.isDeleted },
+    });
+  } catch (e) {
+    yield put({
+      type: 'DELETE_RESUME_FIELD_FAILURE',
+      payload: { message: e.message },
+    });
+  }
+}
+
+export function* requestResumeSaga() {
   yield takeLatest('SAVE_RESUME_FIELD_REQUEST', fetchSave);
-}
-
-export function* editResumeSaga() {
   yield takeLatest('EDIT_RESUME_FIELD_REQUEST', fetchEdit);
-}
-
-export function* updateResumeSaga() {
   yield takeLatest('UPDATE_RESUME_FIELD_REQUEST', fetchUpdate);
-}
-
-export function* uploadImageSaga() {
   yield takeLatest('ON_UPLOAD_IMAGE_REQUEST', fetchUpload);
+  yield takeLatest('DELETE_RESUME_FIELD_REQUEST', fetchDelete);
 }
