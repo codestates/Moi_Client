@@ -1,0 +1,126 @@
+@media screen and (min-width: 769px) {
+  .review__card__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  
+  .review__card__list header {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .review__card__list__header__rating__block  {
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+  }
+  
+  .review__card__list strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--mainText);
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  
+  .review__card__list__profile__img{
+    margin-right: 12px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .review__card__list span {
+    color: var(--nomalText);
+  }
+  
+  .review__card__list_item {
+    border-radius: 5px;
+    width: 30%;
+    padding: 25px 30px;
+    box-shadow: 0 0px 23px rgba(50,50,93,0.2);
+  }
+  
+  .review__card__list article {
+    font-size: 15px;
+    line-height: 27px;
+    color: var(--nomalText);
+  }
+  
+  .review__card__list__star__list {
+    display: flex;
+  
+  }
+  .review__card__list__star__list svg{
+    margin-right: 3px;
+    color: rgb(255,213,47);
+  }
+  
+  
+}
+
+@media screen and (max-width: 768px) {
+  .review__card__list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  
+  .review__card__list header {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .review__card__list__header__rating__block  {
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+  }
+  
+  .review__card__list strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--mainText);
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  
+  .review__card__list__profile__img{
+    margin-right: 12px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .review__card__list span {
+    color: var(--nomalText);
+  }
+  
+  .review__card__list_item {
+    border-radius: 5px;
+    width: 100%;
+    padding: 25px 30px;
+    box-shadow: 0 0px 23px rgba(50,50,93,0.2);
+    margin-bottom: 25px;
+  }
+  
+  .review__card__list article {
+    font-size: 15px;
+    line-height: 27px;
+    color: var(--nomalText);
+  }
+  
+  .review__card__list__star__list {
+    display: flex;
+  
+  }
+  .review__card__list__star__list svg{
+    margin-right: 3px;
+    color: rgb(255,213,47);
+  }
+}
+
+
+

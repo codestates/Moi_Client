@@ -1,0 +1,128 @@
+@media screen and (min-width: 1025px) {
+.template__cards__list {  
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.template__cards__list li {
+  width: 31%;
+  cursor: pointer;
+}
+
+.template__cards__list__nameTag {
+  width: 40%;
+  font-size: 16px;
+  font-family: 'Jua';
+  background: var(--mainGreen);
+  color: white;
+  padding :5px 10px 5px 5px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.template__cards__list__preview__block{
+  position: relative;
+  transition: all 300ms ease-in-out;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.template__cards__list__preview__block:hover{
+    transition: all 300ms ease-in-out;
+    transform: scale(1.03);
+}
+
+.template__cards__list img{
+  width: 100%;
+  height: auto;
+}
+
+.template__cards__list__button__block {
+  cursor: pointer;
+  background: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.template__cards__list a {
+  text-decoration: none;
+}
+
+.template__cards__list svg {
+  color: var(--nomalText);
+  font-size: 20px;
+}
+}
+
+@media screen and (max-width: 1024px) {
+  .template__cards__list {  
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+.template__cards__list li {
+  width: 70%;
+}
+
+.template__cards__list__nameTag {
+  width: 60%;
+  font-size: 16px;
+  font-family: 'Jua';
+  background: var(--mainGreen);
+  color: white;
+  padding :5px 10px 5px 5px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.template__cards__list__preview__block{
+  position: relative;
+  transition: all 300ms ease-in-out;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.template__cards__list__preview__block:hover{
+    transition: all 300ms ease-in-out;
+    transform: scale(1.03);
+}
+
+.template__cards__list img{
+  width: 100%;
+  height: auto;
+}
+
+.template__cards__list__button__block {
+  cursor: pointer;
+  background: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.template__cards__list a {
+  text-decoration: none;
+}
+
+.template__cards__list svg {
+  color: var(--nomalText);
+  font-size: 20px;
+}
+}

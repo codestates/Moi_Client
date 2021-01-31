@@ -1,0 +1,317 @@
+@media screen and (min-width: 1025px) {
+  .education_container__article{
+    margin-bottom: 50px;
+  }
+
+  .education_container__article > div{
+    margin-bottom: 20px;
+  }
+
+  .education_title__p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--mainText);
+    padding-bottom: 10px;
+  }
+
+  .education_sub_title__p {
+    color: var(--nomalText);
+    font-size: 12px;
+  }
+
+  .education_list_block__div {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .education_list_block__div button{
+    text-align: left;
+    width: 100%;
+    padding : 12px 0px 12px 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--mainGreen);
+  }
+
+  .education_list_block__div button:hover {
+    background: #19a76c11;
+  }
+ 
+  .education_list__li {
+    box-shadow: -1px 2px 4px rgba(50,50,93,0.2);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    padding: 0px 15px 0px 15px;
+    position: relative;
+  }
+
+  .education_list_header {
+    padding: 15px 0px 25px 0px;
+  }
+  .education_list_header svg{
+    color: var(--mainGreen);
+    font-size: 12px;
+  }
+
+
+  .education_list_header__button  {
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--mainText);
+    font-weight: 800;
+    padding-bottom: 5px;
+    margin-right: 7px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+  }
+
+  .education_list_header__button:hover {
+    color: var(--mainGreen);
+    transition: all 200ms ease-in-out;
+  }
+
+  .education_list_header p{
+    color: var(--nomalText)
+  }
+  .education_company_and_position_container__div{
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  .education_company_and_position_block__div{
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+    width: 50%;
+  }
+
+  .education_company_and_position_block__div form {
+    padding-top: 5px;
+    margin-right: 20px;
+  }
+
+  .education_company_and_position_block__div input {
+    background: #f2f5fa;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .education_period_container__div {
+    margin-bottom: 20px;
+  }
+  .education_period_title_block__div {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .education_period_in_office__span{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: 100;
+  }
+
+  .education_period_in_office__span input {
+    margin-right: 5px;
+  }
+
+  .education_period__input {
+    background: #f2f5fa;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 10px 10px;
+  width: 22%;
+  border-radius: 5px;
+  }
+
+  .education_period_wave__span {
+    padding: 10px;
+  }
+
+  .education_delete__button {
+    top: 15px;
+  position: absolute;
+  right: 15px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mainGreen);
+  font-size: 15px;
+}
+}
+
+
+@media screen and (max-width: 1024px) {
+  .education_container__article{
+    margin-bottom: 50px;
+  }
+
+  .education_container__article > div{
+    margin-bottom: 20px;
+  }
+
+  .education_title__p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--mainText);
+    padding-bottom: 10px;
+  }
+
+  .education_sub_title__p {
+    color: var(--nomalText);
+    font-size: 12px;
+  }
+  .education_list_block__div {
+    width: 100%;
+    border-radius: 3px;
+  }
+  .education_list_block__div button{
+    text-align: left;
+    width: 100%;
+    padding : 12px 0px 12px 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--mainGreen);
+  }
+  .education_list_block__div button:hover {
+    background: #19a76c11;
+  }
+ 
+
+  /* education_list */
+  .education_list__li {
+    box-shadow: -1px 2px 4px rgba(50,50,93,0.2);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    padding: 0px 15px 0px 15px;
+    position: relative;
+  }
+
+  .education_list_header {
+    padding: 15px 0px 25px 0px;
+  }
+  
+  .education_list_header svg{
+    color: var(--mainGreen);
+    font-size: 12px;
+  }
+
+  .education_list_header__button {
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--mainText);
+    font-weight: 800;
+    padding-bottom: 5px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: all 200ms ease-in-out;
+  }
+
+  .education_list_header__button:hover {
+    color: var(--mainGreen);
+    transition: all 200ms ease-in-out;
+  }
+
+  .education_list_header p{
+    color: var(--nomalText)
+  }
+
+  .education_company_and_position_container__div{
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  .education_company_and_position_block__div{
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+    width: 50%;
+  }
+
+  .education_company_and_position_block__div form {
+    padding-top: 5px;
+    margin-right: 20px;
+  }
+
+  .education_company_and_position_block__div input {
+    background: #f2f5fa;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .education_period_container__div {
+    margin-bottom: 30px;
+  }
+
+  .education_period_title_block__div {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .education_period_in_office__span{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: 100;
+  }
+
+  .education_period_in_office__span input {
+    margin-right: 5px;
+  }
+
+  .education_period__input {
+    background: #f2f5fa;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 10px 10px;
+  width: 22%;
+  border-radius: 5px;
+  }
+
+  .education_period_wave__span {
+    padding: 10px;
+  }
+  .education_delete__button {
+    top: 15px;
+  position: absolute;
+  right: 15px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mainGreen);
+  font-size: 15px;
+}
+}

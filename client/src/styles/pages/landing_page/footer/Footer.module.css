@@ -1,0 +1,37 @@
+.block{
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.footer__header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer__title {
+  font-size: 33px;
+  font-weight: 700;
+  padding: 60px 0 10px;
+  color: var(--mainText);
+}
+
+.footer__desc {
+  color: var(--subText);
+  padding-top: 10px;
+}
+
+
+.footer__copylight {
+  padding-top: 40px;
+  color: var(--subText);
+}

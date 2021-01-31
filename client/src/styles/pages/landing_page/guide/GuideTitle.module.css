@@ -1,0 +1,47 @@
+@media screen and (min-width: 769px) {
+  .landing__guide__header{
+    text-align: center;
+  }
+  
+  .landing__guide__header p{
+    font-size: 16px;
+    color: var(--subText);
+    padding-bottom: 75px;
+    line-height: 30px;
+  }
+
+  .landing__guide__header h3{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--mainText);
+    padding-top: 85px;
+    line-height: 40px;
+    padding-bottom: 25px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .landing__guide__header{
+    text-align: center;
+  }
+  .landing__guide__header p{
+    color: var(--subText);
+    padding-bottom: 40px;
+    line-height: 20px;
+    font-size: 15px;
+  }
+
+  .landing__guide__header h3{
+    line-height: 35px;
+    font-size: 33px;
+    font-weight: 800;
+    color: var(--mainText);
+    padding-top: 50px;
+    line-height: 45px;
+    padding-bottom: 15px;
+  }
+}
+
+
+

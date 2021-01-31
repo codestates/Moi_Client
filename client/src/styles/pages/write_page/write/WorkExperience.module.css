@@ -1,0 +1,416 @@
+/* Global input and placeholder setting */
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color:transparent;
+}
+
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:transparent;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:transparent;
+}
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:transparent;
+}
+
+/* Global input and placeholder setting END */
+
+.block {
+  margin-top: 200px;
+  width: 50%;
+  border: 1px soild black;
+  height: 400px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+  
+/* PC */
+@media screen and (min-width: 1025px) {
+  .experience_container__article{
+    margin-bottom: 50px;
+  }
+
+  .experience_container__article > div{
+    margin-bottom: 20px;
+  }
+  
+
+  .experience_title__p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--mainText);
+    padding-bottom: 10px;
+  }
+
+  .experience_sub_title__p {
+    color: var(--nomalText);
+    font-size: 12px;
+  }
+
+  .experience_list_block__div {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .experience_list_block__div button{
+    text-align: left;
+    width: 100%;
+    padding : 12px 0px 12px 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--mainGreen);
+  }
+  .experience_list_block__div button:hover {
+    background: #19a76c11;
+  }
+
+  .experience_list__li {
+    box-shadow: -1px 2px 4px rgba(50,50,93,0.2);
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    padding: 15px 15px 15px 15px;
+    position: relative;
+  }
+  .experience_company_and_position_container__div{
+    display: flex;
+    margin-bottom: 25px;
+    padding-top: 25px;
+  }
+
+  .experience_company_and_position_block__div{
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+    width: 50%;
+  }
+
+  .experience_company_and_position_block__div form {
+    padding-top: 5px;
+    margin-right: 20px;
+  }
+
+  .experience_company_and_position_block__div input {
+    background: #f2f5fa;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 10px;
+    width: 92%;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  .experience_period_container__div {
+    margin-bottom: 20px;
+  }
+  .experience_period_title_block__div {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .experience_period_in_office__span{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: 100;
+  }
+
+  .experience_period_in_office__span input {
+    margin-right: 5px;
+  }
+
+  .experience_period__input {
+    background: #f2f5fa;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 10px 10px;
+  width: 22%;
+  border-radius: 5px;
+  }
+
+  .experience_period_wave__span {
+    padding: 10px;
+  }
+
+   /* add_work */
+   .experience_add_work_container_div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .experience_add_work_container_div > div {
+    margin-bottom: 10px;
+  }
+
+  .experience_add_work_container_div button {
+  background: none;
+  border: none;
+  color: var(--mainGreen);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 15px 15px;
+  outline: none;
+  }
+  .experience_delete__button {
+    top: 15px;
+  position: absolute;
+  right: 15px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mainGreen);
+  font-size: 15px;
+  }
+
+  /* JobDesc */
+  .experience_job_desc_list__ul {
+  width: 100%;
+  }
+
+  .experience_job_desc_list__li {
+    margin-bottom: 15px;
+  }
+
+  .experience_job_desc_list__li div {
+    width: 25px;
+    height: 36px;
+    position: absolute;
+    border-radius: 8px 0px 0px 8px;
+    background: var(--mainGreen);
+  }
+
+  .experience_job_desc_list__li input {
+    width: 90%;
+    border: none;
+    font-size: 15px;
+    outline: none;
+    padding: 10px 10px 10px 40px;
+    background: #f2f5fa;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  .experience_job_desc_list__li button {
+    position: absolute;
+    background: #f2f5fa;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 37px;
+    padding: 0px 15px 0px 8px;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+
+  }
+  
+  
+  /* Mobile */
+  @media screen and (max-width: 1024px) {
+    .experience_container__article{
+      margin-bottom: 50px;
+    }
+
+    .experience_container__article > div{
+      margin-bottom: 20px;
+    }
+
+    .experience_title__p {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--mainText);
+      padding-bottom: 10px;
+    }
+
+    .experience_sub_title__p {
+      color: var(--nomalText);
+      font-size: 12px;
+    }
+    .experience_list_block__div {
+      width: 100%;
+      border-radius: 3px;
+    }
+    .experience_list_block__div button{
+      text-align: left;
+      width: 100%;
+      padding : 12px 0px 12px 15px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--mainGreen);
+    }
+    .experience_list_block__div button:hover {
+      background: #19a76c11;
+    }
+
+    .experience_list__li {
+      box-shadow: -1px 2px 4px rgba(50,50,93,0.2);
+      margin-bottom: 30px;
+      border-radius: 5px;
+      border: 1px solid #e5e5e5;
+      padding: 15px 15px 15px 15px;
+      position: relative;
+    }
+    .experience_company_and_position_container__div{
+      display: flex;
+      margin-bottom: 25px;
+    }
+  
+    .experience_company_and_position_block__div{
+      color: var(--nomalText);
+    font-size: 12px;
+    font-weight: 500;
+    width: 50%;
+    }
+  
+    .experience_company_and_position_block__div form {
+      padding-top: 5px;
+      margin-right: 20px;
+    }
+  
+    .experience_company_and_position_block__div input {
+      background: #f2f5fa;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      padding: 10px 10px;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .experience_period_container__div {
+      margin-bottom: 30px;
+    }
+
+    .experience_period_title_block__div {
+      margin-bottom: 5px;
+      display: flex;
+      flex-direction: row;
+      color: var(--nomalText);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .experience_period_in_office__span{
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      font-weight: 100;
+    }
+
+    .experience_period_in_office__span input {
+      margin-right: 5px;
+    }
+
+    .experience_period__input {
+      background: #f2f5fa;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 10px;
+    width: 22%;
+    border-radius: 5px;
+    }
+  
+    .experience_period_wave__span {
+      padding: 10px;
+    }
+
+    /* add_work */
+    .experience_add_work_container_div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .experience_add_work_container_div > div {
+      margin-bottom: 10px;
+    }
+
+    .experience_add_work_container_div button {
+    background: none;
+    border: none;
+    color: var(--mainGreen);
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 15px 15px;
+    outline: none;
+    }
+
+    .experience_delete__button {
+      top: 15px;
+    position: absolute;
+    right: 15px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: var(--mainGreen);
+    font-size: 15px;
+    }
+
+    /* JobDesc */
+    .experience_job_desc_list__ul {
+    width: 100%;
+    }
+
+    .experience_job_desc_list__li {
+      margin-bottom: 15px;
+    }
+
+    .experience_job_desc_list__li div {
+      width: 25px;
+      height: 36px;
+      position: absolute;
+      border-radius: 8px 0px 0px 8px;
+      background: var(--mainGreen);
+    }
+
+    .experience_job_desc_list__li input {
+      width: 90%;
+      border: none;
+      font-size: 15px;
+      outline: none;
+      padding: 10px 10px 10px 40px;
+      background: #f2f5fa;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    .experience_job_desc_list__li button {
+      position: absolute;
+      background: #f2f5fa;
+      cursor: pointer;
+      height: 37px;
+      padding: 0px 15px 0px 8px;
+      border-radius: 0px 8px 8px 0px;
+    }
+
+  }
