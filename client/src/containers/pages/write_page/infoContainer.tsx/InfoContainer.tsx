@@ -14,6 +14,10 @@ const InfoContainer: React.FC = () => {
     address,
     phone,
     email,
+    emailMsg,
+    usernameMsg,
+    phoneMsg,
+    addressMsg,
     onChangeFields,
     onChangeTextAreas,
   } = useChangeInfoField();
@@ -32,6 +36,10 @@ const InfoContainer: React.FC = () => {
         phone={phone}
         email={email}
         onChangeFields={onChangeFields}
+        emailMsg={emailMsg}
+        usernameMsg={usernameMsg}
+        phoneMsg={phoneMsg}
+        addressMsg={addressMsg}
       />
       <Profile profile={profile} onChangeTextAreas={onChangeTextAreas} />
     </>

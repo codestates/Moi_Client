@@ -102,6 +102,16 @@ margin-bottom: 40px;
 padding: 20px 20px 20px 0;
 }
 
+.userinfo_form_item > div { 
+  height: 10px;
+}
+
+.userinfo_form_item > div > p {
+  margin-top: 10px;
+  padding-left: 4px;
+  color: red;
+  font-size: 12px;
+}
 /* User Info END*/
 
 /* Profile */
@@ -339,6 +349,7 @@ padding: 20px 20px 20px 0;
   .userinfo_form_item {
   padding: 20px 20px 20px 0;
   }
+
   
   /* User Info END*/
   

@@ -24,6 +24,10 @@ export interface InfoState {
       };
     };
   };
+  emailMsg: string;
+  usernameMsg: string;
+  phoneMsg: string;
+  addressMsg: string;
 }
 const actions = { changeField, loadInfoField };
 export type Actions = ActionType<typeof actions>;

@@ -8,19 +8,35 @@ function useChangeInfoField(): {
   address: string;
   phone: string;
   email: string;
+  emailMsg: string;
+  usernameMsg: string;
+  phoneMsg: string;
+  addressMsg: string;
   onChangeFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeTextAreas: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 } {
   const dispatch = useDispatch();
-  const { username, profile, address, phone, email } = useSelector(
-    ({ infoField }: { infoField: InfoState }) => ({
-      username: infoField.info.username,
-      profile: infoField.info.profile,
-      address: infoField.info.contact.address,
-      phone: infoField.info.contact.phone,
-      email: infoField.info.contact.email,
-    }),
-  );
+  const {
+    username,
+    profile,
+    address,
+    phone,
+    email,
+    emailMsg,
+    usernameMsg,
+    phoneMsg,
+    addressMsg,
+  } = useSelector(({ infoField }: { infoField: InfoState }) => ({
+    username: infoField.info.username,
+    profile: infoField.info.profile,
+    address: infoField.info.contact.address,
+    phone: infoField.info.contact.phone,
+    email: infoField.info.contact.email,
+    emailMsg: infoField.emailMsg,
+    usernameMsg: infoField.usernameMsg,
+    phoneMsg: infoField.phoneMsg,
+    addressMsg: infoField.addressMsg,
+  }));
 
   const onChangeField = <T>(location: T, value: T): void => {
     dispatch(actions.changeField({ key: location, value: value }));
@@ -44,6 +60,10 @@ function useChangeInfoField(): {
     email,
     onChangeFields,
     onChangeTextAreas,
+    emailMsg,
+    usernameMsg,
+    phoneMsg,
+    addressMsg,
   };
 }
 
