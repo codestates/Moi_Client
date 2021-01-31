@@ -25,7 +25,6 @@ const initialState: InfoState = {
   emailMsg: '이메일을 입력하지 않았거나 형식이 알맞지 않습니다.',
   usernameMsg: '이름은 필수입력값 입니다',
   phoneMsg: 'xxx-xxxx-xxxx형식에 맞춰서 입력해주세요',
-  addressMsg: '주소는 필수입력값 입니다',
 };
 
 const infoField = createReducer<InfoState, Actions>(initialState, {
@@ -34,7 +33,6 @@ const infoField = createReducer<InfoState, Actions>(initialState, {
     const emailReg = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     const usernameReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|\*]{3,20}$/;
     const phoneReg = /^\d{2,3}-\d{3,4}-\d{4}$/;
-    const addressReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9}|\*]{1,50}$/;
     if (key === 'email' && emailReg.test(action.payload.value)) {
       return {
         ...state,
@@ -104,22 +102,9 @@ const infoField = createReducer<InfoState, Actions>(initialState, {
         },
       };
     }
-    if (key === 'address' && addressReg.test(action.payload.value)) {
+    if (key === 'address') {
       return {
         ...state,
-        addressMsg: '',
-        info: {
-          ...state.info,
-          contact: {
-            ...state.info.contact,
-            [key]: action.payload.value,
-          },
-        },
-      };
-    } else if (key === 'address' && !addressReg.test(action.payload.value)) {
-      return {
-        ...state,
-        addressMsg: '주소는 필수입력값 입니다',
         info: {
           ...state.info,
           contact: {
