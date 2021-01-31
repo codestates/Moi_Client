@@ -107,8 +107,6 @@ export interface UpdateResult {
 export const uploadImageAsync: (file: any) => Promise<UploadResult> = async (
   file,
 ) => {
-  console.log(file);
-
   const response = await axios.post(
     'http://localhost:8080/upload/image',
     file.formData,
@@ -124,4 +122,19 @@ export const uploadImageAsync: (file: any) => Promise<UploadResult> = async (
 export interface UploadResult {
   location: string;
   isUpload: null | boolean;
+}
+
+export const deleteResumeAsync: (data: any) => Promise<DeleteResult> = async (
+  data,
+) => {
+  console.log(data);
+  const response = await axios.post('/resume/delete', data, {
+    withCredentials: true,
+  });
+
+  return response.data;
+};
+
+export interface DeleteResult {
+  isDeleted: boolean;
 }

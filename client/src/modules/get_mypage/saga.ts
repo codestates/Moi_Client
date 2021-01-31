@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 import { getMypageAsync } from '../../api/mypage';
 
 function* fetch() {
@@ -20,5 +20,5 @@ function* fetch() {
 }
 
 export function* mypageSaga() {
-  yield takeEvery('GET_MYPAGE_REQUEST', fetch);
+  yield takeLatest('GET_MYPAGE_REQUEST', fetch);
 }

@@ -20,8 +20,29 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 /* Global input and placeholder setting END */
+@keyframes fadein {
+  0% {
+    /* position: absolute;
+    top: 25%; */
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+
+  70% {
+  opacity: 1;
+}
+  100% {
+  opacity: 0;
+}
+}
+
 
 @media screen and (min-width: 1025px) {
+  
 .block {
   width: 50vw;
   padding: 65px 5vw 0px 5vw;
@@ -34,6 +55,31 @@ textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   flex-direction: column;
 }
 
+.save_modal_block__div {
+  background: #34cf23;
+  padding: 18px 26px 18px 10px;
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 10%);
+  color: white;
+  font-size: 15px;
+  position: fixed;
+  top: 100px;
+  right: 52%;
+  animation-name : fadein;
+  animation-duration: 3s;
+  animation-direction:alternate;
+  transition: all 300ms ease-in;
+}
+.save_modal_block__div button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
 
 /* User Info */
 .userinfo_container {
@@ -117,7 +163,7 @@ padding: 20px 20px 20px 0;
 .userinfo_form_item > div > p {
   margin-top: 10px;
   padding-left: 4px;
-  color: red;
+  color: #ec4646;
   font-size: 12px;
 }
 
@@ -331,6 +377,34 @@ padding: 20px 20px 20px 0;
 
 /* Mobile */
 @media screen and (max-width: 1024px) {
+
+  .save_modal_block__div {
+    transform: translateX(50%);
+    border-radius: 2px;
+    background: #34cf23;
+    padding: 18px 26px 18px 10px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 10%);
+    color: white;
+    font-size: 15px;
+    position: fixed;
+    top: 72px;
+    right: 50%;
+    animation-duration: 3s;
+    animation-name : fadein;
+    animation-direction: alternate;
+    transition: all 300ms ease-in;
+  }
+  .save_modal_block__div button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+  }
 
   .imageUpload_block__div{
     display: flex;

@@ -5,7 +5,6 @@ import { Actions } from './types';
 function* fetch(action: Actions) {
   try {
     const githubLogin = yield call(github, action.payload);
-    console.log(githubLogin.currentUser);
     yield put({
       type: 'GITHUB_LOGIN_SUCCESS',
       payload: { currentUser: githubLogin.currentUser },

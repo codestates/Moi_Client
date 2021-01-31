@@ -49,7 +49,7 @@ function useSaveLocalStorage(): {
       username: string;
       avatar: string;
       profile: string;
-      title: string;
+      title: string | null;
       contact: {
         address: string;
         phone: string;

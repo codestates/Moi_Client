@@ -33,7 +33,16 @@ const infoField = createReducer<InfoState, Actions>(initialState, {
     const emailReg = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     const usernameReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|\*]{3,20}$/;
     const phoneReg = /^\d{2,3}-\d{3,4}-\d{4}$/;
-    if (key === 'email' && emailReg.test(action.payload.value)) {
+    const addressReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9}|\*]{1,50}$/;
+    if (key === 'title') {
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          [key]: action.payload.value,
+        },
+      };
+    } else if (key === 'email' && emailReg.test(action.payload.value)) {
       return {
         ...state,
         emailMsg: '',

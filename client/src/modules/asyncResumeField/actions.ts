@@ -16,6 +16,10 @@ export const ON_UPLOAD_IMAGE_REQUEST = 'ON_UPLOAD_IMAGE_REQUEST';
 export const ON_UPLOAD_IMAGE_SUCCESS = 'ON_UPLOAD_IMAGE_SUCCESS';
 export const ON_UPLOAD_IMAGE_FAILURE = 'ON_UPLOAD_IMAGE_FAILURE';
 
+export const DELETE_RESUME_FIELD_REQUEST = 'DELETE_RESUME_FIELD_REQUEST';
+export const DELETE_RESUME_FIELD_SUCCESS = 'DELETE_RESUME_FIELD_SUCCESS';
+export const DELETE_RESUME_FIELD_FAILURE = 'DELETE_RESUME_FIELD_FAILURE';
+
 export const saveResumeFieldRequest = createAction(
   SAVE_RESUME_FIELD_REQUEST,
   ({ values }) => ({
@@ -100,5 +104,28 @@ export const onUploadImageFailure = createAction(
   ({ location, isUpload }) => ({
     location,
     isUpload,
+  }),
+)();
+
+export const deleteResumeFieldRequest = createAction(
+  DELETE_RESUME_FIELD_REQUEST,
+  ({ resumeId }) => ({
+    resumeId,
+  }),
+)();
+
+export const deleteResumeFieldSuccess = createAction(
+  DELETE_RESUME_FIELD_SUCCESS,
+  ({ isDeleted, message }) => ({
+    isDeleted,
+    message,
+  }),
+)();
+
+export const deleteResumeFieldFailure = createAction(
+  DELETE_RESUME_FIELD_FAILURE,
+  ({ isDeleted, message }) => ({
+    isDeleted,
+    message,
   }),
 )();

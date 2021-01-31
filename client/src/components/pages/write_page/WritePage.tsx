@@ -46,6 +46,8 @@ interface WritePageProps {
   onPreviewModal: () => void;
   preview: boolean;
   saveLocal: () => void;
+  saveDoneModal: boolean;
+  onSaveModal: () => void;
 }
 
 const WritePage: React.FC<WritePageProps> = ({
@@ -53,6 +55,8 @@ const WritePage: React.FC<WritePageProps> = ({
   onPreviewModal,
   preview,
   saveLocal,
+  saveDoneModal,
+  onSaveModal,
 }) => {
   // * ====================
   // *  RESPONSIVE
@@ -68,7 +72,12 @@ const WritePage: React.FC<WritePageProps> = ({
     <>
       {isPc && (
         <div className={styles.block}>
-          <Write onPreviewModal={onPreviewModal} saveLocal={saveLocal} />
+          <Write
+            onPreviewModal={onPreviewModal}
+            saveLocal={saveLocal}
+            saveDoneModal={saveDoneModal}
+            onSaveModal={onSaveModal}
+          />
           <RightPreviewContainer values={values} />
           {preview && (
             <PreviewContainer values={values} onPreviewModal={onPreviewModal} />
@@ -77,7 +86,12 @@ const WritePage: React.FC<WritePageProps> = ({
       )}
       {isMobile && (
         <div className={styles.block}>
-          <Write onPreviewModal={onPreviewModal} saveLocal={saveLocal} />
+          <Write
+            onPreviewModal={onPreviewModal}
+            saveLocal={saveLocal}
+            saveDoneModal={saveDoneModal}
+            onSaveModal={onSaveModal}
+          />
           {preview && (
             <PreviewContainer values={values} onPreviewModal={onPreviewModal} />
           )}

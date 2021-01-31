@@ -15,6 +15,7 @@ interface UserInfoProps {
   emailMsg: string;
   usernameMsg: string;
   phoneMsg: string;
+  addressMsg: string;
   title: string;
   avatar: string;
   onChangeFields: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -53,7 +54,7 @@ const UserInfo: React.FC<UserInfoProps> = ({
         <ReactImageCropperTs
           onGetBlobFile={onGetBlobFile}
           placeholderImage=""
-          style={{ maxHeight: '25vh', maxWidth: '25vw' }}
+          style={{ maxHeight: '30vh', maxWidth: '30vw' }}
           onUploadModal={onUploadModal}
         />
       )}
