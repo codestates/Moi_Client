@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { takeLatest, call, put } from 'redux-saga/effects';
 import { getMypageAsync } from '../../api/mypage';
 

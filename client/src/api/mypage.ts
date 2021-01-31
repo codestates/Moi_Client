@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getMypageAsync: () => Promise<CreateResume> = async () => {
-  const response = await axios.get('http://localhost:8080/resume/list', {
+  const response = await axios.get('https://www.everysmoi.tk/resume/list', {
     withCredentials: true,
   });
   return response.data;
