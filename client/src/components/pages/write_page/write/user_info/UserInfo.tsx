@@ -12,6 +12,10 @@ interface UserInfoProps {
   address: string;
   phone: string;
   email: string;
+  emailMsg: string;
+  usernameMsg: string;
+  phoneMsg: string;
+  addressMsg: string
   title: string;
   avatar: string;
   onChangeFields: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -27,6 +31,10 @@ const UserInfo: React.FC<UserInfoProps> = ({
   title,
   avatar,
   email,
+  emailMsg,
+  usernameMsg,
+  phoneMsg,
+  addressMsg,
   onChangeFields,
   uploadModal,
   onUploadModal,
@@ -107,7 +115,11 @@ const UserInfo: React.FC<UserInfoProps> = ({
               value={username}
               onChange={onChangeFields}
             />
+            <div className={styles.usernameMsg}>
+              <p>{usernameMsg}</p>
+            </div>
           </div>
+
           <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_address}>주소</label>
             <input
@@ -117,6 +129,9 @@ const UserInfo: React.FC<UserInfoProps> = ({
               value={address}
               onChange={onChangeFields}
             />
+            <div className={styles.addressMsg}>
+              <p>{addressMsg}</p>
+            </div>
           </div>
           <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_phoneNumber}>연락처</label>
@@ -127,6 +142,9 @@ const UserInfo: React.FC<UserInfoProps> = ({
               onChange={onChangeFields}
               placeholder="ex) xxxx-xxxx-xxxx"
             />
+            <div className={styles.phoneMsg}>
+              <p>{phoneMsg}</p>
+            </div>
           </div>
           <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_email}>이메일</label>
@@ -137,6 +155,9 @@ const UserInfo: React.FC<UserInfoProps> = ({
               value={email}
               onChange={onChangeFields}
             />
+            <div className={styles.emailMsg}>
+              <p>{emailMsg}</p>
+            </div>
           </div>
         </form>
       </div>

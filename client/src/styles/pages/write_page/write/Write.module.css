@@ -106,6 +106,17 @@ margin-bottom: 40px;
 padding: 20px 20px 20px 0;
 }
 
+.userinfo_form_item > div { 
+  height: 10px;
+}
+
+.userinfo_form_item > div > p {
+  margin-top: 10px;
+  padding-left: 4px;
+  color: red;
+  font-size: 12px;
+}
+
 .imageUpload_block__div{
   display: flex;
   align-items: center;
@@ -120,6 +131,7 @@ padding: 20px 20px 20px 0;
     border: none;
     cursor: pointer;
 }
+  
 .imageUpload_button__button{
   padding: 15px;
   position: relative;
@@ -155,8 +167,6 @@ padding: 20px 20px 20px 0;
   color: var(--mainGreen);
   transition: all 200ms ease-in-out;
 }
-
-
 /* User Info END*/
 
 /* Profile */
@@ -457,6 +467,7 @@ padding: 20px 20px 20px 0;
   .userinfo_form_item {
   padding: 20px 20px 20px 0;
   }
+
   
   /* User Info END*/
   
