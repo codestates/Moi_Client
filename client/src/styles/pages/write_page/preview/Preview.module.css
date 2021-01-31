@@ -68,6 +68,9 @@ background:var(--mainGreen);
   }
 
   .preview_pdf_download__button {
+    position: fixed;
+    right: 0;
+    bottom: 10px;
      font-size: 4vw;
     border-radius: 4px;
     padding: 10px 20px;

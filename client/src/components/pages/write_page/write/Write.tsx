@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../../../styles/pages/write_page/write/Write.module.css';
+import { GoX } from 'react-icons/go';
 // * ======================
 // *   IMPORT_CHILD_CONTAINERS
 // * ======================
@@ -16,12 +17,27 @@ import SaveAndPreviewButtons from './ui/SaveAndPreviewButtons';
 interface WriteProps {
   onPreviewModal: () => void;
   saveLocal: () => void;
+  saveDoneModal: boolean;
+  onSaveModal: () => void;
 }
 
-const Write: React.FC<WriteProps> = ({ onPreviewModal, saveLocal }) => {
+const Write: React.FC<WriteProps> = ({
+  onPreviewModal,
+  saveLocal,
+  saveDoneModal,
+  onSaveModal,
+}) => {
   return (
     <section className={styles.block}>
       <div className={styles.container}>
+        {saveDoneModal && (
+          <div className={styles.save_modal_block__div}>
+            <button onClick={onSaveModal}>
+              <GoX />
+            </button>
+            이력서가 임시저장 되었습니다.
+          </div>
+        )}
         <InfoContainer />
         <SkillsContainer />
         <WorkExperienceContainer />
@@ -30,6 +46,7 @@ const Write: React.FC<WriteProps> = ({ onPreviewModal, saveLocal }) => {
         <SaveAndPreviewButtons
           onPreviewModal={onPreviewModal}
           saveLocal={saveLocal}
+          onSaveModal={onSaveModal}
         />
       </div>
     </section>

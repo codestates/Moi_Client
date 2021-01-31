@@ -107,8 +107,6 @@ export interface UpdateResult {
 export const uploadImageAsync: (file: any) => Promise<UploadResult> = async (
   file,
 ) => {
-  console.log(file);
-
   const response = await axios.post(
     'http://localhost:8080/upload/image',
     file.formData,

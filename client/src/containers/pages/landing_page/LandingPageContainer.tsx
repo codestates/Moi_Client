@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import LandingPage from '../../../components/pages/landing_page/LandingPage';
 // * ====================
 // *   IMPORT_CUSTOM_HOOKS
