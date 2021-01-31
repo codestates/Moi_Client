@@ -66,7 +66,11 @@ margin-bottom: 40px;
 }
 
 .userinfo_formContainer {
-  margin-top: 10px;
+  margin-top: 30px;
+}
+.imageUpload_block__div{
+  display: flex;
+  align-items: center;
 }
 
 .userinfo_form {
@@ -111,6 +115,57 @@ padding: 20px 20px 20px 0;
   padding-left: 4px;
   color: red;
   font-size: 12px;
+}
+
+.imageUpload_block__div{
+  display: flex;
+  align-items: center;
+}
+
+.sub_Upload_button__button{
+  color: var(--mainGreen);
+    font-weight: 700;
+    font-size: 15px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+  
+.imageUpload_button__button{
+  padding: 15px;
+  position: relative;
+  outline: none;
+    border: none;
+  /* margin: 30px 0px 15px 0px; */
+  background: #f1f5fa;
+  border-radius: 5px;
+  width: 60px;
+  height: 70px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.input_upload__input {
+  position: absolute;
+  opacity: 0;
+  width: 250%;
+  height: 100%;
+  cursor: pointer;
+    left: 0;
+    top: 0;
+}
+
+
+.imageUpload_button__button > svg{
+  color: #b1bece;
+  font-size: 30px;
+  transition: all 200ms ease-in-out;
+}
+
+.imageUpload_button__button > svg:hover{
+  color: var(--mainGreen);
+  transition: all 200ms ease-in-out;
 }
 /* User Info END*/
 
@@ -273,6 +328,61 @@ padding: 20px 20px 20px 0;
 /* Mobile */
 @media screen and (max-width: 1024px) {
 
+  .imageUpload_block__div{
+    display: flex;
+    align-items: center;
+  }
+
+  .imageUpload_block__div{
+    display: flex;
+    align-items: center;
+  }
+  
+  .sub_Upload_button__button{
+    color: var(--mainGreen);
+      font-weight: 700;
+      font-size: 15px;
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+  }
+  .imageUpload_button__button{
+    padding: 15px;
+    position: relative;
+    outline: none;
+      border: none;
+    /* margin: 30px 0px 15px 0px; */
+    background: #f1f5fa;
+    border-radius: 5px;
+    width: 60px;
+    height: 70px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .input_upload__input {
+    position: absolute;
+    opacity: 0;
+    width: 250%;
+    height: 100%;
+    cursor: pointer;
+      left: 0;
+      top: 0;
+  }
+  
+  
+  .imageUpload_button__button > svg{
+    color: #b1bece;
+    font-size: 30px;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .imageUpload_button__button > svg:hover{
+    color: var(--mainGreen);
+    transition: all 200ms ease-in-out;
+  }
+
   .userinfo_resume_title_block__div {
     margin-bottom: 40px;
     }
@@ -303,7 +413,9 @@ padding: 20px 20px 20px 0;
   .userinfo_container {
     margin-bottom: 50px;
     padding-top: 65px;
+    position: relative;
   }
+  
   .userinfo_title {
     width: 90%;
     font-family: 'Nanum Gothic';
@@ -314,8 +426,14 @@ padding: 20px 20px 20px 0;
   }
   
   .userinfo_formContainer {
-    margin-top: 10px;
+    margin-top: 30px;
   }
+
+  .imageUpload_block__div{
+    display: flex;
+    align-items: center;
+  }
+
   
   .userinfo_form {
     display: flex;

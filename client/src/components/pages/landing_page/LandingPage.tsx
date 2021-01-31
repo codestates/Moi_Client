@@ -9,11 +9,28 @@ import ScrollTopButton from './scrollTopButton/ScrollTopButton';
 import { Element } from 'react-scroll';
 import { Link } from 'react-scroll';
 
-const LandingPage: React.FC = () => {
+interface LandingPageProps {
+  checkModal: boolean;
+  type: string;
+  onAuthCheckModal: (state: boolean, type: string) => void;
+  onCloseModal: () => void;
+}
+
+const LandingPage: React.FC<LandingPageProps> = ({
+  checkModal,
+  type,
+  onAuthCheckModal,
+  onCloseModal,
+}) => {
   return (
     <div className={styles.block}>
       <Element name="intro">
-        <Intro />
+        <Intro
+          checkModal={checkModal}
+          type={type}
+          onAuthCheckModal={onAuthCheckModal}
+          onCloseModal={onCloseModal}
+        />
       </Element>
 
       {/* // ? destination point for scroll event (react-scroll) */}

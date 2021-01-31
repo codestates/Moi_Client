@@ -9,6 +9,7 @@ import MidNav from './mid_nav_bar/MidNav';
 import RightLoginButton from './right_login_button/RightLoginButton';
 import styles from '../../../styles/systems/header/Header.module.css';
 import LoginModal from '../header/login_modal/LoginModal';
+import AuthCheckModal from '../modal/AuthCheckModal';
 
 // ? ====================
 // ?   INTERFACE
@@ -19,13 +20,21 @@ interface HeaderProps {
   bugerMenu: boolean;
   onBugerMenu: () => void;
   onScroll: (destination: string, name: string) => JSX.Element;
-  modal: boolean;
-  onLoginModal: (state: boolean) => void;
+  loginModal: boolean;
+  hadleLoginModal: () => void;
   requestGoogleAuthorizationCode: () => void;
-  requestFacebookAuthorizationCode: () => void;
+  requestKakaoAuthorizationCode: () => void;
   requestGithubAuthorizationCode: () => void;
   isLoggedIn: boolean;
+  logout: boolean;
   requestSignOut: () => void;
+  checkModal: boolean;
+  type: string;
+  onAuthCheckModal: (state: boolean, type: string) => void;
+  onCloseModal: () => void;
+  userDropdown: boolean;
+  onUserDropdown: (state: boolean) => void;
+  onWithdrawal: () => void;
 }
 // * ====================
 // *  REACT.FC
@@ -36,13 +45,21 @@ const Header: React.FC<HeaderProps> = ({
   bugerMenu,
   onBugerMenu,
   onScroll,
-  modal,
-  onLoginModal,
+  loginModal,
+  hadleLoginModal,
   requestGoogleAuthorizationCode,
-  requestFacebookAuthorizationCode,
+  requestKakaoAuthorizationCode,
   requestGithubAuthorizationCode,
   isLoggedIn,
+  logout,
   requestSignOut,
+  checkModal,
+  type,
+  onAuthCheckModal,
+  onCloseModal,
+  userDropdown,
+  onUserDropdown,
+  onWithdrawal,
 }) => {
   // * ====================
   // *  RESPONSIVE
@@ -64,22 +81,28 @@ const Header: React.FC<HeaderProps> = ({
               dropdown={dropdown}
               onDropdown={onDropdown}
               onScroll={onScroll}
+              onAuthCheckModal={onAuthCheckModal}
             />
             <RightLoginButton
-              onLoginModal={onLoginModal}
+              hadleLoginModal={hadleLoginModal}
               isLoggedIn={isLoggedIn}
+              logout={logout}
               requestSignOut={requestSignOut}
+              userDropdown={userDropdown}
+              onUserDropdown={onUserDropdown}
+              onWithdrawal={onWithdrawal}
             />
           </div>
-          {modal && (
+          {loginModal && (
             <LoginModal
-              onLoginModal={onLoginModal}
+              hadleLoginModal={hadleLoginModal}
               requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
-              requestFacebookAuthorizationCode={
-                requestFacebookAuthorizationCode
-              }
+              requestKakaoAuthorizationCode={requestKakaoAuthorizationCode}
               requestGithubAuthorizationCode={requestGithubAuthorizationCode}
             />
+          )}
+          {checkModal && (
+            <AuthCheckModal type={type} onCloseModal={onCloseModal} />
           )}
         </>
       )}
@@ -96,7 +119,27 @@ const Header: React.FC<HeaderProps> = ({
               <HiMenu />
             </button>
           </div>
-          <Buger bugerMenu={bugerMenu} onBugerMenu={onBugerMenu} />
+          <Buger
+            bugerMenu={bugerMenu}
+            onBugerMenu={onBugerMenu}
+            hadleLoginModal={hadleLoginModal}
+            isLoggedIn={isLoggedIn}
+            logout={logout}
+            requestSignOut={requestSignOut}
+            onWithdrawal={onWithdrawal}
+            onAuthCheckModal={onAuthCheckModal}
+          />
+          {loginModal && (
+            <LoginModal
+              hadleLoginModal={hadleLoginModal}
+              requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
+              requestKakaoAuthorizationCode={requestKakaoAuthorizationCode}
+              requestGithubAuthorizationCode={requestGithubAuthorizationCode}
+            />
+          )}
+          {checkModal && (
+            <AuthCheckModal type={type} onCloseModal={onCloseModal} />
+          )}
         </>
       )}
     </>

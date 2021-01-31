@@ -1,5 +1,5 @@
 import { ActionType } from 'typesafe-actions';
-import { changeField, loadInfoField } from './actions';
+import { changeField, loadInfoField, initInfoField } from './actions';
 
 // ? ======================
 // ?   CONST ACTION & STATE_TYPE
@@ -10,6 +10,7 @@ export interface InfoState {
     username: string;
     avatar: string;
     profile: string;
+    title: string;
     contact: {
       address: string;
       phone: string;
@@ -29,5 +30,5 @@ export interface InfoState {
   phoneMsg: string;
   addressMsg: string;
 }
-const actions = { changeField, loadInfoField };
+const actions = { changeField, loadInfoField, initInfoField };
 export type Actions = ActionType<typeof actions>;

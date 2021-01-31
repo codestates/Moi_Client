@@ -22,6 +22,7 @@
   font-size: 33px;
   font-weight: 700;
   padding: 60px 0 10px;
+  color: var(--mainText);
 }
 
 .footer__desc {

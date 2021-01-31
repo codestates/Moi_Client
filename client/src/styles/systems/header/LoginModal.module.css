@@ -24,7 +24,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
     z-index: 30;
 }
 
@@ -92,9 +91,10 @@
     font-size: 1.125rem;
 }
 
-.button__block > li > .facebook__button {
-    background: #1877f2;
-    color: #fff;
+.button__block > li > .kakao__button {
+    background: #ffe812;
+    color: #000;
+    
 }
 
 .button__block > li > .google__button {
@@ -106,5 +106,4 @@
 .button__block > li > .github__button {
     background: #343a40;
     color: #fff;
-    border: 2px solid rgba(222, 226,230);
 }

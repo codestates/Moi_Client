@@ -4,6 +4,7 @@ import {
   addSkillField,
   deleteSkillField,
   loadSkillsField,
+  initSkillsField,
 } from './actions';
 
 // ? ======================
@@ -21,5 +22,6 @@ const actions = {
   addSkillField,
   deleteSkillField,
   loadSkillsField,
+  initSkillsField,
 };
 export type Actions = ActionType<typeof actions>;

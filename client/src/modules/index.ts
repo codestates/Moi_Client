@@ -11,18 +11,23 @@ import aeasField from './changeField/aea/reducers';
 import askField from './changeField/ask/reducers';
 import askRequestField from './post_ask/reducer';
 import googleLoginField from './socialLoginField/google/reducer';
-import facebookLoginField from './socialLoginField/facebook/reducer';
+import kakaoLoginField from './socialLoginField/facebook/reducer';
 import githubLoginField from './socialLoginField/github/reducer';
 import checkUserField from './socialLoginField/user/reducer';
 import mypageRequestField from './get_mypage/reducer';
 import asyncResumeField from './asyncResumeField/reducers';
 
 import { googleLoginSaga } from './socialLoginField/google/saga';
-import { facebookLoginSaga } from './socialLoginField/facebook/saga';
+import { kakaoLoginSaga } from './socialLoginField/facebook/saga';
 import { githubLoginSaga } from './socialLoginField/github/saga';
 import { userSaga } from './socialLoginField/user/saga';
 import { mypageSaga } from './get_mypage/saga';
-import { saveResumeSaga } from './asyncResumeField/sagas';
+import {
+  saveResumeSaga,
+  editResumeSaga,
+  updateResumeSaga,
+  uploadImageSaga,
+} from './asyncResumeField/sagas';
 
 const rootReducer = combineReducers({
   config,
@@ -34,7 +39,7 @@ const rootReducer = combineReducers({
   askField,
   askRequestField,
   googleLoginField,
-  facebookLoginField,
+  kakaoLoginField,
   githubLoginField,
   checkUserField,
   mypageRequestField,
@@ -45,11 +50,14 @@ export function* rootSaga(): Generator {
   yield all([
     askSaga(),
     googleLoginSaga(),
-    facebookLoginSaga(),
+    kakaoLoginSaga(),
     githubLoginSaga(),
     userSaga(),
     mypageSaga(),
     saveResumeSaga(),
+    editResumeSaga(),
+    updateResumeSaga(),
+    uploadImageSaga(),
   ]);
 }
 

@@ -8,6 +8,7 @@ import {
 export interface UserInfo {
   id: string | null;
   email: string | null;
+  thumbnail: string | null;
 }
 
 export interface State {

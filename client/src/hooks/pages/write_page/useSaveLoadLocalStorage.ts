@@ -19,6 +19,7 @@ function useSaveLocalStorage(): {
       username: string;
       avatar: string;
       profile: string;
+      title: string;
       contact: {
         address: string;
         phone: string;
@@ -43,10 +44,12 @@ function useSaveLocalStorage(): {
 
   const setLocalStorage = (values: {
     template: number;
+    resumeId?: string;
     info: {
       username: string;
       avatar: string;
       profile: string;
+      title: string;
       contact: {
         address: string;
         phone: string;
@@ -68,15 +71,34 @@ function useSaveLocalStorage(): {
   }) => {
     localStorage.setItem('resume-field', JSON.stringify(values));
     if (localStorage.getItem('current_user')) {
-      dispatch(asyncResume.saveResumeFieldRequest({ values }));
+      if (localStorage.getItem('edit_field')) {
+        const localState = JSON.parse(
+          localStorage.getItem('edit_field') || '{}',
+        );
+        values.resumeId = localState._id;
+
+        dispatch(asyncResume.updateResumeFieldRequest({ values }));
+      } else {
+        dispatch(asyncResume.saveResumeFieldRequest({ values }));
+      }
     }
   };
 
   const loadInfoField = () => {
-    if (localStorage.getItem('resume-field')) {
+    if (localStorage.getItem('edit_field')) {
+      const localState = JSON.parse(localStorage.getItem('edit_field') || '{}');
+      dispatch(info.loadInfoField({ state: localState.info }));
+      dispatch(skills.loadSkillsField({ state: localState.skills }));
+      dispatch(
+        experience.loadExperienceField({ state: localState.workExperience }),
+      );
+      dispatch(educations.loadEducationField({ state: localState.educations }));
+      dispatch(aeas.loadAeaField({ state: localState.aeas }));
+    } else if (localStorage.getItem('resume-field')) {
       const localState = JSON.parse(
         localStorage.getItem('resume-field') || '{}',
       );
+
       dispatch(info.loadInfoField({ state: localState.info }));
       dispatch(skills.loadSkillsField({ state: localState.skills }));
       dispatch(

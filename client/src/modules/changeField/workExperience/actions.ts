@@ -9,6 +9,7 @@ export const ADD_EXPERIENCE_FIELD = 'workExperience/ADD_EXPERIENCE_FIELD';
 export const EXPERIENCE_CHANGE_FIELD = 'workExperience/EXPERIENCE_CHANGE_FIELD';
 export const DELETE_EXPERIENCE_FIELD = 'workExperience/DELETE_EXPERIENCE_FIELD';
 export const LOAD_EXPERIENCE_FIELD = 'workExperience/LOAD_EXPERIENCE_FIELD';
+export const INIT_EXPERIENCE_FIELD = 'workExperience/INIT_EXPERIENCE_FIELD';
 
 //* JOB_DESCRIPTION_TYPES
 export const ADD_JOB_DESC_FIELD = 'workExperience/ADD_JOB_DESC_FIELD';
@@ -47,6 +48,10 @@ export const loadExperienceField = createAction(
   ({ state }) => ({
     state,
   }),
+)();
+export const initExperienceField = createAction(
+  INIT_EXPERIENCE_FIELD,
+  ({}) => ({}),
 )();
 
 // * JOB_DESCRIPTION_ACTIONS

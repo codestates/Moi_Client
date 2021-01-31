@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 //* Import child Components
 import WritePage from '../../../components/pages/write_page/WritePage';
@@ -7,8 +8,7 @@ import WritePage from '../../../components/pages/write_page/WritePage';
 //* Import custom hooks
 import useLoadPreviewValues from '../../../hooks/pages/write_page/useLoadPreviewValues';
 import usePreviewModal from '../../../hooks/pages/write_page/usePreviewModal';
-import useSaveLocalStorage from '../../../hooks/pages/write_page/useSaveLocalStorage';
-
+import useSaveLocalStorage from '../../../hooks/pages/write_page/useSaveLoadLocalStorage';
 //* Import reduce states
 import { ExperienceState } from '../../../modules/changeField/workExperience/types';
 import { ConfigState } from '../../../modules/config/types';
@@ -21,6 +21,8 @@ const WritePageContainer: React.FC = () => {
   const values = useLoadPreviewValues();
   const { preview, onPreviewModal } = usePreviewModal();
   const { setLocalStorage } = useSaveLocalStorage();
+
+  // const { uploadImage } = useSkillsChangeField();
 
   const {
     template,
@@ -53,7 +55,7 @@ const WritePageContainer: React.FC = () => {
       aeas: aeasField.aeas,
     }),
   );
-
+  const history = useHistory();
   const saveLocal = () => {
     const values = {
       template,
@@ -63,8 +65,16 @@ const WritePageContainer: React.FC = () => {
       aeas,
       educations,
     };
+
     setLocalStorage(values);
+    if (localStorage.getItem('current_user')) {
+      history.push('/mypage');
+    }
   };
+
+  // const onGetBlobFile = (blobFile: File) => {
+  //   console.log(blobFile);
+  // };
 
   return (
     <>

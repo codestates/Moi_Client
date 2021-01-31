@@ -15,30 +15,43 @@ import {
 // * ====================
 import useDropdown from '../../../hooks/systems/header/useDropdown';
 import useBugerMenu from '../../../hooks/systems/header/useBugerMenu';
-import useLoginModal from '../../../hooks/systems/header/useLoginModal';
+import useLoginModal from '../../../hooks/systems/modal/useLoginModal';
 import useRequestAuthorizationCode from '../../../hooks/systems/auth/useRequestAuthorizationCode';
 import useGoogleLogin from '../../../hooks/systems/auth/socialLogin/useGoogleLogin';
-import useFacebookLogin from '../../../hooks/systems/auth/socialLogin/useFacebookLogin';
+import useKakaoLogin from '../../../hooks/systems/auth/socialLogin/useKakaoLogin';
 import useGithubLogin from '../../../hooks/systems/auth/socialLogin/useGithubLogin';
 import useSignOut from '../../../hooks/systems/auth/useSignOut';
+import useAuthCheckModal from '../../../hooks/systems/modal/useAuthCheckModal';
+import useUserDropDown from '../../../hooks/systems/header/useUserDropDown';
+import useWithdrawal from '../../../hooks/systems/auth/useWithdrawal';
 
 const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  // const [thumbnail, setThumbnail] = useState<string | null>('');
+
   // * ====================
   // *   CUSTOM_HOOKS
   // * ====================
   const { dropdown, onDropdown } = useDropdown();
   const { bugerMenu, onBugerMenu } = useBugerMenu();
-  const { modal, onLoginModal } = useLoginModal();
+  const { loginModal, hadleLoginModal } = useLoginModal();
   const {
     requestGoogleAuthorizationCode,
-    requestFacebookAuthorizationCode,
+    requestKakaoAuthorizationCode,
     requestGithubAuthorizationCode,
   } = useRequestAuthorizationCode();
   const { googleUser, googleLogin } = useGoogleLogin();
-  const { facebookUser, facebookLogin } = useFacebookLogin();
+  const { kakaoUser, kakaoLogin } = useKakaoLogin();
   const { githubUser, githubLogin } = useGithubLogin();
   const { logout, requestSignOut } = useSignOut();
+  const {
+    checkModal,
+    type,
+    onAuthCheckModal,
+    onCloseModal,
+  } = useAuthCheckModal();
+  const { userDropdown, onUserDropdown } = useUserDropDown();
+  const { onWithdrawal } = useWithdrawal();
 
   // * ====================
   // *   FUNCTIONS
@@ -81,7 +94,7 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
           history.push(`/${loginState[1]}`);
           break;
         case 'kakao':
-          facebookLogin(authorizationCode);
+          kakaoLogin(authorizationCode);
           history.push(`/${loginState[1]}`);
           break;
         case 'github':
@@ -95,18 +108,15 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
   };
 
   useEffect(() => {
-    if (modal) {
+    if (loginModal) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-    if (googleUser.id || facebookUser.id || githubUser.id) {
+    if (googleUser.id || kakaoUser.id || githubUser.id) {
       setIsLoggedIn(true);
     }
-    if (logout) {
-      setIsLoggedIn(false);
-    }
-  }, [modal, googleUser, facebookUser, githubUser, logout]);
+  }, [loginModal, googleUser, kakaoUser, githubUser, logout]);
 
   useEffect(() => {
     onSocialLogin();
@@ -114,7 +124,6 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
       setIsLoggedIn(true);
     }
   }, []);
-
   // * ====================
   // *   RENDER
   // * ====================
@@ -126,13 +135,21 @@ const HeaderContainer: React.FC<RouteComponentProps> = ({ history }) => {
         bugerMenu={bugerMenu}
         onBugerMenu={onBugerMenu}
         onScroll={onScroll}
-        modal={modal}
-        onLoginModal={onLoginModal}
+        loginModal={loginModal}
+        hadleLoginModal={hadleLoginModal}
         requestGoogleAuthorizationCode={requestGoogleAuthorizationCode}
-        requestFacebookAuthorizationCode={requestFacebookAuthorizationCode}
+        requestKakaoAuthorizationCode={requestKakaoAuthorizationCode}
         requestGithubAuthorizationCode={requestGithubAuthorizationCode}
         isLoggedIn={isLoggedIn}
+        logout={logout}
         requestSignOut={requestSignOut}
+        checkModal={checkModal}
+        type={type}
+        onAuthCheckModal={onAuthCheckModal}
+        onCloseModal={onCloseModal}
+        userDropdown={userDropdown}
+        onUserDropdown={onUserDropdown}
+        onWithdrawal={onWithdrawal}
       />
     </>
   );

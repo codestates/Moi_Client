@@ -1,5 +1,5 @@
 import { ActionType } from 'typesafe-actions';
-import { selectTemplate } from './actions';
+import { selectTemplate, onLoginModal, onUploadModal } from './actions';
 
 // ? ======================
 // ?   CONST ACTION & STATE_TYPE
@@ -7,8 +7,14 @@ import { selectTemplate } from './actions';
 
 export interface ConfigState {
   resume: {
-    template: 0;
+    template: number;
+  };
+  modal: {
+    loginModal: boolean;
+    uploadModal: boolean;
   };
 }
 
-export type Actions = ActionType<typeof selectTemplate>;
+const action = { selectTemplate, onLoginModal, onUploadModal };
+
+export type Actions = ActionType<typeof action>;

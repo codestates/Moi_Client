@@ -1,13 +1,14 @@
 import { ActionType } from 'typesafe-actions';
 import {
-  facebookLoginRequest,
-  facebookLoginSuccess,
-  facebookLoginFailure,
+  kakaoLoginRequest,
+  kakaoLoginSuccess,
+  kakaoLoginFailure,
 } from './actions';
 
 export interface UserInfo {
   id: string | null;
   email: string | null;
+  thumbnail: string | null;
 }
 
 export interface State {
@@ -16,8 +17,8 @@ export interface State {
 }
 
 const actions = {
-  facebookLoginRequest,
-  facebookLoginSuccess,
-  facebookLoginFailure,
+  kakaoLoginRequest,
+  kakaoLoginSuccess,
+  kakaoLoginFailure,
 };
 export type Actions = ActionType<typeof actions>;

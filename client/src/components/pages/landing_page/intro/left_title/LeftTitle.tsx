@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from '../../../../../styles/pages/landing_page/intro/Intro.module.css';
-import { Link } from 'react-router-dom';
-const LeftTitle: React.FC = () => {
+import birdImg from '../../../../../public/intro_Bird_illust.png';
+interface LeftTitleProps {
+  onAuthCheckModal: (state: boolean, type: string) => void;
+}
+
+const LeftTitle: React.FC<LeftTitleProps> = ({ onAuthCheckModal }) => {
   return (
     <div className={styles.intro__title__container}>
       <article>
         <span>
+          <img src={birdImg} alt="moiBird" />
           <strong className={styles.intro__title}>모</strong>
         </span>
         <article className={styles.intro__title__block}>
@@ -19,9 +24,13 @@ const LeftTitle: React.FC = () => {
         </p>
         <p>행운을 담은 이력서 지금 체험해보세요</p>
       </article>
-      <Link to="/template">
-        <button className={styles.start__button}>시작하기</button>
-      </Link>
+
+      <button
+        className={styles.start__button}
+        onClick={() => onAuthCheckModal(true, 'write')}
+      >
+        시작하기
+      </button>
     </div>
   );
 };
