@@ -123,3 +123,18 @@ export interface UploadResult {
   location: string;
   isUpload: null | boolean;
 }
+
+export const deleteResumeAsync: (data: any) => Promise<DeleteResult> = async (
+  data,
+) => {
+  console.log(data);
+  const response = await axios.post('/resume/delete', data, {
+    withCredentials: true,
+  });
+
+  return response.data;
+};
+
+export interface DeleteResult {
+  isDeleted: boolean;
+}

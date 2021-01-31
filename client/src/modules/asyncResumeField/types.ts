@@ -19,6 +19,9 @@ import {
   onUploadImageRequest,
   onUploadImageSuccess,
   onUploadImageFailure,
+  deleteResumeFieldRequest,
+  deleteResumeFieldSuccess,
+  deleteResumeFieldFailure,
 } from './actions';
 
 export interface SaveEditResumeState {
@@ -81,6 +84,7 @@ export interface SaveEditResumeState {
     };
   };
   uploadImage: { location: null | string; isUpload: null | boolean };
+  deleteResume: { isDeleted: boolean; message: string | null };
 }
 
 const actions = {
@@ -96,5 +100,8 @@ const actions = {
   onUploadImageRequest,
   onUploadImageSuccess,
   onUploadImageFailure,
+  deleteResumeFieldRequest,
+  deleteResumeFieldSuccess,
+  deleteResumeFieldFailure,
 };
 export type Actions = ActionType<typeof actions>;

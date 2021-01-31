@@ -1,17 +1,14 @@
-
 .resume__card__block {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
   width: 100%;
   height: 100%;
 }
 
 .resume__icon {
-  flex: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,12 +17,12 @@
 }
 
 .resume__info__block {
-  flex: 0.5;
   width: 100%;
+  padding: 2rem;
 }
 
 .resume__info__block > p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -44,4 +41,16 @@
   right: 0;
   bottom: 0;
   background: #000;
+}
+
+.resume__remove__block {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-top: 1px solid #DBDBDB;
+}
+
+.resume__remove__button {
+  font-size: 1.25rem;
 }
