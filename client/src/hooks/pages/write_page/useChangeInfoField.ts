@@ -31,7 +31,7 @@ function useChangeInfoField(): {
     phoneMsg,
     addressMsg,
     avatar,
-    } = useSelector(({ infoField }: { infoField: InfoState }) => ({
+  } = useSelector(({ infoField }: { infoField: InfoState }) => ({
     username: infoField.info.username,
     title: infoField.info.title,
     profile: infoField.info.profile,

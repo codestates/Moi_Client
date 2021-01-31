@@ -23,7 +23,9 @@ const DeleteResumeModal: React.FC<DeleteResumeModalProps> = ({
     <div className={styles.full__screen}>
       <div className={styles.white__box}>
         <div className={styles.wanring__message__block}>
-          <p className={styles.wanring__message}>삭제하시겠습니까?</p>
+          <p className={styles.wanring__message}>
+            {deleteModal.title}를 삭제하시겠습니까?
+          </p>
         </div>
         <ul className={styles.button__block}>
           <li className={styles.cancle__button__area}>

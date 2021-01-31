@@ -15,7 +15,7 @@ interface UserInfoProps {
   emailMsg: string;
   usernameMsg: string;
   phoneMsg: string;
-  addressMsg: string
+  addressMsg: string;
   title: string;
   avatar: string;
   onChangeFields: (e: React.ChangeEvent<HTMLInputElement>) => void;
