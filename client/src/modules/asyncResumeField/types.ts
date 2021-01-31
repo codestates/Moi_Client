@@ -84,7 +84,7 @@ export interface SaveEditResumeState {
     };
   };
   uploadImage: { location: null | string; isUpload: null | boolean };
-  deleteResume: { isDeleted: boolean | null; message: string | null };
+  deleteResume: { isDeleted: boolean; message: string | null };
 }
 
 const actions = {

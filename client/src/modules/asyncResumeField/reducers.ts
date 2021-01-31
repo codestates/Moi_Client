@@ -32,7 +32,7 @@ const initialState: SaveEditResumeState = {
     newResume: null,
   },
   uploadImage: { location: '', isUpload: null },
-  deleteResume: { isDeleted: null, message: null },
+  deleteResume: { isDeleted: false, message: null },
 };
 
 const asyncResumeField = createReducer<SaveEditResumeState, Actions>(
@@ -111,13 +111,17 @@ const asyncResumeField = createReducer<SaveEditResumeState, Actions>(
     }),
     [DELETE_RESUME_FIELD_SUCCESS]: (state, action) => ({
       ...state,
-      isDeleted: action.payload.isDeleted,
-      message: null,
+      deleteResume: {
+        isDeleted: action.payload.isDeleted,
+        message: null,
+      },
     }),
     [DELETE_RESUME_FIELD_FAILURE]: (state, action) => ({
       ...state,
-      isDeleted: false,
-      message: action.payload.message,
+      deleteResume: {
+        isDeleted: false,
+        message: action.payload.message,
+      },
     }),
   },
 );
