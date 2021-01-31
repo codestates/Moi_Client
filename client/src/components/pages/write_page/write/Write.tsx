@@ -35,6 +35,9 @@ const Write: React.FC<WriteProps> = ({
             <button onClick={onSaveModal}>
               <GoX />
             </button>
+            <button onClick={onSaveModal}>
+              <GoX />
+            </button>
             이력서가 임시저장 되었습니다.
           </div>
         )}

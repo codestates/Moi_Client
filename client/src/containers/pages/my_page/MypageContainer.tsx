@@ -10,7 +10,7 @@ const MypageContainer: React.FC = () => {
   const { onMypageRequest, list } = useMypageRequest();
   const history = useHistory();
   const { editRequest } = useEditResumeField();
-  const { onDeleteResume, isDeleted } = useDeleteResumeField();
+  const { onDeleteResume } = useDeleteResumeField();
   const { deleteModal, onDeleteResumeModal } = useDeleteResumeModal();
 
   useEffect(() => {

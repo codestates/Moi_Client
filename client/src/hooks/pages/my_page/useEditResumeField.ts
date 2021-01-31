@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as actions from '../../../modules/asyncResumeField/actions';
 function useEditResumeField(): {

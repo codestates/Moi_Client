@@ -9,7 +9,7 @@ import { EducationItem } from '../modules/changeField/education/types';
 export const saveResumeAsync: (data: any) => Promise<SaveResult> = async (
   data,
 ) => {
-  const response = await axios.post('http://localhost:8080/resume/save', data, {
+  const response = await axios.post('/resume/save', data, {
     withCredentials: true,
   });
   if (!response.data.save) {
@@ -25,12 +25,9 @@ export const editResumeAsync: (data: any) => Promise<EditResult> = async (
   data,
 ) => {
   const resumeId = data.resumeId;
-  const response = await axios.get(
-    `http://localhost:8080/resume/getresume/${resumeId}`,
-    {
-      withCredentials: true,
-    },
-  );
+  const response = await axios.get(`/resume/getresume/${resumeId}`, {
+    withCredentials: true,
+  });
   if (!response.data.resume) {
     throw new Error('불러오기에 실패했습니다.');
   }
@@ -67,7 +64,7 @@ export interface EditResult {
 export const updateResumeAsync: (data: any) => Promise<UpdateResult> = async (
   data,
 ) => {
-  const response = await axios.post('http://localhost:8080/resume/edit', data, {
+  const response = await axios.post('/resume/edit', data, {
     withCredentials: true,
   });
   if (!response.data.newResume) {
@@ -108,7 +105,7 @@ export const uploadImageAsync: (file: any) => Promise<UploadResult> = async (
   file,
 ) => {
   const response = await axios.post(
-    'http://localhost:8080/upload/image',
+    'https://www.everysmoi.tk/upload/image',
     file.formData,
     {
       withCredentials: true,
@@ -127,10 +124,13 @@ export interface UploadResult {
 export const deleteResumeAsync: (data: any) => Promise<DeleteResult> = async (
   data,
 ) => {
-  console.log(data);
-  const response = await axios.post('/resume/delete', data, {
-    withCredentials: true,
-  });
+  const response = await axios.post(
+    'https://www.everysmoi.tk/resume/delete',
+    data,
+    {
+      withCredentials: true,
+    },
+  );
 
   return response.data;
 };

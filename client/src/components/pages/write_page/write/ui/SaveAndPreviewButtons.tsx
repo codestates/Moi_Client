@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../../../../../styles/pages/write_page/write/ui/SaveAndPreviewButtons.module.css';
 import { useHistory } from 'react-router-dom';
 import { RiArrowGoBackLine } from 'react-icons/ri';
-import { FaDivide } from 'react-icons/fa';
 // ? ======================
 // ?   INTERFACE_TYPE
 // ? ======================
@@ -27,14 +26,25 @@ const SaveAndPreviewButtons: React.FC<SaveAndPreviewButtonsProps> = ({
         <RiArrowGoBackLine /> 템플릿 선택 페이지로
       </button>
       <div>
-        <button
-          className={styles.preview__button}
-          onClick={() => {
-            saveLocal(), onSaveModal();
-          }}
-        >
-          저장
-        </button>
+        {localStorage.getItem('current_user') ? (
+          <button
+            className={styles.preview__button}
+            onClick={() => {
+              saveLocal();
+            }}
+          >
+            저장
+          </button>
+        ) : (
+          <button
+            className={styles.preview__button}
+            onClick={() => {
+              saveLocal(), onSaveModal();
+            }}
+          >
+            저장
+          </button>
+        )}
         <button className={styles.save__button} onClick={onPreviewModal}>
           미리보기
         </button>

@@ -11,7 +11,7 @@ const Title: React.FC = () => {
         모두의 이력서와 함께라면 뛰어나고 전문적인 이력서를 단 15분 내에 빠르고
         간편하게 작성할 수 있습니다
       </p>
-      <p className={styles.footer__copylight}>2021 © Moi.co.kr</p>
+      <p className={styles.footer__copylight}>2021 © everysmoi.tk</p>
     </div>
   );
 };

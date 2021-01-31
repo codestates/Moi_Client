@@ -1,5 +1,4 @@
 import React from 'react';
-import { FcDocument } from 'react-icons/fc';
 import styles from '../../../styles/pages/my_page/resume/Resume.module.css';
 import { GrTrash } from 'react-icons/gr';
 
@@ -19,11 +18,9 @@ interface ResumeCardProps {
 const ResumeCard: React.FC<ResumeCardProps> = ({
   resume,
   editRequest,
-  onDeleteResume,
   onDeleteResumeModal,
   currentIndex,
 }) => {
-  const test = false;
   const createdDate = resume.createdAt.split(' ')[0];
   return (
     <div className={styles.resume__card__block} data-index={currentIndex}>
