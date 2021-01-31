@@ -71,7 +71,7 @@ const aeasField = createReducer<AeaState, Actions>(initialState, {
       ['aeas']: newAea,
     };
   },
-  [INIT_AEA_FIELD]: (state, action) => {
+  [INIT_AEA_FIELD]: (state) => {
     return {
       ...state,
       aeas: [],

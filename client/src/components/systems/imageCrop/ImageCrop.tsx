@@ -168,7 +168,16 @@ export class ReactImageCropperTs extends React.Component<
             <header className={styles.imageUpload_block_header__div}>
               <strong>나의 가장 멋진 사진!</strong>
             </header>
-            <div className="row" style={{ margin: 'auto' }}>
+            <div
+              className="row"
+              style={{
+                margin: 'auto',
+                width: '100%',
+                padding: '15px',
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
               {/* show place holder image until file is uploaded */}
               {this.state.imgLoaded ? (
                 <ReactCrop

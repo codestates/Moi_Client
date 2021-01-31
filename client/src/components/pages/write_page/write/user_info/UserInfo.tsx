@@ -55,7 +55,7 @@ const UserInfo: React.FC<UserInfoProps> = ({
         <ReactImageCropperTs
           onGetBlobFile={onGetBlobFile}
           placeholderImage=""
-          style={{ maxHeight: '25vh', maxWidth: '25vw' }}
+          style={{ maxHeight: '30vh', maxWidth: '30vw' }}
           onUploadModal={onUploadModal}
         />
       )}

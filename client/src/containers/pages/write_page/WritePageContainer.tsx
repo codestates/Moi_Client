@@ -9,6 +9,7 @@ import WritePage from '../../../components/pages/write_page/WritePage';
 import useLoadPreviewValues from '../../../hooks/pages/write_page/useLoadPreviewValues';
 import usePreviewModal from '../../../hooks/pages/write_page/usePreviewModal';
 import useSaveLocalStorage from '../../../hooks/pages/write_page/useSaveLoadLocalStorage';
+import useSaveLocalModal from '../../../hooks/systems/modal/useSaveLocalModal';
 //* Import reduce states
 import { ExperienceState } from '../../../modules/changeField/workExperience/types';
 import { ConfigState } from '../../../modules/config/types';
@@ -21,8 +22,7 @@ const WritePageContainer: React.FC = () => {
   const values = useLoadPreviewValues();
   const { preview, onPreviewModal } = usePreviewModal();
   const { setLocalStorage } = useSaveLocalStorage();
-
-  // const { uploadImage } = useSkillsChangeField();
+  const { saveDoneModal, onSaveModal } = useSaveLocalModal();
 
   const {
     template,
@@ -72,10 +72,6 @@ const WritePageContainer: React.FC = () => {
     }
   };
 
-  // const onGetBlobFile = (blobFile: File) => {
-  //   console.log(blobFile);
-  // };
-
   return (
     <>
       <WritePage
@@ -83,6 +79,8 @@ const WritePageContainer: React.FC = () => {
         preview={preview}
         onPreviewModal={onPreviewModal}
         saveLocal={saveLocal}
+        saveDoneModal={saveDoneModal}
+        onSaveModal={onSaveModal}
       />
     </>
   );
