@@ -24,6 +24,7 @@
 .resume__info__block > p {
   font-size: 1.5rem;
   font-weight: 600;
+  color: var(--mainText);
   margin-bottom: 10px;
 }
 
@@ -50,6 +51,7 @@
   padding: 1rem 2rem;
   border-top: 1px solid #DBDBDB;
 }
+
 
 .resume__remove__button {
   font-size: 1.25rem;
