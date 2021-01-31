@@ -545,6 +545,20 @@ padding: 20px 20px 20px 0;
   .userinfo_form_item {
   padding: 20px 20px 20px 0;
   }
+  .userinfo_form_item > div { 
+    height: 10px;
+  }
+  
+  .userinfo_form_item > .addressMsg {
+    margin-top: 10px;
+  }
+  
+  .userinfo_form_item > div > p {
+    margin-top: 10px;
+    padding-left: 4px;
+    color: #ec4646;
+    font-size: 12px;
+  }
 
   
   /* User Info END*/

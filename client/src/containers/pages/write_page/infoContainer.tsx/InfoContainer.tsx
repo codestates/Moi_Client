@@ -17,9 +17,6 @@ const InfoContainer: React.FC = () => {
     address,
     phone,
     email,
-    emailMsg,
-    usernameMsg,
-    phoneMsg,
     avatar,
     title,
     onChangeFields,
@@ -52,9 +49,6 @@ const InfoContainer: React.FC = () => {
         avatar={avatar}
         title={title}
         onChangeFields={onChangeFields}
-        emailMsg={emailMsg}
-        usernameMsg={usernameMsg}
-        phoneMsg={phoneMsg}
         uploadModal={uploadModal}
         onUploadModal={onUploadModal}
         onChangeAvatarField={onChangeAvatarField}

@@ -9,9 +9,13 @@ import { EducationItem } from '../modules/changeField/education/types';
 export const saveResumeAsync: (data: any) => Promise<SaveResult> = async (
   data,
 ) => {
-  const response = await axios.post('/resume/save', data, {
-    withCredentials: true,
-  });
+  const response = await axios.post(
+    'https://www.everysmoi.tk/resume/save',
+    data,
+    {
+      withCredentials: true,
+    },
+  );
   if (!response.data.save) {
     throw new Error('저장에 실패했습니다.');
   }
@@ -25,9 +29,12 @@ export const editResumeAsync: (data: any) => Promise<EditResult> = async (
   data,
 ) => {
   const resumeId = data.resumeId;
-  const response = await axios.get(`/resume/getresume/${resumeId}`, {
-    withCredentials: true,
-  });
+  const response = await axios.get(
+    `https://www.everysmoi.tk/resume/getresume/${resumeId}`,
+    {
+      withCredentials: true,
+    },
+  );
   if (!response.data.resume) {
     throw new Error('불러오기에 실패했습니다.');
   }
@@ -64,9 +71,13 @@ export interface EditResult {
 export const updateResumeAsync: (data: any) => Promise<UpdateResult> = async (
   data,
 ) => {
-  const response = await axios.post('/resume/edit', data, {
-    withCredentials: true,
-  });
+  const response = await axios.post(
+    'https://www.everysmoi.tk/resume/edit',
+    data,
+    {
+      withCredentials: true,
+    },
+  );
   if (!response.data.newResume) {
     throw new Error('불러오기에 실패했습니다.');
   }
