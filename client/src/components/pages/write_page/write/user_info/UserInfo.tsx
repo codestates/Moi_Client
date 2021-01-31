@@ -34,7 +34,6 @@ const UserInfo: React.FC<UserInfoProps> = ({
   emailMsg,
   usernameMsg,
   phoneMsg,
-  addressMsg,
   onChangeFields,
   uploadModal,
   onUploadModal,
@@ -129,9 +128,7 @@ const UserInfo: React.FC<UserInfoProps> = ({
               value={address}
               onChange={onChangeFields}
             />
-            <div className={styles.addressMsg}>
-              <p>{addressMsg}</p>
-            </div>
+            <div className={styles.addressMsg}></div>
           </div>
           <div className={styles.userinfo_form_item}>
             <label className={styles.userinfo_form_phoneNumber}>연락처</label>

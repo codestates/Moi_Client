@@ -11,7 +11,6 @@ function useChangeInfoField(): {
   emailMsg: string;
   usernameMsg: string;
   phoneMsg: string;
-  addressMsg: string;
   title: string;
   avatar: string;
   onChangeFields: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -29,7 +28,6 @@ function useChangeInfoField(): {
     emailMsg,
     usernameMsg,
     phoneMsg,
-    addressMsg,
     avatar,
   } = useSelector(({ infoField }: { infoField: InfoState }) => ({
     username: infoField.info.username,
@@ -41,7 +39,6 @@ function useChangeInfoField(): {
     emailMsg: infoField.emailMsg,
     usernameMsg: infoField.usernameMsg,
     phoneMsg: infoField.phoneMsg,
-    addressMsg: infoField.addressMsg,
     avatar: infoField.info.avatar,
   }));
 
@@ -77,7 +74,6 @@ function useChangeInfoField(): {
     emailMsg,
     usernameMsg,
     phoneMsg,
-    addressMsg,
     onChangeAvatarField,
   };
 }
