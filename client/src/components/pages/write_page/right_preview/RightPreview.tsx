@@ -121,9 +121,9 @@ const RightPreview: React.FC<RightPreviewProps> = ({ values }) => {
           <h1 className={styles.name__h1}>{username}</h1>
           <div className={styles.contact_block__div}>
             <ul>
-              <li>이메일 : {contact.email}</li>
-              <li>주소 : {contact.address}</li>
-              <li>연락처 : {contact.phone}</li>
+              {contact.email && <li>이메일 : {contact.email}</li>}
+              {contact.address && <li>주소 : {contact.address}</li>}
+              {contact.phone && <li>연락처 : {contact.phone}</li>}
             </ul>
           </div>
         </div>

@@ -85,11 +85,17 @@ const Header: React.FC<HeaderProps> = ({ values }) => {
       <View style={styles.container}>
         <View style={styles.detailColumn}>
           <Text style={styles.name}>{username}</Text>
-          <Link src={email} style={styles.contact}>
-            {`이메일 : ${email}`}
-          </Link>
-          <Text style={styles.contact}>{`주소 : ${address}`}</Text>
-          <Text style={styles.contact}>{`연락처 : ${phone}`}</Text>
+          {email.length > 0 && (
+            <Link src={email} style={styles.contact}>
+              {`이메일 : ${email}`}
+            </Link>
+          )}
+          {address.length > 0 && (
+            <Text style={styles.contact}>{`주소 : ${address}`}</Text>
+          )}
+          {phone.length > 0 && (
+            <Text style={styles.contact}>{`연락처 : ${phone}`}</Text>
+          )}
         </View>
         {avatar.length >= 1 && <Image src={avatar} style={styles.image} />}
       </View>
