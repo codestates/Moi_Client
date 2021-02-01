@@ -5,6 +5,7 @@ import * as skills from '../../../modules/changeField/skills/actions';
 import * as workExperience from '../../../modules/changeField/workExperience/actions';
 import * as education from '../../../modules/changeField/education/actions';
 import * as aea from '../../../modules/changeField/aea/actions';
+import * as certificates from '../../../modules/changeField/certificate/actions';
 
 function useSelectTemplate(): {
   selectTemplate: (templateCode: number) => void;
@@ -26,6 +27,7 @@ function useSelectTemplate(): {
     dispatch(workExperience.initExperienceField(''));
     dispatch(education.initEducationField(''));
     dispatch(aea.initAeaField(''));
+    dispatch(certificates.initCertificateField(''));
   };
   return {
     selectTemplate,
