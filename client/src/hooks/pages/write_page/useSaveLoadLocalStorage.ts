@@ -5,11 +5,13 @@ import * as experience from '../../../modules/changeField/workExperience/actions
 import * as educations from '../../../modules/changeField/education/actions';
 import * as aeas from '../../../modules/changeField/aea/actions';
 import * as asyncResume from '../../../modules/asyncResumeField/actions';
+import * as certificate from '../../../modules/changeField/certificate/actions';
 
 import { SkillItem } from '../../../modules/changeField/skills/types';
 import { ExperienceItem } from '../../../modules/changeField/workExperience/types';
 import { AeaItem } from '../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../modules/changeField/education/types';
+import { CertificateItem } from '../../../modules/changeField/certificate/types';
 
 function useSaveLocalStorage(): {
   loadInfoField: () => void;
@@ -38,6 +40,7 @@ function useSaveLocalStorage(): {
     workExperience: ExperienceItem[];
     aeas: AeaItem[];
     educations: EducationItem[];
+    certificates: CertificateItem[];
   }) => void;
 } {
   const dispatch = useDispatch();
@@ -68,6 +71,7 @@ function useSaveLocalStorage(): {
     workExperience: ExperienceItem[];
     aeas: AeaItem[];
     educations: EducationItem[];
+    certificates: CertificateItem[];
   }) => {
     localStorage.setItem('resume-field', JSON.stringify(values));
     if (localStorage.getItem('current_user')) {
@@ -94,6 +98,9 @@ function useSaveLocalStorage(): {
       );
       dispatch(educations.loadEducationField({ state: localState.educations }));
       dispatch(aeas.loadAeaField({ state: localState.aeas }));
+      dispatch(
+        certificate.loadCertificateField({ state: localState.certificates }),
+      );
     } else if (localStorage.getItem('resume-field')) {
       const localState = JSON.parse(
         localStorage.getItem('resume-field') || '{}',
@@ -106,6 +113,9 @@ function useSaveLocalStorage(): {
       );
       dispatch(educations.loadEducationField({ state: localState.educations }));
       dispatch(aeas.loadAeaField({ state: localState.aeas }));
+      dispatch(
+        certificate.loadCertificateField({ state: localState.certificates }),
+      );
     }
   };
 
