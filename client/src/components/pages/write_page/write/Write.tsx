@@ -9,6 +9,7 @@ import InfoContainer from '../../../../containers/pages/write_page/infoContainer
 import WorkExperienceContainer from '../../../../containers/pages/write_page/workExperienceContainer.tsx/WorkExperienceContainer';
 import EducationContainer from '../../../../containers/pages/write_page/educationContainer/EducationContainer';
 import AeaContainer from '../../../../containers/pages/write_page/aeaContainer/AeaContainer';
+import CertificateContainer from '../../../../containers/pages/write_page/certificateContainer/CertificateContaine';
 import SaveAndPreviewButtons from './ui/SaveAndPreviewButtons';
 
 // ? ======================
@@ -45,6 +46,7 @@ const Write: React.FC<WriteProps> = ({
         <SkillsContainer />
         <WorkExperienceContainer />
         <EducationContainer />
+        <CertificateContainer />
         <AeaContainer />
         <SaveAndPreviewButtons
           onPreviewModal={onPreviewModal}

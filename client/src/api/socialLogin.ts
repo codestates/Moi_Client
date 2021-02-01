@@ -2,40 +2,28 @@
 import axios from 'axios';
 
 export const google: (data: any) => Promise<UserInfo> = async (data) => {
-  const response = await axios.post(
-    'https://www.everysmoi.tk/auth/google',
-    data,
-    {
-      withCredentials: true,
-    },
-  );
+  const response = await axios.post('http://localhost:8080/auth/google', data, {
+    withCredentials: true,
+  });
   return response.data;
 };
 
 export const kakao: (data: any) => Promise<UserInfo> = async (data) => {
-  const response = await axios.post(
-    'https://www.everysmoi.tk/auth/kakao',
-    data,
-    {
-      withCredentials: true,
-    },
-  );
+  const response = await axios.post('http://localhost:8080/auth/kakao', data, {
+    withCredentials: true,
+  });
   return response.data;
 };
 
 export const github: (data: any) => Promise<UserInfo> = async (data) => {
-  const response = await axios.post(
-    'https://www.everysmoi.tk/auth/github',
-    data,
-    {
-      withCredentials: true,
-    },
-  );
+  const response = await axios.post('http://localhost:8080/auth/github', data, {
+    withCredentials: true,
+  });
   return response.data;
 };
 
 export const check: () => Promise<UserInfo> = async () => {
-  const response = await axios.get('https://www.everysmoi.tk/auth/isauth', {
+  const response = await axios.get('http://localhost:8080/auth/isauth', {
     withCredentials: true,
   });
   return response.data;

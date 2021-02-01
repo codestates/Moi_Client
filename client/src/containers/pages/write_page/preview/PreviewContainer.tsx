@@ -11,6 +11,7 @@ import { ExperienceItem } from '../../../../modules/changeField/workExperience/t
 import { SkillItem } from '../../../../modules/changeField/skills/types';
 import { AeaItem } from '../../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../../modules/changeField/education/types';
+import { CertificateItem } from '../../../../modules/changeField/certificate/types';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 //* ==========================
@@ -41,6 +42,7 @@ interface PreviewProps {
     workExperience: ExperienceItem[];
     educations: EducationItem[];
     aeas: AeaItem[];
+    certificates: CertificateItem[];
   };
   onPreviewModal: () => void;
 }

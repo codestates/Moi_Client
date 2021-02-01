@@ -9,9 +9,9 @@ import {
 } from './actions';
 
 export interface CertificateItem {
-  certificationTitle: string;
-  certificationDesc: string;
-  certificationDate: string;
+  certificateTitle: string;
+  certificateDesc: string;
+  certificateDate: string;
   dropDownToggle: boolean;
 }
 

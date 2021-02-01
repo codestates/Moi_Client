@@ -17,17 +17,15 @@ const certificateField = createReducer<CertificateState, Actions>(
   initialState,
   {
     [ADD_CERTIFICATE_FIELD]: (state) => {
+      const newCertificate = {
+        certificateTitle: '',
+        certificateDesc: '',
+        certificateDate: '',
+        dropDownToggle: false,
+      };
       return {
         ...state,
-        certificates: [
-          ...state.certificates,
-          {
-            certificationTitle: '',
-            certificationDesc: '',
-            certificationDate: '',
-            dropDownToggle: false,
-          },
-        ],
+        certificates: [...state.certificates, newCertificate],
       };
     },
     [CERTIFICATE_CHANGE_FIELD]: (state, action) => {
@@ -35,11 +33,11 @@ const certificateField = createReducer<CertificateState, Actions>(
       const newCertificate = [...state.certificates];
 
       if (action.payload.key === 'certificationTitle') {
-        newCertificate[index].certificationTitle = action.payload.value;
+        newCertificate[index].certificateTitle = action.payload.value;
       } else if (action.payload.key === 'certificationDesc') {
-        newCertificate[index].certificationDesc = action.payload.value;
+        newCertificate[index].certificateDesc = action.payload.value;
       } else if (action.payload.key === 'certificationDate') {
-        newCertificate[index].certificationDate = action.payload.value;
+        newCertificate[index].certificateDate = action.payload.value;
       }
 
       return {
@@ -50,14 +48,14 @@ const certificateField = createReducer<CertificateState, Actions>(
     [DELETE_CERTIFICATE_FIELD]: (state, action) => {
       const index = action.payload.index;
       const newCertificate = [
-        ...state.certificates.filter((ele, idx) => {
+        ...state.certificates.filter((_, idx) => {
           return index !== idx;
         }),
       ];
 
       return {
         ...state,
-        newCertificates: newCertificate,
+        certificates: newCertificate,
       };
     },
     [LOAD_CERTIFICATE_FIELD]: (state, action) => {
