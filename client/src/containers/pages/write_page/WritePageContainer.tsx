@@ -17,6 +17,7 @@ import { InfoState } from '../../../modules/changeField/info/types';
 import { SkillsState } from '../../../modules/changeField/skills/types';
 import { AeaState } from '../../../modules/changeField/aea/types';
 import { EduState } from '../../../modules/changeField/education/types';
+import { CertificateState } from '../../../modules/changeField/certificate/types';
 
 const WritePageContainer: React.FC = () => {
   const values = useLoadPreviewValues();
@@ -31,6 +32,7 @@ const WritePageContainer: React.FC = () => {
     workExperience,
     aeas,
     educations,
+    certificates,
   } = useSelector(
     ({
       config,
@@ -39,6 +41,7 @@ const WritePageContainer: React.FC = () => {
       educationsField,
       aeasField,
       skillsField,
+      certificateField,
     }: {
       config: ConfigState;
       workExperienceField: ExperienceState;
@@ -46,6 +49,7 @@ const WritePageContainer: React.FC = () => {
       educationsField: EduState;
       aeasField: AeaState;
       skillsField: SkillsState;
+      certificateField: CertificateState;
     }) => ({
       template: config.resume.template,
       workExperience: workExperienceField.workExperience,
@@ -53,6 +57,7 @@ const WritePageContainer: React.FC = () => {
       info: infoField.info,
       skills: skillsField.skills,
       aeas: aeasField.aeas,
+      certificates: certificateField.certificates,
     }),
   );
   const history = useHistory();
@@ -64,6 +69,7 @@ const WritePageContainer: React.FC = () => {
       workExperience,
       aeas,
       educations,
+      certificates,
     };
 
     setLocalStorage(values);

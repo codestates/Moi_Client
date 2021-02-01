@@ -7,12 +7,14 @@ import Skills from './skills/Skills';
 import Experience from './experience/Experience';
 import Edu from './education/Edu';
 import Aea from './aea/Aea';
+import Certificate from './certificate/Certificate';
 
 //* Import types
 import { ExperienceItem } from '../../../../modules/changeField/workExperience/types';
 import { SkillItem } from '../../../../modules/changeField/skills/types';
 import { AeaItem } from '../../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../../modules/changeField/education/types';
+import { CertificateItem } from '../../../../modules/changeField/certificate/types';
 
 //* Import fonts
 import NanumGothicNomal from './font/NanumGothic.ttf';
@@ -82,6 +84,7 @@ interface PdfDocumentProps {
     workExperience: ExperienceItem[];
     educations: EducationItem[];
     aeas: AeaItem[];
+    certificates: CertificateItem[];
   };
 }
 
@@ -96,6 +99,7 @@ const PdfDocument: React.FC<PdfDocumentProps> = ({ values }) => {
         {values.workExperience.length >= 1 && <Experience values={values} />}
         {values?.educations.length >= 1 && <Edu values={values} />}
         {values.aeas.length >= 1 && <Aea values={values} />}
+        {values.certificates.length >= 1 && <Certificate values={values} />}
       </Page>
     </Document>
   );

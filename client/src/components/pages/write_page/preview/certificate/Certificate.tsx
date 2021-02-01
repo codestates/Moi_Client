@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
-import { AeaItem } from '../../../../../modules/changeField/aea/types';
+import { CertificateItem } from '../../../../../modules/changeField/certificate/types';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,20 +61,20 @@ const styles = StyleSheet.create({
 
 interface AeaProps {
   values: {
-    aeas: AeaItem[];
+    certificates: CertificateItem[];
   };
 }
 
-const Aea: React.FC<AeaProps> = ({ values }) => {
-  const { aeas } = values;
-  const printAeas = aeas.map((ele, index) => {
+const Certificate: React.FC<AeaProps> = ({ values }) => {
+  const { certificates } = values;
+  const printAeas = certificates.map((ele, index) => {
     return (
       <View style={styles.skillList} key={index}>
         <View style={styles.list}>
-          <Text style={styles.period}>{`${ele.aeaDate}`}</Text>
+          <Text style={styles.period}>{`${ele.certificateDate}`}</Text>
           <View style={styles.experienceTitle}>
-            <Text style={styles.itemContent}>{ele.aeaTitle}</Text>
-            <Text style={styles.subContent}>{ele.aeaDesc}</Text>
+            <Text style={styles.itemContent}>{ele.certificateTitle}</Text>
+            <Text style={styles.subContent}>{ele.certificateDesc}</Text>
           </View>
         </View>
       </View>
@@ -84,7 +84,7 @@ const Aea: React.FC<AeaProps> = ({ values }) => {
     <>
       <View style={styles.container}>
         <View style={styles.title}>
-          <Text style={styles.profile}>수상 및 기타 활동</Text>
+          <Text style={styles.profile}>자격증</Text>
         </View>
         {printAeas}
       </View>
@@ -92,4 +92,4 @@ const Aea: React.FC<AeaProps> = ({ values }) => {
   );
 };
 
-export default Aea;
+export default Certificate;

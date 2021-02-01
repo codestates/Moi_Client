@@ -14,6 +14,10 @@ import {
   EduState,
   EducationItem,
 } from '../../../modules/changeField/education/types';
+import {
+  CertificateItem,
+  CertificateState,
+} from '../../../modules/changeField/certificate/types';
 
 function useLoadPreviewValues(): {
   info: {
@@ -38,27 +42,38 @@ function useLoadPreviewValues(): {
   workExperience: ExperienceItem[];
   educations: EducationItem[];
   aeas: AeaItem[];
+  certificates: CertificateItem[];
 } {
   //? useSelector
-  const { info, skills, workExperience, aeas, educations } = useSelector(
+  const {
+    info,
+    skills,
+    workExperience,
+    aeas,
+    educations,
+    certificates,
+  } = useSelector(
     ({
       workExperienceField,
       infoField,
       educationsField,
       aeasField,
       skillsField,
+      certificateField,
     }: {
       workExperienceField: ExperienceState;
       infoField: InfoState;
       educationsField: EduState;
       aeasField: AeaState;
       skillsField: SkillsState;
+      certificateField: CertificateState;
     }) => ({
       workExperience: workExperienceField.workExperience,
       educations: educationsField.educations,
       info: infoField.info,
       skills: skillsField.skills,
       aeas: aeasField.aeas,
+      certificates: certificateField.certificates,
     }),
   );
 
@@ -68,6 +83,7 @@ function useLoadPreviewValues(): {
     workExperience,
     educations,
     aeas,
+    certificates,
   };
   // * VARIABLE & FUNCTIONS
   return values;

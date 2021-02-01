@@ -14,6 +14,7 @@ import { ExperienceItem } from '../../../modules/changeField/workExperience/type
 import { SkillItem } from '../../../modules/changeField/skills/types';
 import { AeaItem } from '../../../modules/changeField/aea/types';
 import { EducationItem } from '../../../modules/changeField/education/types';
+import { CertificateItem } from '../../../modules/changeField/certificate/types';
 
 // ? ======================
 // ?   INTERFACE_TYPE
@@ -42,6 +43,7 @@ interface WritePageProps {
     workExperience: ExperienceItem[];
     educations: EducationItem[];
     aeas: AeaItem[];
+    certificates: CertificateItem[];
   };
   onPreviewModal: () => void;
   preview: boolean;
