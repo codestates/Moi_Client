@@ -13,6 +13,7 @@ __Moi__ 와 함께라면 누구나 간단하고 빠르게 전문적인 __이력�
 
 ## Stack
 ### Project Stack
-![103530620-1609ca00-4ecb-11eb-9025-de13e31cf5f5](https://user-images.githubusercontent.com/65662469/106995949-50fd6700-67c3-11eb-846f-45c72a23073a.png)
+![기술스택차트](https://user-images.githubusercontent.com/65662469/107024971-178d2180-67ec-11eb-81b9-0c207546bbec.png)
 ## Wiki
 [Go to see Wiki](https://github.com/codestates/Moi_Client/wiki)
+
