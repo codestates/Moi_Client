@@ -13,6 +13,6 @@ __Moi__ 와 함께라면 누구나 간단하고 빠르게 전문적인 __이력�
 
 ## Stack
 ### Project Stack
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb594e7e1-0722-4d05-98ee-12272a0bf4ef%2F_2021-01-13_01-53-39.png?table=block&id=562ae415-c466-4257-8f02-cba242e05578&width=3840&userId=00bcb7e1-ceee-442b-927c-0f939fb6f8c0&cache=v2)
+![103530620-1609ca00-4ecb-11eb-9025-de13e31cf5f5](https://user-images.githubusercontent.com/65662469/106995949-50fd6700-67c3-11eb-846f-45c72a23073a.png)
 ## Wiki
 [Go to see Wiki](https://github.com/codestates/Moi_Client/wiki)
